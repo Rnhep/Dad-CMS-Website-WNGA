@@ -44,7 +44,7 @@
           class="com.sg.sophacms.DAO.UserDBImpl">
         <property name="jdbcTemplate" ref="jdbcTemplate"/>
         </bean>
-        <bean id="newPostDao" 
+        <bean id="NPDao" 
           class="com.sg.sophacms.DAO.NewPostDBImpl">
         <property name="jdbcTemplate" ref="jdbcTemplate"/>
         </bean>

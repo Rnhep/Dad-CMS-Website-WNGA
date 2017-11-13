@@ -12,7 +12,7 @@
     </head>
     <body>
         <div class="container">
-            <h1>Spring MVC Application from Archetype</h1>
+            <h1> WNGA.MN.OG </h1>
             <hr/>
             <div class="navbar">
                 <ul class="nav nav-tabs">

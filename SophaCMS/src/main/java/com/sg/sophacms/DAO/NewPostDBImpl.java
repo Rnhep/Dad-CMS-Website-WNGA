@@ -7,12 +7,19 @@ package com.sg.sophacms.DAO;
 
 import com.sg.sophacms.Model.NewPost;
 import java.util.List;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 /**
  *
  * @author ritheenhep
  */
 public class NewPostDBImpl implements NewPostDao{
+    
+        private JdbcTemplate jdbcTemplate;
+
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     @Override
     public void addNewPost() {

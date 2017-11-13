@@ -7,6 +7,7 @@ package com.sg.sophacms.Controller;
 
 import com.sg.sophacms.DAO.NewPostDao;
 import com.sg.sophacms.DAO.UserDao;
+import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,9 +21,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class MainController {
 
-    private UserDao userDao;
-    private NewPostDao NPDao;
-
+    UserDao userDao;
+    NewPostDao NPDao;
+        
+    @Inject
     public MainController(UserDao userDao, NewPostDao NPDao) {
         this.userDao = userDao;
         this.NPDao = NPDao;
