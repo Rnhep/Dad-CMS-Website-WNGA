@@ -19,6 +19,7 @@ public class PrepareStatement {
     protected final String SQUL_UPDATE_USER
             = "update user set FirstName = ?, LastName = ? , Email = ?, "
             + "Phone = ?, UserName = ?,  Password = ? ";
+    
     protected final String SQL_DELETE_USER
             = "delet from user where userId = ?";
     
@@ -28,8 +29,9 @@ public class PrepareStatement {
     protected final String SQL_SELECT_USER_BY_ID
             = "select * from user "
             + " where userId=?";
+    
     protected final String SQL_SELECTUSER_BY_NAME
-            ="select u.name from user u "
+            = "select u.name from user u "
             + "where userId = ?";
 
 }
