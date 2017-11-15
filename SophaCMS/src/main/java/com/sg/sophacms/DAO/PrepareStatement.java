@@ -33,5 +33,9 @@ public class PrepareStatement {
     protected final String SQL_SELECTUSER_BY_NAME
             = "select u.name from user u "
             + "where userId = ?";
-
+    
+    //new post
+    protected final String SQL_INSERT_INTO_NEW_POST
+            ="insert into NewPost"
+            + "(Title, Content, ImagePath, PublishDate,)values(?,?,?,?)";
 }
