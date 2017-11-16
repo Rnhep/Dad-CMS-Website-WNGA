@@ -14,6 +14,8 @@ CREATE TABLE IF NOT EXISTS `User` (
 `LastName` VARCHAR(30) NOT NULL,
 `UserName` VARCHAR(30)NOT NULL,
 `UserPassword` VARCHAR(250) NOT NULL,
+`Email` VARCHAR(30)NULL,
+`Phone` VARCHAR(30)NULL,
 `Enabled` TINYINT NOT NULL,
 PRIMARY KEY (`UserId`),
 KEY `UserName` (`UserName`))
@@ -41,13 +43,13 @@ PRIMARY KEY (`NewsFeedId`)
 )ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `Static_Page` (
-  `StaticPageId` INT NOT NULL AUTO_INCREMENT,
-  `Page` VARCHAR(45) NULL,
-  `Content` LONGTEXT NULL,
-  `UserId` INT NOT NULL,
-  PRIMARY KEY (`StaticPageId`),
-    FOREIGN KEY (`UserId`)
-    REFERENCES `User` (`UserId`))
+`StaticPageId` INT NOT NULL AUTO_INCREMENT,
+`Page` VARCHAR(45) NULL,
+`Content` LONGTEXT NULL,
+`UserId` INT NOT NULL,
+PRIMARY KEY (`StaticPageId`),
+FOREIGN KEY (`UserId`)
+REFERENCES `User` (`UserId`))
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
@@ -72,8 +74,8 @@ INSERT INTO `User`(`FirstName`, `LastName`, `UserName`, `UserPassword`, `Enabled
 INSERT INTO `User`(`FirstName`, `LastName`, `UserName`, `UserPassword`, `Enabled` )VALUES('Dake', 'Doe', 'Jsmith', '123', true);
 
 INSERT INTO `New_Post`(`Title`, `Content`, `PublishDate`, `ExpDate`, `UserId`, `StatusId` )VALUES('Today news', 'someone cry', '2017-1-1', '2017-1-2', 1,1);
-INSERT INTO `New_Post`(`Title`, `Content`, `PublishDate`, `ExpDate`, `UserId`, `StatusId` )VALUES('Notice Tuesday', 'Taco Tuesday', '2017-1-1', '2017-1-2', 1,3);
-INSERT INTO `New_Post`(`Title`, `Content`, `PublishDate`, `ExpDate`, `UserId`, `StatusId` )VALUES('Sunday Fun day', 'Just not as fun as described', '2017-1-1', '2017-1-2', 1,2);
+INSERT INTO `New_Post`(`Title`, `Content`, `PublishDate`, `ExpDate`, `UserId`, `StatusId` )VALUES('Notice Tuesday', 'Taco Tuesday', '2017-1-1', '2017-1-2', 3,3);
+INSERT INTO `New_Post`(`Title`, `Content`, `PublishDate`, `ExpDate`, `UserId`, `StatusId` )VALUES('Sunday Fun day', 'Just not as fun as described', '2017-1-1', '2017-1-2', 2,2);
 
 INSERT INTO `News_Feed`(`Content`, `Date`)VALUES('Something flew accross the sky today', ' 2017-3-5');
 INSERT INTO `News_Feed`(`Content`, `Date`)VALUES('World leaders schedual to meet', ' 2017-9-5');
@@ -96,8 +98,16 @@ select * from News_Feed;
 select * from Authorities;
 select * from Static_page;
 
-select NP.title, s.Status, u.FirstName from  New_Post NP
-inner join  Status s on s.StatusId = NP.StatusId
+select np.Title, np.Content, u.UserName from New_Post np
+inner join User u on u.userId = np.userId
+where u.userId=1;
+
+select * from New_Post np
+inner join User u on u.userId = np.userId
+where u.userId=1;
+
+select np.title, s.Status, u.FirstName from  New_Post np
+inner join  Status s on s.StatusId = np.StatusId
 inner join User u on u.userId = NP.StatusId
 where s.StatusId = 3;
 

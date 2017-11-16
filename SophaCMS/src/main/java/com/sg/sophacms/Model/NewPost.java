@@ -5,6 +5,8 @@
  */
 package com.sg.sophacms.Model;
 
+
+import java.time.LocalDate;
 import java.util.Objects;
 
 /**
@@ -15,6 +17,9 @@ public class NewPost {
     private int postId;
     private String title;
     private String content;
+    private String imagePath;
+    private LocalDate publishDate;
+    private LocalDate expireDate;
     private User user;
 
     public int getPostId() {
@@ -41,6 +46,30 @@ public class NewPost {
         this.content = content;
     }
 
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
+
+    public LocalDate getPublishDate() {
+        return publishDate;
+    }
+
+    public void setPublishDate(LocalDate publishDate) {
+        this.publishDate = publishDate;
+    }
+
+    public LocalDate getExpireDate() {
+        return expireDate;
+    }
+
+    public void setExpireDate(LocalDate expireDate) {
+        this.expireDate = expireDate;
+    }
+
     public User getUser() {
         return user;
     }
@@ -49,15 +78,16 @@ public class NewPost {
         this.user = user;
     }
 
-    
-    
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 89 * hash + this.postId;
-        hash = 89 * hash + Objects.hashCode(this.title);
-        hash = 89 * hash + Objects.hashCode(this.content);
-        hash = 89 * hash + Objects.hashCode(this.user);
+        hash = 29 * hash + this.postId;
+        hash = 29 * hash + Objects.hashCode(this.title);
+        hash = 29 * hash + Objects.hashCode(this.content);
+        hash = 29 * hash + Objects.hashCode(this.imagePath);
+        hash = 29 * hash + Objects.hashCode(this.publishDate);
+        hash = 29 * hash + Objects.hashCode(this.expireDate);
+        hash = 29 * hash + Objects.hashCode(this.user);
         return hash;
     }
 
@@ -82,12 +112,20 @@ public class NewPost {
         if (!Objects.equals(this.content, other.content)) {
             return false;
         }
+        if (!Objects.equals(this.imagePath, other.imagePath)) {
+            return false;
+        }
+        if (!Objects.equals(this.publishDate, other.publishDate)) {
+            return false;
+        }
+        if (!Objects.equals(this.expireDate, other.expireDate)) {
+            return false;
+        }
         if (!Objects.equals(this.user, other.user)) {
             return false;
         }
         return true;
     }
-    
-    
+
     
 }

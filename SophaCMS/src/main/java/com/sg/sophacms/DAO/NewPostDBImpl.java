@@ -5,6 +5,7 @@
  */
 package com.sg.sophacms.DAO;
 
+import static com.sg.sophacms.DAO.PrepareStatement.SQL_INSERT_INTO_NEW_POST;
 import com.sg.sophacms.Model.NewPost;
 import java.util.List;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -22,27 +23,29 @@ public class NewPostDBImpl implements NewPostDao{
     }
 
     @Override
-    public void addNewPost() {
+    public void addNewPost(NewPost newPost) {
+        jdbcTemplate.update(SQL_INSERT_INTO_NEW_POST,
+                newPost.getTitle(),
+                newPost.getContent(),
+                newPost.getImagePath(),
+                newPost.getPublishDate(),
+                newPost.getExpireDate(),
+                newPost.getUser().getUserId());
+        newPost.setPostId(jdbcTemplate.queryForObject("select LAST_INSERT_ID()", Integer.class));
+    }
+
+    @Override
+    public void deletePost(int newPostId) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void deletePost() {
+    public void updatePost(NewPost newPost) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void updatePost() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public NewPost getPostById() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public NewPost getPostByUser() {
+    public NewPost getPostById(int newPostId) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -50,5 +53,5 @@ public class NewPostDBImpl implements NewPostDao{
     public List<NewPost> getAllPost() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

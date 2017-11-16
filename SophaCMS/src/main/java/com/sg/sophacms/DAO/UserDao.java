@@ -14,15 +14,15 @@ import java.util.List;
  */
 public interface UserDao {
 
-    public void addUser();
+    public void addUser(User user);
 
-    public void deleteUser();
+    public void deleteUser(int user);
 
-    public void updateUser();
+    public void updateUser(User user);
 
-    public User getUserByUserName();
+//    public User getUserByUserName(User user);
 
-    public User getUserbyId(User user);
+    public User getUserbyId(int userId);
 
-    public List<User> getAllUser();
+    public List<User> getAllUsers();
 }
