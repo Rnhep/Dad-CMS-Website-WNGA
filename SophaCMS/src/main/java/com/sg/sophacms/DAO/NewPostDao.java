@@ -14,15 +14,15 @@ import java.util.List;
  */
 public interface NewPostDao {
 
-    public void addNewPost();
+    public void addNewPost(NewPost newPost);
 
-    public void deletePost();
+    public void deletePost(int newPostId);
 
-    public void updatePost();
+    public void updatePost(NewPost newPost);
 
-    public NewPost getPostById();
+    public NewPost getPostById(int newPostId);
 
-    public NewPost getPostByUser();
+   // public NewPost getPostByUser();
 
     public List<NewPost> getAllPost();
 

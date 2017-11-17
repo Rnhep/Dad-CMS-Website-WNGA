@@ -10,9 +10,9 @@ ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `User` (
 `userId` INT NOT NULL AUTO_INCREMENT,
-`FirstName` VARCHAR(30) NOT NULL,
-`LastName` VARCHAR(30) NOT NULL,
-`UserName` VARCHAR(30)NOT NULL,
+`FirstName` NVARCHAR(30) NOT NULL,
+`LastName` NVARCHAR(30) NOT NULL,
+`UserName` NVARCHAR(30)NOT NULL,
 `UserPassword` VARCHAR(250) NOT NULL,
 `Email` VARCHAR(30)NULL,
 `Phone` VARCHAR(30)NULL,
@@ -24,7 +24,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `New_Post` (
 `PostId` INT NOT NULL AUTO_INCREMENT,
 `Title` VARCHAR(50) NULL,
-`Content` LONGTEXT NULL,
+`Content` NVARCHAR(350) NULL,
 `ImagePath` VARCHAR(255) NULL,
 `PublishDate` DATE NULL,
 `ExpDate` DATE NULL,
@@ -37,7 +37,7 @@ ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `News_Feed` (
 `NewsFeedId` INT NOT NULL AUTO_INCREMENT,
-`Content` VARCHAR(250) NULL,
+`Content` NVARCHAR(350) NULL,
 `Date` DATE NOT NULL,
 PRIMARY KEY (`NewsFeedId`)
 )ENGINE = InnoDB;
@@ -45,16 +45,16 @@ PRIMARY KEY (`NewsFeedId`)
 CREATE TABLE IF NOT EXISTS `Static_Page` (
 `StaticPageId` INT NOT NULL AUTO_INCREMENT,
 `Page` VARCHAR(45) NULL,
-`Content` LONGTEXT NULL,
+`Content` NVARCHAR(350)NULL,
 `UserId` INT NOT NULL,
 PRIMARY KEY (`StaticPageId`),
 FOREIGN KEY (`UserId`)
 REFERENCES `User` (`UserId`))
-ENGINE = InnoDB;
+ENGINE = InnoDB; 
 
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Authorities` (
-`Username` VARCHAR(30) NOT NULL,
+`Username` NVARCHAR(30) NOT NULL,
 `Authority` VARCHAR(30) NOT NULL,
 FOREIGN KEY (`Username`)
 REFERENCES `User` (`Username`),
@@ -66,7 +66,7 @@ INSERT INTO `Status`(`Status`)VALUES('Approve');
 INSERT INTO `Status`(`Status`)VALUES('Pending');
 INSERT INTO `Status`(`Status`)VALUES('Reject');
 
-INSERT INTO `User`(`FirstName`, `LastName`, `UserName`, `UserPassword`, `Enabled` )VALUES('Jon', 'Smith', 'Jsmith', '123', true);
+INSERT INTO `User`(`FirstName`, `LastName`, `UserName`, `UserPassword`, `Enabled` )VALUES('សុផា', 'Smith', 'Jsmith', '123', true);
 INSERT INTO `User`(`FirstName`, `LastName`, `UserName`, `UserPassword`, `Enabled` )VALUES('Nic', 'Doe', 'NicDo', '123', true);
 INSERT INTO `User`(`FirstName`, `LastName`, `UserName`, `UserPassword`, `Enabled` )VALUES('Mike', 'Nic', 'MikeN', '123', true);
 INSERT INTO `User`(`FirstName`, `LastName`, `UserName`, `UserPassword`, `Enabled` )VALUES('Rithee', 'Smith', 'RSmith', '123', true);
@@ -90,6 +90,8 @@ INSERT INTO `Authorities` (`Username`, `Authority`) VALUES ('MikeN', 'ROLE_USER'
 INSERT INTO `Static_Page` (`StaticPageId`, `Page`, `Content`, `UserId`) VALUES (1, 'About','Make new page', 1);
 INSERT INTO `Static_Page` (`StaticPageId`, `Page`, `Content`, `UserId`) VALUES (2, 'News', 'Make new page1', 1);
 
+
+
 use wnga;
 select * from User;
 select * from Status;
@@ -102,7 +104,7 @@ select np.Title, np.Content, u.UserName from New_Post np
 inner join User u on u.userId = np.userId
 where u.userId=1;
 
-select * from New_Post np
+select np.* from New_Post np
 inner join User u on u.userId = np.userId
 where u.userId=1;
 

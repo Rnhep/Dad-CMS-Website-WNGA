@@ -41,11 +41,11 @@
     </bean>
 
     <bean id="userDao" 
-          class="com.sg.sophacms.DAO.UserDBImpl">
+          class="com.sg.sophacms.DAO.UserDaoImpl">
         <property name="jdbcTemplate" ref="jdbcTemplate"/>
         </bean>
         <bean id="NPDao" 
-          class="com.sg.sophacms.DAO.NewPostDBImpl">
+          class="com.sg.sophacms.DAO.NewPostDaoImpl">
         <property name="jdbcTemplate" ref="jdbcTemplate"/>
         </bean>
         

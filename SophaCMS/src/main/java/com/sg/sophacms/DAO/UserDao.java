@@ -16,11 +16,11 @@ public interface UserDao {
 
     public void addUser(User user);
 
-    public void deleteUser(int user);
+    public void deleteUser(String userName);
 
     public void updateUser(User user);
-
-//    public User getUserByUserName(User user);
+    
+    public User getUserByUserName(String user);
 
     public User getUserbyId(int userId);
 

@@ -5,7 +5,6 @@
  */
 package com.sg.sophacms.Model;
 
-
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -14,6 +13,7 @@ import java.util.Objects;
  * @author ritheenhep
  */
 public class NewPost {
+
     private int postId;
     private String title;
     private String content;
@@ -127,5 +127,4 @@ public class NewPost {
         return true;
     }
 
-    
 }
