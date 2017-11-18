@@ -62,3 +62,5 @@ ENGINE = InnoDB;
 
 use wnga_test;
 select * from user;
+select * from New_Post;
+delete from New_Post where PostId = 2;

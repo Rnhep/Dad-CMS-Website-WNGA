@@ -18,7 +18,8 @@ public class PrepareStatement {
 
     protected static final String SQUL_UPDATE_USER
             = "update user set FirstName = ?, LastName = ?,"
-            + " UserName = ?,  UserPassword = ?, Email = ?, Phone = ?";
+            + " UserName = ?,  UserPassword = ?, Email = ?, Phone = ? "
+            + " where userId = ? ";
 
     protected static final String SQL_DELETE_USER
             = "delete from user where userName = ?";
@@ -42,13 +43,13 @@ public class PrepareStatement {
 
     //new post
     protected static final String SQL_INSERT_INTO_NEW_POST
-            = "insert into NewPost"
-            + "(Title, Content, ImagePath, PublishDate, ExpireDate, UseId)values(?,?,?,?,?,?)";
+            = "insert into New_Post "
+            + "(Title, Content, ImagePath, PublishDate, ExpDate, UserId)values(?,?,?,?,?,?)";
 
     protected static final String SQL_UPDATE_NEW_POST
             = " update New_Post set Title = ?, Content = ?, "
-            + "ImagePath = ?, PublishDate = ?, ExpireDate = ?,"
-            + " UserId = ?, StatusId = ?";
+            + "ImagePath = ?, PublishDate = ?, ExpDate = ?, UserId = ? "
+            + "where postId=?";
 
     protected static final String SQL_SELECT_USER_BY_NEW_POST
             = "select u.* from User u "
@@ -62,7 +63,7 @@ public class PrepareStatement {
             = "select * from New_Post";
 
     protected static final String SQL_SELECT_NEW_POST_BY_ID
-            = "select * from New_Post where New_PostId = ?";
+            = "select * from New_Post where PostId = ?";
 
     //news Feed
     protected static final String SQL_INSERT_INTO_NEWS_FEED
@@ -93,3 +94,5 @@ public class PrepareStatement {
     protected static final String SQL_SELECT_STATIC_PAGE_BY_ID
             = "select * from Static_page where StaticPageId = ?";
 }
+
+      

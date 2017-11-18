@@ -64,7 +64,8 @@ public class UserDaoImpl implements UserDao {
                 user.getUserName(),
                 user.getPassWord(),
                 user.getEmail(),
-                user.getPhone());
+                user.getPhone(),
+                user.getUserId());
     }
 
     @Override

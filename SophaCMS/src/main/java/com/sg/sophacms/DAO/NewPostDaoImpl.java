@@ -70,7 +70,7 @@ public class NewPostDaoImpl implements NewPostDao {
             return null;
         }
     }
-
+    
     @Override
     public List<NewPost> getAllPost() {
         List<NewPost> allPost = jdbcTemplate.query(SQL_SELECT_ALL_NEW_POST, new NewPostMapper());
