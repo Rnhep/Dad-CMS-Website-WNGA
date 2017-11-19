@@ -13,7 +13,8 @@ import java.util.Objects;
  * @author ritheenhep
  */
 public class NewsFeed {
-
+    
+    private String title;
     private String content;
     private LocalDate date;
 
@@ -35,9 +36,10 @@ public class NewsFeed {
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 89 * hash + Objects.hashCode(this.content);
-        hash = 89 * hash + Objects.hashCode(this.date);
+        int hash = 7;
+        hash = 37 * hash + Objects.hashCode(this.title);
+        hash = 37 * hash + Objects.hashCode(this.content);
+        hash = 37 * hash + Objects.hashCode(this.date);
         return hash;
     }
 
@@ -53,6 +55,9 @@ public class NewsFeed {
             return false;
         }
         final NewsFeed other = (NewsFeed) obj;
+        if (!Objects.equals(this.title, other.title)) {
+            return false;
+        }
         if (!Objects.equals(this.content, other.content)) {
             return false;
         }
@@ -61,5 +66,7 @@ public class NewsFeed {
         }
         return true;
     }
+
+    
 
 }

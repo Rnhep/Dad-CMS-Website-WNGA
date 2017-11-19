@@ -6,6 +6,7 @@
 package com.sg.sophacms.DAO;
 
 import com.sg.sophacms.Model.NewPost;
+import com.sg.sophacms.Model.User;
 import java.util.List;
 
 /**
@@ -22,7 +23,7 @@ public interface NewPostDao {
 
     public NewPost getPostById(int newPostId);
 
-   // public NewPost getPostByUser();
+    public NewPost getUserByPostId(int newPostId);
 
     public List<NewPost> getAllPost();
 

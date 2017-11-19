@@ -70,7 +70,20 @@ public class NewPostDaoImpl implements NewPostDao {
             return null;
         }
     }
-    
+
+    @Override
+    public NewPost getUserByPostId(int newPostId) {
+        try{
+       
+           NewPost newPost  = jdbcTemplate.queryForObject(SQL_SELECT_USER_BY_POST_ID, new NewPostMapper(), newPostId);
+           newPost.setUser(findUserForPost(newPost));
+           return newPost;
+        }catch(EmptyResultDataAccessException ex){
+            return null;
+        }
+        }
+        
+
     @Override
     public List<NewPost> getAllPost() {
         List<NewPost> allPost = jdbcTemplate.query(SQL_SELECT_ALL_NEW_POST, new NewPostMapper());
@@ -80,7 +93,6 @@ public class NewPostDaoImpl implements NewPostDao {
     public User findUserForPost(NewPost newPost) {
         return jdbcTemplate.queryForObject(SQL_SELECT_USER_BY_NEW_POST,
                 new UserMapper(), newPost.getPostId());
-
     }
 
     public List<NewPost> associateUserAndPost(List<NewPost> newPostList) {
@@ -89,4 +101,5 @@ public class NewPostDaoImpl implements NewPostDao {
         }
         return newPostList;
     }
+
 }

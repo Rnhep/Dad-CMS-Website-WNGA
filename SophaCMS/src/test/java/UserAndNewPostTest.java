@@ -319,5 +319,29 @@ public class UserAndNewPostTest {
         allPosts = newPostDao.getAllPost();
         assertEquals(2, allPosts.size());
     }
+     @Test
+    public void testGetUserNameByPost() {
+ 
+        User user = new User();
+        user.setFirstName("Rithee");
+        user.setLastName("Nhep");
+        user.setUserName("RitheeN");
+        user.setPassWord("password");
+        user.setEmail("user.user");
+        user.setPhone("123465");
+        user.setEnable(true);
+        userDao.addUser(user);
+        NewPost np = new NewPost();
+        np.setTitle("UnitTest");
+        np.setContent("Tommorow is the Future");
+        np.setImagePath("test");
+        np.setPublishDate(LocalDate.now());
+        np.setExpireDate(LocalDate.now());
+        np.setUser(user);
+        newPostDao.addNewPost(np);
+        
+        NewPost fromDB = newPostDao.getUserByPostId(np.getPostId());
+        assertEquals("RitheeN", fromDB.getUser().getUserName() );
+    }
 
 }

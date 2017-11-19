@@ -61,6 +61,11 @@ public class PrepareStatement {
 
     protected static final String SQL_SELECT_ALL_NEW_POST
             = "select * from New_Post";
+    
+    protected static final String SQL_SELECT_USER_BY_POST_ID
+            = "select * from New_Post np " 
+            + "inner join User u on u.userId = np.UserId " 
+            + "where np.postId = ?";
 
     protected static final String SQL_SELECT_NEW_POST_BY_ID
             = "select * from New_Post where PostId = ?";
