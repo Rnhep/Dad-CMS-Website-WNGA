@@ -6,17 +6,37 @@
 package com.sg.sophacms.Model;
 
 import java.time.LocalDate;
+
 import java.util.Objects;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 /**
  *
  * @author ritheenhep
  */
 public class NewsFeed {
-    
+    private int newsFeedId;
     private String title;
     private String content;
+     @DateTimeFormat(iso = ISO.DATE)
     private LocalDate date;
+
+    public int getNewsFeedId() {
+        return newsFeedId;
+    }
+
+    public void setNewsFeedId(int newsFeedId) {
+        this.newsFeedId = newsFeedId;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
     public String getContent() {
         return content;
@@ -37,9 +57,10 @@ public class NewsFeed {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 37 * hash + Objects.hashCode(this.title);
-        hash = 37 * hash + Objects.hashCode(this.content);
-        hash = 37 * hash + Objects.hashCode(this.date);
+        hash = 23 * hash + this.newsFeedId;
+        hash = 23 * hash + Objects.hashCode(this.title);
+        hash = 23 * hash + Objects.hashCode(this.content);
+        hash = 23 * hash + Objects.hashCode(this.date);
         return hash;
     }
 
@@ -55,6 +76,9 @@ public class NewsFeed {
             return false;
         }
         final NewsFeed other = (NewsFeed) obj;
+        if (this.newsFeedId != other.newsFeedId) {
+            return false;
+        }
         if (!Objects.equals(this.title, other.title)) {
             return false;
         }
@@ -66,7 +90,5 @@ public class NewsFeed {
         }
         return true;
     }
-
     
-
 }

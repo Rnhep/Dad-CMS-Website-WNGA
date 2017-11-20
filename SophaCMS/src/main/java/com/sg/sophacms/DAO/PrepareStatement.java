@@ -72,13 +72,18 @@ public class PrepareStatement {
 
     //news Feed
     protected static final String SQL_INSERT_INTO_NEWS_FEED
-            = "insert into News_Feed (Content, Date)values(?,?)";
+            = "insert into News_Feed (Title, Date, Content)values(?,?,?)";
 
     protected static final String SQL_UPDATE_NEWS_FEED
-            = "update News_Feed set Content = ?, Date = ?";
+            = "update News_Feed set Title = ?, Date = ?, Content = ? "
+            + "where NewsFeedId = ?";
 
     protected static final String SQL_DELETE_NEWS_FEED
-            = "delete from News_Feeds where NewsFeedId = ?";
+            = "delete from News_Feed where NewsFeedId = ?";
+    
+    protected static final String SQL_SELECT_NEWS_FEED_BY_ID
+            = "select * from News_Feed "
+            + "where NewsFeedId = ?";
 
     protected static final String SQL_SELECT_ALL_NEWS_FEED
             = "select * from News_Feed";
@@ -88,7 +93,8 @@ public class PrepareStatement {
             = "insert into Static_Page (Page, Content, UserId)values(?,?,?)";
 
     protected static final String SQL_UPDATE_STATIC_PAGE
-            = "update Static_page set Page = ?, Content = ?, UserId = ?";
+            = "update Static_page set Page = ?, Content = ?, UserId = ? "
+            + "where Static_pageId = ?";
 
     protected static final String SQL_DELETE_STATIC_PAGE
             = "delete from Static_Page where StaticPageId = ?";

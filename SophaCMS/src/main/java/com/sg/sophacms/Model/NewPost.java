@@ -7,6 +7,8 @@ package com.sg.sophacms.Model;
 
 import java.time.LocalDate;
 import java.util.Objects;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 /**
  *
@@ -18,7 +20,9 @@ public class NewPost {
     private String title;
     private String content;
     private String imagePath;
+    @DateTimeFormat(iso = ISO.DATE)
     private LocalDate publishDate;
+    @DateTimeFormat(iso = ISO.DATE)
     private LocalDate expireDate;
     private User user;
 

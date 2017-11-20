@@ -37,8 +37,9 @@ ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `News_Feed` (
 `NewsFeedId` INT NOT NULL AUTO_INCREMENT,
-`Content` NVARCHAR(350) NULL,
+`Title` NVARCHAR(350),
 `Date` DATE NOT NULL,
+`Content` NVARCHAR(350) NULL,
 PRIMARY KEY (`NewsFeedId`)
 )ENGINE = InnoDB;
 
@@ -99,6 +100,15 @@ select * from New_Post;
 select * from News_Feed;
 select * from Authorities;
 select * from Static_page;
+
+select u.UserName from New_Post np
+inner join User u on u.userId = np.UserId
+where np.postId = 2;
+
+select * from New_Post np
+inner join user u on u.userId = np.UserId
+where np.postId = 2;
+
 
 select np.Title, np.Content, u.UserName from New_Post np
 inner join User u on u.userId = np.userId

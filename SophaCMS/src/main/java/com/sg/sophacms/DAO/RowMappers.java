@@ -6,6 +6,7 @@
 package com.sg.sophacms.DAO;
 
 import com.sg.sophacms.Model.NewPost;
+import com.sg.sophacms.Model.NewsFeed;
 import com.sg.sophacms.Model.User;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -50,5 +51,18 @@ public class RowMappers {
         }
 
     }
+    protected static final class NewsFeedMapper implements RowMapper<NewsFeed>{
 
+        @Override
+        public NewsFeed mapRow(ResultSet rs, int i) throws SQLException {
+            NewsFeed NF = new NewsFeed();
+            NF.setTitle(rs.getString("Title"));
+            NF.setDate(rs.getTimestamp("Date").toLocalDateTime().toLocalDate());
+            NF.setContent(rs.getString("Content"));
+            NF.setNewsFeedId(rs.getInt("NewsFeedId"));
+           return NF;
+        }
+        
+        
+    }
 }

@@ -86,6 +86,7 @@ public class UserAndNewPostTest {
         User fromDB = userDao.getUserbyId(user.getUserId());
         assertEquals(fromDB, user);
     }
+
     @Test
     public void testDeleteUser() {
 
@@ -106,7 +107,7 @@ public class UserAndNewPostTest {
 
     @Test
     public void testUpdateUser() {
-        
+
         User user = new User();
         user.setFirstName("person1");
         user.setLastName("person1");
@@ -123,9 +124,10 @@ public class UserAndNewPostTest {
         User updateName = userDao.getUserbyId(user.getUserId());
         assertEquals(fromDB, updateName);
     }
+
     @Test
     public void testGetUserById() {
- 
+
         User user = new User();
         user.setFirstName("person1");
         user.setLastName("person1");
@@ -138,9 +140,10 @@ public class UserAndNewPostTest {
         User fromDB = userDao.getUserbyId(user.getUserId());
         assertEquals(fromDB, user);
     }
+
     @Test
     public void testGetUserByUserName() {
- 
+
         User user = new User();
         user.setFirstName("person1");
         user.setLastName("person1");
@@ -153,9 +156,10 @@ public class UserAndNewPostTest {
         User fromDB = userDao.getUserByUserName(user.getUserName());
         assertEquals("Rithee", fromDB.getUserName());
     }
+
     @Test
     public void testGetAllUsers() {
-  
+
         User user = new User();
         user.setFirstName("Rithee1");
         user.setLastName("Nhep1");
@@ -179,6 +183,7 @@ public class UserAndNewPostTest {
         allUsers = userDao.getAllUsers();
         assertEquals(2, allUsers.size());
     }
+
     @Test
     public void testAddGetNewPost() {
 
@@ -202,9 +207,10 @@ public class UserAndNewPostTest {
         NewPost fromDB = newPostDao.getPostById(np.getPostId());
         assertEquals(fromDB, np);
     }
+
     @Test
     public void testDeleteNewPost() {
- 
+
         User user1 = new User();
         user1.setFirstName("Rithee");
         user1.setLastName("Nhep");
@@ -227,9 +233,10 @@ public class UserAndNewPostTest {
         newPostDao.deletePost(np.getPostId());
         assertNull(newPostDao.getPostById(np.getPostId()));
     }
+
     @Test
     public void testUpdatePost() {
- 
+
         User user = new User();
         user.setFirstName("Rithee");
         user.setLastName("Nhep");
@@ -254,9 +261,10 @@ public class UserAndNewPostTest {
         NewPost fromDB = newPostDao.getPostById(np.getPostId());
         assertEquals(toUpdate, fromDB);
     }
+
     @Test
     public void testGetPostById() {
- 
+
         User user1 = new User();
         user1.setFirstName("Rithee");
         user1.setLastName("Nhep");
@@ -273,13 +281,14 @@ public class UserAndNewPostTest {
         np.setPublishDate(LocalDate.now());
         np.setExpireDate(LocalDate.now());
         np.setUser(user1);
-        newPostDao.addNewPost(np);   
+        newPostDao.addNewPost(np);
         NewPost fromDB = newPostDao.getPostById(np.getPostId());
         assertEquals(fromDB.getPostId(), np.getPostId());
     }
+
     @Test
     public void testGetAllPost() {
- 
+
         User user = new User();
         user.setFirstName("Rithee");
         user.setLastName("Nhep");
@@ -319,9 +328,10 @@ public class UserAndNewPostTest {
         allPosts = newPostDao.getAllPost();
         assertEquals(2, allPosts.size());
     }
-     @Test
-    public void testGetUserNameByPost() {
- 
+
+    @Test
+    public void testGetUserNameByPostId() {
+
         User user = new User();
         user.setFirstName("Rithee");
         user.setLastName("Nhep");
@@ -339,9 +349,9 @@ public class UserAndNewPostTest {
         np.setExpireDate(LocalDate.now());
         np.setUser(user);
         newPostDao.addNewPost(np);
-        
+
         NewPost fromDB = newPostDao.getUserByPostId(np.getPostId());
-        assertEquals("RitheeN", fromDB.getUser().getUserName() );
+        assertEquals("RitheeN", fromDB.getUser().getUserName());
     }
 
 }
