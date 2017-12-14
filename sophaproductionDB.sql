@@ -132,3 +132,5 @@ update User set  UserPassword = 'corndog' where UserId = 1;
 select * from User;
 update News_Feed set Title='Paris Peace Agreement' where NewsFeedId= 4;
 update  News_Feed set Title='Education' where NewsFeedId=1;
+update  News_Feed set Title='Health' where NewsFeedId=2;
+update  News_Feed set Title='Human Right' where NewsFeedId=3;

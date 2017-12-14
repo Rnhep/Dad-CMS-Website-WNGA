@@ -58,7 +58,7 @@ public class MainController {
         List<NewsFeed> allNews = new ArrayList<>();
         allNews = NFDao.getAllNews();
         model.addAttribute("allNews", allNews);
-        return "/";
+        return "NewsFeed";
     }
     //Get lates post from DB to display in home page
 

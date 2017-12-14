@@ -22,7 +22,7 @@
                 <a  href="${pageContext.request.contextPath}/">Photos</a>
             </div>
             <div class="col-sm-2 align-top " id="news">
-                <a  href="${pageContext.request.contextPath}/">News</a>
+                <a  href="${pageContext.request.contextPath}/displayNewsFeed">News</a>
             </div>
             <div class="col-sm-2 align-top " id="blog">
                 <a  href="${pageContext.request.contextPath}/">Blog</a>
@@ -87,6 +87,7 @@
                 <a href="${pageContext.request.contextPath}/">
                     read more
                 </a>
+                    
         </div>
         <!-- Placed at the end of the document so the pages load faster -->
         <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>

@@ -27,6 +27,18 @@ body{
         background-color:rgba(26,66,106, 0.9);
     }
     #education {
+        background: linear-gradient(to bottom, rgba(255,255,255,0.1) 0%,rgba(0,0,0,0.8) 100%), url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpo10S405taRVqs66pQ0lYE4YTy-2_ewm3blfWQouZ8pOsLdbZsw") no-repeat;
+        background-size: cover;   
+    }
+    #health {
+        background: linear-gradient(to bottom, rgba(255,255,255,0.1) 0%,rgba(0,0,0,0.8) 100%), url("http://www.akp.gov.kh/wp-content/uploads/2016/09/309-600x399.jpg") no-repeat;
+        background-size: cover;   
+    }
+    #humanRight {
+        background: linear-gradient(to bottom, rgba(255,255,255,0.1) 0%,rgba(0,0,0,0.8) 100%), url("http://brightcove04.o.brightcove.com/1764166205001/1764166205001_5144915128001_5144899868001-vs.jpg?pubId=1764166205001") no-repeat;
+        background-size: cover;   
+    }
+    #ppa {
         background: linear-gradient(to bottom, rgba(255,255,255,0.1) 0%,rgba(0,0,0,0.8) 100%), url("http://irri.org/images/profiles/national_governments/cambodia/cambodia-transplanting-rice.jpg") no-repeat;
         background-size: cover;   
     }
