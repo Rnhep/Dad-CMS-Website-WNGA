@@ -19,7 +19,7 @@
         <div class="container-fluid nav">
             <!--         <span class="glyphicon glyphicon-home"></span>-->
             <div class="col-sm-2 align-top " id="home">
-                <a  href="${pageContext.request.contextPath}/">Photos</a>
+                <a  href="${pageContext.request.contextPath}/">About Us</a>
             </div>
             <div class="col-sm-2 align-top " id="news">
                 <a  href="${pageContext.request.contextPath}/displayNewsFeed">News</a>
