@@ -89,6 +89,11 @@ public class NewPostDaoImpl implements NewPostDao {
         List<NewPost> allPost = jdbcTemplate.query(SQL_SELECT_ALL_NEW_POST, new NewPostMapper());
         return associateUserAndPost(allPost);
     }
+    @Override
+    public List<NewPost> getLatestPost(){
+        List<NewPost> latestPost = jdbcTemplate.query(SLQ_GET_LATEST_POST, new NewPostMapper());
+        return associateUserAndPost(latestPost);
+    }
 
     public User findUserForPost(NewPost newPost) {
         return jdbcTemplate.queryForObject(SQL_SELECT_USER_BY_NEW_POST,

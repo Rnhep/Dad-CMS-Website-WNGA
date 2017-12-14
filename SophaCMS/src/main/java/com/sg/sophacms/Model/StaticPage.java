@@ -13,17 +13,17 @@ import java.util.Objects;
  */
 public class StaticPage {
 
-    private int staticPage;
+    private int staticPageId;
     private String page;
     private String content;
     private User user;
 
     public int getStaticPage() {
-        return staticPage;
+        return staticPageId;
     }
 
     public void setStaticPage(int staticPage) {
-        this.staticPage = staticPage;
+        this.staticPageId = staticPage;
     }
 
     public String getPage() {
@@ -53,7 +53,7 @@ public class StaticPage {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 97 * hash + this.staticPage;
+        hash = 97 * hash + this.staticPageId;
         hash = 97 * hash + Objects.hashCode(this.page);
         hash = 97 * hash + Objects.hashCode(this.content);
         hash = 97 * hash + Objects.hashCode(this.user);
@@ -72,7 +72,7 @@ public class StaticPage {
             return false;
         }
         final StaticPage other = (StaticPage) obj;
-        if (this.staticPage != other.staticPage) {
+        if (this.staticPageId != other.staticPageId) {
             return false;
         }
         if (!Objects.equals(this.page, other.page)) {

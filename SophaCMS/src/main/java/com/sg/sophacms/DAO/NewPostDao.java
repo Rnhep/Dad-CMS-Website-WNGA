@@ -26,5 +26,7 @@ public interface NewPostDao {
     public NewPost getUserByPostId(int newPostId);
 
     public List<NewPost> getAllPost();
+    
+    public List<NewPost> getLatestPost();
 
 }

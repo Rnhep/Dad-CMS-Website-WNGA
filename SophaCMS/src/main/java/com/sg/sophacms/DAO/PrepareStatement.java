@@ -62,6 +62,10 @@ public class PrepareStatement {
     protected static final String SQL_SELECT_ALL_NEW_POST
             = "select * from New_Post";
     
+    protected static final String SLQ_GET_LATEST_POST
+            = "select *  from sighting ORDER BY date desc limit 10 ";
+
+    
     protected static final String SQL_SELECT_USER_BY_POST_ID
             = "select * from New_Post np " 
             + "inner join User u on u.userId = np.UserId " 

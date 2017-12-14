@@ -1,0 +1,72 @@
+body{
+    background-color:white;
+}
+
+@media only screen and (min-width : 310px) and (max-width : 414px) {
+    .logo{
+
+        background: url('../Images/WNGA-M.png')no-repeat center white;
+        height: 150px;
+        width: 100%;
+        opacity: 0.9; 
+        background-size: contain;
+    }
+    #home a, #news a, #blog a, #log-in a 
+    {
+        color: #fff;
+        text-decoration: none;
+        font-size: 10px;
+       word-spacing: -0.6em;
+    }
+
+    #home, #news, #blog, #log-in{
+        margin-left: 9px;
+        color: #fff;
+        border: 1px solid black;
+        border-radius: 9em 9em 9em;
+        background-color:rgba(26,66,106, 0.9);
+    }
+    #education {
+        background: linear-gradient(to bottom, rgba(255,255,255,0.1) 0%,rgba(0,0,0,0.8) 100%), url("http://irri.org/images/profiles/national_governments/cambodia/cambodia-transplanting-rice.jpg") no-repeat;
+        background-size: cover;   
+    }
+    #education a, #health a, #humanRight a, #ppa a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 26px;
+       
+    }
+    
+    .box p , .news p a{
+        color: azure;
+        font-size: 36px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    .education-content p{
+        font-size: 12px;
+    }
+
+    .news, .box{
+  
+        color: #fff;
+        font-size: 24px;
+        margin-top: 20px;
+        height: 250px;
+        background-color:rgba(79,150,221, 0.8);
+
+    }
+    .nav{
+        display: -webkit-flex;
+        display: flex;
+        margin-left: 30px;
+    }
+ 
+
+
+
+
+}
+
+
+

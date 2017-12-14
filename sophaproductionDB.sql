@@ -95,6 +95,7 @@ INSERT INTO `Static_Page` (`StaticPageId`, `Page`, `Content`, `UserId`) VALUES (
 
 use wnga;
 select * from User;
+select left(Content, 50) from News_Feed where NewsFeedId = 1;
 select * from Status;
 select * from New_Post;
 select * from News_Feed;
@@ -129,3 +130,5 @@ where  u.UserId = 1;
 
 update User set  UserPassword = 'corndog' where UserId = 1;
 select * from User;
+update News_Feed set Title='Paris Peace Agreement' where NewsFeedId= 4;
+update  News_Feed set Title='Education' where NewsFeedId=1;
