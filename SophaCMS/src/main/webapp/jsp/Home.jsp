@@ -19,10 +19,10 @@
         <div class="container-fluid nav">
             <!--         <span class="glyphicon glyphicon-home"></span>-->
             <div class="col-sm-2 align-top " id="home">
-                <a  href="${pageContext.request.contextPath}/">About Us</a>
+                <a  href="${pageContext.request.contextPath}/displayAboutUsPage">About Us</a>
             </div>
             <div class="col-sm-2 align-top " id="news">
-                <a  href="${pageContext.request.contextPath}/displayNewsFeed">News</a>
+                <a  href="${pageContext.request.contextPath}/displayNewsFeedPage">News</a>
             </div>
             <div class="col-sm-2 align-top " id="blog">
                 <a  href="${pageContext.request.contextPath}/">Blog</a>
@@ -31,10 +31,11 @@
                 <a  href="${pageContext.request.contextPath}/"><i class="glyphicon glyphicon-log-in">Sign In</i></a>
             </div>
         </div>
-        <h1> WNGA.MN.US.OG </h1>
-
+        <h1> WNGA.MN.US.ORG </h1>
+        <div class="container-fluid" id="events">
+    </div>
         <div class="container-fluid box" id="education">
-            <p><a  href="${pageContext.request.contextPath}/">
+            <p><a  href="${pageContext.request.contextPath}/displayContentsPage">
                     <c:out value="${education.title}"/>
                 </a></p>
         </div>
@@ -48,11 +49,11 @@
 
         <!--            for health section.-->
         <div class="container-fluid box" id="health">
-            <p><a  href="${pageContext.request.contextPath}/">
+            <p><a  href="${pageContext.request.contextPath}/displayContentsPage">
                     <c:out value="${health.title}"/>
                 </a></p>
         </div>
-        <div class="education-content" >
+        <div class="health-content" >
             <p><c:out value="${health.content}"/></p>
             <p><a href="${pageContext.request.contextPath}/">
                     read more
@@ -60,11 +61,11 @@
         </div>
 
         <div class="container-fluid box" id="humanRight">
-            <p> <a href="${pageContext.request.contextPath}/">  
+            <p> <a href="${pageContext.request.contextPath}/displayContentsPage">  
                     <c:out value="${humanRight.title}"/>
                 </a></p>
         </div>
-        <div class="education-content" >
+        <div class="hm-right" >
             <p><c:out value="${humanRight.content}"/></p>
             <p>
                 <a href="${pageContext.request.contextPath}/">
@@ -74,21 +75,25 @@
         </div>
 
         <div class="container-fluid box" id="ppa">
-            <p><a href="${pageContext.request.contextPath}/">
+            <p><a href="${pageContext.request.contextPath}/displayContentsPage">
                     <c:out value="${PPA.title}"/>
                 </a>
             </p>
 
         </div>
-        <div>
-            <p >
+           
+                    <div class="PPA-content">
+            <p>
                 <c:out value="${PPA.content}"/>
             <p>
-                <a href="${pageContext.request.contextPath}/">
+            <p> <a href="${pageContext.request.contextPath}/">
                     read more
                 </a>
+            </p>
                     
         </div>
+            
+         <footer class="footer"> copyright 2017</footer>
         <!-- Placed at the end of the document so the pages load faster -->
         <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
         <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>

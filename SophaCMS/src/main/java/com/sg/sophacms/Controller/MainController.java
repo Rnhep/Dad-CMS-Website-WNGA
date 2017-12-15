@@ -51,16 +51,26 @@ public class MainController {
 
         return "Home";
     }
-    //Get lates newsfeed from DB to display in home page
-
-    @RequestMapping(value = "/displayNewsFeed", method = RequestMethod.GET)
+    //display about us page
+    @RequestMapping(value = "/displayAboutUsPage", method = RequestMethod.GET)
+    public String aboutUsPage(){
+        return "AboutUsPage";
+    }
+    
+    @RequestMapping(value = "/displayContentsPage", method = RequestMethod.GET)
+    public String contentsPage(){
+        return "ContentsPage";
+    }
+    
+    //Get lates newsfeed from DB to display in home page.
+    @RequestMapping(value = "/displayNewsFeedPage", method = RequestMethod.GET)
     public String displayNewsFeed(Model model) {
         List<NewsFeed> allNews = new ArrayList<>();
         allNews = NFDao.getAllNews();
         model.addAttribute("allNews", allNews);
-        return "NewsFeed";
+        return "NewsFeedPage";
     }
-    //Get lates post from DB to display in home page
+    //Get lates post from DB.
 
     @RequestMapping(value = "/displayLatestPost", method = RequestMethod.GET)
     public String displayLatesPost(Model model) {
@@ -69,5 +79,7 @@ public class MainController {
         model.addAttribute("displayLatestPost", displayLatestPost);
         return "/";
     }
+    
+    //submit post. using userName in submit post method
 
 }
