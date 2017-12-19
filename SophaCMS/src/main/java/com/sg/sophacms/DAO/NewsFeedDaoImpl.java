@@ -67,6 +67,8 @@ public class NewsFeedDaoImpl implements NewsFeedDao {
         }catch(EmptyResultDataAccessException ex){
             return null;
         }
+        
+    
     }
 
 }

@@ -5,7 +5,8 @@
  */
 package com.sg.sophacms.Model;
 
-import java.time.LocalDate;
+
+import java.time.LocalDateTime;
 import java.util.Objects;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
@@ -21,9 +22,9 @@ public class NewPost {
     private String content;
     private String imagePath;
     @DateTimeFormat(iso = ISO.DATE)
-    private LocalDate publishDate;
+    private LocalDateTime publishDate;
     @DateTimeFormat(iso = ISO.DATE)
-    private LocalDate expireDate;
+    private LocalDateTime expireDate;
     private User user;
 
     public int getPostId() {
@@ -58,19 +59,19 @@ public class NewPost {
         this.imagePath = imagePath;
     }
 
-    public LocalDate getPublishDate() {
+    public LocalDateTime getPublishDate() {
         return publishDate;
     }
 
-    public void setPublishDate(LocalDate publishDate) {
+    public void setPublishDate(LocalDateTime publishDate) {
         this.publishDate = publishDate;
     }
 
-    public LocalDate getExpireDate() {
+    public LocalDateTime getExpireDate() {
         return expireDate;
     }
 
-    public void setExpireDate(LocalDate expireDate) {
+    public void setExpireDate(LocalDateTime expireDate) {
         this.expireDate = expireDate;
     }
 
@@ -85,13 +86,13 @@ public class NewPost {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 29 * hash + this.postId;
-        hash = 29 * hash + Objects.hashCode(this.title);
-        hash = 29 * hash + Objects.hashCode(this.content);
-        hash = 29 * hash + Objects.hashCode(this.imagePath);
-        hash = 29 * hash + Objects.hashCode(this.publishDate);
-        hash = 29 * hash + Objects.hashCode(this.expireDate);
-        hash = 29 * hash + Objects.hashCode(this.user);
+        hash = 89 * hash + this.postId;
+        hash = 89 * hash + Objects.hashCode(this.title);
+        hash = 89 * hash + Objects.hashCode(this.content);
+        hash = 89 * hash + Objects.hashCode(this.imagePath);
+        hash = 89 * hash + Objects.hashCode(this.publishDate);
+        hash = 89 * hash + Objects.hashCode(this.expireDate);
+        hash = 89 * hash + Objects.hashCode(this.user);
         return hash;
     }
 
@@ -131,4 +132,5 @@ public class NewPost {
         return true;
     }
 
+    
 }

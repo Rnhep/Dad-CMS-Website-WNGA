@@ -24,12 +24,12 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `New_Post` (
 `PostId` INT NOT NULL AUTO_INCREMENT,
 `Title` VARCHAR(50) NULL,
-`Content` NVARCHAR(350) NULL,
-`ImagePath` VARCHAR(255) NULL,
-`PublishDate` DATE NULL,
+`Content` NVARCHAR(20000) NULL,
+`ImagePath` NVARCHAR(450) NULL,
+`PublishDate` DATETIME NULL,
 `ExpDate` DATE NULL,
 `UserId` INT NOT NULL,
-`StatusId` INT NOT NULL,
+`StatusId` int Null,
 PRIMARY KEY (`PostId`),
 FOREIGN KEY (`UserId`)
 REFERENCES `User` (`UserId`))
@@ -67,16 +67,27 @@ INSERT INTO `Status`(`Status`)VALUES('Approve');
 INSERT INTO `Status`(`Status`)VALUES('Pending');
 INSERT INTO `Status`(`Status`)VALUES('Reject');
 
-INSERT INTO `User`(`FirstName`, `LastName`, `UserName`, `UserPassword`, `Enabled` )VALUES('សុផា', 'Smith', 'Jsmith', '123', true);
+INSERT INTO `User`(`FirstName`, `LastName`, `UserName`, `UserPassword`, `Enabled` )VALUES('សុផា', 'Smith', 'សុផា', '123', true);
 INSERT INTO `User`(`FirstName`, `LastName`, `UserName`, `UserPassword`, `Enabled` )VALUES('Nic', 'Doe', 'NicDo', '123', true);
 INSERT INTO `User`(`FirstName`, `LastName`, `UserName`, `UserPassword`, `Enabled` )VALUES('Mike', 'Nic', 'MikeN', '123', true);
 INSERT INTO `User`(`FirstName`, `LastName`, `UserName`, `UserPassword`, `Enabled` )VALUES('Rithee', 'Smith', 'RSmith', '123', true);
 INSERT INTO `User`(`FirstName`, `LastName`, `UserName`, `UserPassword`, `Enabled` )VALUES('Mo', 'Jo', 'MoJo', '123', true);
 INSERT INTO `User`(`FirstName`, `LastName`, `UserName`, `UserPassword`, `Enabled` )VALUES('Dake', 'Doe', 'Jsmith', '123', true);
 
+INSERT INTO `New_Post`(`Title`, `Content`, `PublishDate`, `ExpDate`, `UserId`, `StatusId` )VALUES('Today អាណាចក្រអង្គរ',' with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsu', '2017-1-1', '2017-1-2', 1,1);
+INSERT INTO `New_Post`(`Title`, `Content`, `PublishDate`, `ExpDate`, `UserId`, `StatusId` )VALUES('Notice Tuesday', 'Taco Tuesday', '2017-1-1', '2017-1-2', 3,3);
+INSERT INTO `New_Post`(`Title`, `Content`, `PublishDate`, `ExpDate`, `UserId`, `StatusId` )VALUES('Sunday Fun day', 'Just not as fun as described', '2017-1-1', '2017-1-2', 2,2);
 INSERT INTO `New_Post`(`Title`, `Content`, `PublishDate`, `ExpDate`, `UserId`, `StatusId` )VALUES('Today news', 'someone cry', '2017-1-1', '2017-1-2', 1,1);
 INSERT INTO `New_Post`(`Title`, `Content`, `PublishDate`, `ExpDate`, `UserId`, `StatusId` )VALUES('Notice Tuesday', 'Taco Tuesday', '2017-1-1', '2017-1-2', 3,3);
 INSERT INTO `New_Post`(`Title`, `Content`, `PublishDate`, `ExpDate`, `UserId`, `StatusId` )VALUES('Sunday Fun day', 'Just not as fun as described', '2017-1-1', '2017-1-2', 2,2);
+INSERT INTO `New_Post`(`Title`, `Content`, `PublishDate`, `ExpDate`, `UserId`, `StatusId` )VALUES('Today news', 'someone cry', '2017-1-1', '2017-1-2', 1,1);
+INSERT INTO `New_Post`(`Title`, `Content`, `PublishDate`, `ExpDate`, `UserId`, `StatusId` )VALUES('Notice Tuesday', 'Taco Tuesday', '2017-1-1', '2017-1-2', 3,3);
+INSERT INTO `New_Post`(`Title`, `Content`, `PublishDate`, `ExpDate`, `UserId`, `StatusId` )VALUES('Sunday Fun day', 'Just not as fun as described', '2017-1-1', '2017-1-2', 2,2);
+INSERT INTO `New_Post`(`Title`, `Content`, `PublishDate`, `ExpDate`, `UserId`, `StatusId` )VALUES('Today news', 'someone cry', '2017-1-1', '2017-1-2', 1,1);
+INSERT INTO `New_Post`(`Title`, `Content`, `PublishDate`, `ExpDate`, `UserId`, `StatusId` )VALUES('Notice Tuesday', 'If statements or transactions are running on a table, and ANALYZE TABLE is run on the same table followed by a second ANALYZE TABLE operation, the second ANALYZE TABLE operation is blocked until the statements or transactions are completed. This behavior occurs because ANALYZE TABLE marks the currently loaded table definition as obsolete when ANALYZE TABLE is finished running. New statements or transactions (including a second ANALYZE TABLE statement) must load the new table definition into the table cache, which cannot occur until currently running statements or transactions are completed and the old table definition is purged. Loading multiple concurrent table definitions is not supported.
+
+', '2017-1-1', '2017-1-2', 3,3);
+INSERT INTO `New_Post`(`Title`, `Content`, `PublishDate`, `ExpDate`, `UserId`, `StatusId` )VALUES('Sunday Fun day', 'អាណាចក្រអង្គរ', '2017-1-1', '2017-1-2', 2,2);
 
 INSERT INTO `News_Feed`(`Content`, `Date`)VALUES('Something flew accross the sky today', ' 2017-3-5');
 INSERT INTO `News_Feed`(`Content`, `Date`)VALUES('World leaders schedual to meet', ' 2017-9-5');
@@ -134,3 +145,6 @@ update News_Feed set Title='Paris Peace Agreement' where NewsFeedId= 4;
 update  News_Feed set Title='Education' where NewsFeedId=1;
 update  News_Feed set Title='Health' where NewsFeedId=2;
 update  News_Feed set Title='Human Right' where NewsFeedId=3;
+
+
+

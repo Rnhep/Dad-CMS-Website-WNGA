@@ -44,8 +44,8 @@ public class RowMappers {
             newPost.setTitle(rs.getString("Title"));
             newPost.setContent(rs.getString("Content"));
             newPost.setImagePath(rs.getString("ImagePath"));
-            newPost.setPublishDate(rs.getTimestamp("PublishDate").toLocalDateTime().toLocalDate());
-            newPost.setExpireDate(rs.getTimestamp("ExpDate").toLocalDateTime().toLocalDate());
+            newPost.setPublishDate(rs.getTimestamp("PublishDate").toLocalDateTime());
+            newPost.setExpireDate(rs.getTimestamp("ExpDate").toLocalDateTime());
             newPost.setPostId(rs.getInt("PostId"));
             return newPost;
         }

@@ -60,10 +60,10 @@ public class PrepareStatement {
             = "delete from New_Post where PostId = ? ";
 
     protected static final String SQL_SELECT_ALL_NEW_POST
-            = "select * from New_Post";
+            = "select * from New_Post order by PostId desc";
     
     protected static final String SLQ_GET_LATEST_POST
-            = "select *  from sighting ORDER BY date desc limit 10 ";
+            = "select *  from New_Post ORDER BY PostId desc limit 5 ";
 
     
     protected static final String SQL_SELECT_USER_BY_POST_ID

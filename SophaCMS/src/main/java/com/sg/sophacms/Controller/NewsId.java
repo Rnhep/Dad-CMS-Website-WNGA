@@ -15,5 +15,7 @@ public class NewsId {
     protected static final int FOR_HEALTH = 2;
     protected static final int FOR_HUMAN_RIGHT = 3;
     protected static final int FOR_PARIS_PEACE_AGREEMENT = 4;
+    protected static final int FOR_EVENT_ONE = 5;
+    protected static final int FOR_EVENT_TWO = 6;
 
 }
