@@ -51,11 +51,12 @@ public class MainController {
     //ID 5 to 6 reserved for events
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String home(HttpServletRequest request, Model model) {
+        //for home page contents
         NewsFeed contentOne = NFDao.getNewsFeedById(FOR_CONTENT_ONE);
         NewsFeed contentTwo = NFDao.getNewsFeedById(FOR_CONTENT_TWO);
         NewsFeed contentThree = NFDao.getNewsFeedById(FOR_CONTENT_THREE);
         NewsFeed contentFour = NFDao.getNewsFeedById(FOR_CONTENT_FOUR);
-        
+        //for events
         NewsFeed eventOne = NFDao.getNewsFeedById(FOR_EVENT_ONE);
         NewsFeed eventTwo = NFDao.getNewsFeedById(FOR_EVENT_TWO);
        
@@ -64,6 +65,7 @@ public class MainController {
         model.addAttribute("contentThree", contentThree);
         model.addAttribute("contentFour", contentFour);
         model.addAttribute("eventOne", eventOne);
+        model.addAttribute("eventTwo", eventTwo);
     
 
         List<NewPost> displayLatestPost = new ArrayList<>();

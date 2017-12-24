@@ -55,11 +55,12 @@ public class AdminController {
         model.addAttribute("contentTwo", contentTwo);
         model.addAttribute("contentThree", contentThree);
         model.addAttribute("contentFour", contentFour);
-
-//String contentOneIdParameter = rq.getParameter("newsFeedId");
-//           int newsfeedId = Integer.parseInt(contentOneIdParameter);
-//           NewsFeed newsFeed = NFDao.getNewsFeedById(newsfeedId);
-//           model.addAttribute("newsFeed", newsFeed);
+        //for events
+        NewsFeed eventOne = NFDao.getNewsFeedById(FOR_EVENT_ONE);
+        NewsFeed eventTwo = NFDao.getNewsFeedById(FOR_EVENT_TWO);
+         model.addAttribute("eventOne", eventOne);
+         model.addAttribute("eventTwo", eventTwo);
+        
         return "AdminPage";
     }
 
@@ -71,6 +72,7 @@ public class AdminController {
         model.addAttribute("newsFeed", newsFeed);
         LocalDate date = LocalDate.now();
         model.addAttribute("date", date);
+        
         return "EditContent";
     }
     

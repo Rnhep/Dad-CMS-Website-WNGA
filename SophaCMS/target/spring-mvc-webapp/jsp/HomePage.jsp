@@ -19,10 +19,12 @@
                     
                     <div id="header"></div>
                     <div class="col-md-12" id="events">
-                        <p> Up coming Events: </p>
-                        <p><c:out value="${event.title}"/></p>
-                        <p><c:out value="${event.content}"/></p>
-                        <c:out value="${newPostCount}"/>
+                        <p class="upcoming"> Up coming Events: </p>
+                        <p><c:out value="${eventOne.title}"/></p>
+                        <p><c:out value="${eventOne.content}"/></p>
+                        <hr></hr>
+                        <p><c:out value="${eventTwo.title}"/></p>
+                        <p><c:out value="${eventTwo.content}"/></p>
                     </div>
                    
                         <hr></hr>

@@ -29,20 +29,23 @@
                     <sf:form role="form" action="editNewsFeed" method="POST" modelAttribute="newsFeed">
                         <div class="form-group">
                    <div class="col-md-8">
+                       
                         <sf:input type="text" class="form-control" id="title"
                                   path="title" placeholder="Enter your Title here"/>
                         <sf:errors path="title" cssclass="error"></sf:errors>
                             <sf:hidden path="date" value="${date}"/>
-                            <sf:textarea type="text" class="form-control" id="content"
+                            <sf:textarea type="text"  id="content"
                                   path="content" placeholder="Enter your news Feed here"/>
                         <sf:errors path="content" cssclass="error"></sf:errors>
                         <sf:hidden path="newsFeedId"/>
-                        <input type="submit" class="btn btn-default" value="Update Contact"/>
+                        <input type="submit" class="btn btn-default" value="Update Content"/>
                     </div>
                     
                 </div>
                         
                     </sf:form>
+                    
+                    
                     
                     
                     <hr>             

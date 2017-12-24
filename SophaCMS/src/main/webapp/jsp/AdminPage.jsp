@@ -17,51 +17,70 @@
                 </head>
                 <body> 
                     <div id="header"></div>
-                    
-                    
-                    
-                    
-                 
-                    <div class="container pre-posts">
-                            <p><c:out value="${contentOne.title}"/>
-                                    <a  href="displayEditPostForm?newsFeedId=${contentOne.newsFeedId}">
-                                        <button class="btn-sm" >Edit</button></a>
-                            </p>
-                            <p>
-                                <c:out value="${contentOne.content}"/>
-                            </p>
-                    </div>
 
+
+                    <div class="container admin-note">
+                        <h1> Admin Page</h1>
+                        <p> To update any content click on edit button</p>
+                    </div>
                     <div class="container pre-posts">
-                            <p><c:out value="${contentTwo.title}"/>
-                                <a  href="displayEditPostForm?newsFeedId=${contentTwo.newsFeedId}">
-                                        <button class="btn-sm" >Edit</button></a>
-                            </p>
-                            <p>
-                                <c:out value="${contentTwo.content}"/>
-                            </p>
+                        <p><c:out value="${contentOne.title}"/>
+                            <a  href="displayEditPostForm?newsFeedId=${contentOne.newsFeedId}">
+                                <button class="btn-sm" >Edit</button></a>
+                        </p>
+                        <p>
+                            <c:out value="${contentOne.content}"/>
+                        </p>
+                    </div>
+                    <div class="container pre-posts">
+                        <p><c:out value="${contentTwo.title}"/>
+                            <a  href="displayEditPostForm?newsFeedId=${contentTwo.newsFeedId}">
+                                <button class="btn-sm" >Edit</button></a>
+                        </p>
+                        <p>
+                            <c:out value="${contentTwo.content}"/>
+                        </p>
                     </div>
                     <div class="container pre-posts" >
-                            <p> <c:out value="${contentThree.title}"/>
-                               <a  href="displayEditPostForm?newsFeedId=${contentThree.newsFeedId}">
-                                        <button class="btn-sm" >Edit</button></a>
-                            </p>
-                            <p>
-                                <c:out value="${contentThree.content}"/>
-                            </p>
+                        <p> <c:out value="${contentThree.title}"/>
+                            <a  href="displayEditPostForm?newsFeedId=${contentThree.newsFeedId}">
+                                <button class="btn-sm" >Edit</button></a>
+                        </p>
+                        <p>
+                            <c:out value="${contentThree.content}"/>
+                        </p>
                     </div>
-                   <div class="container pre-posts">
-                            <p> <c:out value="${contentThree.title}"/>
-                               <a  href="displayEditPostForm?newsFeedId=${contentFour.newsFeedId}">
-                                        <button class="btn-sm" >Edit</button></a>
-                            </p>
-                            <p>
-                                <c:out value="${contentFour.content}"/>
-                            </p>
+                    <div class="container pre-posts">
+                        <p> <c:out value="${contentThree.title}"/>
+                            <a  href="displayEditPostForm?newsFeedId=${contentFour.newsFeedId}">
+                                <button class="btn-sm" >Edit</button></a>
+                        </p>
+                        <p>
+                            <c:out value="${contentFour.content}"/>
+                        </p>
                     </div>
+                        <hr>
+                            
+                        </hr>
 
-
-
+                    <div class="container pre-posts">
+                        <p><c:out value="${eventOne.title}"/>
+                            <a  href="displayEditPostForm?newsFeedId=${eventOne.newsFeedId}">
+                                <button class="btn-sm" >Edit</button></a>
+                        </p>
+                        <p>
+                            <c:out value="${eventOne.content}"/>
+                        </p>
+                    </div>
+                    <div class="container pre-posts">
+                        <p><c:out value="${eventTwo.title}"/>
+                            <a  href="displayEditPostForm?newsFeedId=${eventTwo.newsFeedId}">
+                                <button class="btn-sm" >Edit</button></a>
+                        </p>
+                        <p>
+                            <c:out value="${eventTwo.content}"/>
+                        </p>
+                    </div>
 
 
                     <hr>             
@@ -72,5 +91,5 @@
                         <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
                         <script src="${pageContext.request.contextPath}/js/Home.js"></script>
 
-    </body>
-</html>
+                </body>
+                </html>
