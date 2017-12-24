@@ -8,10 +8,7 @@ import com.sg.sophacms.DAO.NewPostDao;
 import com.sg.sophacms.DAO.UserDao;
 import com.sg.sophacms.Model.NewPost;
 import com.sg.sophacms.Model.User;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.After;
@@ -83,7 +80,6 @@ public class UserAndNewPostTest {
         user.setUserName("person1");
         user.setPassWord("password");
         user.setEmail("user.user");
-        user.setPhone("123465");
         user.setEnable(true);
         userDao.addUser(user);
         User fromDB = userDao.getUserbyId(user.getUserId());
@@ -99,7 +95,6 @@ public class UserAndNewPostTest {
         user.setUserName("person1");
         user.setPassWord("password");
         user.setEmail("user.user");
-        user.setPhone("123465");
         user.setEnable(true);
         userDao.addUser(user);
         User fromDB = userDao.getUserbyId(user.getUserId());
@@ -117,7 +112,6 @@ public class UserAndNewPostTest {
         user.setUserName("person1");
         user.setPassWord("password");
         user.setEmail("user.user");
-        user.setPhone("123465");
         user.setEnable(true);
         userDao.addUser(user);
         String firstName = "Rithee";
@@ -137,7 +131,6 @@ public class UserAndNewPostTest {
         user.setUserName("person1");
         user.setPassWord("password");
         user.setEmail("user.user");
-        user.setPhone("123465");
         user.setEnable(true);
         userDao.addUser(user);
         User fromDB = userDao.getUserbyId(user.getUserId());
@@ -153,7 +146,6 @@ public class UserAndNewPostTest {
         user.setUserName("Rithee");
         user.setPassWord("password");
         user.setEmail("user.user");
-        user.setPhone("123465");
         user.setEnable(true);
         userDao.addUser(user);
         User fromDB = userDao.getUserByUserName(user.getUserName());
@@ -169,7 +161,6 @@ public class UserAndNewPostTest {
         user.setUserName("Rithee");
         user.setPassWord("password");
         user.setEmail("user.user");
-        user.setPhone("123465");
         user.setEnable(true);
         userDao.addUser(user);
 
@@ -179,8 +170,6 @@ public class UserAndNewPostTest {
         user1.setUserName("RitheeN");
         user1.setPassWord("password");
         user1.setEmail("user.user");
-        user1.setPhone("123465");
-        user1.setEnable(true);
         userDao.addUser(user1);
         List<User> allUsers = new ArrayList<>();
         allUsers = userDao.getAllUsers();
@@ -220,7 +209,6 @@ public class UserAndNewPostTest {
         user1.setUserName("RitheeN");
         user1.setPassWord("password");
         user1.setEmail("user.user");
-        user1.setPhone("123465");
         user1.setEnable(true);
         userDao.addUser(user1);
         NewPost np = new NewPost();
@@ -228,7 +216,6 @@ public class UserAndNewPostTest {
         np.setContent("Tommorow is the Future");
         np.setImagePath("test");
         np.setPublishDate(timeStamp);
-        np.setExpireDate(timeStamp);
         np.setUser(user1);
         newPostDao.addNewPost(np);
         newPostDao.deletePost(np.getPostId());
@@ -244,15 +231,14 @@ public class UserAndNewPostTest {
         user.setUserName("RitheeN");
         user.setPassWord("password");
         user.setEmail("user.user");
-        user.setPhone("123465");
         user.setEnable(true);
         userDao.addUser(user);
         NewPost np = new NewPost();
         np.setTitle("UnitTest");
         np.setContent("Tommorow is the Future");
         np.setImagePath("test");
+          np.setImagePathTwo("test2");
         np.setPublishDate(timeStamp);
-        np.setExpireDate(timeStamp);
         np.setUser(user);
         newPostDao.addNewPost(np);
         String Title = "updateUnitTest";
@@ -272,15 +258,15 @@ public class UserAndNewPostTest {
         user1.setUserName("RitheeN");
         user1.setPassWord("password");
         user1.setEmail("user.user");
-        user1.setPhone("123465");
+  
         user1.setEnable(true);
         userDao.addUser(user1);
         NewPost np = new NewPost();
         np.setTitle("UnitTest");
         np.setContent("Tommorow is the Future");
         np.setImagePath("test");
+        np.setImagePathTwo("test2");
         np.setPublishDate(timeStamp);
-        np.setExpireDate(timeStamp);
         np.setUser(user1);
         newPostDao.addNewPost(np);
         NewPost fromDB = newPostDao.getPostById(np.getPostId());
@@ -296,15 +282,15 @@ public class UserAndNewPostTest {
         user.setUserName("RitheeN");
         user.setPassWord("password");
         user.setEmail("user.user");
-        user.setPhone("123465");
+  
         user.setEnable(true);
         userDao.addUser(user);
         NewPost np = new NewPost();
         np.setTitle("UnitTest");
         np.setContent("Tommorow is the Future");
         np.setImagePath("test");
+//        np.setImagePathTwo("test2");
         np.setPublishDate(timeStamp);
-        np.setExpireDate(timeStamp);
         np.setUser(user);
         newPostDao.addNewPost(np);
 
@@ -314,15 +300,15 @@ public class UserAndNewPostTest {
         user1.setUserName("RitheeN");
         user1.setPassWord("password");
         user1.setEmail("user.user");
-        user1.setPhone("123465");
+ 
         user1.setEnable(true);
         userDao.addUser(user1);
         NewPost np1 = new NewPost();
         np1.setTitle("UnitTest");
         np1.setContent("Tommorow is the Future");
         np1.setImagePath("test");
+//        np.setImagePathTwo("test2");
         np1.setPublishDate(timeStamp);
-        np1.setExpireDate(timeStamp);
         np1.setUser(user1);
         newPostDao.addNewPost(np1);
         List<NewPost> allPosts = new ArrayList();
@@ -339,15 +325,15 @@ public class UserAndNewPostTest {
         user.setUserName("RitheeN");
         user.setPassWord("password");
         user.setEmail("user.user");
-        user.setPhone("123465");
+    
         user.setEnable(true);
         userDao.addUser(user);
         NewPost np = new NewPost();
         np.setTitle("UnitTest");
         np.setContent("Tommorow is the Future");
         np.setImagePath("test");
+//        np.setImagePathTwo("test2");
         np.setPublishDate(timeStamp);
-        np.setExpireDate(timeStamp);
         np.setUser(user);
         newPostDao.addNewPost(np);
 

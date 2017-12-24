@@ -14,11 +14,11 @@ public class PrepareStatement {
     //user table
     protected static final String SQL_INSERT_INTO_USER
             = "insert into user "
-            + "(FirstName, LastName, UserName, UserPassword, Email, Phone, Enabled)values(?,?,?,?,?,?,?)";
+            + "(FirstName, LastName, UserName, UserPassword, Email, Enabled)values(?,?,?,?,?,?)";
 
     protected static final String SQUL_UPDATE_USER
             = "update user set FirstName = ?, LastName = ?,"
-            + " UserName = ?,  UserPassword = ?, Email = ?, Phone = ? "
+            + " UserName = ?,  UserPassword = ?, Email = ? "
             + " where userId = ? ";
 
     protected static final String SQL_DELETE_USER
@@ -44,11 +44,11 @@ public class PrepareStatement {
     //new post
     protected static final String SQL_INSERT_INTO_NEW_POST
             = "insert into New_Post "
-            + "(Title, Content, ImagePath, PublishDate, ExpDate, UserId)values(?,?,?,?,?,?)";
+            + "(Title, Content, ImagePath, ImagePathTwo, PublishDate, UserId)values(?,?,?,?,?,?)";
 
     protected static final String SQL_UPDATE_NEW_POST
             = " update New_Post set Title = ?, Content = ?, "
-            + "ImagePath = ?, PublishDate = ?, ExpDate = ?, UserId = ? "
+            + "ImagePath = ?, ImagePathTwo= ?, PublishDate = ?, UserId = ? "
             + "where postId=?";
 
     protected static final String SQL_SELECT_USER_BY_NEW_POST
@@ -61,14 +61,13 @@ public class PrepareStatement {
 
     protected static final String SQL_SELECT_ALL_NEW_POST
             = "select * from New_Post order by PostId desc";
-    
+
     protected static final String SLQ_GET_LATEST_POST
             = "select *  from New_Post ORDER BY PostId desc limit 5 ";
 
-    
     protected static final String SQL_SELECT_USER_BY_POST_ID
-            = "select * from New_Post np " 
-            + "inner join User u on u.userId = np.UserId " 
+            = "select * from New_Post np "
+            + "inner join User u on u.userId = np.UserId "
             + "where np.postId = ?";
 
     protected static final String SQL_SELECT_NEW_POST_BY_ID
@@ -84,7 +83,7 @@ public class PrepareStatement {
 
     protected static final String SQL_DELETE_NEWS_FEED
             = "delete from News_Feed where NewsFeedId = ?";
-    
+
     protected static final String SQL_SELECT_NEWS_FEED_BY_ID
             = "select * from News_Feed "
             + "where NewsFeedId = ?";
@@ -108,6 +107,11 @@ public class PrepareStatement {
 
     protected static final String SQL_SELECT_STATIC_PAGE_BY_ID
             = "select * from Static_page where StaticPageId = ?";
+    //count number of row
+    protected static final String SQL_GET_COUNT_FROM_USER
+            = "select count(*)from user";
+    protected static final String SQL_GET_COUNT_FROM_NEWSFEED
+            = "select count(*)from News_Feed";
+    protected static final String SQL_GET_COUNT_FROM_NEW_POST
+            = " select count(*)from New_Post";
 }
-
-      

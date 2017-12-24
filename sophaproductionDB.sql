@@ -10,11 +10,11 @@ ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `User` (
 `userId` INT NOT NULL AUTO_INCREMENT,
-`FirstName` NVARCHAR(30) NOT NULL,
-`LastName` NVARCHAR(30) NOT NULL,
-`UserName` NVARCHAR(30)NOT NULL,
-`UserPassword` VARCHAR(250) NOT NULL,
-`Email` VARCHAR(30)NULL,
+`FirstName` NVARCHAR(50) NOT NULL,
+`LastName` NVARCHAR(50) NOT NULL,
+`UserName` NVARCHAR(50)NOT NULL,
+`UserPassword` VARCHAR(500) NOT NULL,
+`Email` VARCHAR(100)NULL,
 `Phone` VARCHAR(30)NULL,
 `Enabled` TINYINT NOT NULL,
 PRIMARY KEY (`UserId`),
@@ -23,13 +23,12 @@ ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `New_Post` (
 `PostId` INT NOT NULL AUTO_INCREMENT,
-`Title` VARCHAR(50) NULL,
-`Content` NVARCHAR(20000) NULL,
-`ImagePath` NVARCHAR(450) NULL,
+`Title` NVARCHAR(100) NULL,
+`Content` NVARCHAR(2000) NULL,
+`ImagePath` NVARCHAR(2000) NULL,
+`ImagePathTwo` NVARCHAR(2000) NULL,
 `PublishDate` DATETIME NULL,
-`ExpDate` DATE NULL,
 `UserId` INT NOT NULL,
-`StatusId` int Null,
 PRIMARY KEY (`PostId`),
 FOREIGN KEY (`UserId`)
 REFERENCES `User` (`UserId`))
@@ -37,9 +36,9 @@ ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `News_Feed` (
 `NewsFeedId` INT NOT NULL AUTO_INCREMENT,
-`Title` NVARCHAR(350),
+`Title` NVARCHAR(100),
 `Date` DATE NOT NULL,
-`Content` NVARCHAR(350) NULL,
+`Content` NVARCHAR(2000) NULL,
 PRIMARY KEY (`NewsFeedId`)
 )ENGINE = InnoDB;
 
@@ -74,26 +73,79 @@ INSERT INTO `User`(`FirstName`, `LastName`, `UserName`, `UserPassword`, `Enabled
 INSERT INTO `User`(`FirstName`, `LastName`, `UserName`, `UserPassword`, `Enabled` )VALUES('Mo', 'Jo', 'MoJo', '123', true);
 INSERT INTO `User`(`FirstName`, `LastName`, `UserName`, `UserPassword`, `Enabled` )VALUES('Dake', 'Doe', 'Jsmith', '123', true);
 
-INSERT INTO `New_Post`(`Title`, `Content`, `PublishDate`, `ExpDate`, `UserId`, `StatusId` )VALUES('Today អាណាចក្រអង្គរ',' with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsu', '2017-1-1', '2017-1-2', 1,1);
-INSERT INTO `New_Post`(`Title`, `Content`, `PublishDate`, `ExpDate`, `UserId`, `StatusId` )VALUES('Notice Tuesday', 'Taco Tuesday', '2017-1-1', '2017-1-2', 3,3);
-INSERT INTO `New_Post`(`Title`, `Content`, `PublishDate`, `ExpDate`, `UserId`, `StatusId` )VALUES('Sunday Fun day', 'Just not as fun as described', '2017-1-1', '2017-1-2', 2,2);
-INSERT INTO `New_Post`(`Title`, `Content`, `PublishDate`, `ExpDate`, `UserId`, `StatusId` )VALUES('Today news', 'someone cry', '2017-1-1', '2017-1-2', 1,1);
-INSERT INTO `New_Post`(`Title`, `Content`, `PublishDate`, `ExpDate`, `UserId`, `StatusId` )VALUES('Notice Tuesday', 'Taco Tuesday', '2017-1-1', '2017-1-2', 3,3);
-INSERT INTO `New_Post`(`Title`, `Content`, `PublishDate`, `ExpDate`, `UserId`, `StatusId` )VALUES('Sunday Fun day', 'Just not as fun as described', '2017-1-1', '2017-1-2', 2,2);
-INSERT INTO `New_Post`(`Title`, `Content`, `PublishDate`, `ExpDate`, `UserId`, `StatusId` )VALUES('Today news', 'someone cry', '2017-1-1', '2017-1-2', 1,1);
-INSERT INTO `New_Post`(`Title`, `Content`, `PublishDate`, `ExpDate`, `UserId`, `StatusId` )VALUES('Notice Tuesday', 'Taco Tuesday', '2017-1-1', '2017-1-2', 3,3);
-INSERT INTO `New_Post`(`Title`, `Content`, `PublishDate`, `ExpDate`, `UserId`, `StatusId` )VALUES('Sunday Fun day', 'Just not as fun as described', '2017-1-1', '2017-1-2', 2,2);
-INSERT INTO `New_Post`(`Title`, `Content`, `PublishDate`, `ExpDate`, `UserId`, `StatusId` )VALUES('Today news', 'someone cry', '2017-1-1', '2017-1-2', 1,1);
-INSERT INTO `New_Post`(`Title`, `Content`, `PublishDate`, `ExpDate`, `UserId`, `StatusId` )VALUES('Notice Tuesday', 'If statements or transactions are running on a table, and ANALYZE TABLE is run on the same table followed by a second ANALYZE TABLE operation, the second ANALYZE TABLE operation is blocked until the statements or transactions are completed. This behavior occurs because ANALYZE TABLE marks the currently loaded table definition as obsolete when ANALYZE TABLE is finished running. New statements or transactions (including a second ANALYZE TABLE statement) must load the new table definition into the table cache, which cannot occur until currently running statements or transactions are completed and the old table definition is purged. Loading multiple concurrent table definitions is not supported.
+INSERT INTO `New_Post`(`Title`, `Content`, `PublishDate`,  `UserId`)VALUES('Today',' with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsu', '2017-1-2', 1);
 
-', '2017-1-1', '2017-1-2', 3,3);
-INSERT INTO `New_Post`(`Title`, `Content`, `PublishDate`, `ExpDate`, `UserId`, `StatusId` )VALUES('Sunday Fun day', 'អាណាចក្រអង្គរ', '2017-1-1', '2017-1-2', 2,2);
 
-INSERT INTO `News_Feed`(`Content`, `Date`)VALUES('Something flew accross the sky today', ' 2017-3-5');
-INSERT INTO `News_Feed`(`Content`, `Date`)VALUES('World leaders schedual to meet', ' 2017-9-5');
-INSERT INTO `News_Feed`(`Content`, `Date`)VALUES('Today it was a good day', ' 2017-8-5');
-INSERT INTO `News_Feed`(`Content`, `Date`)VALUES('Noddel and chips day', ' 2017-8-9');
-INSERT INTO `News_Feed`(`Content`, `Date`)VALUES('Notice bright star ', ' 2017-7-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Something flew accross the sky today', ' 2017-3-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','World leaders schedual to meet', ' 2017-9-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Today it was a good day', ' 2017-8-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Noddel and chips day', ' 2017-8-9');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Notice bright star ', ' 2017-7-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Something flew accross the sky today', ' 2017-3-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','World leaders schedual to meet', ' 2017-9-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Today it was a good day', ' 2017-8-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Noddel and chips day', ' 2017-8-9');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Notice bright star ', ' 2017-7-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Something flew accross the sky today', ' 2017-3-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','World leaders schedual to meet', ' 2017-9-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Today it was a good day', ' 2017-8-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Noddel and chips day', ' 2017-8-9');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Notice bright star ', ' 2017-7-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Something flew accross the sky today', ' 2017-3-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','World leaders schedual to meet', ' 2017-9-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Today it was a good day', ' 2017-8-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Noddel and chips day', ' 2017-8-9');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Notice bright star ', ' 2017-7-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Something flew accross the sky today', ' 2017-3-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','World leaders schedual to meet', ' 2017-9-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Today it was a good day', ' 2017-8-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Noddel and chips day', ' 2017-8-9');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Notice bright star ', ' 2017-7-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Something flew accross the sky today', ' 2017-3-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','World leaders schedual to meet', ' 2017-9-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Today it was a good day', ' 2017-8-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Noddel and chips day', ' 2017-8-9');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Notice bright star ', ' 2017-7-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Something flew accross the sky today', ' 2017-3-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','World leaders schedual to meet', ' 2017-9-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Today it was a good day', ' 2017-8-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Noddel and chips day', ' 2017-8-9');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Notice bright star ', ' 2017-7-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Something flew accross the sky today', ' 2017-3-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','World leaders schedual to meet', ' 2017-9-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Today it was a good day', ' 2017-8-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Noddel and chips day', ' 2017-8-9');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Notice bright star ', ' 2017-7-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Something flew accross the sky today', ' 2017-3-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','World leaders schedual to meet', ' 2017-9-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Today it was a good day', ' 2017-8-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Noddel and chips day', ' 2017-8-9');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Notice bright star ', ' 2017-7-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Something flew accross the sky today', ' 2017-3-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','World leaders schedual to meet', ' 2017-9-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Today it was a good day', ' 2017-8-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Noddel and chips day', ' 2017-8-9');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Notice bright star ', ' 2017-7-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Something flew accross the sky today', ' 2017-3-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','World leaders schedual to meet', ' 2017-9-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Today it was a good day', ' 2017-8-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Noddel and chips day', ' 2017-8-9');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Notice bright star ', ' 2017-7-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Something flew accross the sky today', ' 2017-3-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','World leaders schedual to meet', ' 2017-9-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Today it was a good day', ' 2017-8-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Noddel and chips day', ' 2017-8-9');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Notice bright star ', ' 2017-7-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Something flew accross the sky today', ' 2017-3-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','World leaders schedual to meet', ' 2017-9-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Today it was a good day', ' 2017-8-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Noddel and chips day', ' 2017-8-9');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Notice bright star ', ' 2017-7-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Something flew accross the sky today', ' 2017-3-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','World leaders schedual to meet', ' 2017-9-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Today it was a good day', ' 2017-8-5');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Noddel and chips day', ' 2017-8-9');
+INSERT INTO `News_Feed`(`Title`,`Content`, `Date`)VALUES('education','Notice bright star ', ' 2017-7-5');
 
 INSERT INTO `Authorities` (`Username`, `Authority`) VALUES ('Jsmith', 'ROLE_ADMIN');
 INSERT INTO `Authorities` (`Username`, `Authority`) VALUES ('NicDo', 'ROLE_USER');
@@ -145,6 +197,8 @@ update News_Feed set Title='Paris Peace Agreement' where NewsFeedId= 4;
 update  News_Feed set Title='Education' where NewsFeedId=1;
 update  News_Feed set Title='Health' where NewsFeedId=2;
 update  News_Feed set Title='Human Right' where NewsFeedId=3;
-
+delete from News_Feed  where NewsFeedId>=8 limit 10;
+select count(*)from News_Feed;
+delete  from New_post where PostId <4;
 
 

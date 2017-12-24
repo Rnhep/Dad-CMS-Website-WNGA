@@ -53,6 +53,11 @@
     <bean id="newsFeedDao"
           class= "com.sg.sophacms.DAO.NewsFeedDaoImpl">
          <property name="jdbcTemplate" ref="jdbcTemplate"/>
+    </bean> 
+    
+    <bean id="getCountDao"
+          class= "com.sg.sophacms.DAO.GetCountDaoImpl">
+         <property name="jdbcTemplate" ref="jdbcTemplate"/>
     </bean>    
     
 </beans>

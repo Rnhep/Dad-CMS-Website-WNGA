@@ -18,12 +18,12 @@ public class User {
     private String firstName;
     private String lastName;
     private String email;
-    private String phone;
     private String userName;
     private String passWord;
     private boolean enable;
     private ArrayList<String> authorities = new ArrayList<>();
 
+   
     public int getUserId() {
         return userId;
     }
@@ -54,14 +54,6 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
     }
 
     public String getUserName() {
@@ -103,7 +95,6 @@ public class User {
         hash = 89 * hash + Objects.hashCode(this.firstName);
         hash = 89 * hash + Objects.hashCode(this.lastName);
         hash = 89 * hash + Objects.hashCode(this.email);
-        hash = 89 * hash + Objects.hashCode(this.phone);
         hash = 89 * hash + Objects.hashCode(this.userName);
         hash = 89 * hash + Objects.hashCode(this.passWord);
         hash = 89 * hash + (this.enable ? 1 : 0);
@@ -138,9 +129,7 @@ public class User {
         if (!Objects.equals(this.email, other.email)) {
             return false;
         }
-        if (!Objects.equals(this.phone, other.phone)) {
-            return false;
-        }
+       
         if (!Objects.equals(this.userName, other.userName)) {
             return false;
         }

@@ -26,8 +26,9 @@ CREATE TABLE IF NOT EXISTS `New_Post` (
 `Title` VARCHAR(50) NULL,
 `Content` NVARCHAR(350) NULL,
 `ImagePath` VARCHAR(255) NULL,
+`ImagePathTwo` VARCHAR(255) NULL,
 `PublishDate` DATETIME NULL,
-`ExpDate` DATE NULL,
+
 `UserId` INT NOT NULL,
 PRIMARY KEY (`PostId`),
 FOREIGN KEY (`UserId`)

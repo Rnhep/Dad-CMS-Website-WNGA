@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,10 +24,9 @@
                  WHAT IS WNGA?<br>      
             </p>
             <p>• Legal Organization with State and Federal.</p>
-            <p>• A Non-Profit Organization 501©4.</p>
+            <p>• A Non-Profit Organization 501(C)4.</p>
             <p>• Not a Tax Exemption.</p>
             </div>
-
 
 
             <p>

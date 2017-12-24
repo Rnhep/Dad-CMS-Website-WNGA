@@ -6,7 +6,6 @@
 package com.sg.sophacms.DAO;
 
 import com.sg.sophacms.Model.NewPost;
-import com.sg.sophacms.Model.User;
 import java.util.List;
 
 /**

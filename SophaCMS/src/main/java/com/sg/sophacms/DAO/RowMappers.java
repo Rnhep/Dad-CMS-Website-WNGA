@@ -29,7 +29,6 @@ public class RowMappers {
             user.setUserName(rs.getString("UserName"));
             user.setPassWord(rs.getString("UserPassword"));
             user.setEmail(rs.getString(("Email")));
-            user.setPhone(rs.getString("Phone"));
             user.setEnable(rs.getBoolean("enabled"));
             user.setUserId(rs.getInt("UserId"));
             return user;
@@ -44,8 +43,8 @@ public class RowMappers {
             newPost.setTitle(rs.getString("Title"));
             newPost.setContent(rs.getString("Content"));
             newPost.setImagePath(rs.getString("ImagePath"));
+            newPost.setImagePathTwo(rs.getString("ImagePathTwo"));
             newPost.setPublishDate(rs.getTimestamp("PublishDate").toLocalDateTime());
-            newPost.setExpireDate(rs.getTimestamp("ExpDate").toLocalDateTime());
             newPost.setPostId(rs.getInt("PostId"));
             return newPost;
         }

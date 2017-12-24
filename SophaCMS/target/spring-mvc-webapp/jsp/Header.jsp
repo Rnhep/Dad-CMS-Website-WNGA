@@ -32,7 +32,7 @@
                     </li>
                     <li>
                         <div class="col-sm-2 align-top " id="home">
-                            <a href="${pageContext.request.contextPath}/displayAboutUsPage">  About Us</a>
+                            <a href="${pageContext.request.contextPath}/displayAboutUsPage"> About Us</a>
                         </div>
                     </li>
                     <li> <div class="col-sm-2 align-top " id="news">
@@ -43,6 +43,9 @@
                         </div></li>
                     <li> <div class="col-sm-2 align-top " id="log-in">
                             <a  href="${pageContext.request.contextPath}/">Sign In</a>
+                        </div></a></li>
+                    <li> <div class="col-sm-2 align-top " id="log-in">
+                            <a  href="${pageContext.request.contextPath}/displayAdminPage">Admin</a>
                         </div></a></li>
                 </ul>
             </sec:authorize>

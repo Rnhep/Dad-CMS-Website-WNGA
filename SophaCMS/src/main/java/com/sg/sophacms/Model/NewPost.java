@@ -8,8 +8,10 @@ package com.sg.sophacms.Model;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.format.annotation.DateTimeFormat.ISO;
+
 
 /**
  *
@@ -18,13 +20,19 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
 public class NewPost {
 
     private int postId;
+    @NotEmpty(message ="Title must not be empty!")
+    @Length(max = 50, message="Title must be less then 50 charactor")
     private String title;
+     @NotEmpty(message ="Comment must not be empty!")
+    @Length(max = 50, message="Title must be less then 50 charactor")
     private String content;
+    @Length(max = 50, message="Title must be less then 50 charactor")
     private String imagePath;
-    @DateTimeFormat(iso = ISO.DATE)
+    @Length(max = 50, message="Title must be less then 50 charactor")
+    private String imagePathTwo;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     private LocalDateTime publishDate;
-    @DateTimeFormat(iso = ISO.DATE)
-    private LocalDateTime expireDate;
+    
     private User user;
 
     public int getPostId() {
@@ -59,20 +67,20 @@ public class NewPost {
         this.imagePath = imagePath;
     }
 
+    public String getImagePathTwo() {
+        return imagePathTwo;
+    }
+
+    public void setImagePathTwo(String imagePathTwo) {
+        this.imagePathTwo = imagePathTwo;
+    }
+
     public LocalDateTime getPublishDate() {
         return publishDate;
     }
 
     public void setPublishDate(LocalDateTime publishDate) {
         this.publishDate = publishDate;
-    }
-
-    public LocalDateTime getExpireDate() {
-        return expireDate;
-    }
-
-    public void setExpireDate(LocalDateTime expireDate) {
-        this.expireDate = expireDate;
     }
 
     public User getUser() {
@@ -85,14 +93,14 @@ public class NewPost {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 89 * hash + this.postId;
-        hash = 89 * hash + Objects.hashCode(this.title);
-        hash = 89 * hash + Objects.hashCode(this.content);
-        hash = 89 * hash + Objects.hashCode(this.imagePath);
-        hash = 89 * hash + Objects.hashCode(this.publishDate);
-        hash = 89 * hash + Objects.hashCode(this.expireDate);
-        hash = 89 * hash + Objects.hashCode(this.user);
+        int hash = 3;
+        hash = 17 * hash + this.postId;
+        hash = 17 * hash + Objects.hashCode(this.title);
+        hash = 17 * hash + Objects.hashCode(this.content);
+        hash = 17 * hash + Objects.hashCode(this.imagePath);
+        hash = 17 * hash + Objects.hashCode(this.imagePathTwo);
+        hash = 17 * hash + Objects.hashCode(this.publishDate);
+        hash = 17 * hash + Objects.hashCode(this.user);
         return hash;
     }
 
@@ -120,10 +128,10 @@ public class NewPost {
         if (!Objects.equals(this.imagePath, other.imagePath)) {
             return false;
         }
-        if (!Objects.equals(this.publishDate, other.publishDate)) {
+        if (!Objects.equals(this.imagePathTwo, other.imagePathTwo)) {
             return false;
         }
-        if (!Objects.equals(this.expireDate, other.expireDate)) {
+        if (!Objects.equals(this.publishDate, other.publishDate)) {
             return false;
         }
         if (!Objects.equals(this.user, other.user)) {
@@ -132,5 +140,6 @@ public class NewPost {
         return true;
     }
 
-    
+  
+
 }

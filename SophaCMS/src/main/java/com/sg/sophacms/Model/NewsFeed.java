@@ -8,6 +8,7 @@ package com.sg.sophacms.Model;
 import java.time.LocalDate;
 
 import java.util.Objects;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
@@ -16,8 +17,11 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
  * @author ritheenhep
  */
 public class NewsFeed {
+    
     private int newsFeedId;
+    @NotEmpty(message ="Title must not be empty!")
     private String title;
+    @NotEmpty(message ="Content must not be empty!")
     private String content;
      @DateTimeFormat(iso = ISO.DATE)
     private LocalDate date;
@@ -56,7 +60,7 @@ public class NewsFeed {
 
     @Override
     public int hashCode() {
-        int hash = 7;
+        int hash = 3;
         hash = 23 * hash + this.newsFeedId;
         hash = 23 * hash + Objects.hashCode(this.title);
         hash = 23 * hash + Objects.hashCode(this.content);
@@ -90,5 +94,7 @@ public class NewsFeed {
         }
         return true;
     }
+
+ 
     
 }

@@ -34,8 +34,8 @@ public class NewPostDaoImpl implements NewPostDao {
                 newPost.getTitle(),
                 newPost.getContent(),
                 newPost.getImagePath(),
+                newPost.getImagePathTwo(),
                 newPost.getPublishDate().toString(),
-                newPost.getExpireDate().toString(),
                 newPost.getUser().getUserId());
         newPost.setPostId(jdbcTemplate.queryForObject("select LAST_INSERT_ID()", Integer.class));
     }
@@ -54,8 +54,8 @@ public class NewPostDaoImpl implements NewPostDao {
                 newPost.getTitle(),
                 newPost.getContent(),
                 newPost.getImagePath(),
+                newPost.getImagePathTwo(),
                 newPost.getPublishDate().toString(),
-                newPost.getExpireDate().toString(),
                 newPost.getUser().getUserId(),
                 newPost.getPostId());
     }
@@ -73,24 +73,24 @@ public class NewPostDaoImpl implements NewPostDao {
 
     @Override
     public NewPost getUserByPostId(int newPostId) {
-        try{
-       
-           NewPost newPost  = jdbcTemplate.queryForObject(SQL_SELECT_USER_BY_POST_ID, new NewPostMapper(), newPostId);
-           newPost.setUser(findUserForPost(newPost));
-           return newPost;
-        }catch(EmptyResultDataAccessException ex){
+        try {
+
+            NewPost newPost = jdbcTemplate.queryForObject(SQL_SELECT_USER_BY_POST_ID, new NewPostMapper(), newPostId);
+            newPost.setUser(findUserForPost(newPost));
+            return newPost;
+        } catch (EmptyResultDataAccessException ex) {
             return null;
         }
-        }
-        
+    }
 
     @Override
     public List<NewPost> getAllPost() {
         List<NewPost> allPost = jdbcTemplate.query(SQL_SELECT_ALL_NEW_POST, new NewPostMapper());
         return associateUserAndPost(allPost);
     }
+
     @Override
-    public List<NewPost> getLatestPost(){
+    public List<NewPost> getLatestPost() {
         List<NewPost> latestPost = jdbcTemplate.query(SLQ_GET_LATEST_POST, new NewPostMapper());
         return associateUserAndPost(latestPost);
     }

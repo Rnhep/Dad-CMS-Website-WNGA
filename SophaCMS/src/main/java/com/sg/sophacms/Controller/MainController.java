@@ -5,7 +5,8 @@
  */
 package com.sg.sophacms.Controller;
 
-import static com.sg.sophacms.Controller.NewsId.*;
+import static com.sg.sophacms.Controller.Contents.*;
+import com.sg.sophacms.DAO.GetCountDao;
 import com.sg.sophacms.DAO.NewPostDao;
 import com.sg.sophacms.DAO.NewsFeedDao;
 import com.sg.sophacms.DAO.UserDao;
@@ -13,17 +14,16 @@ import com.sg.sophacms.Model.NewPost;
 import com.sg.sophacms.Model.NewsFeed;
 import com.sg.sophacms.Model.User;
 import java.time.LocalDateTime;
-
 import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
+//import org.springframework.validation.BindingResult;
+//import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
 
 /**
  *
@@ -31,36 +31,44 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 public class MainController {
-    
+
     UserDao userDao;
     NewPostDao NPDao;
     NewsFeedDao NFDao;
-    
+    GetCountDao getCountDao;
+    String titleField;
+    String commentOut;
+
     @Inject
-    public MainController(UserDao userDao, NewPostDao NPDao, NewsFeedDao NFDao) {
+    public MainController(UserDao userDao, NewPostDao NPDao, NewsFeedDao NFDao, GetCountDao getCountDao) {
         this.userDao = userDao;
         this.NPDao = NPDao;
         this.NFDao = NFDao;
+        this.getCountDao= getCountDao;
     }
+
     //first 4 IDs from news feed are uses for education, health, humandright,PPA.
     //ID 5 to 6 reserved for events
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String home(HttpServletRequest request, Model model) {
-        NewsFeed education = NFDao.getNewsFeedById(FOR_EDUCATION);
-        NewsFeed health = NFDao.getNewsFeedById(FOR_HEALTH);
-        NewsFeed humanRight = NFDao.getNewsFeedById(FOR_HUMAN_RIGHT);
-        NewsFeed PPA = NFDao.getNewsFeedById(FOR_PARIS_PEACE_AGREEMENT);
+        NewsFeed contentOne = NFDao.getNewsFeedById(FOR_CONTENT_ONE);
+        NewsFeed contentTwo = NFDao.getNewsFeedById(FOR_CONTENT_TWO);
+        NewsFeed contentThree = NFDao.getNewsFeedById(FOR_CONTENT_THREE);
+        NewsFeed contentFour = NFDao.getNewsFeedById(FOR_CONTENT_FOUR);
+        
         NewsFeed eventOne = NFDao.getNewsFeedById(FOR_EVENT_ONE);
         NewsFeed eventTwo = NFDao.getNewsFeedById(FOR_EVENT_TWO);
-        model.addAttribute("education", education);
-        model.addAttribute("health", health);
-        model.addAttribute("humanRight", humanRight);
-        model.addAttribute("PPA", PPA);
+       
+        model.addAttribute("contentOne", contentOne);
+        model.addAttribute("contentTwo", contentTwo);
+        model.addAttribute("contentThree", contentThree);
+        model.addAttribute("contentFour", contentFour);
         model.addAttribute("eventOne", eventOne);
-        
+    
+
         List<NewPost> displayLatestPost = new ArrayList<>();
         displayLatestPost = NPDao.getLatestPost();
-        model.addAttribute("displayLatestPost", displayLatestPost);        
+        model.addAttribute("displayLatestPost", displayLatestPost);
         return "HomePage";
     }
 
@@ -93,31 +101,54 @@ public class MainController {
 
     //Get lates post from DB.
     @RequestMapping(value = "/displayBlogPage", method = RequestMethod.GET)
-    public String displayLatesPost(Model model) {
+    public String displayLatesPost(HttpServletRequest rq, Model model) {
         List<NewPost> displayAllPost = new ArrayList<>();
         displayAllPost = NPDao.getAllPost();
         model.addAttribute("displayAllPost", displayAllPost);
         return "NewPostPage";
-    
-    }
 
-    //for add Post form
+    }
+// resubmit post form
+
+    @RequestMapping(value = "/repostForm", method = RequestMethod.GET)
+    public String repostForm(HttpServletRequest rq, Model model) {
+        String message = "Required field is empty";
+        model.addAttribute("message", message);
+        model.addAttribute("titleField", titleField);
+        model.addAttribute("commentOut", commentOut);
+        List<NewPost> displayAllPost = new ArrayList<>();
+        displayAllPost = NPDao.getAllPost();
+        model.addAttribute("displayAllPost", displayAllPost);
+
+        return "NewPostPage";
+    }
+//add post form
+
     @RequestMapping(value = "/newPost", method = RequestMethod.POST)
-    public String createPost(HttpServletRequest rq) {
+    public String createPost(HttpServletRequest rq, Model model, User user) {
+        //check for empty fields
+        String title = rq.getParameter("title");
+        String comment = rq.getParameter("comment");
+        if (title == null || title.trim().length() == 0
+                || comment == null || comment.trim().length() == 0) {
+            titleField = title;
+            commentOut = comment;
+            return "redirect:repostForm";
+        }
         LocalDateTime timeStamp = LocalDateTime.now();
         String getUserID = rq.getParameter("userId");
-//        int userId = Integer.parseInt(getUserID);
-        User setUserId = userDao.getUserbyId(2);
+//       int userId = Integer.parseInt(getUserID);
         NewPost newPost = new NewPost();
-        newPost.setTitle(rq.getParameter("title"));
-        newPost.setContent(rq.getParameter("comment"));
+        User setUserId = userDao.getUserbyId(1);
+        newPost.setTitle(title);
+        newPost.setContent(comment);
         newPost.setImagePath(rq.getParameter("photo"));
+        newPost.setImagePathTwo(rq.getParameter("photoTwo"));
         newPost.setPublishDate(timeStamp);
-        newPost.setExpireDate(timeStamp);
         newPost.setUser(setUserId);
         NPDao.addNewPost(newPost);
         return "redirect:displayBlogPage";
-    }
 
+    }
 
 }
