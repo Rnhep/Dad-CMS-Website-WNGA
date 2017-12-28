@@ -39,7 +39,7 @@
                             <a  href="${pageContext.request.contextPath}/displayNewsFeedPage">News</a>
                         </div></li>
                     <li><div class="col-sm-2 align-top " id="blog">
-                            <a  href="${pageContext.request.contextPath}/displayBlogPage">Blog</a>
+                            <a  href="${pageContext.request.contextPath}/displayNewPostPage">Posts</a>
                         </div></li>
                     <li> <div class="col-sm-2 align-top " id="log-in">
                             <a  href="${pageContext.request.contextPath}/">Sign In</a>

@@ -24,54 +24,57 @@
                 <body>
                     <div id="header">
                     </div>
-
-                    <!--Add post form for user/admin role-->
-                    <div id="add-post" class="col-md-12">
-                        <sf:form  class="form-horizontal" 
-                                  role="form"  method="POST" 
-                                  action="newPost">
-                            <div class="col-md-12">
-                                 <div class="form-group">
-                                    <div class="col-md-6">
-                                        <div >${message}</div>
-                                        <input type="text" class="form-control" name="title" placeholder="Title required" value="${titleField}" required/>
-                                        <input type="text" class="form-control" name="photo" placeholder="Link to a photo only"  />
-                                        <input type="text" class="form-control" name="photoTwo" placeholder="Link to a photo only"  />
-                                        <textarea  type="text" class="form-control comment" name="comment"   placeholder="Comment required" required>${commentOut}</textarea> 
-                                        <input type="submit" id="add"class="btn btn-default" value="Submit Post"/>
-                                        </div>
+                    <div class="container">
+                        <!--Add post form for user/admin role-->
+                        <div id="add-post" class="col-md-12">
+                            <sf:form  class="form-horizontal" 
+                                      role="form"  method="POST" 
+                                      action="newPost">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="col-md-6">
+                                            <div >${message}</div>
+                                            <input type="text" class="form-control" name="title" placeholder="Title required" value="${titleField}" required/>
+                                            <input type="text" class="form-control" name="photo" placeholder="Link to a photo only"  />
+                                            <input type="text" class="form-control" name="photoTwo" placeholder="Link to a photo only"  />
+                                            <textarea  type="text" class="commentbox" name="comment"   placeholder="Comment required" required>${commentOut}</textarea> 
+                                            <input type="submit" id="add"class="btn btn-default" value="Submit Post"/>
                                         </div>
                                     </div>
-                                    </sf:form> 
                                 </div>
-                                <!------------------------------------------------------------------------------------------------------------------------------>                         
-                                <div class="container">
-                                <!--To display all of the posts-->
-                                <c:forEach var="allPosts" items="${displayAllPost}">
-                                    <div class="container pre-posts">
-                                        <p> Posted by:<span class="blue">
-                                                <c:out value="${allPosts.user.userName}"/>
-                                                | ${allPosts.publishDate}CT<br>
-                                            </span></p>
-                                            <p><c:out value="${allPosts.title}"/></p>
-                                            <p><c:out value="${allPosts.content}"/></p>
-                                            <div class="photo">
-                                                  <c:if test="${!empty allPosts.imagePath}">
-                                                  <img src="${allPosts.imagePath}"/>
-                                                   <c:if test="${!empty allPosts.imagePathTwo}">
-                                                  <img src="${allPosts.imagePathTwo}"/>
-                                               </c:if>
-                                               </c:if>                 
-                                            </div>
-                                    </div> 
-                                    
-                                </c:forEach>
-                                </div>
-                                <hr>
+                            </sf:form> 
+                        </div>
+                        <!------------------------------------------------------------------------------------------------------------------------------>                         
+                        <div class="container ">
+                            <!--To display all of the posts-->
+                            <c:forEach var="allPosts" items="${displayAllPost}">
+                                <div class="container pre-posts">
+                                    <p> Posted by:<span class="blue">
+                                            <c:out value="${allPosts.user.userName}"/>
+                                            | ${allPosts.publishDate}CT<br>
+                                        </span>
+                                    </p>
+                                    <p><c:out value="${allPosts.title}"/></p>
+                                    <p><c:out value="${allPosts.content}"/></p>
+                                    <div class="photo">
+                                        <c:if test="${!empty allPosts.imagePath}">
+                                            <a href="${allPosts.imagePath}"><img src="${allPosts.imagePath}"/></a>
+                                            <c:if test="${!empty allPosts.imagePathTwo}">
+                                                <a href="${allPosts.imagePathTwo}"> <img src="${allPosts.imagePathTwo}"/></a>
+                                            </c:if>
+                                        </c:if>                 
+                                    </div>
+
+                                </div> 
+
+                            </c:forEach>
+                        </div>
+                    </div>
+                    <hr>
 
 
-                                    <footer id="footer"></footer>
-                                    <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
-                                    <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
-                                    <script src="${pageContext.request.contextPath}/js/Home.js"></script>
-                                    </html>
+                        <footer id="footer"></footer>
+                        <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
+                        <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+                        <script src="${pageContext.request.contextPath}/js/Home.js"></script>
+                        </html>

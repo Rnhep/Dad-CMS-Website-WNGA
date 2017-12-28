@@ -16,97 +16,123 @@
             <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
                 </head>
                 <body> 
-                    
+
                     <div id="header"></div>
-                    <div class="col-md-12" id="events">
-                        <p class="upcoming"> Up coming Events: </p>
+                    
+                        <div class=" container pre-posts">
+                        <p class="upcoming"> Upcoming Events: </p>
                         <p><c:out value="${eventOne.title}"/></p>
                         <p><c:out value="${eventOne.content}"/></p>
                         <hr></hr>
                         <p><c:out value="${eventTwo.title}"/></p>
                         <p><c:out value="${eventTwo.content}"/></p>
-                    </div>
-                   
-                        <hr></hr>
-                    <c:forEach var="latestPost" items="${displayLatestPost}">
-                        <div class=" container-fluid pre-posts">
-                            <p> Posted by|<span class="blue">
-                                    <c:out value="${latestPost.user.userName}"/>
-                                    | ${latestPost.publishDate}|<br>
-                                </span>
-                                <p><c:out value="${latestPost.content}"/></p>
-                                <div class="photo">
-                                    <c:if test="${!empty latestPost.imagePath}">
-                                        <img src="${latestPost.imagePath}"/>
-                                        <c:if test="${!empty latestPost.imagePathTwo}">
-                                            <img src="${latestPost.imagePathTwo}"/>
-                                        </c:if>
-                                    </c:if>
-                                </div>
-                            </p>
                         </div>
-                    </c:forEach>
+                    
 
-                    <div class="container-fluid box" id="education">
-                        <div class="container">
-                            <p>
+                    <hr></hr>
+                    <div class="container">
+                        <c:forEach var="latestPost" items="${displayLatestPost}">
+                            <div class=" container post-preview">
+                                <p> Posted by|<span class="blue">
+                                        <c:out value="${latestPost.user.userName}"/>
+                                        | ${latestPost.publishDate}|<br>
+                                    </span>
+                                    <p>${latestPost.title}<p/>
+                                        <p><a href="${pageContext.request.contextPath}/displayNewPostPage"><c:out value="${latestPost.content}"/></a></p>
+                                </p>
+                            </div>
+                        </c:forEach>
+                    </div>
+
+                    <hr>
+                        <div class="container-fluid box" id="education">
+                            <div class="container">
+                                <p>
                                     <c:out value="${contentOne.title}"/>
-                             
-                            </p>
-                            <p>
-                                <c:out value="${contentOne.content}"/>
-                            </p>
-                        </div> 
-                    </div>
+                                </p>
+                                <p>
+                                    <c:out value="${contentOne.content}"/>
+                                </p>
+                            </div> 
+                        </div>
 
-                    <!--            for health section.-->
-                    <div class="container-fluid box" id="health">
-                        <div class="container">
-                            <p>
+                        <div class="container-fluid box" id="img">
+                            <div class="container">
+                                <p>
+                                    reserved for image
+
+                                </p>
+
+                            </div> 
+                        </div>
+
+                        <div class="container-fluid box" id="health">
+                            <div class="container">
+                                <p>
                                     <c:out value="${contentTwo.title}"/>
-                              
-                            </p>
-                            <p>
-                                <c:out value="${contentTwo.content}"/>
-                            </p>
+
+                                </p>
+                                <p>
+                                    <c:out value="${contentTwo.content}"/>
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="container-fluid box" id="humanRight">
-                        <div class="container">
-                            <p>  
+
+                        <div class="container-fluid box" id="img">
+                            <div class="container">
+                                <p>
+                                    reserved for image
+
+                                </p>
+
+                            </div> 
+                        </div>
+
+
+                        <div class="container-fluid box" id="humanRight">
+                            <div class="container">
+                                <p>  
                                     <c:out value="${contentThree.title}"/>
-                              
+
+                                </p>
+                                <p>
+                                    <c:out value="${contentThree.content}"/>
+                                </p>
+
+                            </div>
+                        </div>
+                        <div class="container-fluid box" id="ppa">
+                            <p>
+                                <c:out value="${contentFour.title}"/>
+
                             </p>
                             <p>
-                                <c:out value="${contentThree.content}"/>
+                                <c:out value="${contentFour.content}"/>
                             </p>
-
                         </div>
-                    </div>
-                    <div class="container-fluid box" id="ppa">
-                        <p>
-                                <c:out value="${contentFour.title}"/>
-                          
-                        </p>
-                        <p>
-                            <c:out value="${contentFour.content}"/>
-                        </p>
-                    </div>
 
 
 
+                        <div class="container-fluid box" id="img">
+                            <div class="container">
+                                <p>
+                                    reserved for image
+
+                                </p>
+
+                            </div> 
+                        </div>
 
 
 
+                        <hr>             
+                            <footer id="footer"></footer>
 
-                    <hr>             
-                        <footer id="footer"></footer>
+                            <!-- Placed at the end of the document so the pages load faster -->
+                            <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
+                            <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+                            <script src="${pageContext.request.contextPath}/js/Home.js"></script>
 
-                        <!-- Placed at the end of the document so the pages load faster -->
-                        <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
-                        <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
-                        <script src="${pageContext.request.contextPath}/js/Home.js"></script>
-
-                </body>
-                </html>
+                            </body>
+                            </html>
 

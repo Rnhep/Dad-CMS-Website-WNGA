@@ -12,7 +12,10 @@ import com.sg.sophacms.DAO.NewPostDao;
 import com.sg.sophacms.DAO.NewsFeedDao;
 import com.sg.sophacms.DAO.UserDao;
 import com.sg.sophacms.Model.NewsFeed;
+import com.sg.sophacms.Model.User;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -58,9 +61,19 @@ public class AdminController {
         //for events
         NewsFeed eventOne = NFDao.getNewsFeedById(FOR_EVENT_ONE);
         NewsFeed eventTwo = NFDao.getNewsFeedById(FOR_EVENT_TWO);
-         model.addAttribute("eventOne", eventOne);
-         model.addAttribute("eventTwo", eventTwo);
+        model.addAttribute("eventOne", eventOne);
+        model.addAttribute("eventTwo", eventTwo);
+         
+        Long postCount = getCountDao.getNewPostCount();
+        Long newsFeedCount = getCountDao.getNewsFeedCount();
+        Long usersCount = getCountDao.getUserCount();
+        model.addAttribute("postCount", postCount);
+        model.addAttribute("newsFeedCount", newsFeedCount);
+        model.addAttribute("usersCount", usersCount);
         
+        List <User> userList = new ArrayList<>();
+        userList = userDao.getAllUsers();
+        model.addAttribute("userList", userList);
         return "AdminPage";
     }
 

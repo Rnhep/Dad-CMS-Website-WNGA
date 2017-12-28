@@ -47,8 +47,7 @@ public class MainController {
         this.getCountDao= getCountDao;
     }
 
-    //first 4 IDs from news feed are uses for education, health, humandright,PPA.
-    //ID 5 to 6 reserved for events
+    
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String home(HttpServletRequest request, Model model) {
         //for home page contents
@@ -59,7 +58,6 @@ public class MainController {
         //for events
         NewsFeed eventOne = NFDao.getNewsFeedById(FOR_EVENT_ONE);
         NewsFeed eventTwo = NFDao.getNewsFeedById(FOR_EVENT_TWO);
-       
         model.addAttribute("contentOne", contentOne);
         model.addAttribute("contentTwo", contentTwo);
         model.addAttribute("contentThree", contentThree);
@@ -67,13 +65,13 @@ public class MainController {
         model.addAttribute("eventOne", eventOne);
         model.addAttribute("eventTwo", eventTwo);
     
-
         List<NewPost> displayLatestPost = new ArrayList<>();
         displayLatestPost = NPDao.getLatestPost();
         model.addAttribute("displayLatestPost", displayLatestPost);
+       
         return "HomePage";
     }
-
+   
     //return to home page
     @RequestMapping(value = "/displayHomePage", method = RequestMethod.GET)
     public String homePage() {
@@ -91,7 +89,7 @@ public class MainController {
     public String contentsPage() {
         return "ContentsPage";
     }
-
+    
     //Get lates newsfeed from DB to display in home page.
     @RequestMapping(value = "/displayNewsFeedPage", method = RequestMethod.GET)
     public String displayNewsFeed(Model model) {
@@ -102,7 +100,7 @@ public class MainController {
     }
 
     //Get lates post from DB.
-    @RequestMapping(value = "/displayBlogPage", method = RequestMethod.GET)
+    @RequestMapping(value = "/displayNewPostPage", method = RequestMethod.GET)
     public String displayLatesPost(HttpServletRequest rq, Model model) {
         List<NewPost> displayAllPost = new ArrayList<>();
         displayAllPost = NPDao.getAllPost();
@@ -149,7 +147,7 @@ public class MainController {
         newPost.setPublishDate(timeStamp);
         newPost.setUser(setUserId);
         NPDao.addNewPost(newPost);
-        return "redirect:displayBlogPage";
+        return "redirect:displayNewPostPage";
 
     }
 

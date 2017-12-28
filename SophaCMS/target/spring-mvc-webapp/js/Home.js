@@ -9,8 +9,6 @@ console.log("the header load is working");
 //$('#header').load('jsp/header.jsp');
 $('#header').load('/SophaCMS/jsp/Header.jsp');
 
-
-
 $('#footer').load('/SophaCMS/jsp/Footer.jsp');
 });
 
