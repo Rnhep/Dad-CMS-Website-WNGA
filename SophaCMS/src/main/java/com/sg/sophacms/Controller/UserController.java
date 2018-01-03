@@ -34,7 +34,7 @@ public class UserController {
         this.userDao = userDao;
     }
 
-    //display reqistration Form
+    //display registration Form
     @RequestMapping(value = "/displayRegistrationForm", method = RequestMethod.GET)
     public String registrationform() {
 
