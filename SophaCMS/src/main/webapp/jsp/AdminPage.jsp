@@ -21,10 +21,11 @@
                     <div class="container">
                         <div class="container admin-note">
                             <h1> Admin Page</h1>
-                            <p> click edit button to edit title or contents </p>
+                            <h1> You have the POWER!</h1>
+                            <p> to edit, delete and disable </p>
                         </div>
                         <div class="container admin-note">
-                            <p> You Have ${postCount} Posts | ${newsFeedCount} News Feed | ${usersCount} Users</p>
+                            <p> You have ${postCount} Posts | ${newsFeedCount} News Feed | ${usersCount} Users  | in your database</p>
 
                         </div>
                         <hr></hr>

@@ -63,14 +63,16 @@ public class AdminController {
         NewsFeed eventTwo = NFDao.getNewsFeedById(FOR_EVENT_TWO);
         model.addAttribute("eventOne", eventOne);
         model.addAttribute("eventTwo", eventTwo);
-         
+         //Post count
         Long postCount = getCountDao.getNewPostCount();
-        Long newsFeedCount = getCountDao.getNewsFeedCount();
+       
         Long usersCount = getCountDao.getUserCount();
         model.addAttribute("postCount", postCount);
+        //news count
+         Long newsFeedCount = getCountDao.getNewsFeedCount();
         model.addAttribute("newsFeedCount", newsFeedCount);
         model.addAttribute("usersCount", usersCount);
-        
+        //user count
         List <User> userList = new ArrayList<>();
         userList = userDao.getAllUsers();
         model.addAttribute("userList", userList);

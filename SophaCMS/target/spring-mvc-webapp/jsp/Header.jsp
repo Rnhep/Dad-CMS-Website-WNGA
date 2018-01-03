@@ -41,6 +41,11 @@
                     <li><div class="col-sm-2 align-top " id="blog">
                             <a  href="${pageContext.request.contextPath}/displayNewPostPage">Posts</a>
                         </div></li>
+                        <li>
+                        <div class="col-sm-2 align-top " id="home">
+                            <a href="${pageContext.request.contextPath}/displayRegistrationForm">sign up</a>
+                        </div>
+                    </li>
                     <li> <div class="col-sm-2 align-top " id="log-in">
                             <a  href="${pageContext.request.contextPath}/">Sign In</a>
                         </div></a></li>

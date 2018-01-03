@@ -21,9 +21,9 @@ public class User {
     private String userName;
     private String passWord;
     private boolean enable;
+    private String photo;
     private ArrayList<String> authorities = new ArrayList<>();
 
-   
     public int getUserId() {
         return userId;
     }
@@ -80,6 +80,14 @@ public class User {
         this.enable = enable;
     }
 
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
     public ArrayList<String> getAuthorities() {
         return authorities;
     }
@@ -90,15 +98,16 @@ public class User {
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 89 * hash + this.userId;
-        hash = 89 * hash + Objects.hashCode(this.firstName);
-        hash = 89 * hash + Objects.hashCode(this.lastName);
-        hash = 89 * hash + Objects.hashCode(this.email);
-        hash = 89 * hash + Objects.hashCode(this.userName);
-        hash = 89 * hash + Objects.hashCode(this.passWord);
-        hash = 89 * hash + (this.enable ? 1 : 0);
-        hash = 89 * hash + Objects.hashCode(this.authorities);
+        int hash = 5;
+        hash = 97 * hash + this.userId;
+        hash = 97 * hash + Objects.hashCode(this.firstName);
+        hash = 97 * hash + Objects.hashCode(this.lastName);
+        hash = 97 * hash + Objects.hashCode(this.email);
+        hash = 97 * hash + Objects.hashCode(this.userName);
+        hash = 97 * hash + Objects.hashCode(this.passWord);
+        hash = 97 * hash + (this.enable ? 1 : 0);
+        hash = 97 * hash + Objects.hashCode(this.photo);
+        hash = 97 * hash + Objects.hashCode(this.authorities);
         return hash;
     }
 
@@ -129,11 +138,13 @@ public class User {
         if (!Objects.equals(this.email, other.email)) {
             return false;
         }
-       
         if (!Objects.equals(this.userName, other.userName)) {
             return false;
         }
         if (!Objects.equals(this.passWord, other.passWord)) {
+            return false;
+        }
+        if (!Objects.equals(this.photo, other.photo)) {
             return false;
         }
         if (!Objects.equals(this.authorities, other.authorities)) {
@@ -141,5 +152,7 @@ public class User {
         }
         return true;
     }
+
+   
 
 }

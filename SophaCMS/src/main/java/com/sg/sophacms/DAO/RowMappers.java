@@ -30,6 +30,7 @@ public class RowMappers {
             user.setPassWord(rs.getString("UserPassword"));
             user.setEmail(rs.getString(("Email")));
             user.setEnable(rs.getBoolean("enabled"));
+            user.setPhoto(rs.getString("Photo"));
             user.setUserId(rs.getInt("UserId"));
             return user;
         }

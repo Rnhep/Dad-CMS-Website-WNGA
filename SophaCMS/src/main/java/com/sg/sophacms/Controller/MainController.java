@@ -84,11 +84,6 @@ public class MainController {
         return "AboutUsPage";
     }
 
-    //display all content page
-    @RequestMapping(value = "/displayContentsPage", method = RequestMethod.GET)
-    public String contentsPage() {
-        return "ContentsPage";
-    }
     
     //Get lates newsfeed from DB to display in home page.
     @RequestMapping(value = "/displayNewsFeedPage", method = RequestMethod.GET)

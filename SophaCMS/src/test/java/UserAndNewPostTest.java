@@ -28,7 +28,8 @@ public class UserAndNewPostTest {
 
     private UserDao userDao;
     private NewPostDao newPostDao;
-     LocalDateTime timeStamp = LocalDateTime.now();
+    LocalDateTime timeStamp = LocalDateTime.now();
+
     public UserAndNewPostTest() {
     }
 
@@ -80,6 +81,7 @@ public class UserAndNewPostTest {
         user.setUserName("person1");
         user.setPassWord("password");
         user.setEmail("user.user");
+        user.setPhoto("test");
         user.setEnable(true);
         userDao.addUser(user);
         User fromDB = userDao.getUserbyId(user.getUserId());
@@ -95,6 +97,7 @@ public class UserAndNewPostTest {
         user.setUserName("person1");
         user.setPassWord("password");
         user.setEmail("user.user");
+        user.setPhoto("test");
         user.setEnable(true);
         userDao.addUser(user);
         User fromDB = userDao.getUserbyId(user.getUserId());
@@ -112,6 +115,7 @@ public class UserAndNewPostTest {
         user.setUserName("person1");
         user.setPassWord("password");
         user.setEmail("user.user");
+        user.setPhoto("test");
         user.setEnable(true);
         userDao.addUser(user);
         String firstName = "Rithee";
@@ -131,6 +135,7 @@ public class UserAndNewPostTest {
         user.setUserName("person1");
         user.setPassWord("password");
         user.setEmail("user.user");
+        user.setPhoto("test");
         user.setEnable(true);
         userDao.addUser(user);
         User fromDB = userDao.getUserbyId(user.getUserId());
@@ -146,6 +151,7 @@ public class UserAndNewPostTest {
         user.setUserName("Rithee");
         user.setPassWord("password");
         user.setEmail("user.user");
+        user.setPhoto("test");
         user.setEnable(true);
         userDao.addUser(user);
         User fromDB = userDao.getUserByUserName(user.getUserName());
@@ -161,6 +167,7 @@ public class UserAndNewPostTest {
         user.setUserName("Rithee");
         user.setPassWord("password");
         user.setEmail("user.user");
+        user.setPhoto("test");
         user.setEnable(true);
         userDao.addUser(user);
 
@@ -170,6 +177,7 @@ public class UserAndNewPostTest {
         user1.setUserName("RitheeN");
         user1.setPassWord("password");
         user1.setEmail("user.user");
+        user1.setPhoto("test");
         userDao.addUser(user1);
         List<User> allUsers = new ArrayList<>();
         allUsers = userDao.getAllUsers();
@@ -199,7 +207,6 @@ public class UserAndNewPostTest {
 //        NewPost fromDB = newPostDao.getPostById(np.getPostId());
 //        assertEquals(fromDB.getPublishDate(), np.getPublishDate());
 //    }
-
     @Test
     public void testDeleteNewPost() {
 
@@ -209,6 +216,7 @@ public class UserAndNewPostTest {
         user1.setUserName("RitheeN");
         user1.setPassWord("password");
         user1.setEmail("user.user");
+        user1.setPhoto("test");
         user1.setEnable(true);
         userDao.addUser(user1);
         NewPost np = new NewPost();
@@ -231,13 +239,14 @@ public class UserAndNewPostTest {
         user.setUserName("RitheeN");
         user.setPassWord("password");
         user.setEmail("user.user");
+        user.setPhoto("test");
         user.setEnable(true);
         userDao.addUser(user);
         NewPost np = new NewPost();
         np.setTitle("UnitTest");
         np.setContent("Tommorow is the Future");
         np.setImagePath("test");
-          np.setImagePathTwo("test2");
+        np.setImagePathTwo("test2");
         np.setPublishDate(timeStamp);
         np.setUser(user);
         newPostDao.addNewPost(np);
@@ -257,8 +266,9 @@ public class UserAndNewPostTest {
         user1.setLastName("Nhep");
         user1.setUserName("RitheeN");
         user1.setPassWord("password");
+        user1.setPhoto("test");
         user1.setEmail("user.user");
-  
+
         user1.setEnable(true);
         userDao.addUser(user1);
         NewPost np = new NewPost();
@@ -273,6 +283,7 @@ public class UserAndNewPostTest {
         assertEquals(fromDB.getPostId(), np.getPostId());
     }
 //
+
     @Test
     public void testGetAllPost() {
 
@@ -282,7 +293,7 @@ public class UserAndNewPostTest {
         user.setUserName("RitheeN");
         user.setPassWord("password");
         user.setEmail("user.user");
-  
+        user.setPhoto("test");
         user.setEnable(true);
         userDao.addUser(user);
         NewPost np = new NewPost();
@@ -299,8 +310,9 @@ public class UserAndNewPostTest {
         user1.setLastName("Nhep");
         user1.setUserName("RitheeN");
         user1.setPassWord("password");
+        user1.setPhoto("test");
         user1.setEmail("user.user");
- 
+
         user1.setEnable(true);
         userDao.addUser(user1);
         NewPost np1 = new NewPost();
@@ -325,7 +337,7 @@ public class UserAndNewPostTest {
         user.setUserName("RitheeN");
         user.setPassWord("password");
         user.setEmail("user.user");
-    
+        user.setPhoto("test");
         user.setEnable(true);
         userDao.addUser(user);
         NewPost np = new NewPost();

@@ -14,11 +14,11 @@ public class PrepareStatement {
     //user table
     protected static final String SQL_INSERT_INTO_USER
             = "insert into user "
-            + "(FirstName, LastName, UserName, UserPassword, Email, Enabled)values(?,?,?,?,?,?)";
+            + "(FirstName, LastName, UserName, UserPassword, Email, Photo, Enabled)values(?,?,?,?,?,?,?)";
 
     protected static final String SQUL_UPDATE_USER
             = "update user set FirstName = ?, LastName = ?,"
-            + " UserName = ?,  UserPassword = ?, Email = ? "
+            + " UserName = ?,  UserPassword = ?, Email = ?, Photo = ? "
             + " where userId = ? ";
 
     protected static final String SQL_DELETE_USER
