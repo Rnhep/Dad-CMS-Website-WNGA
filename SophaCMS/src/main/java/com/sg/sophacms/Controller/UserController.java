@@ -66,9 +66,9 @@ public class UserController {
         String passWord = rq.getParameter("password");
         String confirmPassword = rq.getParameter("confirmPassword");
          
-//        need to check username. iterate through the list and compare. 
+//        need to check username for dup. iterate through DB and compare. 
         
-
+        //check to see if any of the field is empty
         if (email == null || email.trim().length() == 0
                 || firstName == null || firstName.trim().length() == 0
                 || lastName == null || lastName.trim().length() == 0
@@ -76,13 +76,12 @@ public class UserController {
                 || passWord == null || passWord.trim().length() == 0
                 || !confirmPassword.equals(passWord)) {
             
-            
+           //redirect to resubmitForm with value entered. 
             emailField = email;
             firstNameField = firstName;
             lastNameField = lastName;
             userNameField = userName;
             passWordField = passWord;
-            
             return "redirect:resubmitForm";
 
         }

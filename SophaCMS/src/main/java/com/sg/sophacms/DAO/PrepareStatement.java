@@ -13,22 +13,22 @@ public class PrepareStatement {
 
     //user table
     protected static final String SQL_INSERT_INTO_USER
-            = "insert into user "
+            = "insert into User "
             + "(FirstName, LastName, UserName, UserPassword, Email, Photo, Enabled)values(?,?,?,?,?,?,?)";
 
     protected static final String SQUL_UPDATE_USER
-            = "update user set FirstName = ?, LastName = ?,"
+            = "update User set FirstName = ?, LastName = ?,"
             + " UserName = ?,  UserPassword = ?, Email = ?, Photo = ? "
-            + " where userId = ? ";
+            + " where UserId = ? ";
 
     protected static final String SQL_DELETE_USER
-            = "delete from user where userName = ?";
+            = "delete from User where userName = ?";
 
     protected static final String SQL_SELECT_ALL_USER
-            = "select * from user";
+            = "select * from User";
 
     protected static final String SQL_SELECT_USER_BY_ID
-            = "select * from user "
+            = "select * from User "
             + " where userId = ?";
 
     protected static final String SQL_SELECT_NEW_POST_BY_USER_ID
@@ -36,7 +36,7 @@ public class PrepareStatement {
             + "inner join User u on u.userId = np.userId "
             + "where u.userId= ?";
     protected static final String SQL_SELECT_USER_BY_USER_NAME
-            = "select * from user "
+            = "select * from User "
             + "where UserName = ?";
     protected static final String SQL_INSERT_AUTHORITY
             = "insert into Authority(UserName, Authority)values(?, ? ) ";
@@ -109,7 +109,7 @@ public class PrepareStatement {
             = "select * from Static_page where StaticPageId = ?";
     //count number of row
     protected static final String SQL_GET_COUNT_FROM_USER
-            = "select count(*)from user";
+            = "select count(*)from User";
     protected static final String SQL_GET_COUNT_FROM_NEWSFEED
             = "select count(*)from News_Feed";
     protected static final String SQL_GET_COUNT_FROM_NEW_POST

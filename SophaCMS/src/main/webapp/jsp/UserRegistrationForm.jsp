@@ -32,7 +32,8 @@
                     <sf:form role="form" action="createUser" method="POST" >
                         <div class="form-group">
                                 <div class="col-md-8">
-                                    <div class="alert alert-danger"> <c:out value="${message}"/></div>
+                                  <c:if test="${!empty message}">  <div class="alert alert-danger"> <c:out value="${message}"/></div>
+                                  </c:if>
                                     <input type="text" class="form-control" id="email"
                                            name="email" placeholder="Email" value="${emailField}" />
                                 </div>

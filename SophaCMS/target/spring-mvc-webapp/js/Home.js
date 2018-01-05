@@ -4,11 +4,11 @@
  * and open the template in the editor.
  */
 $(document).ready(function () {
-console.log("the header load is working");
+console.log("testing");
 
 //$('#header').load('jsp/header.jsp');
-$('#header').load('/SophaCMS/jsp/Header.jsp');
+$('#header').load('jsp/Header.jsp');
 
-$('#footer').load('/SophaCMS/jsp/Footer.jsp');
+$('#footer').load('jsp/Footer.jsp');
 });
 
