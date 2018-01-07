@@ -22,8 +22,8 @@
         <div class="col-md-12 logo"> </div>
         <div class="btn-group dropdown" id="nav">
             <sec:authorize access="hasRole('ROLE_USER')">
-                <button class="dropdown-toggle" id="dropdown" type="button" data-toggle="dropdown">&#9776; 
-                    <span class="caret"></span></button>
+                <button class="" id="dropdown" type="button" data-toggle="dropdown">&#9776; 
+                    </button>
                 <ul class="dropdown-menu" id="dropdown">
                     <li>
                         <div class="col-sm-2 align-top " id="home">
@@ -43,11 +43,11 @@
                         </div></li>
                     <li>
                         <div class="col-sm-2 align-top " id="home">
-                            <a href="${pageContext.request.contextPath}/displayRegistrationForm">sign up</a>
+                            <a href="${pageContext.request.contextPath}/displayRegistrationForm"><span class="glyphicon glyphicon-user"></span> Sign up</a>
                         </div>
                     </li>
                     <li> <div class="col-sm-2 align-top " id="log-in">
-                            <a  href="${pageContext.request.contextPath}/SignInForm">Sign In</a>
+                            <a  href="${pageContext.request.contextPath}/SignInForm"><span class="glyphicon glyphicon-log-in"></span> Sign In</a>
                         </div></a></li>
                     <li> <div class="col-sm-2 align-top " id="log-in">
                             <a  href="${pageContext.request.contextPath}/displayAdminPage">Admin</a>
