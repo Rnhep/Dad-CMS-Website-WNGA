@@ -13,17 +13,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">      
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
+        <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
     </head>
     <body>
-        <div class="col-md-12 logo" >   
-        </div>
-        <div class="col-sm-2" id="nav">
+        <div class="col-md-12 logo"> </div>
+        <div class="btn-group dropdown" id="nav">
             <sec:authorize access="hasRole('ROLE_USER')">
-                <a class="dropdown-toggle" id="dropdown" type="button" data-toggle="dropdown">&#9776; 
-                    <span class="caret"></span></a>
+                <button class="dropdown-toggle" id="dropdown" type="button" data-toggle="dropdown">&#9776; 
+                    <span class="caret"></span></button>
                 <ul class="dropdown-menu" id="dropdown">
                     <li>
                         <div class="col-sm-2 align-top " id="home">
@@ -32,7 +32,7 @@
                     </li>
                     <li>
                         <div class="col-sm-2 align-top " id="home">
-                            <a href="${pageContext.request.contextPath}/displayAboutUsPage"> About Us</a>
+                            <a  href="${pageContext.request.contextPath}/displayAboutUsPage"> About Us</a>
                         </div>
                     </li>
                     <li> <div class="col-sm-2 align-top " id="news">
@@ -41,13 +41,13 @@
                     <li><div class="col-sm-2 align-top " id="blog">
                             <a  href="${pageContext.request.contextPath}/displayNewPostPage">Posts</a>
                         </div></li>
-                        <li>
+                    <li>
                         <div class="col-sm-2 align-top " id="home">
                             <a href="${pageContext.request.contextPath}/displayRegistrationForm">sign up</a>
                         </div>
                     </li>
                     <li> <div class="col-sm-2 align-top " id="log-in">
-                            <a  href="${pageContext.request.contextPath}/">Sign In</a>
+                            <a  href="${pageContext.request.contextPath}/SignInForm">Sign In</a>
                         </div></a></li>
                     <li> <div class="col-sm-2 align-top " id="log-in">
                             <a  href="${pageContext.request.contextPath}/displayAdminPage">Admin</a>
@@ -55,7 +55,7 @@
                 </ul>
             </sec:authorize>
         </div>
-                        <hr class="hr">
+        <hr class="hr">
 
 
     </body>

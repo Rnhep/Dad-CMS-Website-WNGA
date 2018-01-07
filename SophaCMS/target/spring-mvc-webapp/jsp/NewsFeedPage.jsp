@@ -15,7 +15,7 @@
         <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
     </head>
     <body>
-        <div id="header"></div>
+        <div id="header-about-us"></div>
       
 
 

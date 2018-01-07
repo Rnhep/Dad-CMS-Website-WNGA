@@ -8,7 +8,7 @@ console.log("testing");
 
 //$('#header').load('jsp/header.jsp');
 $('#header').load('jsp/Header.jsp');
-
+$('#header-about-us').load('jsp/Header.jsp');
 $('#footer').load('jsp/Footer.jsp');
 });
-
+ 

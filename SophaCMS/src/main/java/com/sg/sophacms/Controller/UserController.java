@@ -7,6 +7,8 @@ package com.sg.sophacms.Controller;
 
 import com.sg.sophacms.DAO.UserDao;
 import com.sg.sophacms.Model.User;
+import java.util.ArrayList;
+import java.util.List;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
@@ -36,28 +38,30 @@ public class UserController {
 
     //display registration Form
     @RequestMapping(value = "/displayRegistrationForm", method = RequestMethod.GET)
-    public String registrationform() {
-
+    public String registrationform(Model model) {
+        String registration = "User Registration Form";
+         model.addAttribute("registration", registration);
         return "UserRegistrationForm";
     }
 
-//resubmit form
+    //resubmit form
     @RequestMapping(value = "/resubmitForm", method = RequestMethod.GET)
     public String reSubmitForm(Model model) {
-        String message = "One or more required field is missing value or password not match";
+        String message = "One or more required field is missing value or password not match or user name was taken";
         model.addAttribute("emailField", emailField);
         model.addAttribute("firstNameField", firstNameField);
         model.addAttribute("lastNameField", lastNameField);
         model.addAttribute("userNameField", userNameField);
         model.addAttribute("passWordField", passWordField);
         model.addAttribute("message", message);
-
         return "UserRegistrationForm";
     }
 
     //add user
     @RequestMapping(value = "/createUser", method = RequestMethod.POST)
     public String createUser(HttpServletRequest rq) {
+        List<User> allUsers = new ArrayList<>();
+        List<User> userFromDB = userDao.getAllUsers();
         User newUser = new User();
         String email = rq.getParameter("email");
         String firstName = rq.getParameter("firstName");
@@ -65,9 +69,6 @@ public class UserController {
         String userName = rq.getParameter("userName");
         String passWord = rq.getParameter("password");
         String confirmPassword = rq.getParameter("confirmPassword");
-         
-//        need to check username for dup. iterate through DB and compare. 
-        
         //check to see if any of the field is empty
         if (email == null || email.trim().length() == 0
                 || firstName == null || firstName.trim().length() == 0
@@ -75,16 +76,26 @@ public class UserController {
                 || userName == null || userName.trim().length() == 0 
                 || passWord == null || passWord.trim().length() == 0
                 || !confirmPassword.equals(passWord)) {
-            
-           //redirect to resubmitForm with value entered. 
+        //redirect to resubmitForm with value entered. 
             emailField = email;
             firstNameField = firstName;
             lastNameField = lastName;
             userNameField = userName;
             passWordField = passWord;
             return "redirect:resubmitForm";
-
         }
+        // check if user name was taken loop through all of users from database and check again new user. 
+        for(User currentUser: userFromDB){
+        if(currentUser.getUserName().equalsIgnoreCase(userName)){
+            emailField = email;
+            firstNameField = firstName;
+            lastNameField = lastName;
+            userNameField = "USER NAME WAS TAKEN";
+            passWordField = passWord;
+            return "redirect:resubmitForm"; 
+        }
+    }
+        //Other wise we good to go
         newUser.setFirstName(firstName);
         newUser.setLastName(lastName);
         newUser.setUserName(userName);
@@ -94,4 +105,12 @@ public class UserController {
         return "LogInPage";
 
     }
+    
+    //log in
+    @RequestMapping(value = "/SignInForm", method = RequestMethod.GET)
+    public String signinform() {
+
+        return "SignInPage";
+    }
+    
 }

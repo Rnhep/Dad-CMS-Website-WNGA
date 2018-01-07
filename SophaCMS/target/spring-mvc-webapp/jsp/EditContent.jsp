@@ -22,51 +22,32 @@
                 </head>
                 <body> 
                     <div id="header"></div>
-                    
-                    <sf:form role="form" action="createUser" method="POST" modelAttribute="user">
-                           <div class="form-group">
+                    <div class="container-fluid " id="contain">
+                     <sf:form role="form" action="editNewsFeed" method="POST" modelAttribute="newsFeed">
+                        <div class="form-group">
                    <div class="col-md-8">
                        
-                        <sf:input type="text" class="form-control" id="email"
-                                  path="email" placeholder="Email"/>
-                        <sf:errors path="email" cssclass="error"></sf:errors>
+                        <sf:input type="text" class="form-control" id="title"
+                                  path="title" placeholder="Enter your Title here"/>
+                        <sf:errors path="title" cssclass="error"></sf:errors>
                    </div>
                         </div>
                         <div class="form-group">
                    <div class="col-md-8">
                        
-                        <sf:input type="text" class="form-control" id="fn"
-                                  path="firstName" placeholder="First Name"/>
-                        <sf:errors path="firstName" cssclass="error"></sf:errors>
-                   </div>
-                        </div>
-                      <div class="form-group">
-                   <div class="col-md-8">
-                       
-                        <sf:input type="text" class="form-control" id="ln"
-                                  path="lastName" placeholder="Last Name"/>
-                        <sf:errors path="lasttName" cssclass="error"></sf:errors>
-                   </div>
-                        </div>
-                      <div class="form-group">
-                   <div class="col-md-8">
-                       
-                        <sf:input type="text" class="form-control" id="userName"
-                                  path="userName" placeholder="User Name"/>
-                        <sf:errors path="userName" cssclass="error"></sf:errors>
-                   </div>
-                        </div>
-                         <div class="form-group">
-                   <div class="col-md-8">
-                       
-                        <sf:input type="text" class="form-control" id="password"
-                                  path="password" placeholder="Password"/>
-                        <sf:errors path="Password" cssclass="error"></sf:errors>
-                   </div>
-                        </div>
+                            <sf:hidden path="date" value="${date}"/>
+                            <sf:textarea type="text"  id="content"
+                                  path="content" placeholder="Enter your news Feed here"/>
+                        <sf:errors path="content" cssclass="error"></sf:errors>
+                        <sf:hidden path="newsFeedId"/>
+                        <input type="submit" class="btn btn-default" value="Update Content"/>
+                    </div>
+                    
+                </div>
+                        
                     </sf:form>
-                    
-                    
+                    </div>
+<!--                    <div id="contain"></div>-->
                     
                     
                     <hr>             

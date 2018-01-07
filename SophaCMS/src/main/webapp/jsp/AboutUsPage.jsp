@@ -16,9 +16,9 @@
         <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
     </head>
     <body>
-        <div id="header"></div>
+        <div id="header-about-us"></div>
         <div class="container aboutus">
-            
+            <div class="container">
             <div id="strong">    
             <p>
                  WHAT IS WNGA?<br>      
@@ -83,6 +83,7 @@
             democracy, freedom, independence, stability,  economic security,  
             system of justice  and free market enterprise  for Cambodia. </p>
         <hr>
+            </div>
     </div>
 
 

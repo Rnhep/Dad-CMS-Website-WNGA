@@ -6,6 +6,10 @@ body{
 
     body
     {
+        
+        padding-top: -200px;
+        vertical-align: baseline;
+        outline: 0;
         background-color:rgba(188,188,188,0);
     }
 
@@ -17,7 +21,18 @@ body{
         width: 100%;
         opacity: 1; 
         background-size: contain;
-
+        
+    }
+    #header{
+     position: relative;
+     margin-top: -20px;
+    }
+    #header-about-us{
+     position: relative;
+     
+    }
+    butt {
+        outline:none;
     }
 
     #home a,
@@ -29,14 +44,15 @@ body{
         text-decoration: none;
         font-size: 14px;
         width: 100%;
+        display: block;
     }
-
+   
     #home, 
     #news,
     #blog, 
     #log-in
     {
-
+        width: 100%;
         text-align: center;
         color: #337ab7;
         border: 1px solid black;
@@ -55,6 +71,8 @@ body{
         font-size: 30px;
         background:none;
         text-decoration: none;
+        outline: none;
+        border: 0;
 
     }
     textarea 
@@ -69,7 +87,16 @@ body{
         font-weight: bold;
         background: none;
     }
-
+    #contain
+    {
+        height: 367px;
+        margin-top: 150px;
+    }
+ #contain-one
+    {
+        height: 470px;
+     
+    }
     .box p,
     .news p a
     {
@@ -83,7 +110,6 @@ body{
     .upcoming
     {
         text-align: center;
-
         color: #337ab7;
     }
     .admin-note
@@ -91,10 +117,7 @@ body{
         text-align: center;
         color: blue;
     }
-    .btn-sm
-    {
-        float: right;
-    }
+   
     
     .post-preview,
     .user-box
@@ -145,7 +168,15 @@ body{
         overflow: hidden;
         background: linear-gradient(to bottom, rgba(188,188,188,0.1) 10%,rgba(255,255,255,0.2) 40%),rgba(188,188,188,0.1)100%;
     }
-    
+    #log-in-btn
+    {
+        outline: 0px;
+        border: 0px;
+        color: #fff;
+        font-weight: bold;
+        font-size: 16px;
+        background: #3385ff;
+    }
     .pre-posts{
         
         overflow-y: hidden;
@@ -175,7 +206,7 @@ body{
     {
         color: blue;  
     }
-    .aboutus
+/*    .aboutus
     {
 
         word-wrap: break-word;
@@ -183,11 +214,15 @@ body{
         overflow: hidden; 
         width: 400px;
 
-    }
+    }*/
     #nav
     {
         color:#337ab7;
         margin-top: 0px;
+    }
+    .edit-btn
+    {
+        float: right;
     }
     .footer
     {  
@@ -197,7 +232,7 @@ body{
         height: 60px;
         background-color: #122b40; 
         position:relative;
-        bottom: 0;
+        bottom: 0x;
         width: 100%;
         border: 1px #fff;
         clear: both;

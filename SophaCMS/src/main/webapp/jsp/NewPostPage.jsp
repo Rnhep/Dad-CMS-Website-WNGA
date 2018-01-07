@@ -34,11 +34,17 @@
                                     <div class="form-group">
                                         <div class="col-md-6">
                                             <div >${message}</div>
+                                             <div class="form-group container">
                                             <input type="text" class="form-control" name="title" placeholder="Title required" value="${titleField}" required/>
+                                             </div>
+                                              <div class="form-group container">
                                             <input type="text" class="form-control" name="photo" placeholder="Link to a photo only"  />
+                                              </div>
+                                             <div class="form-group container">
                                             <input type="text" class="form-control" name="photoTwo" placeholder="Link to a photo only"  />
+                                             </div>
                                             <textarea  type="text" class="commentbox" name="comment"   placeholder="Comment required" required>${commentOut}</textarea> 
-                                            <input type="submit" id="add"class="btn btn-default" value="Submit Post"/>
+                                            <input type="submit" id="log-in-btn" class="form-control" value="Submit Post"/>
                                         </div>
                                     </div>
                                 </div>

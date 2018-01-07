@@ -28,68 +28,56 @@
                 </head>
                 <body> 
                     <div id="header"></div>
-
+                    <div class="container-fluid"id="contain-one">
                     <sf:form role="form" action="createUser" method="POST" >
                         <div class="form-group">
                                 <div class="col-md-8">
+                                    <h2>${registration}</h2>
                                   <c:if test="${!empty message}">  <div class="alert alert-danger"> <c:out value="${message}"/></div>
                                   </c:if>
-                                    <input type="text" class="form-control" id="email"
-                                           name="email" placeholder="Email" value="${emailField}" />
+                                    <input type="email" class="form-control" id="email"
+                                           name="email" placeholder="Email" value="${emailField}" required/>
                                 </div>
                             </div>
-                                
                             <div class="form-group">
                                 <div class="col-md-8">
                                     <input type="text" class="form-control" id="fn"
-                                           name="firstName" placeholder="First Name" value="${firstNameField}"/>
+                                           name="firstName" placeholder="First Name" value="${firstNameField}" required/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-8">
-
                                     <input type="text" class="form-control" id="ln"
-                                           name="lastName" placeholder="Last Name" value="${lastNameField}"/>
+                                           name="lastName" placeholder="Last Name" value="${lastNameField}" required/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-8">
-
                                     <input type="text" class="form-control" id="userName"
-                                           name="userName" placeholder="userName" value="${userNameField}"/>
+                                           name="userName" placeholder="userName" value="${userNameField}" required/>
                                 </div>
                             </div>
-                            
                                 <div class="form-group">
                                 <div class="col-md-8">
-
                                     <input type="text" class="form-control" id="password"
-                                           name="password" placeholder="password"/>
+                                           name="password" placeholder="password" required/>
                                 </div>
                             </div><div class="form-group">
                                 <div class="col-md-8">
-
                                     <input type="text" class="form-control" id="password"
-                                           name="confirmPassword" placeholder="password" />
+                                           name="confirmPassword" placeholder="password" required/>
                                 </div>
                             </div>
-                            <input type="submit" class="btn btn-default" value="Submit"/>
+                                <div class="col-md-8">
+                            <input type="submit" id="log-in-btn" class="form-control" value="Submit"/>
                         </div>
-
-                        </div>
-
                     </sf:form>
-
-
-
-
+                    </div>
                     <hr>             
                         <footer id="footer"></footer>
-
                         <!-- Placed at the end of the document so the pages load faster -->
                         <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
                         <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
                         <script src="${pageContext.request.contextPath}/js/Home.js"></script>
-
                 </body>
                 </html>
