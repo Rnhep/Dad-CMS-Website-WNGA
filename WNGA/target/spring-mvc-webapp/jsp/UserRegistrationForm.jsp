@@ -39,6 +39,12 @@
                                            name="email" placeholder="Email" value="${emailField}" required/>
                                 </div>
                             </div>
+                                <div class="form-group">
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" id="userName"
+                                           name="userName" placeholder="userName" value="${userNameField}" required/>
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <div class="col-md-8">
                                     <input type="text" class="form-control" id="fn"
@@ -51,21 +57,20 @@
                                            name="lastName" placeholder="Last Name" value="${lastNameField}" required/>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <div class="col-md-8">
-                                    <input type="text" class="form-control" id="userName"
-                                           name="userName" placeholder="userName" value="${userNameField}" required/>
-                                </div>
-                            </div>
                                 <div class="form-group">
                                 <div class="col-md-8">
-                                    <input type="text" class="form-control" id="password"
-                                           name="password" placeholder="password" required/>
+                                    <input type="password" class="form-control" id="password"
+                                           name="password" placeholder="password" 
+                                           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"  required />
+                                   
                                 </div>
                             </div><div class="form-group">
                                 <div class="col-md-8">
-                                    <input type="text" class="form-control" id="password"
-                                           name="confirmPassword" placeholder="password" required/>
+                                    <input type="password" class="form-control" id="password"
+                                           name="confirmPassword" placeholder="password" 
+                                           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                                           title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/>
+                                    ${pswmessage}
                                 </div>
                             </div>
                                 <div class="col-md-8">

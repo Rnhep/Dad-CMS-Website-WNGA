@@ -17,7 +17,7 @@
     <!-- Bean definitions go here -->
         <tx:annotation-driven/>
   
-    <context:component-scan base-package="com.sg.sophacms.DAO" />
+    <context:component-scan base-package="com.sg.wnga.DAO" />
     
     <bean id="dataSource"
           class="org.apache.commons.dbcp2.BasicDataSource">
@@ -41,22 +41,22 @@
     </bean>
 
     <bean id="userDao" 
-          class="com.sg.sophacms.DAO.UserDaoImpl">
+          class="com.sg.wnga.DAO.UserDaoImpl">
         <property name="jdbcTemplate" ref="jdbcTemplate"/>
         </bean>
         
         <bean id="newPostDao" 
-          class="com.sg.sophacms.DAO.NewPostDaoImpl">
+          class="com.sg.wnga.DAO.NewPostDaoImpl">
         <property name="jdbcTemplate" ref="jdbcTemplate"/>
         </bean>
         
     <bean id="newsFeedDao"
-          class= "com.sg.sophacms.DAO.NewsFeedDaoImpl">
+          class= "com.sg.wnga.DAO.NewsFeedDaoImpl">
          <property name="jdbcTemplate" ref="jdbcTemplate"/>
     </bean> 
     
     <bean id="getCountDao"
-          class= "com.sg.sophacms.DAO.GetCountDaoImpl">
+          class= "com.sg.wnga.DAO.GetCountDaoImpl">
          <property name="jdbcTemplate" ref="jdbcTemplate"/>
     </bean>    
     

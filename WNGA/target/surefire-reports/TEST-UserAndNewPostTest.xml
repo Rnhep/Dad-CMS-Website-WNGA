@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="10" failures="0" name="UserAndNewPostTest" time="2.898" errors="0" skipped="0">
+<testsuite tests="10" failures="0" name="UserAndNewPostTest" time="3.015" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib"/>
     <property name="java.vm.version" value="25.144-b01"/>
     <property name="gopherProxySet" value="false"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="/Users/ritheenhep/Documents/Dad-CMS-Website-WNGA/SophaCMS"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Users/ritheenhep/Documents/Dad-CMS-Website-WNGA/WNGA"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=":"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="unknown"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/Users/ritheenhep/Documents/Dad-CMS-Website-WNGA/SophaCMS"/>
+    <property name="user.dir" value="/Users/ritheenhep/Documents/Dad-CMS-Website-WNGA/WNGA"/>
     <property name="java.runtime.version" value="1.8.0_144-b01"/>
     <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/endorsed"/>
@@ -65,14 +65,14 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="UserAndNewPostTest" name="testGetPostById" time="0.42"/>
-  <testcase classname="UserAndNewPostTest" name="testGetUserNameByPostId" time="0.442"/>
-  <testcase classname="UserAndNewPostTest" name="testGetAllUsers" time="0.243"/>
-  <testcase classname="UserAndNewPostTest" name="testUpdatePost" time="0.36"/>
-  <testcase classname="UserAndNewPostTest" name="testUpdateUser" time="0.328"/>
-  <testcase classname="UserAndNewPostTest" name="testDeleteNewPost" time="0.241"/>
-  <testcase classname="UserAndNewPostTest" name="testGetAllPost" time="0.292"/>
-  <testcase classname="UserAndNewPostTest" name="testGetUserByUserName" time="0.202"/>
-  <testcase classname="UserAndNewPostTest" name="testDeleteUser" time="0.193"/>
-  <testcase classname="UserAndNewPostTest" name="testGetUserById" time="0.177"/>
+  <testcase classname="UserAndNewPostTest" name="testGetPostById" time="0.357"/>
+  <testcase classname="UserAndNewPostTest" name="testGetUserNameByPostId" time="0.405"/>
+  <testcase classname="UserAndNewPostTest" name="testGetAllUsers" time="0.224"/>
+  <testcase classname="UserAndNewPostTest" name="testUpdatePost" time="0.441"/>
+  <testcase classname="UserAndNewPostTest" name="testUpdateUser" time="0.203"/>
+  <testcase classname="UserAndNewPostTest" name="testDeleteNewPost" time="0.27"/>
+  <testcase classname="UserAndNewPostTest" name="testGetAllPost" time="0.297"/>
+  <testcase classname="UserAndNewPostTest" name="testGetUserByUserName" time="0.395"/>
+  <testcase classname="UserAndNewPostTest" name="testDeleteUser" time="0.167"/>
+  <testcase classname="UserAndNewPostTest" name="testGetUserById" time="0.256"/>
 </testsuite>

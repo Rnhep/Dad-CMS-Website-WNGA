@@ -4,10 +4,10 @@
  * and open the template in the editor.
  */
 
-import com.sg.sophacms.DAO.NewPostDao;
-import com.sg.sophacms.DAO.UserDao;
-import com.sg.sophacms.Model.NewPost;
-import com.sg.sophacms.Model.User;
+import com.sg.wnga.DAO.NewPostDao;
+import com.sg.wnga.DAO.UserDao;
+import com.sg.wnga.Model.NewPost;
+import com.sg.wnga.Model.User;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -98,7 +98,7 @@ public class UserAndNewPostTest {
         user.setPassWord("password");
         user.setEmail("user.user");
         user.setPhoto("test");
-        user.setEnable(true);
+       
         userDao.addUser(user);
         User fromDB = userDao.getUserbyId(user.getUserId());
         assertEquals(fromDB, user);
@@ -136,7 +136,7 @@ public class UserAndNewPostTest {
         user.setPassWord("password");
         user.setEmail("user.user");
         user.setPhoto("test");
-        user.setEnable(true);
+      
         userDao.addUser(user);
         User fromDB = userDao.getUserbyId(user.getUserId());
         assertEquals(fromDB, user);
@@ -152,7 +152,7 @@ public class UserAndNewPostTest {
         user.setPassWord("password");
         user.setEmail("user.user");
         user.setPhoto("test");
-        user.setEnable(true);
+        
         userDao.addUser(user);
         User fromDB = userDao.getUserByUserName(user.getUserName());
         assertEquals("Rithee", fromDB.getUserName());
@@ -168,7 +168,7 @@ public class UserAndNewPostTest {
         user.setPassWord("password");
         user.setEmail("user.user");
         user.setPhoto("test");
-        user.setEnable(true);
+       
         userDao.addUser(user);
 
         User user1 = new User();

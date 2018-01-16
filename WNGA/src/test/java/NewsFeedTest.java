@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 
-import com.sg.sophacms.DAO.NewsFeedDao;
-import com.sg.sophacms.Model.NewsFeed;
+import com.sg.wnga.DAO.NewsFeedDao;
+import com.sg.wnga.Model.NewsFeed;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;

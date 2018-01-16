@@ -92,14 +92,21 @@ body{
         font-weight: bold;
        
     }
+    .username
+    {
+        float: right;
+        clear: both;
+        padding-right: 0px;
+    }
     #contain
     {
         height: 367px;
-        margin-top: 150px;
+        margin-top: 90px;
     }
  #contain-one
     {
         height: 470px;
+        padding-top: 20px;
      
     }
     .box p,
@@ -182,6 +189,29 @@ body{
         font-size: 16px;
         background: #3385ff;
     }
+    #profile
+    {
+        outline: none;
+        border: none;
+        width: 36px;
+        
+        padding-left: 0px;
+        background: none;
+        color:  #3385ff;
+    }
+    .user-info
+    {
+        text-align: center;
+        outline: 0px;
+        border: 1px solid #fff;
+        color: #fff;
+        font-weight: bold;
+        font-size: 15px;
+        background: #3385ff;
+        padding-top: 0px;
+        margin-top: -19px;
+        padding-bottom: 10px;
+    }
     .pre-posts{
         
         overflow-y: hidden;
@@ -201,10 +231,16 @@ body{
     }
     img
     {
-        width: 300px; 
+        width: 250px; 
         padding: 5px;
         border-radius: 3px;
+        
      
+    }
+    .img-center
+    {
+        text-align: center;
+        padding-bottom: 10px;
     }
 
     .blue
