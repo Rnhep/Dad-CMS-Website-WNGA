@@ -6,6 +6,8 @@
 package com.sg.wnga.Controller;
 import com.sg.wnga.DAO.UserDao;
 import com.sg.wnga.Model.User;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
@@ -65,14 +67,17 @@ public class UserController {
     //add user
     @RequestMapping(value = "/createUser", method = RequestMethod.POST)
     public String createUser(HttpServletRequest rq) {
+       
+       
         List<User> allUsers = new ArrayList<>();
         List<User> userFromDB = userDao.getAllUsers();
+        
         User newUser = new User();
-        String email = rq.getParameter("email");
         String firstName = rq.getParameter("firstName");
         String lastName = rq.getParameter("lastName");
         String userName = rq.getParameter("userName");
         String password = rq.getParameter("password");
+        String email = rq.getParameter("email");
         String confirmPassword = rq.getParameter("confirmPassword");
         //check to see if any of the field is empty
         if (email == null || email.trim().length() == 0
@@ -101,12 +106,16 @@ public class UserController {
         }
     }
         //Other wise we good to go
+        LocalDateTime timeStamp = LocalDateTime.now();
+       
         newUser.setFirstName(firstName);
         newUser.setLastName(lastName);
         newUser.setUserName(userName);
         String hasPw = encoder.encode(password);
         newUser.setPassWord(hasPw);
         newUser.setEmail(email);
+        newUser.setJointDate(LocalDate.now());
+        newUser.setEnable(Boolean.TRUE);
          newUser.addAuthority("ROLE_USER");
         if (null != rq.getParameter("isAdmin")) {
             newUser.addAuthority("ROLE_ADMIN");

@@ -29,6 +29,8 @@ public class RowMappers {
             user.setUserName(rs.getString("UserName"));
             user.setPassWord(rs.getString("UserPassword"));
             user.setEmail(rs.getString(("Email")));
+            user.setJointDate(rs.getTimestamp("JointDate").toLocalDateTime().toLocalDate());
+            user.setEnable(rs.getBoolean("Enabled"));
             user.setPhoto(rs.getString("Photo"));
             user.setUserId(rs.getInt("UserId"));
             return user;

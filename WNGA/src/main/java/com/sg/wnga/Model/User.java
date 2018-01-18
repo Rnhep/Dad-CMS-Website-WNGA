@@ -5,8 +5,13 @@
  */
 package com.sg.wnga.Model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Objects;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 /**
  *
@@ -15,17 +20,22 @@ import java.util.Objects;
 public class User {
 
     private int userId;
+    @NotEmpty(message = "First Name is empty")
     private String firstName;
+    @NotEmpty(message = "Last Name is empty")
     private String lastName;
+    @Email(message = "Email is empty")
     private String email;
+    @NotEmpty(message = "User Name is empty")
     private String userName;
+    @NotEmpty(message = "Password is empty")
     private String passWord;
+     @DateTimeFormat(iso = ISO.DATE)
+    private LocalDate jointDate;
     private boolean enable;
     private String photo;
     private ArrayList<String> authorities = new ArrayList<>();
 
-    
-    
     public int getUserId() {
         return userId;
     }
@@ -74,6 +84,14 @@ public class User {
         this.passWord = passWord;
     }
 
+    public LocalDate getJointDate() {
+        return jointDate;
+    }
+
+    public void setJointDate(LocalDate jointDate) {
+        this.jointDate = jointDate;
+    }
+
     public boolean isEnable() {
         return enable;
     }
@@ -97,6 +115,8 @@ public class User {
     public void setAuthorities(ArrayList<String> authorities) {
         this.authorities = authorities;
     }
+
+   
      
     public void addAuthority(String authority) {
         authorities.add(authority);
@@ -105,13 +125,14 @@ public class User {
 
     @Override
     public int hashCode() {
-        int hash = 3;
+        int hash = 7;
         hash = 37 * hash + this.userId;
         hash = 37 * hash + Objects.hashCode(this.firstName);
         hash = 37 * hash + Objects.hashCode(this.lastName);
         hash = 37 * hash + Objects.hashCode(this.email);
         hash = 37 * hash + Objects.hashCode(this.userName);
         hash = 37 * hash + Objects.hashCode(this.passWord);
+        hash = 37 * hash + Objects.hashCode(this.jointDate);
         hash = 37 * hash + (this.enable ? 1 : 0);
         hash = 37 * hash + Objects.hashCode(this.photo);
         hash = 37 * hash + Objects.hashCode(this.authorities);
@@ -154,11 +175,16 @@ public class User {
         if (!Objects.equals(this.photo, other.photo)) {
             return false;
         }
+        if (!Objects.equals(this.jointDate, other.jointDate)) {
+            return false;
+        }
         if (!Objects.equals(this.authorities, other.authorities)) {
             return false;
         }
         return true;
     }
+    
+    
     
     
 }

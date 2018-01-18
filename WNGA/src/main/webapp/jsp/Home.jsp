@@ -58,7 +58,7 @@
                                         <div class="container">
                                             <p>
                                                 reserved for image
-
+                                          
                                             </p>
 
                                         </div> 

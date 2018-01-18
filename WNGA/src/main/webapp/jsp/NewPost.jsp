@@ -59,11 +59,11 @@
                             <!--To display all of the posts-->
                             <c:forEach var="allPosts" items="${displayAllPost}">
                                 <div class="container pre-posts">
-                                    <p> Posted by:<span class="blue">
+                                    <div class="container member-Detail" <p> Posted by:<span class="blue">
                                             <c:out value="${allPosts.user.userName}"/>
                                             | ${allPosts.publishDate}CT<br>
                                         </span>
-                                    </p>
+                                        </div>
                                     <p><c:out value="${allPosts.title}"/></p>
                                     <p><c:out value="${allPosts.content}"/></p>
                                     <div class="container img-center">

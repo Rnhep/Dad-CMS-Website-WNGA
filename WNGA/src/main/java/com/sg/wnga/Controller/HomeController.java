@@ -13,6 +13,7 @@ import com.sg.wnga.DAO.UserDao;
 import com.sg.wnga.Model.NewPost;
 import com.sg.wnga.Model.NewsFeed;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -63,6 +64,7 @@ public class HomeController {
         List<NewPost> displayLatestPost = new ArrayList<>();
         displayLatestPost = NPDao.getLatestPost();
         model.addAttribute("displayLatestPost", displayLatestPost);
+       
        
         return "Home";
     }

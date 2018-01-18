@@ -36,6 +36,8 @@ public class UserDaoImpl implements UserDao {
                 user.getUserName(),
                 user.getPassWord(),
                 user.getEmail(),
+                user.getJointDate().toString(),
+                user.isEnable(),
                 user.getPhoto());
         user.setUserId(jdbcTemplate.queryForObject("select LAST_INSERT_ID()", Integer.class));
 
@@ -64,8 +66,9 @@ public class UserDaoImpl implements UserDao {
                 user.getUserName(),
                 user.getPassWord(),
                 user.getEmail(),
-                user.getPhoto(),
+                user.getJointDate().toString(),
                 user.isEnable(),
+                user.getPhoto(),
                 user.getUserId());
                 
     }

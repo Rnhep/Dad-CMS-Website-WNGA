@@ -25,18 +25,20 @@
                     <div class="container-fluid user-info">
                         <div class="container">
                             <p> ${message} </p>
-                            User Name: ${currentUser.userName}     
-                            | First Name: ${currentUser.firstName}   
-                            | Last Name: ${currentUser.lastName} | Email: ${currentUser.email}
+                            User Name: ${currentLogInUser.userName}
+                            | Joint Date: ${currentLogInUser.jointDate}
+                            | First Name: ${currentLogInUser.firstName}   
+                            | Last Name: ${currentLogInUser.lastName} | Email: ${currentLogInUser.email}
                         </div>
                     </div>
 
-                    <div class="container-fluid"id="contain-one">
+                    <div class="container-fluid" >
 
-                        <sf:form role="form" modelAttribute="currentUser" action="updateProfile" method="POST" >
+                        <sf:form role="form" modelAttribute="currentLogInUser" action="updateProfile" method="POST" >
                             ${updateProfileMessage}
                             <div class="form-group">
                                 <div class="col-md-8">
+                                    <label>Current Email</label>
                                     <sf:input type="email" class="form-control" path="email" name="email" placeholder="email" />
                                     <sf:errors path="email" cssClass="error"></sf:errors>
                                     </div>
@@ -69,6 +71,18 @@
                             <div class="form-group">
                                 <div class="col-md-8">
                                     ${passwordField}
+                                    <label>Enter Old Password</label>
+                                    <input type="password" class="form-control" id="password"
+                                           name="oldPassword" placeholder="password" 
+                                           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                                          title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required  />
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-8">
+                                    ${passwordField}
+                                    <label> Enter New Password</label>
                                     <input type="password" class="form-control" id="password"
                                            name="password" placeholder="password" 
                                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
@@ -78,6 +92,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-md-8">
+                                    <label> Confirm New Password</label>
                                     <input type="password" class="form-control" id="password"
                                            name="confirmPassword" placeholder="password" 
                                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
@@ -93,7 +108,7 @@
 
                     </div>
 
-
+                        <hr></hr>
                     <footer id="footer"></footer>
                     <!-- Placed at the end of the document so the pages load faster -->
                     <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
