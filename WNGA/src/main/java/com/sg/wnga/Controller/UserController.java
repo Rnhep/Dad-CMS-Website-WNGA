@@ -117,9 +117,9 @@ public class UserController {
         newUser.setJointDate(LocalDate.now());
         newUser.setEnable(Boolean.TRUE);
          newUser.addAuthority("ROLE_USER");
-        if (null != rq.getParameter("isAdmin")) {
-            newUser.addAuthority("ROLE_ADMIN");
-        }
+//        if (null != rq.getParameter("isAdmin")) {
+//            newUser.addAuthority("ROLE_ADMIN");
+//        }
         userDao.addUser(newUser);
         return "redirect:signIn";
 

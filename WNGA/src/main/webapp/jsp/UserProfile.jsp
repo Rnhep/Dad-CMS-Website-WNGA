@@ -32,25 +32,27 @@
                         </div>
                     </div>
 
-                    <div class="container-fluid" >
+                    <div class="container-fluid">
 
                         <sf:form role="form" modelAttribute="currentLogInUser" action="updateProfile" method="POST" >
                             ${updateProfileMessage}
                             <div class="form-group">
                                 <div class="col-md-8">
-                                    <label>Current Email</label>
+                                    <label>Email</label>
                                     <sf:input type="email" class="form-control" path="email" name="email" placeholder="email" />
                                     <sf:errors path="email" cssClass="error"></sf:errors>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md-8">
+                                        <label>First Name</label>
                                     <sf:input type="text" class="form-control" path="firstName" name="firstName" placeholder="First Name" />
                                     <sf:errors path="firstName" cssClass="error"></sf:errors>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md-8">
+                                        <label>Last Name</label>
                                     <sf:input type="text" class="form-control" path="lastName" name="lastName" placeholder="Last Name" />
                                     <sf:errors path="lastName" cssClass="error"></sf:errors>
                                     </div>
@@ -59,6 +61,7 @@
                                 <div class="col-md-8">
                                  <sf:hidden path="userId"/>
                                  <sf:hidden path="userName"/>
+                                 <sf:hidden path="jointDate"/>
                                  <sf:hidden path="passWord"/>
                                 
                                     <input type="submit" id="log-in-btn" class="form-control" value="Update Profile"/>
