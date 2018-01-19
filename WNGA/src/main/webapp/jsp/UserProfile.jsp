@@ -26,7 +26,7 @@
                         <div class="container">
                             <p> ${message} </p>
                             User Name: ${currentLogInUser.userName}
-                            | Joint Date: ${currentLogInUser.jointDate}
+                            | Join Date: ${currentLogInUser.jointDate}
                             | First Name: ${currentLogInUser.firstName}   
                             | Last Name: ${currentLogInUser.lastName} | Email: ${currentLogInUser.email}
                         </div>

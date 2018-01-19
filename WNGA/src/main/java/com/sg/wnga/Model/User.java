@@ -31,7 +31,7 @@ public class User {
     @NotEmpty(message = "Password is empty")
     private String passWord;
      @DateTimeFormat(iso = ISO.DATE)
-    private LocalDate jointDate;
+    private LocalDate joinDate;
     private boolean enable;
     private String photo;
     private ArrayList<String> authorities = new ArrayList<>();
@@ -84,12 +84,12 @@ public class User {
         this.passWord = passWord;
     }
 
-    public LocalDate getJointDate() {
-        return jointDate;
+    public LocalDate getJoinDate() {
+        return joinDate;
     }
 
-    public void setJointDate(LocalDate jointDate) {
-        this.jointDate = jointDate;
+    public void setJoinDate(LocalDate jointDate) {
+        this.joinDate = jointDate;
     }
 
     public boolean isEnable() {
@@ -132,7 +132,7 @@ public class User {
         hash = 37 * hash + Objects.hashCode(this.email);
         hash = 37 * hash + Objects.hashCode(this.userName);
         hash = 37 * hash + Objects.hashCode(this.passWord);
-        hash = 37 * hash + Objects.hashCode(this.jointDate);
+        hash = 37 * hash + Objects.hashCode(this.joinDate);
         hash = 37 * hash + (this.enable ? 1 : 0);
         hash = 37 * hash + Objects.hashCode(this.photo);
         hash = 37 * hash + Objects.hashCode(this.authorities);
@@ -175,7 +175,7 @@ public class User {
         if (!Objects.equals(this.photo, other.photo)) {
             return false;
         }
-        if (!Objects.equals(this.jointDate, other.jointDate)) {
+        if (!Objects.equals(this.joinDate, other.joinDate)) {
             return false;
         }
         if (!Objects.equals(this.authorities, other.authorities)) {

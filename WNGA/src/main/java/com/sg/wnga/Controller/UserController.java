@@ -85,8 +85,7 @@ public class UserController {
 //            userNameField = userName;
 //            passWordField = password;
 //    }
-    
-    
+
     //add user. this is lots DRY. will need to figure out to simplify the code  in the future
     @RequestMapping(value = "/createUser", method = RequestMethod.POST)
     public String createUser(HttpServletRequest rq) {
@@ -146,7 +145,7 @@ public class UserController {
         String hasPw = encoder.encode(password);
         newUser.setPassWord(hasPw);
         newUser.setEmail(email);
-        newUser.setJointDate(LocalDate.now());
+        newUser.setJoinDate(LocalDate.now());
         newUser.setEnable(Boolean.TRUE);
         newUser.addAuthority("ROLE_USER");
 //        if (null != rq.getParameter("isAdmin")) {
