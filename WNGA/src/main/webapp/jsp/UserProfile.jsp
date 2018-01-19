@@ -63,7 +63,6 @@
                                  <sf:hidden path="userName"/>
                                  <sf:hidden path="jointDate"/>
                                  <sf:hidden path="passWord"/>
-                                
                                     <input type="submit" id="log-in-btn" class="form-control" value="Update Profile"/>
                                 </div>
                                     </div>
@@ -87,7 +86,7 @@
                                     ${passwordField}
                                     <label> Enter New Password</label>
                                     <input type="password" class="form-control" id="password"
-                                           name="password" placeholder="password" 
+                                           name="password" placeholder="Password" 
                                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
                                           title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required  />
 
@@ -97,7 +96,7 @@
                                 <div class="col-md-8">
                                     <label> Confirm New Password</label>
                                     <input type="password" class="form-control" id="password"
-                                           name="confirmPassword" placeholder="password" 
+                                           name="confirmPassword" placeholder="Confirm Password" 
                                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
                                            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/>
 
