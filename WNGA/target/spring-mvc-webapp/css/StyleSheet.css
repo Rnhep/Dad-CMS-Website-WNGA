@@ -37,7 +37,8 @@ body{
     #home a,
     #news a,
     #blog a,
-    #log-in a 
+    #log-in a,
+    .profile a
     {
         color: #fff;
         text-decoration: none;
@@ -100,7 +101,7 @@ body{
     }
     #contain
     {
-        height: 367px;
+        height: 400px;
         margin-top: 90px;
     }
  #contain-one
@@ -199,6 +200,16 @@ body{
         background: none;
         color:  #3385ff;
     }
+    .profile{
+        margin-top: 45px; 
+        margin-bottom: 30px;
+        padding-top: 20px;
+        color: #fff;
+        background: linear-gradient(to bottom, rgba(188,188,188,0.1) 10%,rgba(255,255,255,0.2) 40%),rgba(188,188,188,0.1)100%;
+
+        
+        
+    }
     .user-info
     {
         text-align: center;
@@ -209,7 +220,8 @@ body{
         font-size: 15px;
         background: #3385ff;
         padding-top: 0px;
-        margin-top: -19px;
+        margin-top: 20px;
+        height: 470px;
         padding-bottom: 10px;
     }
     .pre-posts{
@@ -274,7 +286,7 @@ body{
         color: #adadad;
         height: 60px;
         background-color: #122b40; 
-        position:relative;
+        position: relative;
         bottom: 0x;
         width: 100%;
         border: 1px #fff;

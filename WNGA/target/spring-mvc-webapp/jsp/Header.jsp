@@ -21,18 +21,17 @@
     </head>
     <body>
         <div class="col-md-12 logo"> 
-            <sf:form role="form" action="userProfile" method="GET" >
+           
                 <c:if test="${!empty pageContext.request.userPrincipal.name}">
                     <small class="username"> 
                         <c:if test="${ pageContext.request.userPrincipal.name != null}">
                             Hello : ${pageContext.request.userPrincipal.name} |
-                            <input  id="profile" type="submit" value="Profile"/>
-                            <input type="hidden" name="userName" value="${pageContext.request.userPrincipal.name}"/>
-
-                        </small>
+                            <a href="userProfile?userName=${pageContext.request.userPrincipal.name}">Profile</a>
+                        
                     </c:if>
+                            </small>
                 </c:if>
-            </sf:form>
+      
         </div>
         <div class="btn-group dropdown" id="nav">
 

@@ -21,20 +21,28 @@
        <head>
         <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>UserRegistrationForm</title>
+        <title>UserRegistration Form</title>
         <!-- Bootstrap core CSS -->
         <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
             <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
                 </head>
                 <body> 
                     <div id="header"></div>
-                    <div class="container-fluid"id="contain-one">
+                    <c:if test="${!empty message}"> 
+                    <div class="container">
+                    <div class=" alert alert-danger">
+                        
+                            ${message}
+                       
+                    </div>
+                    </div>
+                             </c:if>
+                    <div class="container-fluid" id="contain-one">
+
                         <sf:form role="form" action="createUser" method="POST" >
                             <div class="form-group">
                                 <div class="col-md-8">
                                     <h2>${registration}</h2>
-                                    <c:if test="${!empty message}">  <div class="alert alert-danger">${message}</div>
-                                    </c:if>
                                     <div class="alert-danger">${termBox}</div>
                                     <input type="checkbox" name="agreement" value="true"/> ${iAgree} <a href="${pageContext.request.contextPath}/termandcondition">${termAndCondition}</a>
                                     <input type="email" class="form-control" id="email"
@@ -45,7 +53,7 @@
                                 <div class="col-md-8">
                                     ${userName}
                                     <input type="text" class="form-control" id="userName"
-                                           name="userName" placeholder="userName" value="${userNameField}" required/>
+                                           name="userName" placeholder="User Name" value="${userNameField}" required/>
                                 </div>
                             </div>
                             <div class="form-group">

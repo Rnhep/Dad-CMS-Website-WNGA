@@ -43,19 +43,19 @@ public class UserController {
         this.userDao = userDao;
         this.encoder = encoder;
     }
-
     //display registration Form
     @RequestMapping(value = "/signUp", method = RequestMethod.GET)
     public String registrationform(Model model) {
         String registration = "Sign Up";
-        String pswmessage = "Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters";
+        String pswmessage = " Password must contain at least one number "
+                + "and one uppercase and lowercase letter, "
+                + "and at least 8 or more characters";
         model.addAttribute("registration", registration);
         model.addAttribute("pswmessage", pswmessage);
         model.addAttribute("iAgree", iAgree);
         model.addAttribute("termAndCondition", termAndCondition);
         return "UserRegistrationForm";
     }
-
     //resubmit form
     @RequestMapping(value = "/resubmitForm", method = RequestMethod.GET)
     public String reSubmitForm(Model model) {
@@ -72,19 +72,6 @@ public class UserController {
         model.addAttribute("termBox", termBox);
         return "UserRegistrationForm";
     }
-//    public void testing(HttpServletRequest rq){
-//        String firstName = rq.getParameter("firstName");
-//        String lastName = rq.getParameter("lastName");
-//        String userName = rq.getParameter("userName");
-//        String password = rq.getParameter("password");
-//        String email = rq.getParameter("email");
-//        
-//            emailField = email;
-//            firstNameField = firstName;
-//            lastNameField = lastName;
-//            userNameField = userName;
-//            passWordField = password;
-//    }
 
     //add user. this is lots DRY. will need to figure out to simplify the code  in the future
     @RequestMapping(value = "/createUser", method = RequestMethod.POST)
@@ -107,7 +94,7 @@ public class UserController {
             lastNameField = lastName;
             userNameField = userName;
             passWordField = password;
-            termBox = "Please check the box";
+            termBox = "Please check the box if you agreed to the term and condition";
             return "redirect:resubmitForm";
         }
         if (email == null || email.trim().length() == 0
@@ -122,6 +109,7 @@ public class UserController {
             lastNameField = lastName;
             userNameField = userName;
             passWordField = password;
+            userNameMessage="";
             return "redirect:resubmitForm";
         }
         // check if user name was taken loop through all of users from database and check again new user. 
@@ -132,13 +120,12 @@ public class UserController {
                 lastNameField = lastName;
                 userNameField = userName;
                 passWordField = password;
-                userNameMessage = "User Name is Taking";
+                userNameMessage = "Username already taken";
                 return "redirect:resubmitForm";
             }
         }
         //Other wise we good to go
         LocalDateTime timeStamp = LocalDateTime.now();
-
         newUser.setFirstName(firstName);
         newUser.setLastName(lastName);
         newUser.setUserName(userName);
@@ -152,8 +139,13 @@ public class UserController {
 //            newUser.addAuthority("ROLE_ADMIN");
 //        }
         userDao.addUser(newUser);
+        
+      
         return "redirect:signIn";
 
     }
+    
+    
+    
 
 }

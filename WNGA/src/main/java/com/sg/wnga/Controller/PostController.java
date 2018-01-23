@@ -79,7 +79,7 @@ public class PostController {
     @RequestMapping(value = "/newPost", method = RequestMethod.POST)
     public String createPost(HttpServletRequest rq, Model model) {
         //check for empty fields
-        
+        String userName = rq.getParameter("userName");
         String title = rq.getParameter("title");
         String comment = rq.getParameter("comment");
         if (title == null || title.trim().length() == 0
@@ -94,7 +94,7 @@ public class PostController {
         List<User> allUsers = userDao.getAllUsers();
         for (User currentUser : allUsers) {
             boolean findUser = false;
-            String userName = rq.getParameter("userName");
+            
             if(currentUser.getUserName().equalsIgnoreCase(userName))
                     userId = currentUser.getUserId();
             findUser= true;

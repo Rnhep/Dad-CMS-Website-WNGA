@@ -58,7 +58,8 @@
                         </div>
                     </div>
 
-
+                            
+                            <hr></hr>
                     <footer id="footer"></footer>
                     <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
                     <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>

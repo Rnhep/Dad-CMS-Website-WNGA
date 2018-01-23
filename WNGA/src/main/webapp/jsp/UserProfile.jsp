@@ -22,95 +22,27 @@
                 </head>
                 <body>
                     <div id="header"></div>
-                    <div class="container-fluid user-info">
-                        <div class="container">
-                            <p> ${message} </p>
-                            User Name: ${currentLogInUser.userName}
-                            | Join Date: ${currentLogInUser.jointDate}
-                            | First Name: ${currentLogInUser.firstName}   
-                            | Last Name: ${currentLogInUser.lastName} | Email: ${currentLogInUser.email}
+                    <div class="container user-info">
+                        <div class="container profile">
+                            <p> ${msg} </p>
+                            <p><a href="updateProfileForm?userId=${currentLogInUser.userId}">
+                                    <input  type="button" class="form-control"  value="Update Profile"/></a></p>
+                            <hr></hr>
+                            <p> User Name: ${currentLogInUser.userName}</p>
+                            <hr></hr>
+                            <p>   Member Since: ${currentLogInUser.joinDate}</p>
+                            <hr></hr>
+                            <p>   First Name: ${currentLogInUser.firstName}  </p>
+                            <hr></hr>
+                            <p>   Last Name: ${currentLogInUser.lastName} </p>
+                            <hr></hr>
+                            <p>Email:  ${currentLogInUser.email}</p>
+
                         </div>
                     </div>
 
-                    <div class="container-fluid">
 
-                        <sf:form role="form" modelAttribute="currentLogInUser" action="updateProfile" method="POST" >
-                            ${updateProfileMessage}
-                            <div class="form-group">
-                                <div class="col-md-8">
-                                    <label>Email</label>
-                                    <sf:input type="email" class="form-control" path="email" name="email" placeholder="email" />
-                                    <sf:errors path="email" cssClass="error"></sf:errors>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-md-8">
-                                        <label>First Name</label>
-                                    <sf:input type="text" class="form-control" path="firstName" name="firstName" placeholder="First Name" />
-                                    <sf:errors path="firstName" cssClass="error"></sf:errors>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-md-8">
-                                        <label>Last Name</label>
-                                    <sf:input type="text" class="form-control" path="lastName" name="lastName" placeholder="Last Name" />
-                                    <sf:errors path="lastName" cssClass="error"></sf:errors>
-                                    </div>
-                                </div>
-                                    <div class="form-group">
-                                <div class="col-md-8">
-                                 <sf:hidden path="userId"/>
-                                 <sf:hidden path="userName"/>
-                                 <sf:hidden path="jointDate"/>
-                                 <sf:hidden path="passWord"/>
-                                    <input type="submit" id="log-in-btn" class="form-control" value="Update Profile"/>
-                                </div>
-                                    </div>
-                        </sf:form>
-                         
-                        <sf:form role="form" modelAttribute="currentUser" action="updatePassword" method="POST"> 
-                          
-                            <div class="form-group">
-                                <div class="col-md-8">
-                                    ${passwordField}
-                                    <label>Enter Old Password</label>
-                                    <input type="password" class="form-control" id="password"
-                                           name="oldPassword" placeholder="password" 
-                                           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
-                                          title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required  />
-
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-8">
-                                    ${passwordField}
-                                    <label> Enter New Password</label>
-                                    <input type="password" class="form-control" id="password"
-                                           name="password" placeholder="Password" 
-                                           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
-                                          title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required  />
-
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-8">
-                                    <label> Confirm New Password</label>
-                                    <input type="password" class="form-control" id="password"
-                                           name="confirmPassword" placeholder="Confirm Password" 
-                                           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
-                                           title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/>
-
-                                    ${pswMessage}
-                                </div>
-                            </div>
-                            <div class="col-md-8">
-                                <input type="submit" id="log-in-btn" class="form-control" value="Update Password"/>
-                            </div>
-                        </sf:form>
-
-                    </div>
-
-                        <hr></hr>
+                    <hr></hr>
                     <footer id="footer"></footer>
                     <!-- Placed at the end of the document so the pages load faster -->
                     <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>

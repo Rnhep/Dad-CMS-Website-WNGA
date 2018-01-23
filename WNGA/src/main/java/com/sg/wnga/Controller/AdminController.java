@@ -63,17 +63,17 @@ public class AdminController {
         NewsFeed eventTwo = NFDao.getNewsFeedById(FOR_EVENT_TWO);
         model.addAttribute("eventOne", eventOne);
         model.addAttribute("eventTwo", eventTwo);
-         //Post count
+        //Post count
         Long postCount = getCountDao.getNewPostCount();
-       
+
         Long usersCount = getCountDao.getUserCount();
         model.addAttribute("postCount", postCount);
         //news count
-         Long newsFeedCount = getCountDao.getNewsFeedCount();
+        Long newsFeedCount = getCountDao.getNewsFeedCount();
         model.addAttribute("newsFeedCount", newsFeedCount);
         model.addAttribute("usersCount", usersCount);
         //user count
-        List <User> userList = new ArrayList<>();
+        List<User> userList = new ArrayList<>();
         userList = userDao.getAllUsers();
         model.addAttribute("userList", userList);
         return "Admin";
@@ -87,18 +87,38 @@ public class AdminController {
         model.addAttribute("newsFeed", newsFeed);
         LocalDate date = LocalDate.now();
         model.addAttribute("date", date);
-        
+
         return "EditContent";
     }
-    
-        @RequestMapping(value = "/editNewsFeed", method = RequestMethod.POST)
-         public String editSuperPerson( @Valid @ModelAttribute("newsFeed") NewsFeed newsFeed,
+
+    @RequestMapping(value = "/editNewsFeed", method = RequestMethod.POST)
+    public String editSuperPerson(@Valid @ModelAttribute("newsFeed") NewsFeed newsFeed,
             BindingResult result) {
-             if(result.hasErrors()){
-                 return "EditContent";
-             }
-             NFDao.updateNewsFeed(newsFeed);
-             return "redirect:admin";
-         }
+        if (result.hasErrors()) {
+            return "EditContent";
+        }
+        NFDao.updateNewsFeed(newsFeed);
+        return "redirect:admin";
+    }
     
+    @RequestMapping(value = "/enabledUser", method = RequestMethod.POST)
+    public String enabledUser(HttpServletRequest rq){
+        String userIdParameter = rq.getParameter("userId");
+        int userId = Integer.parseInt(userIdParameter);
+        User enabled = userDao.getUserbyId(userId);
+        enabled.setEnable(true);
+        userDao.updateUser(enabled);
+        return "redirect:admin";
+    }
+    
+ @RequestMapping(value = "/disabledUser", method = RequestMethod.POST)
+    public String disabledUser(HttpServletRequest rq){
+        
+        String userIdParameter = rq.getParameter("userId");
+        int userId = Integer.parseInt(userIdParameter);
+        User enabled = userDao.getUserbyId(userId);
+        enabled.setEnable(false);
+        userDao.updateUser(enabled);
+        return "redirect:admin";
+    }
 }

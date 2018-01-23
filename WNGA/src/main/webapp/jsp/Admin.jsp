@@ -21,7 +21,7 @@
                     <div class="container">
                         <div class="container admin-note">
                             <h1> Admin </h1>
-                            
+
                         </div>
                         <div class="container admin-note">
                             <p> You have ${postCount} Posts | ${newsFeedCount} News Feed | in your database</p>
@@ -84,25 +84,47 @@
                             </p>
                         </div>
                         <div class="container pre-posts">
-                            <p><c:out value="${eventTwo.title}"/>
+                            <p>${eventTwo.title}
                                 <a  href="editPostForm?newsFeedId=${eventTwo.newsFeedId}">
                                     <button class="edit-btn btn btn-info" >Edit</button></a>
                             </p>
                             <p>
-                                <c:out value="${eventTwo.content}"/>
+                                ${eventTwo.content}
                             </p>
                         </div>
                         <hr>
                             <div class="container admin-note">
 
-                                <p> Current Users | ${usersCount} | </p>
+                                <p>
+                                    Current Users | ${usersCount} | 
+                                </p>
+                           
                             </div>
                         </hr>
                         <!--All users-->
                         <div class="container user-box" id="user-table" >
                             <c:forEach var="currentUser" items="${userList}">
-                                <div class="container-fluid user-box" > <p> <c:out value="${currentUser.firstName} ${currentUser.lastName} |
-                                       User Name: ${currentUser.userName}"/></p>
+                                <div class="container user-box" > 
+                                    <p> ${currentUser.firstName} ${currentUser.lastName} |
+                                           User Name: ${currentUser.userName}
+                                           </p>   
+                                           <p>
+                                               <c:if test="${currentUser.enable == true}">
+                                               User is: Enabled
+                                           </c:if>
+                                                <c:if test="${currentUser.enable == false}">
+                                               User is: Disabled
+                                           </c:if> 
+                                             <sf:form role="form" action="enabledUser" method="POST" >
+                                            <input type="hidden" name="userId" value="${currentUser.userId}"/>
+                                            <button type="submit" class="edit-btn btn btn-danger " >Enable</button>
+                                               </sf:form>
+                                       
+                                        <sf:form role="form" action="disabledUser" method="POST" >
+                                            <input type="hidden" name="userId" value="${currentUser.userId}"/>
+                                            <button type="submit" class="btn btn-danger " >Disable</button>
+                                               </sf:form>
+                                           </p>
                                 </div>
                             </c:forEach>
 

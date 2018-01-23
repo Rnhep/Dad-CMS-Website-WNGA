@@ -28,72 +28,90 @@ public class UserProfileController {
 
     private final UserDao userDao;
     private final PasswordEncoder encoder;
-    String passwordField;
-
+   
     @Inject
     public UserProfileController(UserDao userDao, PasswordEncoder encoder) {
         this.userDao = userDao;
         this.encoder = encoder;
     }
-
+    //get username from the principal compare with username in the DB then get the UserId out then put 
+    // the current log in user object on the model. 
     @RequestMapping(value = "/userProfile", method = RequestMethod.GET)
     public String userProfile(HttpServletRequest rq, Model model) {
         int userId = 0;
         List<User> allUsers = userDao.getAllUsers();
-        //check current log in  again user name in the database then get the Id
-        for (User currentUser : allUsers) {
+        String logInUserName = rq.getParameter("userName");
+        //search allUsers list for match username and then get userID out
+        for (User currentUser : allUsers) { 
             boolean findUser = false;
-            String logInUserName = rq.getParameter("userName");
-            //get user ID if user name match
-            if (currentUser.getUserName().equalsIgnoreCase(logInUserName)) {
-                //store user ID
+            if (currentUser.getUserName().equalsIgnoreCase(logInUserName)){
                 userId = currentUser.getUserId();
+                findUser= true;
             }
-            findUser = true;
+            
         }
-        // put current log in user object in the model
+   // put current log in user object in the model once userId found.
         User currentLogInUser = userDao.getUserbyId(userId);
-        String message = "Current User Profile";
-        String currentPsw = "Current Password";
-        String pswMessage = "Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters";
+        String pswMessage = "Must contain at least one number and one uppercase "
+                + "and lowercase letter, and at least 8 or more characters";
         model.addAttribute("currentLogInUser", currentLogInUser);
-        model.addAttribute("message", message);
-        model.addAttribute("currentPsw", currentPsw);
         model.addAttribute("pswMessage", pswMessage);
-        model.addAttribute("passwordField", passwordField);
         return "UserProfile";
     }
-
+    
+    //custom error endopint
+   @RequestMapping(value = "/customError", method = RequestMethod.GET)
+    public String customError(HttpServletRequest rq, Model model) {
+        String msg="Something went wrong! Check your work and try again.";
+        model.addAttribute("msg", msg);
+        return "CustomError";
+    
+    }
+    //update profile-form endpoint
+    @RequestMapping(value = "/updateProfileForm", method = RequestMethod.GET)
+    public String updateProfile(HttpServletRequest rq, Model model){
+        String userIdParameter = rq.getParameter("userId");
+        int userId = Integer.parseInt(userIdParameter);
+        User currentUser = userDao.getUserbyId(userId);
+         model.addAttribute("currentUser", currentUser );
+         return "UpdateProfile";
+    }
+    // update profile only
     @RequestMapping(value = "/updateProfile", method = RequestMethod.POST)
-    public String editProfile(@Valid @ModelAttribute("currentLogInUser") User currentLogInUser, BindingResult result) {
+    public String editProfile(@Valid @ModelAttribute("currentLogInUser") User currentUser,
+            BindingResult result) {
         if (result.hasErrors()) {
-            return "redirect:userProfile";
+            return "redirect:customError";
         }
-        userDao.updateUser(currentLogInUser);
+        userDao.updateUser(currentUser);
         return "UserProfile";
     }
-
+    // update password only
     @RequestMapping(value = "/updatePassword", method = RequestMethod.POST)
-    public String editPassword(HttpServletRequest rq) {
-        String oldPassword = rq.getParameter("oldPassword");
-        String password = rq.getParameter("password");
-        String confirmPassword = rq.getParameter("confirmPassword");
-//       if(result.hasErrors()){
-//       return "redirect:userProfile";
-//       }
-//        if ( password == null || password.trim().length() == 0
-//                || !confirmPassword.equals(password)) {
-//        //redirect to resubmitForm with value entered. 
-//            
-//            passwordField = "Something wrong with your update. Please check your Password again";
-//            return "redirect:resubmitForm";
-//        }
-        User updatePsw = new User();
-        String hasPw = encoder.encode(password);
+    public String editPassword(HttpServletRequest rq, @Valid @ModelAttribute("currentLogInUser") User currentUser) {
+        String oldPSW = rq.getParameter("oldPSW");
+        String newPSW = rq.getParameter("newPSW");
+        String confirmNewPSW = rq.getParameter("confirmNewPSW");
+        //verify for null input and verify all new password is match
+        if(oldPSW == null || oldPSW.trim().length() == 0
+                    || newPSW == null || newPSW.trim().length() == 0
+                    || !confirmNewPSW.equals(newPSW)){ 
+          return "redirect:customError";
+        }
+        String existingPSW = rq.getParameter("existingPSW");
+        if (encoder.matches(oldPSW, existingPSW)) {
+            //if everything good we update the password. 
+            String hasPw = encoder.encode(newPSW);
+            currentUser.setPassWord(hasPw);
+            userDao.updateUser(currentUser); 
+            return "UserProfile";
+        
+        } else {
+            
+             return "redirect:customError";
 
-        updatePsw.setPassWord(hasPw);
-        userDao.updateUser(updatePsw);
-        return "UserProfile";
+        }
+
     }
 
 }
