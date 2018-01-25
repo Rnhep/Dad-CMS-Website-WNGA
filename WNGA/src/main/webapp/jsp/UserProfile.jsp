@@ -30,7 +30,9 @@
                             <hr></hr>
                             <p> User Name: ${currentLogInUser.userName}</p>
                             <hr></hr>
-                            <p>   Member Since: ${currentLogInUser.joinDate}</p>
+                            <p> Member Since: 
+                                <fmt:parseDate pattern="yyyy-MM-dd" value="${currentLogInUser.joinDate}" var="joindate"/>
+                                <fmt:formatDate value="${joindate}" pattern="MMM-dd-yyyy"/></p>
                             <hr></hr>
                             <p>   First Name: ${currentLogInUser.firstName}  </p>
                             <hr></hr>

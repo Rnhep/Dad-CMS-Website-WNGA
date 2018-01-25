@@ -60,10 +60,12 @@
                             <c:forEach var="allPosts" items="${displayAllPost}">
                                 <div class="container pre-posts">
                                     <div class="container member-Detail" <p> Posted by:<span class="blue">
-                                            <c:out value="${allPosts.user.userName}"/>
-                                            | ${allPosts.publishDate}CT<br>
-                                        </span>
-                                        </div>
+                                                <c:out value="${allPosts.user.userName}"/>
+                                                |<br>
+                                                    <fmt:parseDate pattern="yyyy-MM-dd'T'HH:mm:ss" value=" ${allPosts.publishDate}" var="joindate"/>
+                                                    <fmt:formatDate value="${joindate}" pattern="E MMM-dd-yyyy @ hh:mm a"/>
+                                            </span>
+                                    </div>
                                     <p><c:out value="${allPosts.title}"/></p>
                                     <p><c:out value="${allPosts.content}"/></p>
                                     <div class="container img-center">

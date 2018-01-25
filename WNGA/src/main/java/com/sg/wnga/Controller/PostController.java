@@ -13,6 +13,7 @@ import com.sg.wnga.Model.NewPost;
 import com.sg.wnga.Model.NewsFeed;
 import com.sg.wnga.Model.User;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
@@ -88,7 +89,12 @@ public class PostController {
             commentOut = comment;
             return "redirect:repostForm";
         }
-        LocalDateTime timeStamp = LocalDateTime.now();
+        
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMM-dd-yyyy'T'HH:mm:ss");
+        LocalDateTime today= LocalDateTime.now();
+        String time= today.format(formatter);
+        LocalDateTime timeStamp= LocalDateTime.parse(time, formatter);
+        
         NewPost newPost = new NewPost();
         int userId=0;
         List<User> allUsers = userDao.getAllUsers();

@@ -44,7 +44,7 @@ class ErrorController {
                 statusCode, requestUri, exceptionMessage);
 
         model.addAttribute("errorMessage", message);
-        return "customError";
+        return "CustomError";
     }
 }
     

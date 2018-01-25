@@ -114,7 +114,9 @@ public class UserController {
         }
         // check if user name was taken loop through all of users from database and check again new user. 
         for (User currentUser : userFromDB) {
+            boolean findUser = false;
             if (currentUser.getUserName().equalsIgnoreCase(userName)) {
+                findUser =true;
                 emailField = email;
                 firstNameField = firstName;
                 lastNameField = lastName;
