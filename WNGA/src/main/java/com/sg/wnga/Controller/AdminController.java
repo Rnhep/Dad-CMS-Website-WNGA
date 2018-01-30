@@ -76,6 +76,12 @@ public class AdminController {
         List<User> userList = new ArrayList<>();
         userList = userDao.getAllUsers();
         model.addAttribute("userList", userList);
+        //name and user name
+        String name =" Name: ";
+        String userName = " UserName: ";
+        model.addAttribute("name", name);
+        model.addAttribute("userName", userName);
+                
         return "Admin";
     }
 

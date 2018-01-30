@@ -23,6 +23,7 @@ public class NewsFeed {
     private String title;
     @NotEmpty(message ="Content must not be empty!")
     private String content;
+    private String link;
      @DateTimeFormat(iso = ISO.DATE)
     private LocalDate date;
 
@@ -50,6 +51,14 @@ public class NewsFeed {
         this.content = content;
     }
 
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
     public LocalDate getDate() {
         return date;
     }
@@ -60,11 +69,12 @@ public class NewsFeed {
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 23 * hash + this.newsFeedId;
-        hash = 23 * hash + Objects.hashCode(this.title);
-        hash = 23 * hash + Objects.hashCode(this.content);
-        hash = 23 * hash + Objects.hashCode(this.date);
+        int hash = 5;
+        hash = 31 * hash + this.newsFeedId;
+        hash = 31 * hash + Objects.hashCode(this.title);
+        hash = 31 * hash + Objects.hashCode(this.content);
+        hash = 31 * hash + Objects.hashCode(this.link);
+        hash = 31 * hash + Objects.hashCode(this.date);
         return hash;
     }
 
@@ -89,12 +99,15 @@ public class NewsFeed {
         if (!Objects.equals(this.content, other.content)) {
             return false;
         }
+        if (!Objects.equals(this.link, other.link)) {
+            return false;
+        }
         if (!Objects.equals(this.date, other.date)) {
             return false;
         }
         return true;
     }
 
- 
+
     
 }

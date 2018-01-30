@@ -27,24 +27,19 @@
             <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
                 </head>
                 <body>
+
                     <div id="header"></div>
-                   
-                  
                     <div class="container-fluid">
                         <div class="container">
                             <h3>An error  has occurred....</h3>
                             <h3>${errorMessage}</h3>
                             <p> ${msg} 
-                             
+
                             </p>
                         </div>
                     </div>
-            
-                   
 
                     <hr></hr>
-                  
-                    <!-- Placed at the end of the document so the pages load faster -->
                     <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
                     <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
                     <script src="${pageContext.request.contextPath}/js/Home.js"></script>

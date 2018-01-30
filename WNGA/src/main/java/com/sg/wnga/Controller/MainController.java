@@ -6,14 +6,11 @@
 package com.sg.wnga.Controller;
 
 import static com.sg.wnga.Controller.Contents.*;
-import com.sg.wnga.DAO.GetCountDao;
 import com.sg.wnga.DAO.NewPostDao;
 import com.sg.wnga.DAO.NewsFeedDao;
-import com.sg.wnga.DAO.UserDao;
 import com.sg.wnga.Model.NewPost;
 import com.sg.wnga.Model.NewsFeed;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -27,21 +24,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author ritheenhep
  */
 @Controller
-public class HomeController {
+public class MainController{
     
-    UserDao userDao;
+  
     NewPostDao NPDao;
     NewsFeedDao NFDao;
-    GetCountDao getCountDao;
-    String titleField;
-    String commentOut;
+   
 
     @Inject
-    public HomeController(UserDao userDao, NewPostDao NPDao, NewsFeedDao NFDao, GetCountDao getCountDao) {
-        this.userDao = userDao;
+    public MainController( NewPostDao NPDao, NewsFeedDao NFDao) {
         this.NPDao = NPDao;
         this.NFDao = NFDao;
-        this.getCountDao= getCountDao;
     }
   
     @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
@@ -60,19 +53,24 @@ public class HomeController {
         model.addAttribute("contentFour", contentFour);
         model.addAttribute("eventOne", eventOne);
         model.addAttribute("eventTwo", eventTwo);
-    
         List<NewPost> displayLatestPost = new ArrayList<>();
         displayLatestPost = NPDao.getLatestPost();
         model.addAttribute("displayLatestPost", displayLatestPost);
-       
-       
         return "Home";
     }
-   
+  
   //display about us page
     @RequestMapping(value = "/aboutUs", method = RequestMethod.GET)
     public String aboutUsPage() {
         return "AboutUs";
+    }
+    
+       //Get lates newsfeed from DB to display in home page.
+    @RequestMapping(value = "/newsFeed", method = RequestMethod.GET)
+    public String displayNewsFeed(Model model) {
+        List<NewsFeed> allNews = NFDao.getAllNews();
+        model.addAttribute("allNews", allNews);
+        return "NewsFeed";
     }
 
 

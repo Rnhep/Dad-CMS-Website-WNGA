@@ -10,7 +10,6 @@ import com.sg.wnga.DAO.NewPostDao;
 import com.sg.wnga.DAO.NewsFeedDao;
 import com.sg.wnga.DAO.UserDao;
 import com.sg.wnga.Model.NewPost;
-import com.sg.wnga.Model.NewsFeed;
 import com.sg.wnga.Model.User;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -33,7 +32,6 @@ public class PostController {
    private final UserDao userDao;
    private final NewPostDao NPDao;
    private final NewsFeedDao NFDao;
-   private final  GetCountDao getCountDao;
    private  String titleField;
    private  String commentOut;
 
@@ -42,15 +40,7 @@ public class PostController {
         this.userDao = userDao;
         this.NPDao = NPDao;
         this.NFDao = NFDao;
-        this.getCountDao = getCountDao;
-    }
-
-    //Get lates newsfeed from DB to display in home page.
-    @RequestMapping(value = "/newsFeed", method = RequestMethod.GET)
-    public String displayNewsFeed(Model model) {
-        List<NewsFeed> allNews = NFDao.getAllNews();
-        model.addAttribute("allNews", allNews);
-        return "NewsFeed";
+        
     }
 
     //Get lates post from DB.
@@ -117,5 +107,7 @@ public class PostController {
         return "redirect:post";
 
     }
+    
+    
 
 }

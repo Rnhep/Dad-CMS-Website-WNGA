@@ -55,39 +55,42 @@
                             </div>
                         </sec:authorize>
                         <!------------------------------------------------------------------------------------------------------------------------------>                         
-                        <div class="container ">
-                            <!--To display all of the posts-->
-                            <c:forEach var="allPosts" items="${displayAllPost}">
-                                <div class="container pre-posts">
-                                    <div class="container member-Detail" <p> Posted by:<span class="blue">
-                                                <c:out value="${allPosts.user.userName}"/>
-                                                |<br>
-                                                    <fmt:parseDate pattern="yyyy-MM-dd'T'HH:mm:ss" value=" ${allPosts.publishDate}" var="joindate"/>
-                                                    <fmt:formatDate value="${joindate}" pattern="E MMM-dd-yyyy @ hh:mm a"/>
-                                            </span>
-                                    </div>
-                                    <p><c:out value="${allPosts.title}"/></p>
-                                    <p><c:out value="${allPosts.content}"/></p>
-                                    <div class="container img-center">
-                                        <c:if test="${!empty allPosts.imagePath}">
-                                            <a href="${allPosts.imagePath}"><img src="${allPosts.imagePath}"/></a>
-                                            <c:if test="${!empty allPosts.imagePathTwo}">
-                                                <a href="${allPosts.imagePathTwo}"> <img src="${allPosts.imagePathTwo}"/></a>
-                                            </c:if>
-                                        </c:if>                 
-                                    </div>
 
-                                </div> 
+                        <!--To display all of the posts-->
+                        <c:forEach var="allPosts" items="${displayAllPost}">
+                            <div class="container pre-posts">
+                                <p>
+                                    <c:out value="${allPosts.title}"/>
+                                </p>
+                                <p>
+                                    <c:out value="${allPosts.content}"/>
+                                </p>
+                                <div class="container img-center">
+                                    <c:if test="${!empty allPosts.imagePath}">
+                                        <a href="${allPosts.imagePath}">
+                                            <img src="${allPosts.imagePath}"/>
+                                        </a>
+                                        <c:if test="${!empty allPosts.imagePathTwo}">
+                                            <a href="${allPosts.imagePathTwo}"> 
+                                                <img src="${allPosts.imagePathTwo}"/>
+                                            </a>
+                                        </c:if>
+                                    </c:if>                 
+                                </div>
+                                <span class="blue">
+                                    <c:out value="@${allPosts.user.userName}"/>
+                                    <fmt:parseDate pattern="yyyy-MM-dd'T'HH:mm:ss" value=" ${allPosts.publishDate}" var="joindate"/>
+                                    <fmt:formatDate value="${joindate}" pattern="E MMM-dd-yyyy @hh:mm a"/>
+                                </span>
+                            </div> 
 
-                            </c:forEach>
-                        </div>
+                        </c:forEach>
                     </div>
-                    <hr>
 
-
-                        <footer id="footer"></footer>
-                        <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
-                        <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
-                        <script src="${pageContext.request.contextPath}/js/Home.js"></script>
+                    <hr></hr>
+                    <footer id="footer"></footer>
+                    <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/Home.js"></script>
                 </body>
                 </html>

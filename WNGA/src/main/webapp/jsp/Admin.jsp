@@ -69,7 +69,6 @@
                         </div>
                         <hr>
                             <div class="container admin-note">
-
                                 <p> Current Events</p>
                             </div>  
                         </hr>
@@ -98,45 +97,42 @@
                                 <p>
                                     Current Users | ${usersCount} | 
                                 </p>
-                           
+
                             </div>
                         </hr>
                         <!--All users-->
                         <div class="container user-box" id="user-table" >
                             <c:forEach var="currentUser" items="${userList}">
                                 <div class="container user-box" > 
-                                    <p> ${currentUser.firstName} ${currentUser.lastName} |
-                                           User Name: ${currentUser.userName}
-                                           </p>   
-                                           <p>
-                                               <c:if test="${currentUser.enable == true}">
-                                               User is: Enabled
-                                           </c:if>
-                                                <c:if test="${currentUser.enable == false}">
-                                               User is: Disabled
-                                           </c:if> 
-                                             <sf:form role="form" action="enabledUser" method="POST" >
+                                    <p> ${name}${currentUser.firstName} ${currentUser.lastName} |
+                                        ${userName}: ${currentUser.userName}
+                                    </p>   
+                                    <p>
+                                        <c:if test="${currentUser.enable == true}">
+                                            User is: Enabled
+                                        </c:if>
+                                        <c:if test="${currentUser.enable == false}">
+                                            User is: Disabled
+                                        </c:if> 
+                                        <sf:form role="form" action="enabledUser" method="POST" >
                                             <input type="hidden" name="userId" value="${currentUser.userId}"/>
                                             <button type="submit" class="edit-btn btn btn-danger " >Enable</button>
-                                               </sf:form>
-                                       
+                                        </sf:form>
+
                                         <sf:form role="form" action="disabledUser" method="POST" >
                                             <input type="hidden" name="userId" value="${currentUser.userId}"/>
                                             <button type="submit" class="btn btn-danger " >Disable</button>
-                                               </sf:form>
-                                           </p>
+                                        </sf:form>
+                                    </p>
                                 </div>
                             </c:forEach>
-
                         </div>
                     </div>
-                    <hr>             
-                        <footer id="footer"></footer>
-
-                        <!-- Placed at the end of the document so the pages load faster -->
-                        <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
-                        <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
-                        <script src="${pageContext.request.contextPath}/js/Home.js"></script>
+                    <hr> </hr>         
+                    <footer id="footer"></footer>
+                    <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/Home.js"></script>
 
                 </body>
                 </html>

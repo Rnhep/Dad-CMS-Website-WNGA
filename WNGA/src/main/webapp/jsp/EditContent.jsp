@@ -21,42 +21,35 @@
             <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
                 </head>
                 <body> 
+
                     <div id="header"></div>
                     <div class="container-fluid " id="contain">
-                     <sf:form role="form" action="editNewsFeed" method="POST" modelAttribute="newsFeed">
-                        <div class="form-group">
-                   <div class="col-md-8">
-                       
-                        <sf:input type="text" class="form-control" id="title"
-                                  path="title" placeholder="Enter your Title here"/>
-                        <sf:errors path="title" cssclass="error"></sf:errors>
-                   </div>
-                        </div>
-                        <div class="form-group">
-                   <div class="col-md-8">
-                       
-                            <sf:hidden path="date" value="${date}"/>
-                            <sf:textarea type="text"  id="content"
-                                  path="content" placeholder="Enter your news Feed here"/>
-                        <sf:errors path="content" cssclass="error"></sf:errors>
-                        <sf:hidden path="newsFeedId"/>
-                        <input type="submit" class="btn btn-default" value="Update Content"/>
+                        <sf:form role="form" action="editNewsFeed" method="POST" modelAttribute="newsFeed">
+                            <div class="form-group">
+                                <div class="col-md-8">
+                                    <sf:input type="text" class="form-control" id="title"
+                                              path="title" placeholder="Enter your Title here"/>
+                                    <sf:errors path="title" cssclass="error"></sf:errors>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-8">
+                                    <sf:hidden path="date" value="${date}"/>
+                                    <sf:textarea type="text"  id="content"
+                                                 path="content" placeholder="Enter your news Feed here"/>
+                                    <sf:errors path="content" cssclass="error"></sf:errors>
+                                    <sf:hidden path="newsFeedId"/>
+                                    <input type="submit" class="btn btn-default" value="Update Content"/>
+                                </div>
+                            </div>
+                        </sf:form>
                     </div>
-                    
-                </div>
-                        
-                    </sf:form>
-                    </div>
-<!--                    <div id="contain"></div>-->
-                    
-                    
+
                     <hr>             
                         <footer id="footer"></footer>
-
-                        <!-- Placed at the end of the document so the pages load faster -->
                         <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
                         <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
                         <script src="${pageContext.request.contextPath}/js/Home.js"></script>
 
-    </body>
-</html>
+                </body>
+                </html>

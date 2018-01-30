@@ -91,7 +91,7 @@ public class PrepareStatement {
             + "where NewsFeedId = ?";
 
     protected static final String SQL_SELECT_ALL_NEWS_FEED
-            = "select * from News_Feed";
+            = "select * from News_Feed where NewsFeedId >=7 ";
 
     //static page
     protected static final String SQL_INSERT_INTO_STATIC_PAGE
@@ -112,8 +112,10 @@ public class PrepareStatement {
     //count number of row
     protected static final String SQL_GET_COUNT_FROM_USER
             = "select count(*)from User";
+    
     protected static final String SQL_GET_COUNT_FROM_NEWSFEED
             = "select count(*)from News_Feed";
+    
     protected static final String SQL_GET_COUNT_FROM_NEW_POST
             = " select count(*)from New_Post";
 }

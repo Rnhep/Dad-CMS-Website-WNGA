@@ -26,19 +26,22 @@
                                     <p><c:out value="${eventTwo.title}"/></p>
                                     <p><c:out value="${eventTwo.content}"/></p>
                                 </div>
-
-
                                 <hr></hr>
 
                                 <c:forEach var="latestPost" items="${displayLatestPost}">
                                     <div class=" container post-preview">
-                                        <p> Posted by|<span class="blue">
-                                                <c:out value="${latestPost.user.userName}"/>
-                                                | ${latestPost.publishDate}|<br>
-                                            </span>
-                                            <p>${latestPost.title}<p/>
-                                                <p><a href="${pageContext.request.contextPath}/post"><c:out value="${latestPost.content}"/></a></p>
-                                            </p>
+                                        ${latestPost.title}
+                                        <p/>
+                                        <p>
+                                            <a href="${pageContext.request.contextPath}/post">
+                                                <c:out value="${latestPost.content}"/>
+                                            </a>
+                                        </p>
+                                        <span class="blue">
+                                            <c:out value="@${latestPost.user.userName}"/>
+                                            <fmt:parseDate pattern="yyyy-MM-dd'T'HH:mm:ss" value=" ${latestPost.publishDate}" var="joindate"/>
+                                            <fmt:formatDate value="${joindate}" pattern="E MMM-dd-yyyy @hh:mm a"/>
+                                        </span>
                                     </div>
                                 </c:forEach>
 
@@ -58,7 +61,7 @@
                                         <div class="container">
                                             <p>
                                                 reserved for image
-                                          
+
                                             </p>
 
                                         </div> 
@@ -108,24 +111,15 @@
                                         </p>
                                     </div>
 
-
-
                                     <div class="container-fluid box" id="img">
-
                                         <p>
                                             reserved for image
-
                                         </p>
-
-
                                     </div>
                             </div>
 
-
                             <hr>             
                                 <footer id="footer"></footer>
-
-                                <!-- Placed at the end of the document so the pages load faster -->
                                 <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
                                 <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
                                 <script src="${pageContext.request.contextPath}/js/Home.js"></script>
