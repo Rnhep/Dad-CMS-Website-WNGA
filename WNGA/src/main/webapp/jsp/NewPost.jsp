@@ -77,7 +77,7 @@
                                         </c:if>
                                     </c:if>                 
                                 </div>
-                                <span class="blue">
+                                <span class="grey">
                                     <c:out value="@${allPosts.user.userName}"/>
                                     <fmt:parseDate pattern="yyyy-MM-dd'T'HH:mm:ss" value=" ${allPosts.publishDate}" var="joindate"/>
                                     <fmt:formatDate value="${joindate}" pattern="E MMM-dd-yyyy @hh:mm a"/>

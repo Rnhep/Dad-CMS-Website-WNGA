@@ -97,11 +97,11 @@ public class AdminController {
         return "EditContent";
     }
 
-    @RequestMapping(value = "/editNewsFeed", method = RequestMethod.POST)
-    public String editSuperPerson(@Valid @ModelAttribute("newsFeed") NewsFeed newsFeed,
+    @RequestMapping(value = "/updateNewsFeed", method = RequestMethod.POST)
+    public String updateNewsFeed(@Valid @ModelAttribute("newsFeed") NewsFeed newsFeed,
             BindingResult result) {
         if (result.hasErrors()) {
-            return "EditContent";
+            return "customError";
         }
         NFDao.updateNewsFeed(newsFeed);
         return "redirect:admin";
@@ -127,4 +127,26 @@ public class AdminController {
         userDao.updateUser(enabled);
         return "redirect:admin";
     }
+      @RequestMapping(value = "/editNewsForm", method = RequestMethod.GET)
+    public String editNewsFeed(HttpServletRequest rq, Model model) {
+        String contentOneIdParameter = rq.getParameter("newsFeedId");
+        int newsfeedId = Integer.parseInt(contentOneIdParameter);
+        NewsFeed newsFeed = NFDao.getNewsFeedById(newsfeedId);
+        model.addAttribute("newsFeed", newsFeed);
+        LocalDate date = LocalDate.now();
+        model.addAttribute("date", date);
+
+        return "EditNewsFeed";
+    }
+    @RequestMapping(value = "/updateNews", method = RequestMethod.POST)
+    public String updateNews(@Valid @ModelAttribute("newsFeed") NewsFeed newsFeed,
+            BindingResult result) {
+        if (result.hasErrors()) {
+            return "customError";
+        }
+        NFDao.updateNewsFeed(newsFeed);
+        return "redirect:newsFeed";
+    }
+    
+    
 }

@@ -10,7 +10,9 @@ import com.sg.wnga.DAO.NewPostDao;
 import com.sg.wnga.DAO.NewsFeedDao;
 import com.sg.wnga.DAO.UserDao;
 import com.sg.wnga.Model.NewPost;
+import com.sg.wnga.Model.NewsFeed;
 import com.sg.wnga.Model.User;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -108,6 +110,21 @@ public class PostController {
 
     }
     
-    
+    @RequestMapping(value = "/newsFeed", method = RequestMethod.POST)
+    public String createNewsFeed(HttpServletRequest rq, Model model) {
+        String name = rq.getParameter("name");
+        String link = rq.getParameter("link");
+        String content = rq.getParameter("content");
+        
+        NewsFeed newsFeed = new NewsFeed();
+        LocalDate datePost = LocalDate.now();
+        newsFeed.setName(name);
+        newsFeed.setDate(datePost);
+        newsFeed.setLink(link);
+        newsFeed.setContent(content);
+        NFDao.addNewsFeed(newsFeed);
+        return "redirect:newsFeed";
+        
+    }
 
 }

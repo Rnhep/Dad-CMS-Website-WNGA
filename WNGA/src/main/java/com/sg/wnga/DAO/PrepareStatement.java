@@ -77,10 +77,10 @@ public class PrepareStatement {
 
     //news Feed
     protected static final String SQL_INSERT_INTO_NEWS_FEED
-            = "insert into News_Feed (Title, Date, Content)values(?,?,?)";
+            = "insert into News_Feed (Title, Date, Link, Content)values(?,?,?,?)";
 
     protected static final String SQL_UPDATE_NEWS_FEED
-            = "update News_Feed set Title = ?, Date = ?, Content = ? "
+            = "update News_Feed set Title = ?, Date = ?, Link= ?, Content = ? "
             + "where NewsFeedId = ?";
 
     protected static final String SQL_DELETE_NEWS_FEED
@@ -91,7 +91,7 @@ public class PrepareStatement {
             + "where NewsFeedId = ?";
 
     protected static final String SQL_SELECT_ALL_NEWS_FEED
-            = "select * from News_Feed where NewsFeedId >=7 ";
+            = "select * from News_Feed where NewsFeedId >=7 order by NewsFeedId desc";
 
     //static page
     protected static final String SQL_INSERT_INTO_STATIC_PAGE

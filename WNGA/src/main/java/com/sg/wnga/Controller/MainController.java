@@ -70,6 +70,8 @@ public class MainController{
     public String displayNewsFeed(Model model) {
         List<NewsFeed> allNews = NFDao.getAllNews();
         model.addAttribute("allNews", allNews);
+        String admin = "(Admin)";
+        model.addAttribute("admin", admin);
         return "NewsFeed";
     }
 

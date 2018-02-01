@@ -69,14 +69,16 @@
                             <div class="form-group">
                                 <div class="col-md-8">
                                     <label>Enter new password</label>
-                                    <input type="password"  class="form-control" name="newPSW" placeholder="New Password"/>
+                                    <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-control" name="newPSW" placeholder="New Password"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-8">
                                     <label>Confirm new password</label>
-                                    <input type="password"  class="form-control" name="confirmNewPSW" placeholder="Confirm New Password"/>
+                                    <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-control" name="confirmNewPSW" placeholder="Confirm New Password"/>
+                                     ${pswMessage}
                                 </div>
+                               
                             </div>
                             <input type="hidden" name="existingPSW" value="${currentUser.passWord}"/>
                             <sf:hidden path="userId"/>

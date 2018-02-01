@@ -29,18 +29,18 @@
                         <sec:authorize access="hasRole('ROLE_ADMIN')">
                                 <sf:form  class="form-horizontal" 
                                           role="form"  method="POST" 
-                                          action="newPost">
+                                          action="newsFeed">
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <div class="col-md-9">
                                                 <div >${message}</div>
                                                 <div class="form-group container-fluid">
-                                                    <input type="text" class="form-control" name="title" placeholder="Your Name" value="${titleField}" required/>
+                                                    <input type="text" class="form-control" name="name" placeholder="Your Name"  required/>
                                                 </div>
                                                 <div class="form-group container-fluid">
-                                                    <input type="text" class="form-control" name="link" placeholder="Link"  />
+                                                    <input type="text" class="form-control" name="link" placeholder="Link" />
                                                 </div>
-                                                <textarea  type="text" class="commentbox" name="comment"   placeholder="Comment required" required>${commentOut}</textarea> 
+                                                <textarea  type="text" class="commentbox" name="content"   placeholder="Comment required" required>${commentOut}</textarea> 
                                                 <input type="hidden" name="userName" value="${pageContext.request.userPrincipal.name}"/>
                                                 <input type="submit" id="log-in-btn" class="form-control" value="Submit Post"/>
                                             </div>
@@ -54,12 +54,25 @@
                         
                         <c:forEach var="news" items="${allNews}">
                             <div class="container pre-posts">
+                                <p class="grey">
+                                   ${news.name} ${admin}
+                                     <fmt:parseDate pattern="yyyy-MM-dd" value=" ${news.date}" var="newsDate"/>
+                                     <fmt:formatDate value="${newsDate}" pattern="E MMM-dd-yyyy"/>
+                                
+                                </p>
                                 <p>
-                                    <c:out value="${news.title}"/>
+                                    <a href="${news.link}">${news.link}</a>
                                 </p>
                                 <p>
                                     <c:out value="${news.content}"/>
                                 </p>
+                                    <sec:authorize access="hasRole('ROLE_ADMIN')">
+                                <p>
+                                    
+                                    <a class="grey" href="editNewsForm?newsFeedId=${news.newsFeedId}">edit</a> <a class="grey" href="">delete</a>
+                                    
+                                </p>
+                                    </sec:authorize>
                             </div>
                         </c:forEach>
                             </div>

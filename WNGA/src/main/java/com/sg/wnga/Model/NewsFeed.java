@@ -20,7 +20,7 @@ public class NewsFeed {
     
     private int newsFeedId;
     @NotEmpty(message ="Title must not be empty!")
-    private String title;
+    private String name;
     @NotEmpty(message ="Content must not be empty!")
     private String content;
     private String link;
@@ -35,12 +35,12 @@ public class NewsFeed {
         this.newsFeedId = newsFeedId;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getContent() {
@@ -69,12 +69,12 @@ public class NewsFeed {
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 31 * hash + this.newsFeedId;
-        hash = 31 * hash + Objects.hashCode(this.title);
-        hash = 31 * hash + Objects.hashCode(this.content);
-        hash = 31 * hash + Objects.hashCode(this.link);
-        hash = 31 * hash + Objects.hashCode(this.date);
+        int hash = 3;
+        hash = 23 * hash + this.newsFeedId;
+        hash = 23 * hash + Objects.hashCode(this.name);
+        hash = 23 * hash + Objects.hashCode(this.content);
+        hash = 23 * hash + Objects.hashCode(this.link);
+        hash = 23 * hash + Objects.hashCode(this.date);
         return hash;
     }
 
@@ -93,7 +93,7 @@ public class NewsFeed {
         if (this.newsFeedId != other.newsFeedId) {
             return false;
         }
-        if (!Objects.equals(this.title, other.title)) {
+        if (!Objects.equals(this.name, other.name)) {
             return false;
         }
         if (!Objects.equals(this.content, other.content)) {
@@ -108,6 +108,6 @@ public class NewsFeed {
         return true;
     }
 
-
+   
     
 }

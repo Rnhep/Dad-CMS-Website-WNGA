@@ -62,7 +62,7 @@ public class NewsFeedTest {
     @Test
     public void testAddGetNews() {
         NewsFeed NF = new NewsFeed();
-        NF.setTitle("Today News");
+        NF.setName("Today News");
         NF.setDate(LocalDate.now());
         NF.setContent("something is fun");
         newsFeedDao.addNewsFeed(NF);
@@ -74,7 +74,7 @@ public class NewsFeedTest {
     @Test
     public void testDeleteNews() {
         NewsFeed NF = new NewsFeed();
-        NF.setTitle("Today News");
+        NF.setName("Today News");
         NF.setDate(LocalDate.now());
         NF.setContent("something is fun");
         newsFeedDao.addNewsFeed(NF);
@@ -87,14 +87,14 @@ public class NewsFeedTest {
     @Test
     public void testUpdateNews() {
         NewsFeed NF = new NewsFeed();
-        NF.setTitle("Today News");
+        NF.setName("Today News");
         NF.setDate(LocalDate.now());
         NF.setContent("something is fun");
         newsFeedDao.addNewsFeed(NF);
         NewsFeed fromDB = newsFeedDao.getNewsFeedById(NF.getNewsFeedId());
         assertEquals(fromDB, NF);
         String Title = "Tomorrow";
-        fromDB.setTitle(Title);
+        fromDB.setName(Title);
         newsFeedDao.updateNewsFeed(fromDB);
         NewsFeed updateNews = newsFeedDao.getNewsFeedById(NF.getNewsFeedId());
         assertEquals(updateNews, fromDB);
@@ -103,12 +103,12 @@ public class NewsFeedTest {
     @Test
     public void testGetAll() {
         NewsFeed NF = new NewsFeed();
-        NF.setTitle("Today News");
+        NF.setName("Today News");
         NF.setDate(LocalDate.now());
         NF.setContent("something is fun");
         newsFeedDao.addNewsFeed(NF);
         NewsFeed NF1 = new NewsFeed();
-        NF1.setTitle("Today News");
+        NF1.setName("Today News");
         NF1.setDate(LocalDate.now());
         NF1.setContent("something is fun");
         newsFeedDao.addNewsFeed(NF1);
@@ -120,7 +120,7 @@ public class NewsFeedTest {
    @Test
    public void testGetNewsById(){
         NewsFeed NF = new NewsFeed();
-        NF.setTitle("Today News");
+        NF.setName("Today News");
         NF.setDate(LocalDate.now());
         NF.setContent("something is fun");
         newsFeedDao.addNewsFeed(NF);

@@ -20,10 +20,10 @@
                             <div class="container">
                                 <div class=" container pre-posts">
                                     <p class="upcoming"> Upcoming Events: </p>
-                                    <p><c:out value="${eventOne.title}"/></p>
+                                    <p><c:out value="${eventOne.name}"/></p>
                                     <p><c:out value="${eventOne.content}"/></p>
                                     <hr></hr>
-                                    <p><c:out value="${eventTwo.title}"/></p>
+                                    <p><c:out value="${eventTwo.name}"/></p>
                                     <p><c:out value="${eventTwo.content}"/></p>
                                 </div>
                                 <hr></hr>
@@ -37,7 +37,7 @@
                                                 <c:out value="${latestPost.content}"/>
                                             </a>
                                         </p>
-                                        <span class="blue">
+                                        <span class="grey">
                                             <c:out value="@${latestPost.user.userName}"/>
                                             <fmt:parseDate pattern="yyyy-MM-dd'T'HH:mm:ss" value=" ${latestPost.publishDate}" var="joindate"/>
                                             <fmt:formatDate value="${joindate}" pattern="E MMM-dd-yyyy @hh:mm a"/>
@@ -49,7 +49,7 @@
                                     <div class="container-fluid box" id="education">
                                         <div class="container">
                                             <p>
-                                                <c:out value="${contentOne.title}"/>
+                                                <c:out value="${contentOne.name}"/>
                                             </p>
                                             <p>
                                                 <c:out value="${contentOne.content}"/>
@@ -70,7 +70,7 @@
                                     <div class="container-fluid box" id="health">
 
                                         <p>
-                                            <c:out value="${contentTwo.title}"/>
+                                            <c:out value="${contentTwo.name}"/>
 
                                         </p>
                                         <p>
@@ -92,7 +92,7 @@
 
                                     <div class="container-fluid box" id="humanRight">
                                         <p>
-                                            <c:out value="${contentThree.title}"/>
+                                            <c:out value="${contentThree.name}"/>
 
                                         </p>
                                         <p>
@@ -103,7 +103,7 @@
 
                                     <div class="container-fluid box" id="ppa">
                                         <p>
-                                            <c:out value="${contentFour.title}"/>
+                                            <c:out value="${contentFour.name}"/>
 
                                         </p>
                                         <p>

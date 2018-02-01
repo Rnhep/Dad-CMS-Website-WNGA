@@ -24,14 +24,15 @@
 
                     <div id="header"></div>
                     <div class="container-fluid " id="contain">
-                        <sf:form role="form" action="editNewsFeed" method="POST" modelAttribute="newsFeed">
+                        <sf:form role="form" action="updateNewsFeed" method="POST" modelAttribute="newsFeed">
                             <div class="form-group">
                                 <div class="col-md-8">
                                     <sf:input type="text" class="form-control" id="title"
-                                              path="title" placeholder="Enter your Title here"/>
-                                    <sf:errors path="title" cssclass="error"></sf:errors>
+                                              path="name" placeholder="Enter your Title here"/>
+                                    <sf:errors path="name" cssclass="error"></sf:errors>
                                     </div>
                                 </div>
+                                
                                 <div class="form-group">
                                     <div class="col-md-8">
                                     <sf:hidden path="date" value="${date}"/>

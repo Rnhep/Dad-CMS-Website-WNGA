@@ -30,8 +30,9 @@ public class NewsFeedDaoImpl implements NewsFeedDao {
     @Transactional(propagation = Propagation.REQUIRED, readOnly = false)
     public void addNewsFeed(NewsFeed news) {
         jdbcTemplate.update(SQL_INSERT_INTO_NEWS_FEED,
-                news.getTitle(),
+                news.getName(),
                 news.getDate().toString(),
+                news.getLink(),
                 news.getContent());
         news.setNewsFeedId(jdbcTemplate.queryForObject("select LAST_INSERT_ID()", Integer.class));
         
@@ -47,8 +48,9 @@ public class NewsFeedDaoImpl implements NewsFeedDao {
     @Transactional(propagation = Propagation.REQUIRED, readOnly = false)
     public void updateNewsFeed(NewsFeed newsFeed) {
         jdbcTemplate.update(SQL_UPDATE_NEWS_FEED,
-                newsFeed.getTitle(),
+                newsFeed.getName(),
                 newsFeed.getDate().toString(),
+                newsFeed.getLink(),
                 newsFeed.getContent(),
                 newsFeed.getNewsFeedId());
     }

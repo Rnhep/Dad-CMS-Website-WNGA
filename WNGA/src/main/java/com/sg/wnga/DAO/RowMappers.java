@@ -57,9 +57,10 @@ public class RowMappers {
         @Override
         public NewsFeed mapRow(ResultSet rs, int i) throws SQLException {
             NewsFeed NF = new NewsFeed();
-            NF.setTitle(rs.getString("Title"));
+            NF.setName(rs.getString("Title"));
             NF.setDate(rs.getTimestamp("Date").toLocalDateTime().toLocalDate());
             NF.setContent(rs.getString("Content"));
+            NF.setLink(rs.getString("Link"));
             NF.setNewsFeedId(rs.getInt("NewsFeedId"));
            return NF;
         }
