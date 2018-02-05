@@ -10,5 +10,13 @@ console.log("testing");
 $('#header').load('jsp/Header.jsp');
 $('#header-about-us').load('jsp/Header.jsp');
 $('#footer').load('jsp/Footer.jsp');
+
+$('#photo').on('click', function () {
+  updateImage1();
+        // $('#display-money').val(moneyIn.toFixed(2));
+    });
+    
+
+
 });
  

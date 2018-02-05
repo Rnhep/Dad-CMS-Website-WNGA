@@ -27,6 +27,13 @@
                             ${updateProfileMessage}
                             <div class="form-group">
                                 <div class="col-md-8">
+                                    <label>Please enter link to your photo for your profile picture: WARNING!: file upload is not available</label>
+                                    <sf:input type="text" class="form-control" path="photo" name="email" placeholder="Enter link to your photo" />
+                                    <sf:errors path="photo" cssClass="error"></sf:errors>
+                                    </div>
+                                </div>
+                            <div class="form-group">
+                                <div class="col-md-8">
                                     <label>Email</label>
                                     <sf:input type="email" class="form-control" path="email" name="email" placeholder="email" />
                                     <sf:errors path="email" cssClass="error"></sf:errors>
@@ -88,7 +95,7 @@
                             <sf:hidden path="userName"/>
                             <sf:hidden path="joinDate"/>
                             <sf:hidden  path="passWord"/>
-                            <input type="submit" id="log-in-btn" class="form-control" value="Update Profile"/>
+                            <input type="submit" id="log-in-btn" class="form-control" value="Update Password"/>
 
 
                         </sf:form>

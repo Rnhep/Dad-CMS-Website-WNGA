@@ -4,7 +4,8 @@
     Author     : ritheenhep
 --%>
 
-
+<%@page import="java.time.format.DateTimeFormatter"%>
+<%@page import="java.time.LocalDateTime"%>
 <%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags"%>
@@ -35,10 +36,8 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <div class="col-md-6">
-                                                <div >${message}</div>
-                                                <div class="form-group container">
-                                                    <input type="text" class="form-control" name="title" placeholder="Title required" value="${titleField}" required/>
-                                                </div>
+                                                <div ><c:out value="${message}"/></div>
+                                                
                                                 <div class="form-group container">
                                                     <input type="text" class="form-control" name="photo" placeholder="Link to a photo only"  />
                                                 </div>
@@ -56,12 +55,46 @@
                         </sec:authorize>
                         <!------------------------------------------------------------------------------------------------------------------------------>                         
 
-                        <!--To display all of the posts-->
+                        <div class="col-md-12 ">
+                            <div class="form-group">
+                                <div  class="form-control box1 pre-posts">
+                                    <c:if test="${empty pageContext.request.userPrincipal.name}">
+                                        <p class="login">
+                                          <c:out value="${logIn}"/><a  href="${pageContext.request.contextPath}/signIn">Sign In</a>
+                                        </p>
+                                    </c:if>
+                                      <p>
+                                        <%
+                                            LocalDateTime date = LocalDateTime.now();
+                                            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("E MMM-dd-yyyy HH:mma  ");
+                                            String dates = formatter.format(date);
+                                            out.print("Today is " + dates);
+                                        %>
+
+                                    </p>
+                                    <hr></hr>
+                                    <p class="newPost">
+                                       <c:out value="${newPost}"/>
+                                    </p>
+                                  
+                                </div>
+                            </div>
+                        </div>
                         <c:forEach var="allPosts" items="${displayAllPost}">
-                            <div class="container pre-posts">
+                            <div class="container  pre-posts">
                                 <p>
-                                    <c:out value="${allPosts.title}"/>
+                                     <span class="grey">
+                                          <c:if test="${!empty allPosts.user.photo}">
+                                         <img  id="user-img" 
+                                     src="${allPosts.user.photo}"/>
+                                          </c:if>
+                                    <c:out value="${allPosts.user.userName}..."/>
+                                    <fmt:parseDate pattern="yyyy-MM-dd'T'HH:mm:ss" value=" ${allPosts.publishDate}" var="joindate"/>
+                                    <fmt:formatDate value="${joindate}" pattern="E MMM-dd-yyyy @hh:mma"/>
+                                </span>
+                              
                                 </p>
+                                 <hr></hr>
                                 <p>
                                     <c:out value="${allPosts.content}"/>
                                 </p>
@@ -77,11 +110,8 @@
                                         </c:if>
                                     </c:if>                 
                                 </div>
-                                <span class="grey">
-                                    <c:out value="@${allPosts.user.userName}"/>
-                                    <fmt:parseDate pattern="yyyy-MM-dd'T'HH:mm:ss" value=" ${allPosts.publishDate}" var="joindate"/>
-                                    <fmt:formatDate value="${joindate}" pattern="E MMM-dd-yyyy @hh:mm a"/>
-                                </span>
+                               
+                              <hr></hr>
                             </div> 
 
                         </c:forEach>

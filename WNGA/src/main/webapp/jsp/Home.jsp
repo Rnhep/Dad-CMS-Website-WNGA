@@ -26,11 +26,12 @@
                                     <p><c:out value="${eventTwo.name}"/></p>
                                     <p><c:out value="${eventTwo.content}"/></p>
                                 </div>
-                                <hr></hr>
-
+                            </div>
+                            <hr></hr>
+                            <div class="container">
                                 <c:forEach var="latestPost" items="${displayLatestPost}">
-                                    <div class=" container post-preview">
-                                        ${latestPost.title}
+                                    <div class="container post-preview">
+                                       <c:out value="${latestPost.title}"/>
                                         <p/>
                                         <p>
                                             <a href="${pageContext.request.contextPath}/post">
@@ -39,91 +40,61 @@
                                         </p>
                                         <span class="grey">
                                             <c:out value="@${latestPost.user.userName}"/>
-                                            <fmt:parseDate pattern="yyyy-MM-dd'T'HH:mm:ss" value=" ${latestPost.publishDate}" var="joindate"/>
+                                            <fmt:parseDate pattern="yyyy-MM-dd'T'HH:mm:ss" value="${latestPost.publishDate}" var="joindate"/>
                                             <fmt:formatDate value="${joindate}" pattern="E MMM-dd-yyyy @hh:mm a"/>
                                         </span>
                                     </div>
                                 </c:forEach>
-
-                                <hr>
-                                    <div class="container-fluid box" id="education">
-                                        <div class="container">
-                                            <p>
-                                                <c:out value="${contentOne.name}"/>
-                                            </p>
-                                            <p>
-                                                <c:out value="${contentOne.content}"/>
-                                            </p>
-                                        </div> 
-                                    </div>
-
-                                    <div class="container-fluid box" id="img">
-                                        <div class="container">
-                                            <p>
-                                                reserved for image
-
-                                            </p>
-
-                                        </div> 
-                                    </div>
-
-                                    <div class="container-fluid box" id="health">
-
-                                        <p>
-                                            <c:out value="${contentTwo.name}"/>
-
-                                        </p>
-                                        <p>
-                                            <c:out value="${contentTwo.content}"/>
-                                        </p>
-                                    </div>
-
-
-                                    <div class="container-fluid box" id="img">
-                                        <div class="container">
-                                            <p>
-                                                reserved for image
-
-                                            </p>
-
-                                        </div> 
-                                    </div>
-
-
-                                    <div class="container-fluid box" id="humanRight">
-                                        <p>
-                                            <c:out value="${contentThree.name}"/>
-
-                                        </p>
-                                        <p>
-                                            <c:out value="${contentThree.content}"/>
-                                        </p>
-
-                                    </div>
-
-                                    <div class="container-fluid box" id="ppa">
-                                        <p>
-                                            <c:out value="${contentFour.name}"/>
-
-                                        </p>
-                                        <p>
-                                            <c:out value="${contentFour.content}"/>
-                                        </p>
-                                    </div>
-
-                                    <div class="container-fluid box" id="img">
-                                        <p>
-                                            reserved for image
-                                        </p>
-                                    </div>
                             </div>
+                            <hr>
+                                <div class="container-fluid box " id="bg" 
+                                     style=" background: linear-gradient(to bottom, 
+                                     rgba(0,0,0,0.2) 4%,rgba(0,0,0,0.2) 100%), 
+                                     url(${contentOne.link})no-repeat ; background-size:cover" >
+                                     <p>
+                                        <c:out value="${contentOne.name}"/>
+                                    </p>
+                                    <p>
+                                        <c:out value="${contentOne.content}"/>
+                                    </p>
+                                </div>
+                               
+                                <div class="container-fluid  box1 " id="bg" >
+                                     <p>
+                                        <c:out value="${contentTwo.name}"/>
+                                    </p>
+                                    <p>
+                                        <c:out value="${contentTwo.content}"/>
+                                    </p>
+                                </div>
+                                <div class="container-fluid box" id="bg" 
+                                     style=" background: linear-gradient(to bottom, 
+                                     rgba(0,0,0,0.2) 4%,rgba(0,0,0,0.2) 100%), 
+                                     url(${contentThree.link})no-repeat; background-size:cover" >
+                                 <p>
+                                        <c:out value="${contentThree.name}"/>
 
-                            <hr>             
-                                <footer id="footer"></footer>
-                                <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
-                                <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
-                                <script src="${pageContext.request.contextPath}/js/Home.js"></script>
+                                    </p>
+                                    <p>
+                                        <c:out value="${contentThree.content}"/>
+                                    </p>
+                                </div>
+                               
+                                <div class="container-fluid box1 " id="bg" >
+                                     <p>
+                                        <c:out value="${contentFour.name}"/>
 
-                        </body>
-                        </html>
+                                    </p>
+                                    <p>
+                                        <c:out value="${contentFour.content}"/>
+                                    </p>
+                                </div>
+                                <hr>             
+                                    <footer id="footer"></footer>
+                                    <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
+                                    <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+                                    <script src="${pageContext.request.contextPath}/js/Home.js"></script>
+
+                                    </body>
+                                    </html>
 

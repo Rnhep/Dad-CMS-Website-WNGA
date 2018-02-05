@@ -25,6 +25,8 @@
                     <div class="container user-info">
                         <div class="container profile">
                             <p> ${msg} </p>
+                            <img  id="#userprofile-img" 
+                                     src="${currentLogInUser.photo}"/>
                             <p><a href="updateProfileForm?userId=${currentLogInUser.userId}">
                                     <input  type="button" class="form-control"  value="Update Profile"/></a></p>
                             <hr></hr>

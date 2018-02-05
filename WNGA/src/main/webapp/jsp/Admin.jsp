@@ -24,7 +24,7 @@
 
                         </div>
                         <div class="container admin-note">
-                            <p> You have ${postCount} Posts | ${newsFeedCount} News Feed | in your database</p>
+                            <p> You have <c:out value="${postCount} Posts | ${newsFeedCount} News Feed | in your database"/></p>
 
                         </div>
                         <hr></hr>
@@ -71,7 +71,7 @@
                             <div class="container admin-note">
                                 <p> Current Events</p>
                             </div>  
-                        </hr>
+                        
 
                         <div class="container pre-posts">
                             <p><c:out value="${eventOne.name}"/>
@@ -83,15 +83,34 @@
                             </p>
                         </div>
                         <div class="container pre-posts">
-                            <p>${eventTwo.name}
+                            <p><c:out value="${eventTwo.name}"/>
                                 <a  href="editPostForm?newsFeedId=${eventTwo.newsFeedId}">
                                     <button class="edit-btn btn btn-info" >Edit</button></a>
                             </p>
                             <p>
-                                ${eventTwo.content}
+                                <c:out value="${eventTwo.content}"/>
                             </p>
                         </div>
                         <hr>
+
+                            <div class="container pre-posts">
+                               <sf:form role="form" action="updateImg" method="POST" >
+                            <div class="form-group">
+                                <div class="col-md-8">
+                                    <label><c:out value="${message}"/></label>
+                                    <input type="text" class="form-control" name="idInput" placeholder="Please enter image number" required/>
+                                    <label><c:out value="${linkOut}"/></label>
+                                    <input type="text" class="form-control" name="imgLink" placeholder="Link to your Photo"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-8">
+                            <input type="submit" class="btn btn-info" value="Update"/>
+                                </div>
+                            </div>
+                        </sf:form>
+                            </div>
+                             <hr>
                             <div class="container admin-note">
 
                                 <p>
@@ -99,7 +118,7 @@
                                 </p>
 
                             </div>
-                        </hr>
+                       
                         <!--All users-->
                         <div class="container user-box" id="user-table" >
                             <c:forEach var="currentUser" items="${userList}">

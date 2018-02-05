@@ -16,7 +16,7 @@ body{
     .logo
     {
 
-        background: linear-gradient(to bottom, rgba(0,0,0,0.1) 6%,rgba(255,255,255,0.1) 100%), url('../Images/WNGA-M.png')no-repeat center white;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.1) 6%,rgba(188,188,188,0.0) 100%), url('../Images/WNGA-M.png')no-repeat center white;
         height: 100px;
         width: 100%;
         opacity: 1; 
@@ -98,6 +98,17 @@ body{
         clear: both;
         padding-right: 0px;
     }
+    #user-img
+    {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+    }
+    #userprofile-img
+    {
+        width: 150px;
+        height: 150px;
+    }
     #contain
     {
         height: 400px;
@@ -109,12 +120,12 @@ body{
         padding-top: 20px;
 
     }
-    .box p,
+    .box p, .box1 p,
     .news p a
     {
         text-align: center;
-        font-size: 12px;
-        font-weight: bold;
+        font-size: 16px;
+        font-weight: 900;
         text-decoration: none;
         /*border: 1px solid black;*/
 
@@ -129,7 +140,12 @@ body{
         text-align: center;
         color: blue;
     }
+    #bg
+    {
+        height: 200px; 
 
+    }
+  
 
     .post-preview,
     .user-box
@@ -145,8 +161,9 @@ body{
     }
     #user-table
     {
-        height: 550px;
+        height: auto;
         overflow: scroll;
+        padding-bottom: 10px;
     }
     .post-preview p
     {
@@ -155,15 +172,21 @@ body{
         overflow: hidden;
         text-overflow: ellipsis; 
     }
-
-    .box
+    .box1
     {
 
         margin-top: 20px;
         color: black;
+        height: auto;
+
+    }
+    .box
+    {
+
+        margin-top: 20px;
+        color: white;
         font-size: 24px;
         height: auto;
-        padding-top: 20px;
 
     }
 
@@ -216,13 +239,14 @@ body{
         background: #3385ff;
         padding-top: 0px;
         margin-top: 20px;
-        height: 470px;
+        height: auto;
         padding-bottom: 10px;
     }
     .pre-posts
     {
         overflow-y: hidden;
         padding-top: 5px;
+        padding-bottom: 5px;
         margin-top: 10px;
         /*background-color:rgba(57,124,163,0.3)*/
         height: auto;
@@ -252,8 +276,8 @@ body{
 
     .grey
     {
-        color: #adadad; 
-        
+        color: #101010; 
+
     }
     /*    .aboutus
         {

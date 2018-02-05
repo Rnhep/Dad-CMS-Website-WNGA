@@ -77,11 +77,17 @@ public class AdminController {
         userList = userDao.getAllUsers();
         model.addAttribute("userList", userList);
         //name and user name
-        String name =" Name: ";
+        String name = " Name: ";
         String userName = " UserName: ";
         model.addAttribute("name", name);
         model.addAttribute("userName", userName);
-                
+        //pushing out message for photo link
+        String message = "Please indicate number 1 or 3 for your photo to be updated."
+                + " This number correspond to photo for your home page.";
+        String linkOut = "Link to your image. Waring! this form is only for the link to your photo."
+                + "(File upload is not available)";
+        model.addAttribute("message", message);
+        model.addAttribute("linkOut", linkOut);
         return "Admin";
     }
 
@@ -93,7 +99,6 @@ public class AdminController {
         model.addAttribute("newsFeed", newsFeed);
         LocalDate date = LocalDate.now();
         model.addAttribute("date", date);
-
         return "EditContent";
     }
 
@@ -106,9 +111,9 @@ public class AdminController {
         NFDao.updateNewsFeed(newsFeed);
         return "redirect:admin";
     }
-    
+
     @RequestMapping(value = "/enabledUser", method = RequestMethod.POST)
-    public String enabledUser(HttpServletRequest rq){
+    public String enabledUser(HttpServletRequest rq) {
         String userIdParameter = rq.getParameter("userId");
         int userId = Integer.parseInt(userIdParameter);
         User enabled = userDao.getUserbyId(userId);
@@ -116,10 +121,10 @@ public class AdminController {
         userDao.updateUser(enabled);
         return "redirect:admin";
     }
-    
- @RequestMapping(value = "/disabledUser", method = RequestMethod.POST)
-    public String disabledUser(HttpServletRequest rq){
-        
+
+    @RequestMapping(value = "/disabledUser", method = RequestMethod.POST)
+    public String disabledUser(HttpServletRequest rq) {
+
         String userIdParameter = rq.getParameter("userId");
         int userId = Integer.parseInt(userIdParameter);
         User enabled = userDao.getUserbyId(userId);
@@ -127,7 +132,8 @@ public class AdminController {
         userDao.updateUser(enabled);
         return "redirect:admin";
     }
-      @RequestMapping(value = "/editNewsForm", method = RequestMethod.GET)
+
+    @RequestMapping(value = "/editNewsForm", method = RequestMethod.GET)
     public String editNewsFeed(HttpServletRequest rq, Model model) {
         String contentOneIdParameter = rq.getParameter("newsFeedId");
         int newsfeedId = Integer.parseInt(contentOneIdParameter);
@@ -138,6 +144,7 @@ public class AdminController {
 
         return "EditNewsFeed";
     }
+
     @RequestMapping(value = "/updateNews", method = RequestMethod.POST)
     public String updateNews(@Valid @ModelAttribute("newsFeed") NewsFeed newsFeed,
             BindingResult result) {
@@ -147,6 +154,17 @@ public class AdminController {
         NFDao.updateNewsFeed(newsFeed);
         return "redirect:newsFeed";
     }
-    
-    
+
+    @RequestMapping(value = "/updateImg", method = RequestMethod.POST)
+    public String updateImgOne(HttpServletRequest rq) {
+        String imgLink = rq.getParameter("imgLink");
+        String idInput = rq.getParameter("idInput");
+        int id = Integer.parseInt(idInput);
+        NewsFeed img1 = NFDao.getNewsFeedById(id);
+        img1.setLink(imgLink);
+        NFDao.updateNewsFeed(img1);
+        return "redirect:/";
+
+    }
+
 }

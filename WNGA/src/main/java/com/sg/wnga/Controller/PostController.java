@@ -14,7 +14,6 @@ import com.sg.wnga.Model.NewsFeed;
 import com.sg.wnga.Model.User;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
@@ -34,7 +33,7 @@ public class PostController {
    private final UserDao userDao;
    private final NewPostDao NPDao;
    private final NewsFeedDao NFDao;
-   private  String titleField;
+
    private  String commentOut;
 
     @Inject
@@ -48,8 +47,13 @@ public class PostController {
     //Get lates post from DB.
     @RequestMapping(value = "/post", method = RequestMethod.GET)
     public String displayLatesPost(HttpServletRequest rq, Model model) {
+        String newPost = "Latest Posts";
+        String logIn = "To start your post please ";
         List<NewPost> displayAllPost  = NPDao.getAllPost();
         model.addAttribute("displayAllPost", displayAllPost);
+        model.addAttribute("newPost", newPost);
+        model.addAttribute("logIn", logIn);
+        
         return "NewPost";
 
     }
@@ -59,7 +63,6 @@ public class PostController {
     public String repostForm(HttpServletRequest rq, Model model) {
         String message = "Required field is empty";
         model.addAttribute("message", message);
-        model.addAttribute("titleField", titleField);
         model.addAttribute("commentOut", commentOut);
         List<NewPost> displayAllPost = new ArrayList<>();
         displayAllPost = NPDao.getAllPost();
@@ -75,30 +78,33 @@ public class PostController {
         String userName = rq.getParameter("userName");
         String title = rq.getParameter("title");
         String comment = rq.getParameter("comment");
-        if (title == null || title.trim().length() == 0
-                || comment == null || comment.trim().length() == 0) {
-            titleField = title;
+        if (comment == null || comment.trim().length() == 0) {
+            
             commentOut = comment;
             return "redirect:repostForm";
         }
-        
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMM-dd-yyyy'T'HH:mm:ss");
-        LocalDateTime today= LocalDateTime.now();
-        String time= today.format(formatter);
-        LocalDateTime timeStamp= LocalDateTime.parse(time, formatter);
-        
+//        <---------------figured better way to get user object  --------------------_>
+//        
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMM-dd-yyyy'T'HH:mm:ss");
+//        LocalDateTime today= LocalDateTime.now();
+//        String time= today.format(formatter);
+//        LocalDateTime timeStamp= LocalDateTime.parse(time, formatter);
+//        
+//        NewPost newPost = new NewPost();
+//        int userId=0;
+//        List<User> allUsers = userDao.getAllUsers();
+//        for (User currentUser : allUsers) {
+//            boolean findUser = false;
+//            
+//            if(currentUser.getUserName().equalsIgnoreCase(userName))
+//                    userId = currentUser.getUserId();
+//            findUser= true;
+//        } 
+//        User setUserId = userDao.getUserById(userId);
+
+        LocalDateTime timeStamp= LocalDateTime.now();
         NewPost newPost = new NewPost();
-        int userId=0;
-        List<User> allUsers = userDao.getAllUsers();
-        for (User currentUser : allUsers) {
-            boolean findUser = false;
-            
-            if(currentUser.getUserName().equalsIgnoreCase(userName))
-                    userId = currentUser.getUserId();
-            findUser= true;
-        } 
-        
-        User setUserId = userDao.getUserbyId(userId);
+        User setUserId = userDao.getUserByUserName(userName);
         newPost.setTitle(title);
         newPost.setContent(comment);
         newPost.setImagePath(rq.getParameter("photo"));

@@ -37,8 +37,9 @@
                                     <div class="col-md-8">
                                     <sf:hidden path="date" value="${date}"/>
                                     <sf:textarea type="text"  id="content"
-                                                 path="content" placeholder="Enter your news Feed here"/>
+                                                 path="content" placeholder="Enter your news Feed here" maxlength="250" />
                                     <sf:errors path="content" cssclass="error"></sf:errors>
+                                    <sf:hidden path="link"/>
                                     <sf:hidden path="newsFeedId"/>
                                     <input type="submit" class="btn btn-default" value="Update Content"/>
                                 </div>
