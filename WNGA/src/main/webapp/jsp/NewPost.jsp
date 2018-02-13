@@ -89,8 +89,8 @@
                                      src="${allPosts.user.photo}"/>
                                           </c:if>
                                     <c:out value="${allPosts.user.userName}..."/>
-                                    <fmt:parseDate pattern="yyyy-MM-dd'T'HH:mm:ss" value=" ${allPosts.publishDate}" var="joindate"/>
-                                    <fmt:formatDate value="${joindate}" pattern="E MMM-dd-yyyy @hh:mma"/>
+                                    <fmt:parseDate pattern="yyyy-MM-dd'T'HH:mm:ss" value=" ${allPosts.publishDate}" var="Postdate"/>
+                                    <fmt:formatDate value="${Postdate}" pattern="E MMM-dd-yyyy @hh:mma"/>
                                 </span>
                               
                                 </p>
@@ -112,6 +112,15 @@
                                 </div>
                                
                               <hr></hr>
+                            
+                                    <c:if test="${!empty pageContext.request.userPrincipal.name}">
+                                        <c:if test="${pageContext.request.userPrincipal.name == allPosts.user.userName}">
+                                        <p>
+                                        <a class="grey" href="editNewsForm?newsFeedId=${news.newsFeedId}">edit</a> 
+                                        <a class="grey" href="deleteNewsFeed?newsFeedId=${news.newsFeedId}">delete</a>
+                                    </p>
+                                        </c:if>
+                              </c:if>
                             </div> 
 
                         </c:forEach>

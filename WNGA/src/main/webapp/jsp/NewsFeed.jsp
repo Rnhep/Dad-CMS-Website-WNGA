@@ -75,11 +75,11 @@
                                 <p>
                                     <c:out value="${news.content}"/>
                                 </p>
+                                <hr></hr>
                                 <sec:authorize access="hasRole('ROLE_ADMIN')">
                                     <p>
-
-                                        <a class="grey" href="editNewsForm?newsFeedId=${news.newsFeedId}">edit</a> <a class="grey" href="">delete</a>
-
+                                        <a class="grey" href="editNewsForm?newsFeedId=${news.newsFeedId}">edit</a> 
+                                        <a class="grey" href="deleteNewsFeed?newsFeedId=${news.newsFeedId}">delete</a>
                                     </p>
                                 </sec:authorize>
                             </div>
