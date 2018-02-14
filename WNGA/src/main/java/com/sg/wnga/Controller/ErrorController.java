@@ -42,8 +42,9 @@ class ErrorController {
         // format the message for the view
         String message = MessageFormat.format("{0} returned for {1}: {2}",
                 statusCode, requestUri, exceptionMessage);
-        String errorMSG1 = "1) Cannot leave requried field empty";
-        String errorMSG2 = "2) If you don't like what you posted you can delete and repost your comment";
+        String errorMSG1 = "1) Comment section cannot be empty!";
+    String errorMSG2 = "2) If you wish to remove your comment please do so by hitting delete instead of leave it blank";
+         model.addAttribute("errorMessage", message);
          model.addAttribute("errorMSG1", errorMSG1);
          model.addAttribute("errorMSG2", errorMSG2);
         return "CustomError";

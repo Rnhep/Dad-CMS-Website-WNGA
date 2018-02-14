@@ -124,7 +124,7 @@ public class PostController {
         model.addAttribute("commentOut", commentOut);
         return "EditPost";
     }
-
+//work left here
     @RequestMapping(value = "/updatePost", method = RequestMethod.POST)
     public String updatePost(HttpServletRequest rq, NewPost newPost,
             BindingResult result) {
