@@ -31,11 +31,15 @@
                     <div id="header"></div>
                     <div class="container-fluid">
                         <div class="container">
-                            <h3>An error  has occurred....</h3>
-                            <h3>${errorMessage}</h3>
-                            <p> ${msg} 
-
+                            <h3>AN ERROR HAS OCCURRED!!!!....PLEASE CHECK YOUR UPDATE</h3>
+                            <p>
+                               <c:out value="${errorMSG1}"/>
                             </p>
+                            <p>
+                                <c:out value="${errorMSG2}"/>
+                            </p>
+                                <h3><c:out value="${errorMessage}"/></h3>
+                            
                         </div>
                     </div>
 

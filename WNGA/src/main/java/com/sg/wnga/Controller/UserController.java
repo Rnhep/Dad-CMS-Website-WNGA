@@ -43,6 +43,7 @@ public class UserController {
         this.userDao = userDao;
         this.encoder = encoder;
     }
+
     //display registration Form
     @RequestMapping(value = "/signUp", method = RequestMethod.GET)
     public String registrationform(Model model) {
@@ -56,6 +57,7 @@ public class UserController {
         model.addAttribute("termAndCondition", termAndCondition);
         return "UserRegistrationForm";
     }
+
     //resubmit form
     @RequestMapping(value = "/resubmitForm", method = RequestMethod.GET)
     public String reSubmitForm(Model model) {
@@ -109,14 +111,14 @@ public class UserController {
             lastNameField = lastName;
             userNameField = userName;
             passWordField = password;
-            userNameMessage="";
+            userNameMessage = "";
             return "redirect:resubmitForm";
         }
         // check if user name was taken loop through all of users from database and check again new user. 
         for (User currentUser : userFromDB) {
             boolean findUser = false;
             if (currentUser.getUserName().equalsIgnoreCase(userName)) {
-                findUser =true;
+                findUser = true;
                 emailField = email;
                 firstNameField = firstName;
                 lastNameField = lastName;
@@ -141,13 +143,9 @@ public class UserController {
 //            newUser.addAuthority("ROLE_ADMIN");
 //        }
         userDao.addUser(newUser);
-        
-      
+
         return "redirect:signIn";
 
     }
-    
-    
-    
 
 }

@@ -70,7 +70,6 @@ public class PostController {
         List<NewPost> displayAllPost = new ArrayList<>();
         displayAllPost = NPDao.getAllPost();
         model.addAttribute("displayAllPost", displayAllPost);
-
         return "redirect:displayPost";
     }
 //add post form
@@ -82,7 +81,6 @@ public class PostController {
         String title = rq.getParameter("title");
         String comment = rq.getParameter("comment");
         if (comment == null || comment.trim().length() == 0) {
-
             commentOut = comment;
             return "redirect:repostForm";
         }
@@ -130,14 +128,13 @@ public class PostController {
     @RequestMapping(value = "/updatePost", method = RequestMethod.POST)
     public String updatePost(HttpServletRequest rq, NewPost newPost,
             BindingResult result) {
-        String content= rq.getParameter("content");
-       if (content==null || content.isEmpty() || content.trim().length()==0){
-           commentOut= "Comment must not be empty";
-           return "redirect:editPost";
-       }
+        String content = rq.getParameter("content");
+        if (content == null || content.isEmpty() || content.trim().length() == 0) {
+            return "customError";
+        }
         String userIdParameter = rq.getParameter("userId");
         int userId = Integer.parseInt(userIdParameter);
-        User user= userDao.getUserbyId(userId);
+        User user = userDao.getUserbyId(userId);
         newPost.setUser(user);
         NPDao.updatePost(newPost);
         return "redirect:displayPost";

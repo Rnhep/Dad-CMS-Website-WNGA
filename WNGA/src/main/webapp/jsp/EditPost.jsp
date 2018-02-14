@@ -40,8 +40,7 @@
                                     <sf:input path="imagePath" placeholder="Link to photo"/>
                                     <sf:input path="imagePathTwo" placeholder="Link to photo"/>
                                     <sf:input name="date" type="hidden" path="publishDate"/>
-                                    <%--<sf:input name="user" type="hidden" path="user"/>--%>
-                                    <input name="userId" value="${newPost.user.userId}"/>
+                                    <input type="hidden" name="userId" value="${newPost.user.userId}"/>
                                     <sf:hidden path="postId"/>
                                     <sf:hidden path="title"/>
                                     <input type="submit" class="btn btn-default" value="Update"/>

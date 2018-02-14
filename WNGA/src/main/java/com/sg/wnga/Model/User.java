@@ -30,7 +30,7 @@ public class User {
     private String userName;
     @NotEmpty(message = "Password is empty")
     private String passWord;
-     @DateTimeFormat(iso = ISO.DATE)
+    @DateTimeFormat(iso = ISO.DATE)
     private LocalDate joinDate;
     private boolean enable;
     private String photo;
@@ -116,11 +116,9 @@ public class User {
         this.authorities = authorities;
     }
 
-   
-     
     public void addAuthority(String authority) {
         authorities.add(authority);
- 
+
     }
 
     @Override
@@ -183,8 +181,5 @@ public class User {
         }
         return true;
     }
-    
-    
-    
-    
+
 }

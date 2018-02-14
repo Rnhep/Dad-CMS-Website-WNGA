@@ -38,7 +38,7 @@ public class UserProfileController {
 
     @RequestMapping(value = "/userProfile", method = RequestMethod.GET)
     public String userProfile(HttpServletRequest rq, Model model) {
-       // Found a better to get user object without having to iterate through list.
+        // Found a better to get user object without having to iterate through list.
         //   int userId = 0;
         //   List<User> allUsers = userDao.getAllUsers();
         //search allUsers list for match username and then get userID out

@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author ritheenhep
  */
 
-
+@Controller
 class ErrorController {
     // map this end point to /error to match the configuration in web.xml
     @RequestMapping(value = "/error")
@@ -42,9 +42,12 @@ class ErrorController {
         // format the message for the view
         String message = MessageFormat.format("{0} returned for {1}: {2}",
                 statusCode, requestUri, exceptionMessage);
-
-        model.addAttribute("errorMessage", message);
+        String errorMSG1 = "1) Cannot leave requried field empty";
+        String errorMSG2 = "2) If you don't like what you posted you can delete and repost your comment";
+         model.addAttribute("errorMSG1", errorMSG1);
+         model.addAttribute("errorMSG2", errorMSG2);
         return "CustomError";
+        
     }
 }
     

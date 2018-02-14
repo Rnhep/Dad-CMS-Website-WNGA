@@ -24,19 +24,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author ritheenhep
  */
 @Controller
-public class MainController{
-    
-  
+public class MainController {
+
     NewPostDao NPDao;
     NewsFeedDao NFDao;
-   
 
     @Inject
-    public MainController( NewPostDao NPDao, NewsFeedDao NFDao) {
+    public MainController(NewPostDao NPDao, NewsFeedDao NFDao) {
         this.NPDao = NPDao;
         this.NFDao = NFDao;
     }
-  
+
     @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
     public String home(HttpServletRequest request, Model model) {
         //for home page contents
@@ -58,14 +56,14 @@ public class MainController{
         model.addAttribute("displayLatestPost", displayLatestPost);
         return "Home";
     }
-  
-  //display about us page
+
+    //display about us page
     @RequestMapping(value = "/aboutUs", method = RequestMethod.GET)
     public String aboutUsPage() {
         return "AboutUs";
     }
-    
-       //Get lates newsfeed from DB to display in home page.
+
+    //Get lates newsfeed from DB to display in home page.
     @RequestMapping(value = "/newsFeed", method = RequestMethod.GET)
     public String displayNewsFeed(Model model) {
         List<NewsFeed> allNews = NFDao.getAllNews();
@@ -75,6 +73,4 @@ public class MainController{
         return "NewsFeed";
     }
 
-
-    
 }

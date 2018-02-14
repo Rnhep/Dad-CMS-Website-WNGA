@@ -145,7 +145,7 @@ public class AdminController {
 
         return "EditNewsFeed";
     }
-  
+
     @RequestMapping(value = "/updateNews", method = RequestMethod.POST)
     public String updateNews(@Valid @ModelAttribute("newsFeed") NewsFeed newsFeed,
             BindingResult result) {
@@ -155,15 +155,15 @@ public class AdminController {
         NFDao.updateNewsFeed(newsFeed);
         return "redirect:newsFeed";
     }
-      @RequestMapping(value = "/deleteNews", method = RequestMethod.GET)
+
+    @RequestMapping(value = "/deleteNews", method = RequestMethod.GET)
     public String deleteNewsFeed(HttpServletRequest rq, Model model) {
         String newsFeedIdParameter = rq.getParameter("newsFeedId");
         int newsFeedId = Integer.parseInt(newsFeedIdParameter);
-         NFDao.deleteNewsFeed(newsFeedId);
-         return  "redirect:newsFeed";
-        
+        NFDao.deleteNewsFeed(newsFeedId);
+        return "redirect:newsFeed";
+
     }
- 
 
     @RequestMapping(value = "/updateHomeImg", method = RequestMethod.POST)
     public String updateImgOne(HttpServletRequest rq) {

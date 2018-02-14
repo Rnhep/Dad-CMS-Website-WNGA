@@ -23,7 +23,7 @@ public class NewPost {
     @NotEmpty(message ="Title must not be empty!")
     @Length(max = 50, message="Title must be less then 50 charactor")
     private String title;
-     @NotEmpty(message ="Comment must not be empty!")
+    @NotEmpty(message ="Comment must not be empty!")
     @Length(max = 50, message="Title must be less then 50 charactor")
     private String content;
     @Length(max = 50, message="Title must be less then 50 charactor")
