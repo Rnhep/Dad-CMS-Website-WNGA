@@ -7,7 +7,6 @@ package com.sg.wnga.Controller;
 
 import com.sg.wnga.DAO.UserDao;
 import com.sg.wnga.Model.User;
-import java.util.List;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;

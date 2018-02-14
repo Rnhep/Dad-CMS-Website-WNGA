@@ -18,8 +18,11 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -30,30 +33,30 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class PostController {
 
-   private final UserDao userDao;
-   private final NewPostDao NPDao;
-   private final NewsFeedDao NFDao;
+    private final UserDao userDao;
+    private final NewPostDao NPDao;
+    private final NewsFeedDao NFDao;
 
-   private  String commentOut;
+    private String commentOut;
 
     @Inject
     public PostController(UserDao userDao, NewPostDao NPDao, NewsFeedDao NFDao, GetCountDao getCountDao) {
         this.userDao = userDao;
         this.NPDao = NPDao;
         this.NFDao = NFDao;
-        
+
     }
 
     //Get lates post from DB.
-    @RequestMapping(value = "/post", method = RequestMethod.GET)
+    @RequestMapping(value = "/displayPost", method = RequestMethod.GET)
     public String displayLatesPost(HttpServletRequest rq, Model model) {
         String newPost = "Latest Posts";
         String logIn = "To start your post please ";
-        List<NewPost> displayAllPost  = NPDao.getAllPost();
+        List<NewPost> displayAllPost = NPDao.getAllPost();
         model.addAttribute("displayAllPost", displayAllPost);
         model.addAttribute("newPost", newPost);
         model.addAttribute("logIn", logIn);
-        
+
         return "NewPost";
 
     }
@@ -68,41 +71,22 @@ public class PostController {
         displayAllPost = NPDao.getAllPost();
         model.addAttribute("displayAllPost", displayAllPost);
 
-        return "redirect:post";
+        return "redirect:displayPost";
     }
 //add post form
 
-    @RequestMapping(value = "/newPost", method = RequestMethod.POST)
+    @RequestMapping(value = "/creatNewPost", method = RequestMethod.POST)
     public String createPost(HttpServletRequest rq, Model model) {
         //check for empty fields
         String userName = rq.getParameter("userName");
         String title = rq.getParameter("title");
         String comment = rq.getParameter("comment");
         if (comment == null || comment.trim().length() == 0) {
-            
+
             commentOut = comment;
             return "redirect:repostForm";
         }
-//        <---------------figured better way to get user object  --------------------_>
-//        
-//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMM-dd-yyyy'T'HH:mm:ss");
-//        LocalDateTime today= LocalDateTime.now();
-//        String time= today.format(formatter);
-//        LocalDateTime timeStamp= LocalDateTime.parse(time, formatter);
-//        
-//        NewPost newPost = new NewPost();
-//        int userId=0;
-//        List<User> allUsers = userDao.getAllUsers();
-//        for (User currentUser : allUsers) {
-//            boolean findUser = false;
-//            
-//            if(currentUser.getUserName().equalsIgnoreCase(userName))
-//                    userId = currentUser.getUserId();
-//            findUser= true;
-//        } 
-//        User setUserId = userDao.getUserById(userId);
-
-        LocalDateTime timeStamp= LocalDateTime.now();
+        LocalDateTime timeStamp = LocalDateTime.now();
         NewPost newPost = new NewPost();
         User setUserId = userDao.getUserByUserName(userName);
         newPost.setTitle(title);
@@ -112,16 +96,16 @@ public class PostController {
         newPost.setPublishDate(timeStamp);
         newPost.setUser(setUserId);
         NPDao.addNewPost(newPost);
-        return "redirect:post";
+        return "redirect:displayPost";
 
     }
-    
-    @RequestMapping(value = "/newsFeed", method = RequestMethod.POST)
+
+    @RequestMapping(value = "/createNewsFeed", method = RequestMethod.POST)
     public String createNewsFeed(HttpServletRequest rq, Model model) {
         String name = rq.getParameter("name");
         String link = rq.getParameter("link");
         String content = rq.getParameter("content");
-        
+
         NewsFeed newsFeed = new NewsFeed();
         LocalDate datePost = LocalDate.now();
         newsFeed.setName(name);
@@ -130,7 +114,41 @@ public class PostController {
         newsFeed.setContent(content);
         NFDao.addNewsFeed(newsFeed);
         return "redirect:newsFeed";
-        
+
     }
-   
+
+    @RequestMapping(value = "/editPostForm", method = RequestMethod.GET)
+    public String editPostForm(HttpServletRequest rq, Model model) {
+        String postIdParameter = rq.getParameter("postId");
+        int postId = Integer.parseInt(postIdParameter);
+        NewPost newPost = NPDao.getPostById(postId);
+        model.addAttribute("newPost", newPost);
+        model.addAttribute("commentOut", commentOut);
+        return "EditPost";
+    }
+
+    @RequestMapping(value = "/updatePost", method = RequestMethod.POST)
+    public String updatePost(HttpServletRequest rq, NewPost newPost,
+            BindingResult result) {
+        String content= rq.getParameter("content");
+       if (content==null || content.isEmpty() || content.trim().length()==0){
+           commentOut= "Comment must not be empty";
+           return "redirect:editPost";
+       }
+        String userIdParameter = rq.getParameter("userId");
+        int userId = Integer.parseInt(userIdParameter);
+        User user= userDao.getUserbyId(userId);
+        newPost.setUser(user);
+        NPDao.updatePost(newPost);
+        return "redirect:displayPost";
+    }
+
+    @RequestMapping(value = "/deletePost", method = RequestMethod.GET)
+    public String deletePost(HttpServletRequest rq, Model model) {
+        String newsFeedIdParameter = rq.getParameter("postId");
+        int newsFeedId = Integer.parseInt(newsFeedIdParameter);
+        NPDao.deletePost(newsFeedId);
+        return "redirect:newsFeed";
+
+    }
 }

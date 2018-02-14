@@ -34,7 +34,7 @@
                                        <c:out value="${latestPost.title}"/>
                                         <p/>
                                         <p>
-                                            <a href="${pageContext.request.contextPath}/post">
+                                            <a href="${pageContext.request.contextPath}/displayPost">
                                                 <c:out value="${latestPost.content}"/>
                                             </a>
                                         </p>

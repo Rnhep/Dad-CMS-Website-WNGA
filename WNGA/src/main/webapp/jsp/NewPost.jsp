@@ -32,7 +32,7 @@
                             <div id="add-post" class="col-md-12">
                                 <sf:form  class="form-horizontal" 
                                           role="form"  method="POST" 
-                                          action="newPost">
+                                          action="creatNewPost">
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <div class="col-md-6">
@@ -113,14 +113,14 @@
                                
                               <hr></hr>
                             
-                                    <c:if test="${!empty pageContext.request.userPrincipal.name}">
+                                  
                                         <c:if test="${pageContext.request.userPrincipal.name == allPosts.user.userName}">
                                         <p>
-                                        <a class="grey" href="editNewsForm?newsFeedId=${news.newsFeedId}">edit</a> 
-                                        <a class="grey" href="deleteNewsFeed?newsFeedId=${news.newsFeedId}">delete</a>
+                                        <a class="grey" href="editPostForm?postId=${allPosts.postId}">edit</a> 
+                                        <a class="grey" href="deletePost?postId=${allPosts.postId}">delete</a>
                                     </p>
                                         </c:if>
-                              </c:if>
+                              
                             </div> 
 
                         </c:forEach>

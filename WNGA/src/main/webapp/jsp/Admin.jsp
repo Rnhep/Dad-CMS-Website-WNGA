@@ -33,7 +33,7 @@
                         </div>
                         <div class="container pre-posts">
                             <p><c:out value="${contentOne.name}"/>
-                                <a  href="editPostForm?newsFeedId=${contentOne.newsFeedId}">
+                                <a  href="editContent?newsFeedId=${contentOne.newsFeedId}">
                                     <button class="edit-btn btn btn-info" >Edit</button></a>
                             </p>
                             <p>
@@ -42,7 +42,7 @@
                         </div>
                         <div class="container pre-posts">
                             <p><c:out value="${contentTwo.name}"/>
-                                <a  href="editPostForm?newsFeedId=${contentTwo.newsFeedId}">
+                                <a  href="editContent?newsFeedId=${contentTwo.newsFeedId}">
                                     <button class="edit-btn btn btn-info" >Edit</button></a>
                             </p>
                             <p>
@@ -51,7 +51,7 @@
                         </div>
                         <div class="container pre-posts" >
                             <p> <c:out value="${contentThree.name}"/>
-                                <a  href="editPostForm?newsFeedId=${contentThree.newsFeedId}">
+                                <a  href="editContent?newsFeedId=${contentThree.newsFeedId}">
                                     <button class="edit-btn btn btn-info" >Edit</button></a>
                             </p>
                             <p>
@@ -60,7 +60,7 @@
                         </div>
                         <div class="container pre-posts">
                             <p> <c:out value="${contentThree.name}"/>
-                                <a  href="editPostForm?newsFeedId=${contentFour.newsFeedId}">
+                                <a  href="editContent?newsFeedId=${contentFour.newsFeedId}">
                                     <button class="edit-btn btn btn-info" >Edit</button></a>
                             </p>
                             <p>
@@ -75,7 +75,7 @@
 
                         <div class="container pre-posts">
                             <p><c:out value="${eventOne.name}"/>
-                                <a  href="editPostForm?newsFeedId=${eventOne.newsFeedId}">
+                                <a  href="editContent?newsFeedId=${eventOne.newsFeedId}">
                                     <button class="edit-btn btn btn-info" >Edit</button></a>
                             </p>
                             <p>
@@ -84,7 +84,7 @@
                         </div>
                         <div class="container pre-posts">
                             <p><c:out value="${eventTwo.name}"/>
-                                <a  href="editPostForm?newsFeedId=${eventTwo.newsFeedId}">
+                                <a  href="editContent?newsFeedId=${eventTwo.newsFeedId}">
                                     <button class="edit-btn btn btn-info" >Edit</button></a>
                             </p>
                             <p>
@@ -94,7 +94,7 @@
                         <hr>
 
                             <div class="container pre-posts">
-                               <sf:form role="form" action="updateImg" method="POST" >
+                               <sf:form role="form" action="updateHomeImg" method="POST" >
                             <div class="form-group">
                                 <div class="col-md-8">
                                     <label><c:out value="${message}"/></label>

@@ -29,7 +29,7 @@
                         <sec:authorize access="hasRole('ROLE_ADMIN')">
                             <sf:form  class="form-horizontal" 
                                       role="form"  method="POST" 
-                                      action="newsFeed">
+                                      action="createNewsFeed">
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <div class="col-md-9">
@@ -79,7 +79,7 @@
                                 <sec:authorize access="hasRole('ROLE_ADMIN')">
                                     <p>
                                         <a class="grey" href="editNewsForm?newsFeedId=${news.newsFeedId}">edit</a> 
-                                        <a class="grey" href="deleteNewsFeed?newsFeedId=${news.newsFeedId}">delete</a>
+                                        <a class="grey" href="deleteNews?newsFeedId=${news.newsFeedId}">delete</a>
                                     </p>
                                 </sec:authorize>
                             </div>

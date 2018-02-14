@@ -52,7 +52,7 @@
                         <a  href="${pageContext.request.contextPath}/newsFeed">News</a>
                     </div></li>
                 <li><div class="col-sm-2 align-top " id="blog">
-                        <a  href="${pageContext.request.contextPath}/post">Posts</a>
+                        <a  href="${pageContext.request.contextPath}/displayPost">Posts</a>
                     </div></li>
                 <li>
                     <div class="col-sm-2 align-top " id="home">

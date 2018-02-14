@@ -1,8 +1,9 @@
 <%-- 
-    Document   : EditContent
-    Created on : Dec 23, 2017, 11:35:20 PM
+    Document   : EditPost
+    Created on : Feb 13, 2018, 2:45:06 PM
     Author     : ritheenhep
 --%>
+
 <%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -15,7 +16,7 @@
        <head>
         <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Admin Page</title>
+        <title>Edit Post</title>
         <!-- Bootstrap core CSS -->
         <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
             <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
@@ -24,30 +25,31 @@
 
                     <div id="header"></div>
                     <div class="container-fluid " id="contain">
-                        <sf:form role="form" action="updateContent" method="POST" modelAttribute="newsFeed">
-                            <div class="form-group">
-                                <div class="col-md-8">
-                                    <sf:input type="text" class="form-control" id="title"
-                                              path="name" placeholder="Enter your Title here"/>
-                                    <sf:errors path="name" cssclass="error"></sf:errors>
-                                    </div>
-                                </div>
-                                
+<!--                        //something wrong with this action updatePost not found-->
+
+
+    
+                        <sf:form role="form" action="updatePost" method="POST" modelAttribute="newPost">
                                 <div class="form-group">
                                     <div class="col-md-8">
-                                    <sf:hidden path="date" value="${date}"/>
-                                    <sf:textarea type="text"  id="content"
-                                                 path="content" placeholder="Enter your news Feed here" maxlength="250" />
+                                      ${commentOut}  
+                                    <sf:textarea type="text"  id="content" name="content"
+                                                 path="content" placeholder="Enter your comment here"/>
                                     <sf:errors path="content" cssclass="error"></sf:errors>
-                                    <sf:hidden path="link"/>
-                                    <sf:hidden path="newsFeedId"/>
-                                    <input type="submit" class="btn btn-default" value="Update Content"/>
+                                   
+                                    <sf:input path="imagePath" placeholder="Link to photo"/>
+                                    <sf:input path="imagePathTwo" placeholder="Link to photo"/>
+                                    <sf:input name="date" type="hidden" path="publishDate"/>
+                                    <%--<sf:input name="user" type="hidden" path="user"/>--%>
+                                    <input name="userId" value="${newPost.user.userId}"/>
+                                    <sf:hidden path="postId"/>
+                                    <sf:hidden path="title"/>
+                                    <input type="submit" class="btn btn-default" value="Update"/>
                                 </div>
                             </div>
                         </sf:form>
-                      
                     </div>
-                    
+
                     <hr>             
                         <footer id="footer"></footer>
                         <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>

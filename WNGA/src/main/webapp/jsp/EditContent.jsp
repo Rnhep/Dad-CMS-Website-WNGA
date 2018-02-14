@@ -24,7 +24,7 @@
 
                     <div id="header"></div>
                     <div class="container-fluid " id="contain">
-                        <sf:form role="form" action="updateNewsFeed" method="POST" modelAttribute="newsFeed">
+                        <sf:form role="form" action="updateContent" method="POST" modelAttribute="newsFeed">
                             <div class="form-group">
                                 <div class="col-md-8">
                                     <sf:input type="text" class="form-control" id="title"
@@ -45,8 +45,9 @@
                                 </div>
                             </div>
                         </sf:form>
+                      
                     </div>
-
+                    
                     <hr>             
                         <footer id="footer"></footer>
                         <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>

@@ -32,7 +32,6 @@ public class NewPost {
     private String imagePathTwo;
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     private LocalDateTime publishDate;
-    
     private User user;
 
     public int getPostId() {

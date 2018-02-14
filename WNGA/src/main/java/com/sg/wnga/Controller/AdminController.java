@@ -11,6 +11,7 @@ import com.sg.wnga.DAO.GetCountDao;
 import com.sg.wnga.DAO.NewPostDao;
 import com.sg.wnga.DAO.NewsFeedDao;
 import com.sg.wnga.DAO.UserDao;
+import com.sg.wnga.Model.NewPost;
 import com.sg.wnga.Model.NewsFeed;
 import com.sg.wnga.Model.User;
 import java.time.LocalDate;
@@ -49,7 +50,7 @@ public class AdminController {
     }
 
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
-    public String editForm(HttpServletRequest rq, Model model) {
+    public String admin(HttpServletRequest rq, Model model) {
         NewsFeed contentOne = NFDao.getNewsFeedById(FOR_CONTENT_ONE);
         NewsFeed contentTwo = NFDao.getNewsFeedById(FOR_CONTENT_TWO);
         NewsFeed contentThree = NFDao.getNewsFeedById(FOR_CONTENT_THREE);
@@ -91,8 +92,8 @@ public class AdminController {
         return "Admin";
     }
 
-    @RequestMapping(value = "/editPostForm", method = RequestMethod.GET)
-    public String updateNewsFeed(HttpServletRequest rq, Model model) {
+    @RequestMapping(value = "/editContent", method = RequestMethod.GET)
+    public String editContent(HttpServletRequest rq, Model model) {
         String contentOneIdParameter = rq.getParameter("newsFeedId");
         int newsfeedId = Integer.parseInt(contentOneIdParameter);
         NewsFeed newsFeed = NFDao.getNewsFeedById(newsfeedId);
@@ -102,8 +103,8 @@ public class AdminController {
         return "EditContent";
     }
 
-    @RequestMapping(value = "/updateNewsFeed", method = RequestMethod.POST)
-    public String updateNewsFeed(@Valid @ModelAttribute("newsFeed") NewsFeed newsFeed,
+    @RequestMapping(value = "/updateContent", method = RequestMethod.POST)
+    public String updateContent(@Valid @ModelAttribute("newsFeed") NewsFeed newsFeed,
             BindingResult result) {
         if (result.hasErrors()) {
             return "customError";
@@ -134,7 +135,7 @@ public class AdminController {
     }
 
     @RequestMapping(value = "/editNewsForm", method = RequestMethod.GET)
-    public String editNewsFeed(HttpServletRequest rq, Model model) {
+    public String editNews(HttpServletRequest rq, Model model) {
         String contentOneIdParameter = rq.getParameter("newsFeedId");
         int newsfeedId = Integer.parseInt(contentOneIdParameter);
         NewsFeed newsFeed = NFDao.getNewsFeedById(newsfeedId);
@@ -154,7 +155,7 @@ public class AdminController {
         NFDao.updateNewsFeed(newsFeed);
         return "redirect:newsFeed";
     }
-      @RequestMapping(value = "/deleteNewsFeed", method = RequestMethod.GET)
+      @RequestMapping(value = "/deleteNews", method = RequestMethod.GET)
     public String deleteNewsFeed(HttpServletRequest rq, Model model) {
         String newsFeedIdParameter = rq.getParameter("newsFeedId");
         int newsFeedId = Integer.parseInt(newsFeedIdParameter);
@@ -162,8 +163,9 @@ public class AdminController {
          return  "redirect:newsFeed";
         
     }
+ 
 
-    @RequestMapping(value = "/updateImg", method = RequestMethod.POST)
+    @RequestMapping(value = "/updateHomeImg", method = RequestMethod.POST)
     public String updateImgOne(HttpServletRequest rq) {
         String imgLink = rq.getParameter("imgLink");
         String idInput = rq.getParameter("idInput");
