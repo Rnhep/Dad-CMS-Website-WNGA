@@ -1,12 +1,13 @@
+This project is not yet live. It is in developing process.
 
-WNGA is a non-profit organization.
+WNGA (World New Generation Ankorean) is a non-profit organization.
 
-personal project: for WNGA website. 
+volunteered to create a website for this non-profit organization. November 2017 - present 
 
-volunteer to create a website for this non-profit organization. 
-
-This is a small web content management system for the none profit organization. 
+This is a small and basic CRUD web application.
 
 This application allows admins to disable and enable any users that violated the site usage policies.
 
-before users can post any comments, each user has to be authenticated or register with the site. 
+Before users can post any comments, each user has to be authenticated or register with the site.
+
+Tools, Languages, and Technologies uses to create this website:  Netbeans IDE, Java, JSP, Servlet, JSTL, EL, HTML5/CSS3/ Javascript, Mysql Workbench, Mysql, Mysql server, Apache Tomcat, Spring MVC, Spring Security and Spring DI.  
