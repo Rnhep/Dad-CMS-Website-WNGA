@@ -23,8 +23,11 @@
                 <body> 
 
                     <div id="header"></div>
-                    <div class="container-fluid " id="contain">
-                        <sf:form role="form" action="updateContent" method="POST" modelAttribute="newsFeed">
+                    
+                    <div class="container" id="expand">
+                         <div class="form-group">
+                        <sf:form role="form" action="updateContent" 
+                                 method="POST" modelAttribute="newsFeed">
                             <div class="form-group">
                                 <div class="col-md-8">
                                     <sf:input type="text" class="form-control" id="title"
@@ -36,7 +39,7 @@
                                 <div class="form-group">
                                     <div class="col-md-8">
                                     <sf:hidden path="date" value="${date}"/>
-                                    <sf:textarea type="text"  id="content"
+                                    <sf:textarea type="text"  
                                                  path="content" placeholder="Enter your news Feed here" maxlength="250" />
                                     <sf:errors path="content" cssclass="error"></sf:errors>
                                     <sf:hidden path="link"/>
@@ -45,7 +48,7 @@
                                 </div>
                             </div>
                         </sf:form>
-                      
+                         </div>
                     </div>
                     
                     <hr>             

@@ -24,108 +24,101 @@
             <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
                 </head>
                 <body>
-                    <div id="header">
-                    </div>
+                    <div id="header"></div>
                     <div class="container">
+
                         <!--Add post form for user/admin role-->
                         <sec:authorize access="isAuthenticated()">
-                            <div id="add-post" class="col-md-12">
-                                <sf:form  class="form-horizontal" 
-                                          role="form"  method="POST" 
-                                          action="creatNewPost">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <div class="col-md-6">
-                                                <div ><c:out value="${message}"/></div>
-                                                
-                                                <div class="form-group container">
-                                                    <input type="text" class="form-control" name="photo" placeholder="Link to a photo only"  />
-                                                </div>
-                                                <div class="form-group container">
-                                                    <input type="text" class="form-control" name="photoTwo" placeholder="Link to a photo only"  />
-                                                </div>
-                                                <textarea  type="text" class="commentbox" name="comment"   placeholder="Comment required" required>${commentOut}</textarea> 
-                                                <input type="hidden" name="userName" value="${pageContext.request.userPrincipal.name}"/>
-                                                <input type="submit" id="log-in-btn" class="form-control" value="Submit Post"/>
-                                            </div>
-                                        </div>
+                            <div class="container">
+                                <sf:form role="form"  method="POST" 
+                                         action="creatNewPost">
+                                    <div ><c:out value="${message}"/></div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="photo" placeholder="Link to a photo only"  />
                                     </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="photoTwo" placeholder="Link to a photo only"  />
+                                    </div>
+                                    <textarea  type="text" name="comment"   placeholder="Comment required" required>${commentOut}</textarea> 
+                                    <input type="hidden" name="userName" value="${pageContext.request.userPrincipal.name}"/>
+                                    <input type="submit" id="log-in-btn" class="form-control" value="Submit Post"/>
                                 </sf:form> 
-                            </div>
-                        </sec:authorize>
-                        <!------------------------------------------------------------------------------------------------------------------------------>                         
 
-                        <div class="col-md-12 ">
-                            <div class="form-group">
-                                <div  class="form-control box1 pre-posts">
-                                    <c:if test="${empty pageContext.request.userPrincipal.name}">
-                                        <p class="login">
-                                          <c:out value="${logIn}"/><a  href="${pageContext.request.contextPath}/signIn">Sign In</a>
+                            </sec:authorize>
+
+                            <!------------------------------------------------------------------------------------------------------------------------------>                         
+
+                            <div class="col-md-12 ">
+                                <div class="form-group">
+                                    <div  class="form-control to-center pre-posts">
+                                        <c:if test="${empty pageContext.request.userPrincipal.name}">
+                                            <p class="login">
+                                                <c:out value="${logIn}"/><a  href="${pageContext.request.contextPath}/signIn">Sign In</a>
+                                            </p>
+                                        </c:if>
+
+                                        <p>
+                                            <%
+                                                LocalDateTime date = LocalDateTime.now();
+                                                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("E MMM-dd-yyyy HH:mma  ");
+                                                String dates = formatter.format(date);
+                                                out.print("Today is " + dates);
+                                            %>
+
+                                        </p>
+                                        <hr></hr>
+                                        <p class="newPost">
+                                            <c:out value="${newPost}"/>
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <c:forEach var="allPosts" items="${displayAllPost}">
+                                <div class="container pre-posts">
+                                    <p>
+                                        <span class="grey">
+                                            <c:if test="${!empty allPosts.user.photo}">
+                                                <img  id="user-img" 
+                                                      src="${allPosts.user.photo}"/>
+                                            </c:if>
+                                            <c:out value="${allPosts.user.userName}..."/>
+                                            <fmt:parseDate pattern="yyyy-MM-dd'T'HH:mm:ss" value=" ${allPosts.publishDate}" var="Postdate"/>
+                                            <fmt:formatDate value="${Postdate}" pattern="E MMM-dd-yyyy @hh:mma"/>
+                                        </span>
+
+                                    </p>
+                                    <hr class="userinfo-Hr"></hr>
+                                    <p>
+                                        <c:out value="${allPosts.content}"/>
+                                    </p>
+                                    <div class="container img-center">
+                                        <c:if test="${!empty allPosts.imagePath}">
+                                            <a href="${allPosts.imagePath}">
+                                                <img src="${allPosts.imagePath}"/>
+                                            </a>
+                                            <c:if test="${!empty allPosts.imagePathTwo}">
+                                                <a href="${allPosts.imagePathTwo}"> 
+                                                    <img src="${allPosts.imagePathTwo}"/>
+                                                </a>
+                                            </c:if>
+                                        </c:if>                 
+                                    </div>
+
+                                    <hr class="newPost-Hr"></hr>
+
+                                    <c:if test="${pageContext.request.userPrincipal.name == allPosts.user.userName}">
+                                        <p class="edit-delete">
+                                            <a class="grey " href="editPostForm?postId=${allPosts.postId}">edit</a> 
+                                            <a class="grey" href="deletePost?postId=${allPosts.postId}">delete</a>
                                         </p>
                                     </c:if>
-                                      <p>
-                                        <%
-                                            LocalDateTime date = LocalDateTime.now();
-                                            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("E MMM-dd-yyyy HH:mma  ");
-                                            String dates = formatter.format(date);
-                                            out.print("Today is " + dates);
-                                        %>
 
-                                    </p>
-                                    <hr></hr>
-                                    <p class="newPost">
-                                       <c:out value="${newPost}"/>
-                                    </p>
-                                  
-                                </div>
-                            </div>
+                                </div> 
+
+                            </c:forEach>
                         </div>
-                        <c:forEach var="allPosts" items="${displayAllPost}">
-                            <div class="container  pre-posts">
-                                <p>
-                                     <span class="grey">
-                                          <c:if test="${!empty allPosts.user.photo}">
-                                         <img  id="user-img" 
-                                     src="${allPosts.user.photo}"/>
-                                          </c:if>
-                                    <c:out value="${allPosts.user.userName}..."/>
-                                    <fmt:parseDate pattern="yyyy-MM-dd'T'HH:mm:ss" value=" ${allPosts.publishDate}" var="Postdate"/>
-                                    <fmt:formatDate value="${Postdate}" pattern="E MMM-dd-yyyy @hh:mma"/>
-                                </span>
-                              
-                                </p>
-                                 <hr></hr>
-                                <p>
-                                    <c:out value="${allPosts.content}"/>
-                                </p>
-                                <div class="container img-center">
-                                    <c:if test="${!empty allPosts.imagePath}">
-                                        <a href="${allPosts.imagePath}">
-                                            <img src="${allPosts.imagePath}"/>
-                                        </a>
-                                        <c:if test="${!empty allPosts.imagePathTwo}">
-                                            <a href="${allPosts.imagePathTwo}"> 
-                                                <img src="${allPosts.imagePathTwo}"/>
-                                            </a>
-                                        </c:if>
-                                    </c:if>                 
-                                </div>
-                               
-                              <hr></hr>
-                            
-                                  
-                                        <c:if test="${pageContext.request.userPrincipal.name == allPosts.user.userName}">
-                                        <p>
-                                        <a class="grey" href="editPostForm?postId=${allPosts.postId}">edit</a> 
-                                        <a class="grey" href="deletePost?postId=${allPosts.postId}">delete</a>
-                                    </p>
-                                        </c:if>
-                              
-                            </div> 
-
-                        </c:forEach>
                     </div>
-
                     <hr></hr>
                     <footer id="footer"></footer>
                     <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>

@@ -11,7 +11,6 @@ import com.sg.wnga.DAO.GetCountDao;
 import com.sg.wnga.DAO.NewPostDao;
 import com.sg.wnga.DAO.NewsFeedDao;
 import com.sg.wnga.DAO.UserDao;
-import com.sg.wnga.Model.NewPost;
 import com.sg.wnga.Model.NewsFeed;
 import com.sg.wnga.Model.User;
 import java.time.LocalDate;
@@ -97,9 +96,11 @@ public class AdminController {
         String contentOneIdParameter = rq.getParameter("newsFeedId");
         int newsfeedId = Integer.parseInt(contentOneIdParameter);
         NewsFeed newsFeed = NFDao.getNewsFeedById(newsfeedId);
-        model.addAttribute("newsFeed", newsFeed);
         LocalDate date = LocalDate.now();
+        model.addAttribute("newsFeed", newsFeed);
         model.addAttribute("date", date);
+      
+        
         return "EditContent";
     }
 

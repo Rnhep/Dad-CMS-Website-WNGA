@@ -30,8 +30,13 @@
                         <hr></hr>
                         <div class="container">
                             <button class="btn-danger">Delete 100 Posts </button> <button class="btn-danger"> Delete 100 News</button> 
-                        </div>
+                        </div> 
+                        <div class="container admin-note">
+                                <p> Home Page Content</p>
+                            </div>  
                         <div class="container pre-posts">
+                           
+                        
                             <p><c:out value="${contentOne.name}"/>
                                 <a  href="editContent?newsFeedId=${contentOne.newsFeedId}">
                                     <button class="edit-btn btn btn-info" >Edit</button></a>

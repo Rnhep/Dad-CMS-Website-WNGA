@@ -75,7 +75,7 @@
             </ul>
 
         </div>
-        <hr class="hr">
+                    <hr class="header-Hr">
 
 
     </body>

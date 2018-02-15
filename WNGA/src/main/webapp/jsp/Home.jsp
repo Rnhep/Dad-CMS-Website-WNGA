@@ -19,16 +19,20 @@
                             <div id="up"></div>
                             <div class="container">
                                 <div class=" container pre-posts">
-                                    <p class="upcoming"> Upcoming Events: </p>
-                                    <p><c:out value="${eventOne.name}"/></p>
-                                    <p><c:out value="${eventOne.content}"/></p>
+                                    <p class="upcoming"> Upcoming Events:</p>
+                                    <pre><c:out value="${eventOne.name}"/>
+                                     <c:out value="${eventOne.content}"/></pre>
                                     <hr></hr>
-                                    <p><c:out value="${eventTwo.name}"/></p>
-                                    <p><c:out value="${eventTwo.content}"/></p>
+                                    <pre><c:out value="${eventTwo.name}"/>
+                                    <c:out value="${eventTwo.content}"/></pre>
                                 </div>
                             </div>
                             <hr></hr>
                             <div class="container">
+                                <div class="container pre-posts to-center"> 
+                                    <p id="recent-post"> <c:out value="${latestPost}"/>
+                                    </p>
+                                </div>
                                 <c:forEach var="latestPost" items="${displayLatestPost}">
                                     <div class="container post-preview">
                                        <c:out value="${latestPost.title}"/>
@@ -50,7 +54,7 @@
                                 <div class="container-fluid box " id="bg" 
                                      style=" background: linear-gradient(to bottom, 
                                      rgba(0,0,0,0.2) 4%,rgba(0,0,0,0.2) 100%), 
-                                     url(${contentOne.link})no-repeat ; background-size:cover" >
+                                     url(${contentOne.link})no-repeat center; background-size:cover" >
                                      <p>
                                         <c:out value="${contentOne.name}"/>
                                     </p>
@@ -59,7 +63,7 @@
                                     </p>
                                 </div>
                                
-                                <div class="container-fluid  box1 " id="bg" >
+                                <div class="container-fluid  to-center " id="bg" >
                                      <p>
                                         <c:out value="${contentTwo.name}"/>
                                     </p>
@@ -70,7 +74,7 @@
                                 <div class="container-fluid box" id="bg" 
                                      style=" background: linear-gradient(to bottom, 
                                      rgba(0,0,0,0.2) 4%,rgba(0,0,0,0.2) 100%), 
-                                     url(${contentThree.link})no-repeat; background-size:cover" >
+                                     url(${contentThree.link})no-repeat center; background-size:cover" >
                                  <p>
                                         <c:out value="${contentThree.name}"/>
 
@@ -80,7 +84,7 @@
                                     </p>
                                 </div>
                                
-                                <div class="container-fluid box1 " id="bg" >
+                                <div class="container-fluid to-center " id="bg" >
                                      <p>
                                         <c:out value="${contentFour.name}"/>
 

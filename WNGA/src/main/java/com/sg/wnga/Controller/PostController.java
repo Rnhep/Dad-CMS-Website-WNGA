@@ -18,11 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -124,10 +121,9 @@ public class PostController {
         model.addAttribute("commentOut", commentOut);
         return "EditPost";
     }
-//work left here
+
     @RequestMapping(value = "/updatePost", method = RequestMethod.POST)
-    public String updatePost(HttpServletRequest rq, NewPost newPost,
-            BindingResult result) {
+    public String updatePost(HttpServletRequest rq, NewPost newPost) {
         String content = rq.getParameter("content");
         if (content == null || content.isEmpty() || content.trim().length() == 0) {
             return "customError";

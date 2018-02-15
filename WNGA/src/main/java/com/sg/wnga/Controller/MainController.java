@@ -54,6 +54,8 @@ public class MainController {
         List<NewPost> displayLatestPost = new ArrayList<>();
         displayLatestPost = NPDao.getLatestPost();
         model.addAttribute("displayLatestPost", displayLatestPost);
+        String latestPost = "Recent Posts";
+        model.addAttribute("latestPost", latestPost);
         return "Home";
     }
 

@@ -24,7 +24,7 @@
                 </head>
                 <body>
                     <div id="header"> </div>
-                    <div class="container-fluid">
+                    <div class="container">
                         <!--Add post form for user/admin role-->
                         <sec:authorize access="hasRole('ROLE_ADMIN')">
                             <sf:form  class="form-horizontal" 
@@ -52,7 +52,7 @@
                         <!------------------------------------------------------------------------------------------------------------------------------>                         
                        <div class="col-md-12 ">
                             <div class="form-group">
-                                <div  class="form-control box1 pre-posts">
+                                <div  class="form-control to-center pre-posts">
                                     <p>  
                                         <%
                                             out.print("Today News");
@@ -75,9 +75,9 @@
                                 <p>
                                     <c:out value="${news.content}"/>
                                 </p>
-                                <hr></hr>
+                                <hr class="newPost-Hr"></hr>
                                 <sec:authorize access="hasRole('ROLE_ADMIN')">
-                                    <p>
+                                    <p class="edit-delete">
                                         <a class="grey" href="editNewsForm?newsFeedId=${news.newsFeedId}">edit</a> 
                                         <a class="grey" href="deleteNews?newsFeedId=${news.newsFeedId}">delete</a>
                                     </p>
