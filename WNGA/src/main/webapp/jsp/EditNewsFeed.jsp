@@ -15,7 +15,7 @@
        <head>
         <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Admin Page</title>
+        <title>WNGA Edit News</title>
         <!-- Bootstrap core CSS -->
         <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
             <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
@@ -32,15 +32,6 @@
                                     <sf:errors path="name" cssclass="error"></sf:errors>
                                     </div>
                                 </div>
-                                   
-                                     <div class="form-group">
-                                    <div class="col-md-8">
-                                    <sf:input type="text" class="form-control" id="title"
-                                              path="link" placeholder="Enter your Title here"/>
-                                    <sf:errors path="link" cssclass="error"></sf:errors>
-                                    </div>
-                                </div>
-                                   
                                 <div class="form-group">
                                     <div class="col-md-8">
                                     <sf:hidden path="date" value="${date}"/>
@@ -56,9 +47,15 @@
 
                     <hr>             
                         <footer id="footer"></footer>
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+                        <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
                         <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
+                        <script src="${pageContext.request.contextPath}/js/linkify.js"></script>
+                        <script src="${pageContext.request.contextPath}/js/linkify.min.js"></script>
+                        <script src="${pageContext.request.contextPath}/js/linkify-jquery.min.js"></script>
                         <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
                         <script src="${pageContext.request.contextPath}/js/Home.js"></script>
+                        <script src="${pageContext.request.contextPath}/js/linkify.js"></script>
 
                 </body>
                 </html>

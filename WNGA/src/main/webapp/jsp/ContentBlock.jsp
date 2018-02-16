@@ -10,13 +10,21 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"/>
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
-<link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
     </head>
     <body>
-                        <p>
-                            <c:out value="${contentFour.content}"/>
-                        </p>
-                   
+        <p>
+            <c:out value="${contentFour.content}"/>
+        </p>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
+        <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
+        <script src="${pageContext.request.contextPath}/js/linkify.js"></script>
+        <script src="${pageContext.request.contextPath}/js/linkify.min.js"></script>
+        <script src="${pageContext.request.contextPath}/js/linkify-jquery.min.js"></script>
+        <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+        <script src="${pageContext.request.contextPath}/js/Home.js"></script>
+        <script src="${pageContext.request.contextPath}/js/linkify.js"></script>
     </body>
 </html>

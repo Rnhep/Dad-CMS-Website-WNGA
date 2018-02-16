@@ -16,7 +16,7 @@
        <head>
         <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>update profile</title>
+        <title>WNGA Your Profile</title>
         <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
             <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
                 </head>
@@ -25,8 +25,7 @@
                     <div class="container user-info">
                         <div class="container profile">
                             <p> ${msg} </p>
-                            <img  id="#userprofile-img" 
-                                     src="${currentLogInUser.photo}"/>
+                            <img src="${currentLogInUser.photo}"/>
                             <p><a href="updateProfileForm?userId=${currentLogInUser.userId}">
                                     <input  type="button" class="form-control"  value="Update Profile"/></a></p>
                             <hr></hr>
@@ -45,13 +44,17 @@
                         </div>
                     </div>
 
-
                     <hr></hr>
                     <footer id="footer"></footer>
                     <!-- Placed at the end of the document so the pages load faster -->
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
                     <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/linkify.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/linkify.min.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/linkify-jquery.min.js"></script>
                     <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
                     <script src="${pageContext.request.contextPath}/js/Home.js"></script>
-
+                    <script src="${pageContext.request.contextPath}/js/linkify.js"></script>
                 </body>
                 </html>

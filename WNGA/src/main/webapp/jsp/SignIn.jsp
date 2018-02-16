@@ -16,7 +16,7 @@
        <head>
         <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Sign in</title>
+        <title>WNGA Sign in</title>
 
         <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
             <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
@@ -53,7 +53,7 @@
                                 </div>
                             </sf:form> 
                             <div class="col-sm-2 align-top " >
-                                <a href="${pageContext.request.contextPath}/signUp">${signUp}</a>  <a href="${pageContext.request.contextPath}/signUp">${password}</a>
+                                <a href="${pageContext.request.contextPath}/signUp">${signUp}</a> 
                             </div>
                         </div>
                     </div>

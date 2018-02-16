@@ -100,7 +100,10 @@ public class PostController {
         String name = rq.getParameter("name");
         String link = rq.getParameter("link");
         String content = rq.getParameter("content");
-
+        if( name == null || name.isEmpty() || name.trim().length() == 0
+                || content == null || content.trim().length() == 0){
+             return "customError";
+        }
         NewsFeed newsFeed = new NewsFeed();
         LocalDate datePost = LocalDate.now();
         newsFeed.setName(name);

@@ -24,7 +24,7 @@ public class LogIncontroller {
      //log in
     @RequestMapping(value = "/signIn", method = RequestMethod.GET)
     public String signinform(Model model) {
-        String signUp = "| Sign Up";
+        String signUp = "| New User |";
         String password = "| Forgot User Name or Password?";
         model.addAttribute("signUp", signUp);
         model.addAttribute("password", password);

@@ -10,7 +10,7 @@
        <head>
         <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Admin Page</title>
+        <title>WNGA Admin</title>
         <!-- Bootstrap core CSS -->
         <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
             <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
@@ -32,11 +32,11 @@
                             <button class="btn-danger">Delete 100 Posts </button> <button class="btn-danger"> Delete 100 News</button> 
                         </div> 
                         <div class="container admin-note">
-                                <p> Home Page Content</p>
-                            </div>  
+                            <p> Home Page Content</p>
+                        </div>  
                         <div class="container pre-posts">
-                           
-                        
+
+
                             <p><c:out value="${contentOne.name}"/>
                                 <a  href="editContent?newsFeedId=${contentOne.newsFeedId}">
                                     <button class="edit-btn btn btn-info" >Edit</button></a>
@@ -76,87 +76,93 @@
                             <div class="container admin-note">
                                 <p> Current Events</p>
                             </div>  
-                        
 
-                        <div class="container pre-posts">
-                            <p><c:out value="${eventOne.name}"/>
-                                <a  href="editContent?newsFeedId=${eventOne.newsFeedId}">
-                                    <button class="edit-btn btn btn-info" >Edit</button></a>
-                            </p>
-                            <p>
-                                <c:out value="${eventOne.content}"/>
-                            </p>
-                        </div>
-                        <div class="container pre-posts">
-                            <p><c:out value="${eventTwo.name}"/>
-                                <a  href="editContent?newsFeedId=${eventTwo.newsFeedId}">
-                                    <button class="edit-btn btn btn-info" >Edit</button></a>
-                            </p>
-                            <p>
-                                <c:out value="${eventTwo.content}"/>
-                            </p>
-                        </div>
-                        <hr>
 
                             <div class="container pre-posts">
-                               <sf:form role="form" action="updateHomeImg" method="POST" >
-                            <div class="form-group">
-                                <div class="col-md-8">
-                                    <label><c:out value="${message}"/></label>
-                                    <input type="text" class="form-control" name="idInput" placeholder="Please enter image number" required/>
-                                    <label><c:out value="${linkOut}"/></label>
-                                    <input type="text" class="form-control" name="imgLink" placeholder="Link to your Photo"/>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-8">
-                            <input type="submit" class="btn btn-info" value="Update"/>
-                                </div>
-                            </div>
-                        </sf:form>
-                            </div>
-                             <hr>
-                            <div class="container admin-note">
-
-                                <p>
-                                    Current Users | ${usersCount} | 
+                                <p><c:out value="${eventOne.name}"/>
+                                    <a  href="editContent?newsFeedId=${eventOne.newsFeedId}">
+                                        <button class="edit-btn btn btn-info" >Edit</button></a>
                                 </p>
-
+                                <p>
+                                    <c:out value="${eventOne.content}"/>
+                                </p>
                             </div>
-                       
-                        <!--All users-->
-                        <div class="container user-box" id="user-table" >
-                            <c:forEach var="currentUser" items="${userList}">
-                                <div class="container user-box" > 
-                                    <p> ${name}${currentUser.firstName} ${currentUser.lastName} |
-                                        ${userName}: ${currentUser.userName}
-                                    </p>   
-                                    <p>
-                                        <c:if test="${currentUser.enable == true}">
-                                            User is: Enabled
-                                        </c:if>
-                                        <c:if test="${currentUser.enable == false}">
-                                            User is: Disabled
-                                        </c:if> 
-                                        <sf:form role="form" action="enabledUser" method="POST" >
-                                            <input type="hidden" name="userId" value="${currentUser.userId}"/>
-                                            <button type="submit" class="edit-btn btn btn-danger " >Enable</button>
-                                        </sf:form>
+                            <div class="container pre-posts">
+                                <p><c:out value="${eventTwo.name}"/>
+                                    <a  href="editContent?newsFeedId=${eventTwo.newsFeedId}">
+                                        <button class="edit-btn btn btn-info" >Edit</button></a>
+                                </p>
+                                <p>
+                                    <c:out value="${eventTwo.content}"/>
+                                </p>
+                            </div>
+                            <hr>
 
-                                        <sf:form role="form" action="disabledUser" method="POST" >
-                                            <input type="hidden" name="userId" value="${currentUser.userId}"/>
-                                            <button type="submit" class="btn btn-danger " >Disable</button>
-                                        </sf:form>
-                                    </p>
+                                <div class="container pre-posts">
+                                    <sf:form role="form" action="updateHomeImg" method="POST" >
+                                        <div class="form-group">
+                                            <div class="col-md-8">
+                                                <label><c:out value="${message}"/></label>
+                                                <input type="text" class="form-control" name="idInput" placeholder="Please enter image number" required/>
+                                                <label><c:out value="${linkOut}"/></label>
+                                                <input type="text" class="form-control" name="imgLink" placeholder="Link to your Photo"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-8">
+                                                <input type="submit" class="btn btn-info" value="Update"/>
+                                            </div>
+                                        </div>
+                                    </sf:form>
                                 </div>
-                            </c:forEach>
-                        </div>
-                    </div>
-                    <hr> </hr>         
-                    <footer id="footer"></footer>
-                    <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
-                    <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
-                    <script src="${pageContext.request.contextPath}/js/Home.js"></script>
+                                <hr>
+                                    <div class="container admin-note">
 
-                </body>
-                </html>
+                                        <p>
+                                            Current Users | ${usersCount} | 
+                                        </p>
+
+                                    </div>
+
+                                    <!--All users-->
+                                    <div class="container user-box" id="user-table" >
+                                        <c:forEach var="currentUser" items="${userList}">
+                                            <div class="container user-box" > 
+                                                <p> ${name}${currentUser.firstName} ${currentUser.lastName} |
+                                                    ${userName}: ${currentUser.userName}
+                                                </p>   
+                                                <p>
+                                                    <c:if test="${currentUser.enable == true}">
+                                                        User is: Enabled
+                                                    </c:if>
+                                                    <c:if test="${currentUser.enable == false}">
+                                                        User is: Disabled
+                                                    </c:if> 
+                                                    <sf:form role="form" action="enabledUser" method="POST" >
+                                                        <input type="hidden" name="userId" value="${currentUser.userId}"/>
+                                                        <button type="submit" class="edit-btn btn btn-danger " >Enable</button>
+                                                    </sf:form>
+
+                                                    <sf:form role="form" action="disabledUser" method="POST" >
+                                                        <input type="hidden" name="userId" value="${currentUser.userId}"/>
+                                                        <button type="submit" class="btn btn-danger " >Disable</button>
+                                                    </sf:form>
+                                                </p>
+                                            </div>
+                                        </c:forEach>
+                                    </div>
+                                    </div>
+                                    <hr> </hr>         
+                                    <footer id="footer"></footer>
+                                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+                                    <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
+                                    <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
+                                    <script src="${pageContext.request.contextPath}/js/linkify.js"></script>
+                                    <script src="${pageContext.request.contextPath}/js/linkify.min.js"></script>
+                                    <script src="${pageContext.request.contextPath}/js/linkify-jquery.min.js"></script>
+                                    <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+                                    <script src="${pageContext.request.contextPath}/js/Home.js"></script>
+                                    <script src="${pageContext.request.contextPath}/js/linkify.js"></script>
+
+                                    </body>
+                                    </html>

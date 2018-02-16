@@ -18,7 +18,7 @@
        <head>
         <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>New Post</title>
+        <title>WNGA News</title>
         <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
             <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
                 </head>
@@ -37,9 +37,6 @@
                                             <div class="form-group container-fluid">
                                                 <input type="text" class="form-control" name="name" placeholder="Your Name"  required/>
                                             </div>
-                                            <div class="form-group container-fluid">
-                                                <input type="text" class="form-control" name="link" placeholder="Link" />
-                                            </div>
                                             <textarea  type="text" class="commentbox" name="content"   placeholder="Comment required" required>${commentOut}</textarea> 
                                             <input type="hidden" name="userName" value="${pageContext.request.userPrincipal.name}"/>
                                             <input type="submit" id="log-in-btn" class="form-control" value="Submit Post"/>
@@ -50,7 +47,7 @@
 
                         </sec:authorize>
                         <!------------------------------------------------------------------------------------------------------------------------------>                         
-                       <div class="col-md-12 ">
+                        <div class="col-md-12 ">
                             <div class="form-group">
                                 <div  class="form-control to-center pre-posts">
                                     <p>  
@@ -64,13 +61,12 @@
                         <c:forEach var="news" items="${allNews}">
                             <div class="container pre-posts">
                                 <p class="grey">
-                                    <c:out value="${news.name} ${admin}"/>
+                                    <c:out value="${admin}"/>
                                     <fmt:parseDate pattern="yyyy-MM-dd" value=" ${news.date}" var="newsDate"/>
                                     <fmt:formatDate value="${newsDate}" pattern="E MMM-dd-yyyy"/>
-
                                 </p>
                                 <p>
-                                    <a href="${news.link}"><c:out value="${news.link}"/></a>
+                                    <a href="${news.link}" target="_blank"><c:out value="${news.link}"/></a>
                                 </p>
                                 <p>
                                     <c:out value="${news.content}"/>
@@ -88,8 +84,14 @@
 
                     <hr></hr>
                     <footer id="footer"></footer>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
                     <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/linkify.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/linkify.min.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/linkify-jquery.min.js"></script>
                     <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
                     <script src="${pageContext.request.contextPath}/js/Home.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/linkify.js"></script>
                 </body>
                 </html>

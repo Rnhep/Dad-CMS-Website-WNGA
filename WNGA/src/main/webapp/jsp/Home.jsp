@@ -10,7 +10,7 @@
        <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-                <title>Home</title>
+                <title>WNGA Home</title>
                 <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
                     <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
                         </head>
@@ -21,10 +21,10 @@
                                 <div class=" container pre-posts">
                                     <p class="upcoming"> Upcoming Events:</p>
                                     <pre><c:out value="${eventOne.name}"/>
-                                     <c:out value="${eventOne.content}"/></pre>
+                                        <c:out value="${eventOne.content}"/></pre>
                                     <hr></hr>
                                     <pre><c:out value="${eventTwo.name}"/>
-                                    <c:out value="${eventTwo.content}"/></pre>
+                                        <c:out value="${eventTwo.content}"/></pre>
                                 </div>
                             </div>
                             <hr></hr>
@@ -35,7 +35,7 @@
                                 </div>
                                 <c:forEach var="latestPost" items="${displayLatestPost}">
                                     <div class="container post-preview">
-                                       <c:out value="${latestPost.title}"/>
+                                        <c:out value="${latestPost.title}"/>
                                         <p/>
                                         <p>
                                             <a href="${pageContext.request.contextPath}/displayPost">
@@ -55,16 +55,16 @@
                                      style=" background: linear-gradient(to bottom, 
                                      rgba(0,0,0,0.2) 4%,rgba(0,0,0,0.2) 100%), 
                                      url(${contentOne.link})no-repeat center; background-size:cover" >
-                                     <p>
+                                    <p>
                                         <c:out value="${contentOne.name}"/>
                                     </p>
                                     <p>
                                         <c:out value="${contentOne.content}"/>
                                     </p>
                                 </div>
-                               
+
                                 <div class="container-fluid  to-center " id="bg" >
-                                     <p>
+                                    <p>
                                         <c:out value="${contentTwo.name}"/>
                                     </p>
                                     <p>
@@ -75,7 +75,7 @@
                                      style=" background: linear-gradient(to bottom, 
                                      rgba(0,0,0,0.2) 4%,rgba(0,0,0,0.2) 100%), 
                                      url(${contentThree.link})no-repeat center; background-size:cover" >
-                                 <p>
+                                    <p>
                                         <c:out value="${contentThree.name}"/>
 
                                     </p>
@@ -83,9 +83,9 @@
                                         <c:out value="${contentThree.content}"/>
                                     </p>
                                 </div>
-                               
+
                                 <div class="container-fluid to-center " id="bg" >
-                                     <p>
+                                    <p>
                                         <c:out value="${contentFour.name}"/>
 
                                     </p>
@@ -95,9 +95,15 @@
                                 </div>
                                 <hr>             
                                     <footer id="footer"></footer>
+                                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+                                    <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
                                     <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
+                                    <script src="${pageContext.request.contextPath}/js/linkify.js"></script>
+                                    <script src="${pageContext.request.contextPath}/js/linkify.min.js"></script>
+                                    <script src="${pageContext.request.contextPath}/js/linkify-jquery.min.js"></script>
                                     <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
                                     <script src="${pageContext.request.contextPath}/js/Home.js"></script>
+                                    <script src="${pageContext.request.contextPath}/js/linkify.js"></script>
 
                                     </body>
                                     </html>

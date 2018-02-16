@@ -47,7 +47,7 @@ public class UserController {
     //display registration Form
     @RequestMapping(value = "/signUp", method = RequestMethod.GET)
     public String registrationform(Model model) {
-        String registration = "Sign Up";
+        String registration = "Registration";
         String pswmessage = " Password must contain at least one number "
                 + "and one uppercase and lowercase letter, "
                 + "and at least 8 or more characters";

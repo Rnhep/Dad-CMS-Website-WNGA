@@ -20,7 +20,9 @@
   <beans:bean id="encoder"
                 class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
     
-    <http auto-config="true" use-expressions="false">
+   
+         <http auto-config="true" use-expressions="false">
+             
         <form-login login-processing-url="/j_spring_security_check"
                     login-page="/signIn"
                     authentication-failure-url="/signIn?login_error=1"/>

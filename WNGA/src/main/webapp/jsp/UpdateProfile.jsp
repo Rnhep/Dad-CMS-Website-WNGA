@@ -16,7 +16,7 @@
        <head>
         <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Update Password</title>
+        <title>WNGA Profile Update</title>
         <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
             <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
                 </head>
@@ -33,9 +33,9 @@
                                     <sf:errors path="photo" cssClass="error"></sf:errors>
                                     </div>
                                 </div>
-                            <div class="form-group">
-                                <div class="col-md-8">
-                                    <label>Email</label>
+                                <div class="form-group">
+                                    <div class="col-md-8">
+                                        <label>Email</label>
                                     <sf:input type="email" class="form-control" path="email" name="email" placeholder="email" />
                                     <sf:errors path="email" cssClass="error"></sf:errors>
                                     </div>
@@ -65,7 +65,6 @@
                                 </div>
                             </div>
                         </sf:form>
-
                         <sf:form role="form"  modelAttribute="currentUser"  action="updatePassword" method="POST" >
 
                             <div class="form-group">
@@ -84,9 +83,8 @@
                                 <div class="col-md-8">
                                     <label>Confirm new password</label>
                                     <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-control" name="confirmNewPSW" placeholder="Confirm New Password"/>
-                                     ${pswMessage}
+                                    ${pswMessage}
                                 </div>
-                               
                             </div>
                             <input type="hidden" name="existingPSW" value="${currentUser.passWord}"/>
                             <sf:hidden path="userId"/>
@@ -97,18 +95,21 @@
                             <sf:hidden path="joinDate"/>
                             <sf:hidden  path="passWord"/>
                             <input type="submit" id="log-in-btn" class="form-control" value="Update Password"/>
-
-
                         </sf:form>
-
                     </div>
 
                     <hr></hr>
                     <footer id="footer"></footer>
                     <!-- Placed at the end of the document so the pages load faster -->
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
                     <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/linkify.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/linkify.min.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/linkify-jquery.min.js"></script>
                     <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
                     <script src="${pageContext.request.contextPath}/js/Home.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/linkify.js"></script>
 
                 </body>
                 </html>

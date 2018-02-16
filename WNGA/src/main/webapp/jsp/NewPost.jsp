@@ -19,7 +19,7 @@
        <head>
         <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>New Post</title>
+        <title> WNGA Posts</title>
         <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
             <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
                 </head>
@@ -43,7 +43,6 @@
                                     <input type="hidden" name="userName" value="${pageContext.request.userPrincipal.name}"/>
                                     <input type="submit" id="log-in-btn" class="form-control" value="Submit Post"/>
                                 </sf:form> 
-
                             </sec:authorize>
 
                             <!------------------------------------------------------------------------------------------------------------------------------>                         
@@ -64,10 +63,10 @@
                                                 String dates = formatter.format(date);
                                                 out.print("Today is " + dates);
                                             %>
-
                                         </p>
                                         <hr></hr>
                                         <p class="newPost">
+
                                             <c:out value="${newPost}"/>
                                         </p>
 
@@ -86,7 +85,6 @@
                                             <fmt:parseDate pattern="yyyy-MM-dd'T'HH:mm:ss" value=" ${allPosts.publishDate}" var="Postdate"/>
                                             <fmt:formatDate value="${Postdate}" pattern="E MMM-dd-yyyy @hh:mma"/>
                                         </span>
-
                                     </p>
                                     <hr class="userinfo-Hr"></hr>
                                     <p>
@@ -104,25 +102,27 @@
                                             </c:if>
                                         </c:if>                 
                                     </div>
-
                                     <hr class="newPost-Hr"></hr>
-
                                     <c:if test="${pageContext.request.userPrincipal.name == allPosts.user.userName}">
                                         <p class="edit-delete">
                                             <a class="grey " href="editPostForm?postId=${allPosts.postId}">edit</a> 
-                                            <a class="grey" href="deletePost?postId=${allPosts.postId}">delete</a>
+                                            <a class="grey" href="deletePost?postId=${allPosts.postId}"  id="delete" data-confirm=" Are you sure to delete this comment? CANNOT BE UNDONE!!!">delete</a>
                                         </p>
                                     </c:if>
-
                                 </div> 
-
                             </c:forEach>
                         </div>
                     </div>
                     <hr></hr>
                     <footer id="footer"></footer>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
                     <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/linkify.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/linkify.min.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/linkify-jquery.min.js"></script>
                     <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
                     <script src="${pageContext.request.contextPath}/js/Home.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/linkify.js"></script>
                 </body>
                 </html>

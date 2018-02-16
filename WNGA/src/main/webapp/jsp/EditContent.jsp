@@ -15,7 +15,7 @@
        <head>
         <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Admin Page</title>
+        <title>WNGA Edit</title>
         <!-- Bootstrap core CSS -->
         <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
             <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
@@ -23,39 +23,44 @@
                 <body> 
 
                     <div id="header"></div>
-                    
+
                     <div class="container" id="expand">
-                         <div class="form-group">
-                        <sf:form role="form" action="updateContent" 
-                                 method="POST" modelAttribute="newsFeed">
-                            <div class="form-group">
-                                <div class="col-md-8">
-                                    <sf:input type="text" class="form-control" id="title"
-                                              path="name" placeholder="Enter your Title here"/>
-                                    <sf:errors path="name" cssclass="error"></sf:errors>
-                                    </div>
-                                </div>
-                                
+                        <div class="form-group">
+                            <sf:form role="form" action="updateContent" 
+                                     method="POST" modelAttribute="newsFeed">
                                 <div class="form-group">
                                     <div class="col-md-8">
-                                    <sf:hidden path="date" value="${date}"/>
-                                    <sf:textarea type="text"  
-                                                 path="content" placeholder="Enter your news Feed here" maxlength="250" />
-                                    <sf:errors path="content" cssclass="error"></sf:errors>
-                                    <sf:hidden path="link"/>
-                                    <sf:hidden path="newsFeedId"/>
-                                    <input type="submit" class="btn btn-default" value="Update Content"/>
+                                        <sf:input type="text" class="form-control" id="title"
+                                                  path="name" placeholder="Enter your Title here"/>
+                                        <sf:errors path="name" cssclass="error"></sf:errors>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-8">
+                                        <sf:hidden path="date" value="${date}"/>
+                                        <sf:textarea type="text"  
+                                                     path="content" placeholder="Enter your news Feed here" maxlength="250" />
+                                        <sf:errors path="content" cssclass="error"></sf:errors>
+                                        <sf:hidden path="link"/>
+                                        <sf:hidden path="newsFeedId"/>
+                                        <input type="submit" class="btn btn-default" value="Update Content"/>
+                                    </div>
                                 </div>
-                            </div>
-                        </sf:form>
-                         </div>
+                            </sf:form>
+                        </div>
                     </div>
-                    
+
                     <hr>             
                         <footer id="footer"></footer>
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+                        <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
                         <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
+                        <script src="${pageContext.request.contextPath}/js/linkify.js"></script>
+                        <script src="${pageContext.request.contextPath}/js/linkify.min.js"></script>
+                        <script src="${pageContext.request.contextPath}/js/linkify-jquery.min.js"></script>
                         <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
                         <script src="${pageContext.request.contextPath}/js/Home.js"></script>
-
+                        <script src="${pageContext.request.contextPath}/js/linkify.js"></script>
                 </body>
                 </html>
