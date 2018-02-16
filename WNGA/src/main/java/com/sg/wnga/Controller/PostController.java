@@ -141,7 +141,7 @@ public class PostController {
         String newsFeedIdParameter = rq.getParameter("postId");
         int newsFeedId = Integer.parseInt(newsFeedIdParameter);
         NPDao.deletePost(newsFeedId);
-        return "redirect:newsFeed";
+        return "redirect:displayPost";
 
     }
 }

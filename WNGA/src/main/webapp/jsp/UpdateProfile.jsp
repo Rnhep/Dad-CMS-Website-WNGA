@@ -28,6 +28,7 @@
                             <div class="form-group">
                                 <div class="col-md-8">
                                     <label>Please enter link to your photo for your profile picture: WARNING!: file upload is not available</label>
+                                    <label>Profile Photo</label>
                                     <sf:input type="text" class="form-control" path="photo" name="email" placeholder="Enter link to your photo" />
                                     <sf:errors path="photo" cssClass="error"></sf:errors>
                                     </div>

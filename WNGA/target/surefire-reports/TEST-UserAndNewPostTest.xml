@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="9" failures="0" name="UserAndNewPostTest" time="5.788" errors="0" skipped="0">
+<testsuite tests="9" failures="0" name="UserAndNewPostTest" time="2.609" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib"/>
@@ -65,13 +65,13 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="UserAndNewPostTest" name="testGetPostById" time="0.612"/>
-  <testcase classname="UserAndNewPostTest" name="testGetUserNameByPostId" time="0.736"/>
-  <testcase classname="UserAndNewPostTest" name="testGetAllUsers" time="0.913"/>
-  <testcase classname="UserAndNewPostTest" name="testUpdatePost" time="1.144"/>
-  <testcase classname="UserAndNewPostTest" name="testUpdateUser" time="0.57"/>
-  <testcase classname="UserAndNewPostTest" name="testDeleteNewPost" time="0.387"/>
-  <testcase classname="UserAndNewPostTest" name="testGetAllPost" time="0.399"/>
-  <testcase classname="UserAndNewPostTest" name="testGetUserByUserName" time="0.341"/>
-  <testcase classname="UserAndNewPostTest" name="testDeleteUser" time="0.686"/>
+  <testcase classname="UserAndNewPostTest" name="testGetPostById" time="0.217"/>
+  <testcase classname="UserAndNewPostTest" name="testGetUserNameByPostId" time="0.369"/>
+  <testcase classname="UserAndNewPostTest" name="testGetAllUsers" time="0.298"/>
+  <testcase classname="UserAndNewPostTest" name="testUpdatePost" time="0.278"/>
+  <testcase classname="UserAndNewPostTest" name="testUpdateUser" time="0.279"/>
+  <testcase classname="UserAndNewPostTest" name="testDeleteNewPost" time="0.315"/>
+  <testcase classname="UserAndNewPostTest" name="testGetAllPost" time="0.335"/>
+  <testcase classname="UserAndNewPostTest" name="testGetUserByUserName" time="0.345"/>
+  <testcase classname="UserAndNewPostTest" name="testDeleteUser" time="0.173"/>
 </testsuite>
