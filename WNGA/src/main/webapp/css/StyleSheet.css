@@ -1,4 +1,80 @@
+@media only screen and (min-width :1024px ) and (max-width : 3840px) { 
+
+    body
+    {
+
+        padding-top: -200px;
+        vertical-align: baseline;
+        outline: 0;
+        background-color:rgba(188,188,188,0);
+    }
+
+    .logo
+    {
+
+        background: linear-gradient(to bottom, rgba(0,0,0,0.1) 6%,rgba(188,188,188,0.0) 100%), url('../Images/WNGA-M.png')no-repeat center white;
+        height: 100px;
+        max-width: 30%;
+        opacity: 1; 
+        background-size: contain;
+
+    }
+    #header-desktop
+    {
+        max-height: 153px;
+        background-color: black;
+    }
+    .flex-container
+    {
+      
+        display: flex;
+        justify-content: flex-start ;
+        margin-top: 30px;
+
+    }
+    .flex-signIn
+    {
+        display: flex;
+        justify-content: flex-end ;
+    }
+    .flex-container > div,
+    .flex-signIn > div
+    {
+      
+      max-width: 250px;
+      margin: -18px;
+      padding: 10px;
+      margin-left: 5px;
+      margin-right: 3px;
+      border: 1px solid white;
+      
+    }
+    .flex-container a,
+    .flex-signIn a
+    {
+         color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+       
+    }
+
+    #header{
+        display: none;
+
+    }
+
+
+
+
+}
+
+
 @media only screen and (min-width : 414px) and (max-width : 1112px) {
+
+    #header-desktop
+    {
+        display: none;
+    }
     body
     {
 
@@ -34,7 +110,7 @@
     #blog a,
     #log-in a,
     .user-info a
-    
+
     {
         color: #fff;
         text-decoration: none;
@@ -107,7 +183,7 @@
     }
     #expand
     {
-        height: 400px;
+        height: 503px;
         margin-top: 90px;
     }
     #contain-one
@@ -141,7 +217,7 @@
         height: 300px; 
 
     }
-  
+
 
     .post-preview,
     .user-box
@@ -275,15 +351,7 @@
         color: #101010; 
 
     }
-    /*    .aboutus
-        {
-    
-            word-wrap: break-word;
-            white-space: normal;
-            overflow: hidden; 
-            width: 400px;
-    
-        }*/
+
     #nav
     {
         color:#337ab7;
@@ -307,6 +375,7 @@
         width: 100%;
         border: 1px #fff;
         clear: both;
+        margin-top: 128px;
 
 
     } 
@@ -319,7 +388,7 @@
         font-weight: bold;
 
     }
- 
+
     .header-Hr
     {
         margin-top: -1px;
@@ -336,10 +405,13 @@
     {
         margin-top: -7px;  
     }
-    
+
 }
 @media only screen and (min-width : 310px) and (max-width : 414px) {
-
+    #header-desktop
+    {
+        display: none;
+    }
     body
     {
 
@@ -447,7 +519,7 @@
     }
     #expand
     {
-        height: 400px;
+        height: 503px;
         margin-top: 90px;
     }
     #contain-one
@@ -481,7 +553,7 @@
         height: 200px; 
 
     }
-  
+
 
     .post-preview,
     .user-box
@@ -616,15 +688,7 @@
         color: #101010; 
 
     }
-    /*    .aboutus
-        {
-    
-            word-wrap: break-word;
-            white-space: normal;
-            overflow: hidden; 
-            width: 400px;
-    
-        }*/
+
     #nav
     {
         color:#337ab7;
@@ -641,15 +705,14 @@
         padding:  5px 5px 5px 5px;
         font-size: 10px;
         color: #adadad;
-        height: 60px;
+        height: 80px;
         background-color: #122b40; 
-        position: relative;
+        position: absolute;
         bottom: 0x;
         width: 100%;
         border: 1px #fff;
         clear: both;
-
-
+        margin-top: 128px;
     } 
     .footer center{
         color: #fff;
@@ -660,7 +723,7 @@
         font-weight: bold;
 
     }
- 
+
     .header-Hr
     {
         margin-top: -1px;
@@ -677,7 +740,10 @@
     {
         margin-top: -7px;  
     }
-    
+    .spaceBox
+    {
+        height: 450px;
+    }
 }
 
 

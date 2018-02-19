@@ -74,5 +74,11 @@ public class MainController {
         model.addAttribute("admin", admin);
         return "NewsFeed";
     }
+    
+    @RequestMapping(value = "/contactUs", method = RequestMethod.GET)
+    public String contactUs(Model model) {
+        return "ContactUs";
+    }
+    
 
 }

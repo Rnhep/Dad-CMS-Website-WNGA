@@ -12,6 +12,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <%@ page language="java" %>
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
@@ -34,12 +35,12 @@
                                          action="creatNewPost">
                                     <div ><c:out value="${message}"/></div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="photo" placeholder="Link to a photo only"  />
+                                        <input type="text" class="form-control" name="photo" placeholder="Link to a photo only" value="${fn:escapeXml(param.photo)}" />
                                     </div>
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="photoTwo" placeholder="Link to a photo only"  />
                                     </div>
-                                    <textarea  type="text" name="comment"   placeholder="Comment required" required>${commentOut}</textarea> 
+                                    <textarea  type="text" name="comment"   placeholder="Comment required" value="${fn:escapeXml(comment)}" required>${commentOut}</textarea> 
                                     <input type="hidden" name="userName" value="${pageContext.request.userPrincipal.name}"/>
                                     <input type="submit" id="log-in-btn" class="form-control" value="Submit Post"/>
                                 </sf:form> 
@@ -83,7 +84,7 @@
                                             </c:if>
                                             <c:out value="${allPosts.user.userName}..."/>
                                             <fmt:parseDate pattern="yyyy-MM-dd'T'HH:mm:ss" value=" ${allPosts.publishDate}" var="Postdate"/>
-                                            <fmt:formatDate value="${Postdate}" pattern="E MMM-dd-yyyy @hh:mma"/>
+                                            <fmt:formatDate value="${Postdate}" pattern=" MMM-dd-yyyy @hh:mma"/>
                                         </span>
                                     </p>
                                     <hr class="userinfo-Hr"></hr>

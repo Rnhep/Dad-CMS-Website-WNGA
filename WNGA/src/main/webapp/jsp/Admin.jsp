@@ -29,17 +29,19 @@
                         </div>
                         <hr></hr>
                         <div class="container pre-posts">
+                         
                             <sf:form role="form" action="cleanUpNews" method="POST">
                                 <button type="submit" class="btn-danger"  onclick="return cleanUp()">
                                     Delete 100 news 
                                 </button>
                             </sf:form>
+                        
                             <sf:form role="form" action="cleanUpPosts" method="POST">
                                 <button type="submit" class="btn-danger"  onclick="return cleanUp()">
-                                    Delete 100 news 
+                                    Delete 100 posts 
                                 </button>
                             </sf:form>
-
+                             
                         </div> 
                         <div class="container admin-note">
                             <p> Home Page Content</p>
@@ -135,7 +137,7 @@
                                     </div>
 
                                     <!--All users-->
-                                    <div class="container user-box" id="user-table" >
+                                    <div class="container user-box">
                                         <c:forEach var="currentUser" items="${userList}">
                                             <div class="container user-box" > 
                                                 <p > ${name}${currentUser.firstName} ${currentUser.lastName} |

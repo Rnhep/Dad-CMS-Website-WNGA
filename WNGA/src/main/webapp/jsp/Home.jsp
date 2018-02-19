@@ -15,7 +15,9 @@
                     <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
                         </head>
                         <body> 
+                          
                             <div id="header"></div>
+                            <div id="header-desktop"></div>
                             <div id="up"></div>
                             <div class="container">
                                 <div class=" container pre-posts">

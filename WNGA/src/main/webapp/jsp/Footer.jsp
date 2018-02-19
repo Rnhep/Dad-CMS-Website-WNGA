@@ -14,9 +14,12 @@
 <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
     </head>
     <body>
+        
 <footer class="footer">
+   
     <center>|&copy;WNGA 2017|</center>
-  A Non-Profit Organization 501(C)4|Not a business|Not a Tax Exemption|Not a political party|Not a business| <a href="#">Term</a> | <a href="#">Privacy</a> | <a href="#">Contact Us</a> |
+  A Non-Profit Organization 501(C)4|Not a business|Not a Tax Exemption|Not a political party|Not a business|
+  <a href="${pageContext.request.contextPath}/TermAndPolicy">Term of Use</a> | <a href="${pageContext.request.contextPath}/contactUs">Contact Us</a> |
 </footer>
     </body>
 </html>

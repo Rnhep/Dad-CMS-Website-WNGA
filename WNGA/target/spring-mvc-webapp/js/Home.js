@@ -5,8 +5,10 @@
  */
 $('document').ready(function () {
     console.log("testing");
+
 //  alert();
     $('#header').load('jsp/Header.jsp');
+    $('#header-desktop').load('jsp/HeaderDesktop.jsp');
 //$('#header-about-us').load('jsp/Header.jsp');
     $('#footer').load('jsp/Footer.jsp');
 //look for link in plain text

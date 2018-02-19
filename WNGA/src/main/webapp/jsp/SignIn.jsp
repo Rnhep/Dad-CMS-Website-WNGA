@@ -24,7 +24,7 @@
                 <body>
                     <div id="header">
                     </div>
-                    <div class="form-group container" id="contain">
+                    <div class="form-group container" id="expand">
                         <div id="add-post" class="col-md-12">
                             <div class="container text-danger" id="passwordHelp" ><c:if test="${param.login_error == 1}">
                                     <small>Wrong id or password!</small>
@@ -55,12 +55,11 @@
                             <div class="col-sm-2 align-top " >
                                 <a href="${pageContext.request.contextPath}/signUp">${signUp}</a> 
                             </div>
+                             <hr></hr>
                         </div>
                     </div>
-
-
-                    <hr></hr>
-                    <footer id="footer"></footer>
+                             
+                    <footer id="footer" ></footer>
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
                     <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
                     <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
