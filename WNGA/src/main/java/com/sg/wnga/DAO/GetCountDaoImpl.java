@@ -54,4 +54,14 @@ public class GetCountDaoImpl implements GetCountDao {
 
     }
 
+    @Override
+    public void cleanUpNews() {
+    jdbcTemplate.update(SQL_CLEANUP_NEWS);
+    }
+
+    @Override
+    public void cleanUpPosts() {
+    jdbcTemplate.update(SQL_CLEANUP_POSTS);
+    }
+
 }

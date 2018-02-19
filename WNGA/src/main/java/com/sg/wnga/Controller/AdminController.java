@@ -165,6 +165,21 @@ public class AdminController {
         return "redirect:newsFeed";
 
     }
+    
+    @RequestMapping(value = "/cleanUpNews", method = RequestMethod.POST)
+    public String cleanUpNews() {
+        getCountDao.cleanUpNews();
+        return "redirect:admin";
+        
+    }
+    
+     @RequestMapping(value = "/cleanUpPosts", method = RequestMethod.POST)
+    public String cleanUpPosts() {
+        getCountDao.cleanUpPosts();
+        return "redirect:admin";
+        
+    }
+    
 
     @RequestMapping(value = "/updateHomeImg", method = RequestMethod.POST)
     public String updateImgOne(HttpServletRequest rq) {

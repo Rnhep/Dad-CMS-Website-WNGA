@@ -23,7 +23,7 @@
                 <body>
                     <div id="header"></div>
                     <div class="container user-info">
-                        <div class="container profile">
+                       
                             <p> ${msg} </p>
                             <img src="${currentLogInUser.photo}"/>
                             <p><a href="updateProfileForm?userId=${currentLogInUser.userId}">
@@ -41,7 +41,7 @@
                             <hr></hr>
                             <p>Email:  ${currentLogInUser.email}</p>
 
-                        </div>
+                     
                     </div>
 
                     <hr></hr>

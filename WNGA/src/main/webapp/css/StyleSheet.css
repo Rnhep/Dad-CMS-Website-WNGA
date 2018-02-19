@@ -33,7 +33,8 @@
     #news a,
     #blog a,
     #log-in a,
-    .profile a
+    .user-info a
+    
     {
         color: #fff;
         text-decoration: none;
@@ -575,6 +576,7 @@
         padding-top: 0px;
         margin-top: 20px;
         height: auto;
+        max-width: 100%;
         padding-bottom: 10px;
     }
     .pre-posts

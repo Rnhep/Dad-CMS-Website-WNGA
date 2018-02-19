@@ -28,8 +28,18 @@
 
                         </div>
                         <hr></hr>
-                        <div class="container">
-                            <button class="btn-danger">Delete 100 Posts </button> <button class="btn-danger"> Delete 100 News</button> 
+                        <div class="container pre-posts">
+                            <sf:form role="form" action="cleanUpNews" method="POST">
+                                <button type="submit" class="btn-danger"  onclick="return cleanUp()">
+                                    Delete 100 news 
+                                </button>
+                            </sf:form>
+                            <sf:form role="form" action="cleanUpPosts" method="POST">
+                                <button type="submit" class="btn-danger"  onclick="return cleanUp()">
+                                    Delete 100 news 
+                                </button>
+                            </sf:form>
+
                         </div> 
                         <div class="container admin-note">
                             <p> Home Page Content</p>
@@ -103,7 +113,7 @@
                                         <div class="form-group">
                                             <div class="col-md-8">
                                                 <label><c:out value="${message}"/></label>
-                                                <input type="text" class="form-control" name="idInput" placeholder="Please enter image number" required/>
+                                                <input type="text" class="form-control" name="idInput" placeholder="Please enter a number '1' or '3'" required/>
                                                 <label><c:out value="${linkOut}"/></label>
                                                 <input type="text" class="form-control" name="imgLink" placeholder="Link to your Photo"/>
                                             </div>
@@ -128,9 +138,10 @@
                                     <div class="container user-box" id="user-table" >
                                         <c:forEach var="currentUser" items="${userList}">
                                             <div class="container user-box" > 
-                                                <p> ${name}${currentUser.firstName} ${currentUser.lastName} |
-                                                    ${userName}: ${currentUser.userName}
+                                                <p > ${name}${currentUser.firstName} ${currentUser.lastName} |
+                                                    ${userName} ${currentUser.userName}
                                                 </p>   
+
                                                 <p>
                                                     <c:if test="${currentUser.enable == true}">
                                                         User is: Enabled
@@ -140,12 +151,13 @@
                                                     </c:if> 
                                                     <sf:form role="form" action="enabledUser" method="POST" >
                                                         <input type="hidden" name="userId" value="${currentUser.userId}"/>
-                                                        <button type="submit" class="edit-btn btn btn-danger " >Enable</button>
+                                                        <button type="submit" value="Endabled" id="btn" class="edit-btn btn btn-danger"  onclick="return confirmEnabled()">Enable</button>
                                                     </sf:form>
 
                                                     <sf:form role="form" action="disabledUser" method="POST" >
-                                                        <input type="hidden" name="userId" value="${currentUser.userId}"/>
-                                                        <button type="submit" class="btn btn-danger " >Disable</button>
+
+                                                        <input type="hidden"  name="userId"  value="${currentUser.userId}"/>
+                                                        <button type="submit" value="Disable" id="btn" class="btn btn-danger " onclick="return confirmDisabled()" >Disable</button>
                                                     </sf:form>
                                                 </p>
                                             </div>

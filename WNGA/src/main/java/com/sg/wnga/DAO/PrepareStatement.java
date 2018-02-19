@@ -41,7 +41,7 @@ public class PrepareStatement {
     protected static final String SQL_INSERT_AUTHORITY
             = "insert into Authorities(UserName, Authority)values(?, ? ) ";
     protected static final String SQL_DELETE_AUTHORITIES
-        = "delete from Authorities where username = ?";
+            = "delete from Authorities where username = ?";
 
     //new post
     protected static final String SQL_INSERT_INTO_NEW_POST
@@ -112,10 +112,17 @@ public class PrepareStatement {
     //count number of row
     protected static final String SQL_GET_COUNT_FROM_USER
             = "select count(*)from User";
-    
+
     protected static final String SQL_GET_COUNT_FROM_NEWSFEED
             = "select count(*)from News_Feed";
-    
+
     protected static final String SQL_GET_COUNT_FROM_NEW_POST
             = " select count(*)from New_Post";
+
+    protected static final String SQL_CLEANUP_NEWS
+            = "delete from News_Feed where NewsFeedId>=8 limit 100";
+
+    protected static final String SQL_CLEANUP_POSTS
+            = "delete from New_Post where PostId order by PostId asc limit 100";
+
 }

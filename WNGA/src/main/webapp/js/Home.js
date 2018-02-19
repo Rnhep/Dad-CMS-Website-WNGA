@@ -5,7 +5,7 @@
  */
 $('document').ready(function () {
     console.log("testing");
-
+//  alert();
     $('#header').load('jsp/Header.jsp');
 //$('#header-about-us').load('jsp/Header.jsp');
     $('#footer').load('jsp/Footer.jsp');
@@ -13,6 +13,8 @@ $('document').ready(function () {
     $('p , pre').linkify({
         target: '_blank'
     });
+});
+
 //virify delete button
     var deleteLinks = document.querySelectorAll('#delete');
     for (var i = 0; i < deleteLinks.length; i++) {
@@ -25,8 +27,35 @@ $('document').ready(function () {
         });
     };
 
-
-
-});
-
-
+////
+ function confirmDisabled()
+    {
+     
+      var disabled = confirm('This user will be disabled');
+      if (disabled)
+          return true;
+      else
+        return false;
+    
+      }
+      
+     function confirmEnabled()
+    {
+     
+      var disabled = confirm('This user will be enabled');
+      if (disabled)
+          return true;
+      else
+        return false;
+    
+      }
+    
+ function cleanUp()
+    {
+      var cleanUp = confirm('This action will delete 100 items ' 
+              + ' out from your database  do you wish to continue? ');
+      if (cleanUp)
+          return true;
+      else
+        return false;
+    }

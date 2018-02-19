@@ -48,7 +48,7 @@ public class PostController {
     @RequestMapping(value = "/displayPost", method = RequestMethod.GET)
     public String displayLatesPost(HttpServletRequest rq, Model model) {
         String newPost = "Latest Posts";
-        String logIn = "To start your post please ";
+        String logIn = "To post your comment ";
         List<NewPost> displayAllPost = NPDao.getAllPost();
         model.addAttribute("displayAllPost", displayAllPost);
         model.addAttribute("newPost", newPost);

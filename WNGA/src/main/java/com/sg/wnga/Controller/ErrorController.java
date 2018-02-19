@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author ritheenhep
  */
 
-@Controller
+
 class ErrorController {
     // map this end point to /error to match the configuration in web.xml
     @RequestMapping(value = "/error")

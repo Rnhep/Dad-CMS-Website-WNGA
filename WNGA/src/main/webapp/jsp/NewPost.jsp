@@ -52,7 +52,7 @@
                                     <div  class="form-control to-center pre-posts">
                                         <c:if test="${empty pageContext.request.userPrincipal.name}">
                                             <p class="login">
-                                                <c:out value="${logIn}"/><a  href="${pageContext.request.contextPath}/signIn">Sign In</a>
+                                                <a  href="${pageContext.request.contextPath}/signIn">Sign In</a> <c:out value="${logIn}"/>
                                             </p>
                                         </c:if>
 
@@ -106,7 +106,7 @@
                                     <c:if test="${pageContext.request.userPrincipal.name == allPosts.user.userName}">
                                         <p class="edit-delete">
                                             <a class="grey " href="editPostForm?postId=${allPosts.postId}">edit</a> 
-                                            <a class="grey" href="deletePost?postId=${allPosts.postId}"  id="delete" data-confirm=" Are you sure to delete this comment? CANNOT BE UNDONE!!!">delete</a>
+                                            <a class="grey" href="deletePost?postId=${allPosts.postId}"  id="delete" data-confirm=" WARNING!!!!: Are you sure to delete this comment? CANNOT BE UNDONE!!!">delete</a>
                                         </p>
                                     </c:if>
                                 </div> 

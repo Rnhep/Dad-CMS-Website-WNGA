@@ -17,4 +17,8 @@ public interface GetCountDao {
     
     public long getUserCount();
     
+    public void cleanUpNews();
+    
+    public void cleanUpPosts();
+    
 }

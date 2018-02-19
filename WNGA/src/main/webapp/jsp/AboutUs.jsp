@@ -11,12 +11,12 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>About WNGA</title>
+        <title>About-us WNGA</title>
         <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
         <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
     </head>
     <body>
-        <div id="header-about-us"></div>
+        <div id="header"></div>
         <div class="container aboutus">
             <div class="container">
                 <div id="strong">    
