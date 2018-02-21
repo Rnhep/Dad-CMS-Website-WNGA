@@ -23,7 +23,14 @@
         <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet"/>
     </head>
     <body>
-        <div id="header"> </div>
+        <div id="header-mobile"></div>
+                            
+                            <div class="logo logo-hide col-md-12">
+                            </div>
+                            <div class="col-md-12" id="header-desktop"></div>
+                            <div id="up"></div> 
+                            
+                            
         <div class="container">
             <!--Add post form for user/admin role-->
             <sec:authorize access="hasRole('ROLE_ADMIN')">

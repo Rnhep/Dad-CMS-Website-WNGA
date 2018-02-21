@@ -1,3 +1,11 @@
+body
+{
+
+    padding-top: -200px;
+    vertical-align: baseline;
+    outline: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.0) 6%,rgba(188,188,188,0.0) 100%);
+}
 @media only screen and (min-width :1024px ) and (max-width : 3840px) { 
 
     body
@@ -6,70 +14,170 @@
         padding-top: -200px;
         vertical-align: baseline;
         outline: 0;
-        background-color:rgba(188,188,188,0);
+        background: linear-gradient(to bottom, rgba(0,0,0,0.2) 1%,rgba(188,188,188,0.7) 100%)no-repeat center white;
+    }
+    .username
+    {
+        float: right;
+        clear: both;
+        padding-right: 0px;
+        height: 10px;
+        font-size: 16px;
+        margin-top: 35px;
+        
     }
 
     .logo
     {
 
-        background: linear-gradient(to bottom, rgba(0,0,0,0.1) 6%,rgba(188,188,188,0.0) 100%), url('../Images/WNGA-M.png')no-repeat center white;
-        height: 100px;
-        max-width: 30%;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.0) 4%,rgba(0,0,0,0.0) 100%), url('../Images/WNGA-M.png')no-repeat center white;
+        min-height: 190px;
+        max-width: 25%;
         opacity: 1; 
         background-size: contain;
+
 
     }
     #header-desktop
     {
-        max-height: 153px;
-        background-color: black;
+        margin-top: 114px;
+        max-height: 200px;
+        max-width: 100%;
+        opacity: 1;   
+        background-size: contain;
+        border-bottom: 3px solid #fff;
+
+
     }
     .flex-container
     {
-      
+
         display: flex;
-        justify-content: flex-start ;
-        margin-top: 30px;
+        justify-content: center;
+        padding: 10px;
+        padding-bottom: 0px;
 
     }
     .flex-signIn
     {
         display: flex;
         justify-content: flex-end ;
+        margin-left: 40px;
+        padding: 10px;
+        padding-bottom: 0px;
+        
+
     }
     .flex-container > div,
     .flex-signIn > div
     {
-      
-      max-width: 250px;
-      margin: -18px;
-      padding: 10px;
-      margin-left: 5px;
-      margin-right: 3px;
-      border: 1px solid white;
-      
+        font-weight: bold;
+        margin-right: 30px;
+        padding: 10px;
+        border: 3px solid #fff;
+        border-radius: 2px 15px 2px 15px;
+
     }
+
     .flex-container a,
     .flex-signIn a
     {
-         color: #fff;
+        color: #fff;
         text-decoration: none;
         font-size: 14px;
+
+    }
+    .aboutus-header
+    {
+        
+        padding-top: 18px;
        
     }
-
-    #header{
+    .aboutus{
+        
+        margin-top: 100px;
+    }
+    #header-mobile,
+    #header-about-us
+    {
         display: none;
 
     }
 
+    .pre-posts
+    {
+        margin-top: 80px;
 
+    }
+   
 
+    .img-conainter
+    {
 
+        margin-top: 20px;
+        color:#fff;
+        font-size: 30px;
+        max-height: 100%;
+
+    }
+    .to-center
+    {
+
+        margin-top: 20px;
+        color: black;
+        height: auto;
+
+    }
+    .img-conainter p, .to-center p,
+    .news p a
+    {
+        text-align: center;
+        font-size: 18px;
+        font-weight: 900;
+        color: #fff;
+        text-decoration: none;
+        /*border: 1px solid black;*/
+
+    } 
+    #bg
+    {
+        height: 400px; 
+
+    }
+
+    .post-preview p
+    {
+        width: 100%;
+        white-space: nowrap;  
+        overflow: hidden;
+        text-overflow: ellipsis; 
+    }
+
+    .footer
+    {  
+        padding:  5px 5px 5px 5px;
+        font-size: 10px;
+        color: #adadad;
+        height: 80px;
+        background-color: #122b40; 
+        position: relative;
+        bottom: 0x;
+        width: 100%;
+        border: 1px #fff;
+
+        margin-top: 128px;
+    } 
+    .footer center{
+        color: #fff;
+    }
 }
 
 
 @media only screen and (min-width : 414px) and (max-width : 1112px) {
+    .logo-hide
+    {
+        display: none;
+    }
 
     #header-desktop
     {
@@ -94,7 +202,8 @@
         background-size: contain;
 
     }
-    #header{
+    #header-mobile
+    {
         position: relative;
         margin-top: -20px;
     }
@@ -192,7 +301,7 @@
         padding-top: 20px;
 
     }
-    .box p, .to-center p,
+    .img-conainter p, .to-center p,
     .news p a
     {
         text-align: center;
@@ -252,7 +361,7 @@
         height: auto;
 
     }
-    .box
+    .img-conainter
     {
 
         margin-top: 20px;
@@ -408,10 +517,8 @@
 
 }
 @media only screen and (min-width : 310px) and (max-width : 414px) {
-    #header-desktop
-    {
-        display: none;
-    }
+
+
     body
     {
 
@@ -431,9 +538,19 @@
         background-size: contain;
 
     }
-    #header{
+    #header-mobile{
         position: relative;
         margin-top: -20px;
+    }
+    .logo-hide
+    {
+        display: none;
+    }
+
+
+    #header-desktop
+    {
+        display: none;
     }
 
     #header-about-us{
@@ -528,7 +645,7 @@
         padding-top: 20px;
 
     }
-    .box p, .to-center p,
+    .img-conainter p, .to-center p,
     .news p a
     {
         text-align: center;
@@ -588,7 +705,7 @@
         height: auto;
 
     }
-    .box
+    .img-conainter
     {
 
         margin-top: 20px;
@@ -711,7 +828,7 @@
         bottom: 0x;
         width: 100%;
         border: 1px #fff;
-        clear: both;
+
         margin-top: 128px;
     } 
     .footer center{

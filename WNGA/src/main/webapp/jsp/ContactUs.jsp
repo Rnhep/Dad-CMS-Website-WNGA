@@ -28,6 +28,10 @@
             <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
                 </head>
                 <body>
+                    <div class="logo logo-hide col-md-12"></div>
+                    <div class="col-md-12" id="header-desktop"></div>
+                    <div id="up"></div> 
+
                     <div id="header">
                     </div>
                     <div class="form-group container" id="expand">
@@ -44,7 +48,7 @@
                         <p>Email:</p>
                         <hr></hr>
                     </div>
-<hr></hr>
+                    <hr></hr>
                     <footer id="footer" ></footer>
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
                     <script src="${pageContext.request.contextPath}/js/jquery.js"></script>

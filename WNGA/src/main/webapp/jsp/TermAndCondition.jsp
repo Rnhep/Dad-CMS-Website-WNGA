@@ -12,6 +12,14 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <div id="header-mobile"></div>
+                            
+                            <div class="logo logo-hide col-md-12">
+                            </div>
+                            <div class="col-md-12" id="header-desktop"></div>
+                            <div id="up"></div> 
+                            
+                            
         <h1>Hello World!</h1>
     </body>
 </html>

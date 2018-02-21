@@ -22,7 +22,14 @@
                 </head>
                 <body> 
 
-                    <div id="header"></div>
+                    <div id="header-mobile"></div>
+                            
+                            <div class="logo logo-hide col-md-12">
+                            </div>
+                            <div class="col-md-12" id="header-desktop"></div>
+                            <div id="up"></div> 
+                            
+                            
                     <div class="container-fluid " id="contain">
                         <sf:form role="form" action="updateNews" method="POST" modelAttribute="newsFeed">
                             <div class="form-group">

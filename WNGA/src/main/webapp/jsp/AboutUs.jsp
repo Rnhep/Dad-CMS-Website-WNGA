@@ -16,8 +16,14 @@
         <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
     </head>
     <body>
-        <div id="header"></div>
-        <div class="container aboutus">
+<!--        <div id="header-mobile"></div>-->
+        
+        <div class="logo logo-hide col-md-12"></div>
+        <div class="col-md-9 aboutus-header" id="header-desktop"></div>
+        <div id="up"></div> 
+        
+         <div id="header-about-us"> </div>
+        <div class=" col-md-12 container aboutus">
             <div class="container">
                 <div id="strong">    
                     <p>

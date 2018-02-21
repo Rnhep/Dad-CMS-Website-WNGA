@@ -16,10 +16,17 @@
                         </head>
                         <body> 
                           
-                            <div id="header"></div>
-                            <div id="header-desktop"></div>
-                            <div id="up"></div>
-                            <div class="container">
+                            <div id="header-mobile"></div>
+                            
+                            <div class="logo logo-hide col-md-12">
+                            </div>
+                            <div class="col-md-9" id="header-desktop"></div>
+                            <div id="up"></div> 
+                            
+                            
+                            
+                            
+                            <div class="container col-md-12">
                                 <div class=" container pre-posts">
                                     <p class="upcoming"> Upcoming Events:</p>
                                     <pre><c:out value="${eventOne.name}"/>
@@ -28,10 +35,11 @@
                                     <pre><c:out value="${eventTwo.name}"/>
                                         <c:out value="${eventTwo.content}"/></pre>
                                 </div>
+                                <hr></hr>
                             </div>
-                            <hr></hr>
-                            <div class="container">
-                                <div class="container pre-posts to-center"> 
+                            
+                            <div class="container col-md-12">
+                                <div class="container  pre-posts to-center"> 
                                     <p id="recent-post"> <c:out value="${latestPost}"/>
                                     </p>
                                 </div>
@@ -51,9 +59,11 @@
                                         </span>
                                     </div>
                                 </c:forEach>
+                                    <hr></hr>
                             </div>
-                            <hr>
-                                <div class="container-fluid box " id="bg" 
+                       
+                               
+                                <div class="col-md-12 container-fluid img-conainter " id="bg" 
                                      style=" background: linear-gradient(to bottom, 
                                      rgba(0,0,0,0.2) 4%,rgba(0,0,0,0.2) 100%), 
                                      url(${contentOne.link})no-repeat center; background-size:cover" >
@@ -64,8 +74,8 @@
                                         <c:out value="${contentOne.content}"/>
                                     </p>
                                 </div>
-
-                                <div class="container-fluid  to-center " id="bg" >
+                                    
+                                <div class="col-md-12 container-fluid to-center plainText-content" id="bg" >
                                     <p>
                                         <c:out value="${contentTwo.name}"/>
                                     </p>
@@ -73,9 +83,9 @@
                                         <c:out value="${contentTwo.content}"/>
                                     </p>
                                 </div>
-                                <div class="container-fluid box" id="bg" 
+                                <div class=" col-md-12 container-fluid img-conainter" id="bg" 
                                      style=" background: linear-gradient(to bottom, 
-                                     rgba(0,0,0,0.2) 4%,rgba(0,0,0,0.2) 100%), 
+                                     rgba(0,0,0,0.4) 4%,rgba(0,0,0,0.4) 100%), 
                                      url(${contentThree.link})no-repeat center; background-size:cover" >
                                     <p>
                                         <c:out value="${contentThree.name}"/>
@@ -86,7 +96,7 @@
                                     </p>
                                 </div>
 
-                                <div class="container-fluid to-center " id="bg" >
+                                <div class="col-md-12 container-fluid to-center " id="bg" >
                                     <p>
                                         <c:out value="${contentFour.name}"/>
 
@@ -94,9 +104,11 @@
                                     <p>
                                         <c:out value="${contentFour.content}"/>
                                     </p>
+                                <hr></hr>
                                 </div>
-                                <hr>             
-                                    <footer id="footer"></footer>
+                                    
+                                       
+                                    <footer  id="footer"></footer>
                                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
                                     <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
                                     <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>

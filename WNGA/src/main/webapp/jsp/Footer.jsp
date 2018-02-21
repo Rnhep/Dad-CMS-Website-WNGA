@@ -15,7 +15,7 @@
     </head>
     <body>
         
-<footer class="footer">
+<footer class="footer container-fluid col-md-12">
    
     <center>|&copy;WNGA 2017|</center>
   A Non-Profit Organization 501(C)4|Not a business|Not a Tax Exemption|Not a political party|Not a business|
