@@ -25,103 +25,99 @@
             <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
                 </head>
                 <body>
-                  <div id="header-mobile"></div>
-                            
-                            <div class="logo logo-hide col-md-12">
-                            </div>
-                            <div class="col-md-12" id="header-desktop"></div>
-                            <div id="up"></div> 
-                            
-                            
-                    <div class="container">
+                    <div id="header-mobile"></div>
+                    <div class="logo logo-hide col-md-12">
+                    </div>
+                    <div class="col-md-9" id="header-desktop"></div>
+                    <div id="up"></div> 
 
+                    <div class="container col-md-12">
                         <!--Add post form for user/admin role-->
                         <sec:authorize access="isAuthenticated()">
-                            <div class="container">
+                            <div class="container postForm ">
                                 <sf:form role="form"  method="POST" 
                                          action="creatNewPost">
                                     <div ><c:out value="${message}"/></div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="photo" placeholder="Link to a photo only" value="${fn:escapeXml(param.photo)}" />
+                                        <input id="link" type="text" class="form-control" name="photo" placeholder="Link to a photo only" value="${fn:escapeXml(param.photo)}" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="photoTwo" placeholder="Link to a photo only"  />
+                                        <input id="link" type="text" class="form-control" name="photoTwo" placeholder="Link to a photo only"  />
                                     </div>
                                     <textarea  type="text" name="comment"   placeholder="Comment required" value="${fn:escapeXml(comment)}" required>${commentOut}</textarea> 
                                     <input type="hidden" name="userName" value="${pageContext.request.userPrincipal.name}"/>
                                     <input type="submit" id="log-in-btn" class="form-control" value="Submit Post"/>
                                 </sf:form> 
-                            </sec:authorize>
-
-                            <!------------------------------------------------------------------------------------------------------------------------------>                         
-
-                            <div class="col-md-12 ">
-                                <div class="form-group">
-                                    <div  class="form-control to-center pre-posts">
-                                        <c:if test="${empty pageContext.request.userPrincipal.name}">
-                                            <p class="login">
-                                                <a  href="${pageContext.request.contextPath}/signIn">Sign In</a> <c:out value="${logIn}"/>
-                                            </p>
-                                        </c:if>
-
-                                        <p>
-                                            <%
-                                                LocalDateTime date = LocalDateTime.now();
-                                                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("E MMM-dd-yyyy HH:mma  ");
-                                                String dates = formatter.format(date);
-                                                out.print("Today is " + dates);
-                                            %>
-                                        </p>
-                                        <hr></hr>
-                                        <p class="newPost">
-
-                                            <c:out value="${newPost}"/>
-                                        </p>
-
-                                    </div>
-                                </div>
                             </div>
-                            <c:forEach var="allPosts" items="${displayAllPost}">
-                                <div class="container pre-posts">
-                                    <p>
-                                        <span class="grey">
-                                            <c:if test="${!empty allPosts.user.photo}">
-                                                <img  id="user-img" 
-                                                      src="${allPosts.user.photo}"/>
-                                            </c:if>
-                                            <c:out value="${allPosts.user.userName}..."/>
-                                            <fmt:parseDate pattern="yyyy-MM-dd'T'HH:mm:ss" value=" ${allPosts.publishDate}" var="Postdate"/>
-                                            <fmt:formatDate value="${Postdate}" pattern=" MMM-dd-yyyy @hh:mma"/>
-                                        </span>
-                                    </p>
-                                    <hr class="userinfo-Hr"></hr>
-                                    <p>
-                                        <c:out value="${allPosts.content}"/>
-                                    </p>
-                                    <div class="container img-center">
-                                        <c:if test="${!empty allPosts.imagePath}">
-                                            <a href="${allPosts.imagePath}">
-                                                <img src="${allPosts.imagePath}"/>
-                                            </a>
-                                            <c:if test="${!empty allPosts.imagePathTwo}">
-                                                <a href="${allPosts.imagePathTwo}"> 
-                                                    <img src="${allPosts.imagePathTwo}"/>
-                                                </a>
-                                            </c:if>
-                                        </c:if>                 
-                                    </div>
-                                    <hr class="newPost-Hr"></hr>
-                                    <c:if test="${pageContext.request.userPrincipal.name == allPosts.user.userName}">
-                                        <p class="edit-delete">
-                                            <a class="grey " href="editPostForm?postId=${allPosts.postId}">edit</a> 
-                                            <a class="grey" href="deletePost?postId=${allPosts.postId}"  id="delete" data-confirm=" WARNING!!!!: Are you sure to delete this comment? CANNOT BE UNDONE!!!">delete</a>
-                                        </p>
-                                    </c:if>
-                                </div> 
-                            </c:forEach>
+                        </sec:authorize>
+                    </div>
+                    <!------------------------------------------------------------------------------------------------------------------------------>                         
+
+
+                    <div class="to-center  col-md-12" id="date">
+                        <p class="today">
+                            <%
+                                LocalDateTime date = LocalDateTime.now();
+                                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("E MMM-dd-yyyy HH:mma  ");
+                                String dates = formatter.format(date);
+                                out.print("Today is " + dates);
+                            %>|
+                        </p>
+                        <div id="signIn-display">
+                            <p>
+                        <c:if test="${empty pageContext.request.userPrincipal.name}">
+                            <a href="${pageContext.request.contextPath}/signIn">
+                                Sign In
+                            </a> 
+                            <c:out value="${logIn}"/>
+                        </c:if>
+                            </p>
                         </div>
                     </div>
-                    <hr></hr>
+
+                      
+                    <div class="container display-post col-md-12">
+                        <c:forEach var="allPosts" items="${displayAllPost}">
+                            <div class="container pre-posts">
+                                <p>
+                                    <span class="grey">
+                                        <c:if test="${!empty allPosts.user.photo}">
+                                            <img  id="user-img" 
+                                                  src="${allPosts.user.photo}"/>
+                                        </c:if>
+                                        <c:out value="${allPosts.user.userName}..."/>
+                                        <fmt:parseDate pattern="yyyy-MM-dd'T'HH:mm:ss" value=" ${allPosts.publishDate}" var="Postdate"/>
+                                        <fmt:formatDate value="${Postdate}" pattern=" MMM-dd-yyyy @hh:mma"/>
+                                    </span>
+                                </p>
+                                <hr class="userinfo-Hr"></hr>
+                                <p>
+                                    <c:out value="${allPosts.content}"/>
+                                </p>
+                                <div class="container img-center">
+                                    <c:if test="${!empty allPosts.imagePath}">
+                                        <a href="${allPosts.imagePath}">
+                                            <img src="${allPosts.imagePath}"/>
+                                        </a>
+                                        <c:if test="${!empty allPosts.imagePathTwo}">
+                                            <a href="${allPosts.imagePathTwo}"> 
+                                                <img src="${allPosts.imagePathTwo}"/>
+                                            </a>
+                                        </c:if>
+                                    </c:if>                 
+                                </div>
+                                <hr class="newPost-Hr"></hr>
+                                <c:if test="${pageContext.request.userPrincipal.name == allPosts.user.userName}">
+                                    <p class="edit-delete">
+                                        <a class="grey " href="editPostForm?postId=${allPosts.postId}">edit</a> 
+                                        <a class="grey" href="deletePost?postId=${allPosts.postId}"  id="delete" data-confirm=" WARNING!!!!: Are you sure to delete this comment? CANNOT BE UNDONE!!!">delete</a>
+                                    </p>
+                                </c:if>
+                            </div> 
+                        </c:forEach>
+                    </div>
+                   
+                        <hr class="col-md-12"></hr>
                     <footer id="footer"></footer>
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
                     <script src="${pageContext.request.contextPath}/js/jquery.js"></script>

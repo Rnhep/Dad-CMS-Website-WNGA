@@ -31,58 +31,57 @@
                             
                             <div class="logo logo-hide col-md-12">
                             </div>
-                            <div class="col-md-12" id="header-desktop"></div>
+                            <div class="col-md-9" id="header-desktop"></div>
                             <div id="up"></div> 
                             
                             
-                    <c:if test="${!empty message}"> 
-                        <div class="container">
-                            <div class=" alert alert-danger">
+                   
+                    <div class="container col-md-12 registration" id="registration ">
+                         <c:if test="${!empty message}"> 
+                            <div class=" col-md-8 alert alert-danger">
                                 ${message}
                             </div>
-                        </div>
                     </c:if>
-                    <div class="container-fluid" id="contain-one">
-
                         <sf:form role="form" action="createUser" method="POST" >
                             <div class="form-group">
-                                <div class="col-md-8">
+                                <div class="col-md-8 ">
                                     <h2>${registration}</h2>
                                     <div class="alert-danger">${termBox}</div>
-                                    <input type="checkbox" name="agreement" value="true"/> ${iAgree} <a href="${pageContext.request.contextPath}/termandcondition">${termAndCondition}</a>
-                                    <input type="email" class="form-control" id="email"
+                                    <input id="registration-from" type="checkbox" name="agreement" value="true"/> ${iAgree}
+                                    <a href="${pageContext.request.contextPath}/termandcondition">${termAndCondition}</a>
+                                    <input id="registration-from" type="email" class="form-control" id="email"
                                            name="email" placeholder="Email" value="${emailField}" required/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-8">
                                     ${userName}
-                                    <input type="text" class="form-control" id="userName"
+                                    <input id="registration-from" type="text" class="form-control" id="userName"
                                            name="userName" placeholder="User Name" value="${userNameField}" required/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-8">
-                                    <input type="text" class="form-control" id="fn"
+                                    <input id="registration-from" ype="text" class="form-control" id="fn"
                                            name="firstName" placeholder="First Name" value="${firstNameField}" required/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-8">
-                                    <input type="text" class="form-control" id="ln"
+                                    <input id="registration-from" type="text" class="form-control" id="ln"
                                            name="lastName" placeholder="Last Name" value="${lastNameField}" required/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-8">
-                                    <input type="password" class="form-control" id="password"
+                                    <input id="registration-from" type="password" class="form-control" id="password"
                                            name="password" placeholder="password" 
                                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"  required />
 
                                 </div>
                             </div><div class="form-group">
                                 <div class="col-md-8">
-                                    <input type="password" class="form-control" id="password"
+                                    <input id="registration-from" type="password" class="form-control" id="password"
                                            name="confirmPassword" placeholder="password" 
                                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
                                            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/>
@@ -90,7 +89,7 @@
                                 </div>
                             </div>
                             <div class="col-md-8">
-                                <input type="submit" id="log-in-btn" class="form-control" value="Submit"/>
+                                <input id="registration-from" type="submit" id="log-in-btn" class="form-control" value="Submit"/>
                             </div>
                         </sf:form>
                     </div>

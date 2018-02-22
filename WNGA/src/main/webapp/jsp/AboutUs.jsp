@@ -23,7 +23,7 @@
         <div id="up"></div> 
         
          <div id="header-about-us"> </div>
-        <div class=" col-md-12 container aboutus">
+        <div class=" col-md-10 container aboutus">
             <div class="container">
                 <div id="strong">    
                     <p>

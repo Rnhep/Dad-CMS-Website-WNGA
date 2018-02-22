@@ -23,12 +23,12 @@
                 </head>
                 <body>
                     <div id="header-mobile"></div>
-                            
-                            <div class="logo logo-hide col-md-12"></div>
-                            <div class="col-md-12" id="header-desktop"></div>
-                            <div id="up"></div> 
-                            
-                            
+
+                    <div class="logo logo-hide col-md-12"></div>
+                    <div class="col-md-12" id="header-desktop"></div>
+                    <div id="up"></div> 
+
+
                     <div class="form-group container" id="expand">
                         <div id="add-post" class="col-md-12">
                             <div class="container text-danger" id="passwordHelp" ><c:if test="${param.login_error == 1}">
@@ -60,10 +60,10 @@
                             <div class="col-sm-2 align-top " >
                                 <a href="${pageContext.request.contextPath}/signUp">${signUp}</a> 
                             </div>
-                             <hr></hr>
+                            <hr></hr>
                         </div>
                     </div>
-                             
+
                     <footer id="footer" ></footer>
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
                     <script src="${pageContext.request.contextPath}/js/jquery.js"></script>

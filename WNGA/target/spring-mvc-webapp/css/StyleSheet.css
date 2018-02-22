@@ -14,7 +14,7 @@ body
         padding-top: -200px;
         vertical-align: baseline;
         outline: 0;
-        background: linear-gradient(to bottom, rgba(0,0,0,0.2) 1%,rgba(188,188,188,0.7) 100%)no-repeat center white;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.2) 6%,rgba(188,188,188,0.7) 100%)no-repeat center white;
     }
     .username
     {
@@ -24,39 +24,30 @@ body
         height: 10px;
         font-size: 16px;
         margin-top: 35px;
-        
     }
-
     .logo
     {
 
-        background: linear-gradient(to bottom, rgba(0,0,0,0.0) 4%,rgba(0,0,0,0.0) 100%), url('../Images/WNGA-M.png')no-repeat center white;
-        min-height: 190px;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.2) 4%,rgba(0,0,0,0.0) 100%), url('../Images/WNGA-M.png')no-repeat center white;
+        min-height: 120px;
         max-width: 25%;
-        opacity: 1; 
         background-size: contain;
-
-
     }
     #header-desktop
     {
-        margin-top: 114px;
+        margin-top: 46.4px;
         max-height: 200px;
         max-width: 100%;
         opacity: 1;   
         background-size: contain;
         border-bottom: 3px solid #fff;
-
-
     }
     .flex-container
     {
-
         display: flex;
         justify-content: center;
         padding: 10px;
         padding-bottom: 0px;
-
     }
     .flex-signIn
     {
@@ -65,8 +56,6 @@ body
         margin-left: 40px;
         padding: 10px;
         padding-bottom: 0px;
-        
-
     }
     .flex-container > div,
     .flex-signIn > div
@@ -74,58 +63,117 @@ body
         font-weight: bold;
         margin-right: 30px;
         padding: 10px;
-        border: 3px solid #fff;
-        border-radius: 2px 15px 2px 15px;
-
+        border-top: 3px solid #fff;
+        border-left: 3px solid #fff;
+        border-right: 3px solid #fff;
+        border-radius: 2px 15px  2px 15px;
     }
-
     .flex-container a,
     .flex-signIn a
     {
-        color: #fff;
+        color: #000;
         text-decoration: none;
         font-size: 14px;
-
     }
     .aboutus-header
     {
-        
         padding-top: 18px;
-       
     }
     .aboutus{
-        
+
         margin-top: 100px;
+        margin-left: 8.5%;
+        padding: 5px;
+        background-color: #fff;
     }
     #header-mobile,
-    #header-about-us
+    #header-about-us,
+    #signIn-display
     {
         display: none;
 
     }
-
-    .pre-posts
+    .post-preview,
+    .user-box
+    {
+        padding-top: 5px;
+        margin-top: 10px;
+        height: auto;
+        max-width: 81%;
+        border: 1px solid silver;
+        background-color: #fff
+    }
+    #recent-post
+    {
+        font-weight: bold;
+        color: #000;
+        padding-bottom: 20px; 
+    }
+    .display-post
+    {
+        margin-top: 30px;
+        margin-left: 30%;
+        padding: 0px;
+        max-width: 40%;
+        max-height: 700px;
+        overflow-y: scroll;
+        margin-bottom: 0px;
+    }
+    #date
+    {   
+        
+        margin-top: 50px;
+        padding: 5px;
+        background-color: #fff;
+        height: auto;
+        font-size: 12px;
+    }
+    .today
+    {
+        float: right;
+        margin-right: 10px;
+    }
+    #date p
+    {
+        color: #000;
+        font-size: 10px;
+    }
+    .latestPost
+    {
+        padding-top: 20px;
+        padding-bottom: 40px;
+        border-top: 9px solid #fff;
+        border-bottom: 9px solid #fff;
+        max-width: 79%;
+        margin-left:  10.5%;
+    }
+    #events
     {
         margin-top: 80px;
-
+        margin-left: 8.8%;
+        max-width: 80.8%;
     }
-   
-
+    .pre-posts
+    {
+        padding-top: 10px;
+        margin: 10px;
+        height: auto;
+        max-width: 100%;
+        background-color: #fff;
+    }
     .img-conainter
     {
-
         margin-top: 20px;
         color:#fff;
         font-size: 30px;
         max-height: 100%;
-
     }
     .to-center
     {
 
         margin-top: 20px;
         color: black;
-        height: auto;
+        height: 10px;
 
     }
     .img-conainter p, .to-center p,
@@ -141,7 +189,8 @@ body
     } 
     #bg
     {
-        height: 400px; 
+        margin-top: 35px;
+        height: 490px; 
 
     }
 
@@ -164,13 +213,71 @@ body
         bottom: 0x;
         width: 100%;
         border: 1px #fff;
-
-        margin-top: 128px;
+        margin-top: 10px;
+        
     } 
     .footer center{
         color: #fff;
     }
+    .postForm
+    {  max-width: 50%;
+       margin-top: 60px;
+       margin-left: 25%;
+    }
+    .plainText-content
+    {
+        background-color: #fff;
+    }
+    .plainText-content p
+    {
+        padding: 10px;
+        color: #000;
+    }
+    .registration
+   {
+      margin-top: 30px;
+      height: 632px;
+      max-width: 40%;
+      margin-left: -25%;
+   }
+    .registration-form
+    {
+        margin-left: -40px;
+    }
+    textarea, 
+    #log-in-btn, 
+    #link, 
+    #registration-from
+    {
+        overflow:hidden;
+        width:580px;
+        font-size:14px;
+        display:block;
+        margin:auto;
+        border-radius:10px;
+    }
+    textarea
+    {
+        height: 100px;
+    }
+
+    #user-img
+    {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+    }
+    .newPost-Hr
+    {
+        margin-bottom: 5px;
+    }
+
+    .edit-delete
+    {
+        margin-bottom: -0px;
+    }
 }
+
 
 
 @media only screen and (min-width : 414px) and (max-width : 1112px) {
@@ -185,7 +292,6 @@ body
     }
     body
     {
-
         padding-top: -200px;
         vertical-align: baseline;
         outline: 0;
@@ -209,10 +315,10 @@ body
     }
 
     #header-about-us{
+        
         position: relative;
 
     }
-
 
     #home a,
     #news a,
@@ -425,6 +531,7 @@ body
     }
     .pre-posts
     {
+        word-break: break-all;
         overflow-y: hidden;
         padding-top: 5px;
         padding-bottom: 5px;
@@ -514,7 +621,10 @@ body
     {
         margin-top: -7px;  
     }
-
+    .hideatmobile
+    {
+        display: none;
+    }
 }
 @media only screen and (min-width : 310px) and (max-width : 414px) {
 
@@ -639,7 +749,7 @@ body
         height: 503px;
         margin-top: 90px;
     }
-    #contain-one
+    #registration
     {
         height: 470px;
         padding-top: 20px;
@@ -768,8 +878,13 @@ body
         max-width: 100%;
         padding-bottom: 10px;
     }
-    .pre-posts
+    span
     {
+        display: block;
+    }
+    .pre-posts
+    {   
+        word-break: break-all;
         overflow-y: hidden;
         padding-top: 5px;
         padding-bottom: 5px;
@@ -799,13 +914,11 @@ body
         text-align: center;
         padding-bottom: 10px;
     }
-
     .grey
     {
         color: #101010; 
 
     }
-
     #nav
     {
         color:#337ab7;
@@ -834,13 +947,11 @@ body
     .footer center{
         color: #fff;
     }
-
     #strong
     {
         font-weight: bold;
 
     }
-
     .header-Hr
     {
         margin-top: -1px;
@@ -860,6 +971,10 @@ body
     .spaceBox
     {
         height: 450px;
+    }
+    .hideatmobile
+    {
+        display: none;
     }
 }
 

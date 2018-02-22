@@ -19,7 +19,8 @@
         <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
         <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
     </head>
-    <body>  <c:if test="${!empty pageContext.request.userPrincipal.name}">
+    <body> 
+        <c:if test="${!empty pageContext.request.userPrincipal.name}">
             <small class="username"> 
                 <c:if test="${ pageContext.request.userPrincipal.name != null}">
                     Hello : ${pageContext.request.userPrincipal.name} |
@@ -33,19 +34,23 @@
             <div>  <a href="${pageContext.request.contextPath}/home">Home</a></div>
             <div>  <a  href="${pageContext.request.contextPath}/aboutUs"> About Us</a></div>
             <div>  <a  href="${pageContext.request.contextPath}/newsFeed">News</a></div> 
-            <div>  <a  href="${pageContext.request.contextPath}/displayPost">Posts</a></a></div>
-        </div>
-        <div class="flex-signIn col-md-">
+            <div>  <a  href="${pageContext.request.contextPath}/displayPost">Posts</a></div>
             <sec:authorize access="hasRole('ROLE_ADMIN')">
                 <div >
                     <a  href="${pageContext.request.contextPath}/admin">Admin</a>
                 </div>
             </sec:authorize>
-            <div>  <a  href="${pageContext.request.contextPath}/newsFeed">Sign In</a></div> 
-            <div>  <a  href="${pageContext.request.contextPath}/displayPost">Sing Up</a></a></div>
+        </div>
+        <div class="flex-signIn col-md-">
+        
+            <div>  <a  href="${pageContext.request.contextPath}/signIn">Sign In</a></div> 
+            <div>  <a  href="${pageContext.request.contextPath}/signUp">Sing Up</a></div>
+            <c:if test="${ pageContext.request.userPrincipal.name != null}">
+            <div> <a  href="<c:url value="/j_spring_security_logout"/>"> Sign Out</a> </div>
+            </c:if>
         </div>
 
-
+        
 
     </body>
 </html>
