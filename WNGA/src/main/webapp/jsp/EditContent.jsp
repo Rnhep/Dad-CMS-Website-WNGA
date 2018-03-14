@@ -27,24 +27,16 @@
                             <div class="logo logo-hide col-md-12">
                             </div>
                             <div class="col-md-12" id="header-desktop"></div>
-                            <div id="up"></div> 
+                            
                             
                             
 
                     <div class="container" id="expand">
-                        <div class="form-group">
                             <sf:form role="form" action="updateContent" 
                                      method="POST" modelAttribute="newsFeed">
-                                <div class="form-group">
-                                    <div class="col-md-8">
                                         <sf:input type="text" class="form-control" id="title"
                                                   path="name" placeholder="Enter your Title here"/>
                                         <sf:errors path="name" cssclass="error"></sf:errors>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <div class="col-md-8">
                                         <sf:hidden path="date" value="${date}"/>
                                         <sf:textarea type="text"  
                                                      path="content" placeholder="Enter your news Feed here" maxlength="250" />
@@ -52,10 +44,9 @@
                                         <sf:hidden path="link"/>
                                         <sf:hidden path="newsFeedId"/>
                                         <input type="submit" class="btn btn-default" value="Update Content"/>
-                                    </div>
-                                </div>
+                                
                             </sf:form>
-                        </div>
+                        
                     </div>
 
                     <hr>             

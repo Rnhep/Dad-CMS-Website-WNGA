@@ -18,8 +18,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fi">
        <head>
-        <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <title> WNGA Posts</title>
         <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
             <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
@@ -28,13 +29,10 @@
                     <div id="header-mobile"></div>
                     <div class="logo logo-hide col-md-12">
                     </div>
-                    <div class="col-md-9" id="header-desktop"></div>
-                    <div id="up"></div> 
-
-                    <div class="container col-md-12">
+                    <div class="col-md-10" id="header-desktop"></div>
                         <!--Add post form for user/admin role-->
                         <sec:authorize access="isAuthenticated()">
-                            <div class="container postForm ">
+                            <div class="container col-md-12 postForm ">
                                 <sf:form role="form"  method="POST" 
                                          action="creatNewPost">
                                     <div ><c:out value="${message}"/></div>
@@ -50,11 +48,11 @@
                                 </sf:form> 
                             </div>
                         </sec:authorize>
-                    </div>
+                    
                     <!------------------------------------------------------------------------------------------------------------------------------>                         
 
 
-                    <div class="to-center  col-md-12" id="date">
+                    <div class="to-center col-md-12" id="date">
                         <p class="today">
                             <%
                                 LocalDateTime date = LocalDateTime.now();
@@ -90,10 +88,11 @@
                                         <fmt:formatDate value="${Postdate}" pattern=" MMM-dd-yyyy @hh:mma"/>
                                     </span>
                                 </p>
-                                <hr class="userinfo-Hr"></hr>
+                                <div class="container postContents">
                                 <p>
                                     <c:out value="${allPosts.content}"/>
                                 </p>
+                                </div>
                                 <div class="container img-center">
                                     <c:if test="${!empty allPosts.imagePath}">
                                         <a href="${allPosts.imagePath}">
@@ -106,7 +105,6 @@
                                         </c:if>
                                     </c:if>                 
                                 </div>
-                                <hr class="newPost-Hr"></hr>
                                 <c:if test="${pageContext.request.userPrincipal.name == allPosts.user.userName}">
                                     <p class="edit-delete">
                                         <a class="grey " href="editPostForm?postId=${allPosts.postId}">edit</a> 
@@ -117,7 +115,7 @@
                         </c:forEach>
                     </div>
                    
-                        <hr class="col-md-12"></hr>
+                    <hr class="col-md-10"></hr>
                     <footer id="footer"></footer>
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
                     <script src="${pageContext.request.contextPath}/js/jquery.js"></script>

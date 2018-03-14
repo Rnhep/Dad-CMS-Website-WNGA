@@ -3,37 +3,45 @@
     Created on : Nov 13, 2017, 1:44:07 PM
     Author     : ritheenhep
 --%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.time.format.DateTimeFormatter"%>
+<%@page import="java.time.LocalDateTime"%>
+<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="s" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>About-us WNGA</title>
-        <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
-        <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
-    </head>
-    <body>
-<!--        <div id="header-mobile"></div>-->
-        
-        <div class="logo logo-hide col-md-12"></div>
-        <div class="col-md-9 aboutus-header" id="header-desktop"></div>
-        <div id="up"></div> 
-        
-         <div id="header-about-us"> </div>
-        <div class=" col-md-10 container aboutus">
-            <div class="container">
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
+<%@ page language="java" %>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fi">
+       <head>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>About us</title>
+        <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet"/>
+            <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet"/>
+                </head>
+                <body>
+              <div id="header-mobile"></div>
+                    <div class="logo logo-hide col-md-12">
+                    </div>
+                    <div class="col-md-9" id="header-desktop"></div>
+                    <div id="up"></div>       
+            
+                    <div class="container col-md-12 aboutUs-top">
                 <div id="strong">    
                     <p>
-                        WHAT IS WNGA?<br>      
+                        WHAT IS WNGA?      
                     </p>
                     <p>• Legal Organization with State and Federal.</p>
                     <p>• A Non-Profit Organization 501(C)4.</p>
                     <p>• Not a Tax Exemption.</p>
                 </div>
-
+            </div>
+                <div class="container col-md-12 aboutUs">
                 <p>
                     <strong> Overview: </strong><br>
 
@@ -46,7 +54,9 @@
                     the Internal Revenue Code as amended, or the corresponding section of any 
                     future federal tax code. 
                 </p>
-                <hr>
+                </div>
+         
+             <div class="container col-md-12 aboutUs">
 
                 <strong> Objectives: </strong><br>
                 <p> • To establish educational and cultural exchange programs;</p>
@@ -65,11 +75,9 @@
                     who share and support WNGA’s principles of human rights, democracy, economic security, 
                     system of justice and free market enterprise for Cambodia. </p>
 
-                <hr>
-
+                
             </div>
-        </div>
-
+      
 
         <footer id="footer"></footer>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

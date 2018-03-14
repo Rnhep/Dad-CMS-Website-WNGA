@@ -15,11 +15,11 @@
     </head>
     <body>
         
-<footer class="footer container-fluid col-md-12">
+<fotter class="footer container-fluid col-md-12">
    
-    <center>|&copy;WNGA 2017|</center>
+    <center>|&copy;RNhepDev.com 2018|</center>
   A Non-Profit Organization 501(C)4|Not a business|Not a Tax Exemption|Not a political party|Not a business|
   <a href="${pageContext.request.contextPath}/TermAndPolicy">Term of Use</a> | <a href="${pageContext.request.contextPath}/contactUs">Contact Us</a> |
-</footer>
+</fotter>
     </body>
 </html>

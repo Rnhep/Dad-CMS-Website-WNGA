@@ -5,11 +5,7 @@
  */
 $('document').ready(function () {
     console.log("testing");
-
-//  alert();
-    $('#header-mobile').load('jsp/Header.jsp');
-    $('#header-desktop').load('jsp/HeaderDesktop.jsp');
-$('#header-about-us').load('jsp/Header.jsp');
+     $('#header-desktop').load('jsp/HeaderDesktop.jsp');
     $('#footer').load('jsp/Footer.jsp');
 //look for link in plain text
     $('p , pre').linkify({
@@ -17,47 +13,59 @@ $('#header-about-us').load('jsp/Header.jsp');
     });
 });
 
+
+function headerReload(){
+       if ($(window).width() >= 1536) {
+//        alert($(window).width());
+           $('#header-desktop').load('jsp/HeaderDesktop.jsp');
+       }else{
+         $('#header-mobile').load('jsp/Header.jsp');
+       }
+   }
+   $(window).on('load resize', headerReload);
+
 //virify delete button
-    var deleteLinks = document.querySelectorAll('#delete');
-    for (var i = 0; i < deleteLinks.length; i++) {
-        deleteLinks[i].addEventListener('click', function (event) {
-            event.preventDefault();
-            var choice = confirm(this.getAttribute('data-confirm'));
-            if (choice) {
-                window.location.href = this.getAttribute('href');
-            }
-        });
-    };
+var deleteLinks = document.querySelectorAll('#delete');
+for (var i = 0; i < deleteLinks.length; i++) {
+    deleteLinks[i].addEventListener('click', function (event) {
+        event.preventDefault();
+        var choice = confirm(this.getAttribute('data-confirm'));
+        if (choice) {
+            window.location.href = this.getAttribute('href');
+        }
+    });
+}
+;
 
 ////
- function confirmDisabled()
-    {
-     
-      var disabled = confirm('This user will be disabled');
-      if (disabled)
-          return true;
-      else
+function confirmDisabled()
+{
+
+    var disabled = confirm('This user will be disabled');
+    if (disabled)
+        return true;
+    else
         return false;
-    
-      }
-      
-     function confirmEnabled()
-    {
-     
-      var disabled = confirm('This user will be enabled');
-      if (disabled)
-          return true;
-      else
+
+}
+
+function confirmEnabled()
+{
+
+    var disabled = confirm('This user will be enabled');
+    if (disabled)
+        return true;
+    else
         return false;
-    
-      }
-    
- function cleanUp()
-    {
-      var cleanUp = confirm('This action will delete 100 items ' 
-              + ' out from your database  do you wish to continue? ');
-      if (cleanUp)
-          return true;
-      else
+
+}
+
+function cleanUp()
+{
+    var cleanUp = confirm('This action will delete 100 items '
+            + ' out from your database  do you wish to continue? ');
+    if (cleanUp)
+        return true;
+    else
         return false;
-    }
+}

@@ -19,90 +19,98 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fi">
        <head>
-        <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <title>WNGA Registration </title>
         <!-- Bootstrap core CSS -->
         <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
             <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
                 </head>
-                <body> 
+                <body > 
                     <div id="header-mobile"></div>
-                            
-                            <div class="logo logo-hide col-md-12">
-                            </div>
-                            <div class="col-md-9" id="header-desktop"></div>
-                            <div id="up"></div> 
-                            
-                            
-                   
-                    <div class="container col-md-12 registration" id="registration ">
-                         <c:if test="${!empty message}"> 
-                            <div class=" col-md-8 alert alert-danger">
-                                ${message}
-                            </div>
-                    </c:if>
+                    <div class="logo logo-hide col-md-12">
+                    </div>
+                    <div class="col-md-10" id="header-desktop"></div>
+                    
+                    <div class="container col-md-12 register">
+
                         <sf:form role="form" action="createUser" method="POST" >
-                            <div class="form-group">
-                                <div class="col-md-8 ">
+                           
                                     <h2>${registration}</h2>
-                                    <div class="alert-danger">${termBox}</div>
-                                    <input id="registration-from" type="checkbox" name="agreement" value="true"/> ${iAgree}
+                                    <div class="alert-danger">
+                                        ${termBox}
+                                        <c:if test="${!empty message}"> 
+                                            ${message}
+                                        </c:if>
+                                    </div>
+                                         <div class="form-group">
+                                    <input type="checkbox" name="agreement" value="true"/> ${iAgree}
                                     <a href="${pageContext.request.contextPath}/termandcondition">${termAndCondition}</a>
                                     <input id="registration-from" type="email" class="form-control" id="email"
                                            name="email" placeholder="Email" value="${emailField}" required/>
                                 </div>
-                            </div>
                             <div class="form-group">
-                                <div class="col-md-8">
                                     ${userName}
                                     <input id="registration-from" type="text" class="form-control" id="userName"
                                            name="userName" placeholder="User Name" value="${userNameField}" required/>
-                                </div>
                             </div>
-                            <div class="form-group">
-                                <div class="col-md-8">
+                                <div class="form-group">
                                     <input id="registration-from" ype="text" class="form-control" id="fn"
                                            name="firstName" placeholder="First Name" value="${firstNameField}" required/>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-8">
+                                <div class="form-group">
                                     <input id="registration-from" type="text" class="form-control" id="ln"
                                            name="lastName" placeholder="Last Name" value="${lastNameField}" required/>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-8">
+                          <div class="form-group">
                                     <input id="registration-from" type="password" class="form-control" id="password"
                                            name="password" placeholder="password" 
                                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"  required />
-
-                                </div>
-                            </div><div class="form-group">
-                                <div class="col-md-8">
+                          </div>
+                               <div class="form-group">
                                     <input id="registration-from" type="password" class="form-control" id="password"
                                            name="confirmPassword" placeholder="password" 
                                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
                                            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/>
                                     ${pswmessage}
-                                </div>
-                            </div>
-                            <div class="col-md-8">
-                                <input id="registration-from" type="submit" id="log-in-btn" class="form-control" value="Submit"/>
-                            </div>
+                               </div>
+                                 <div class="form-group">
+                                    <input id="registration-from" type="submit" class="btn btn-info"   value="Submit"/>
+                                    </div>
+                         
+
+
                         </sf:form>
                     </div>
-                    <hr>             
-                        <footer id="footer"></footer>
-                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-                        <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
-                        <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
-                        <script src="${pageContext.request.contextPath}/js/linkify.js"></script>
-                        <script src="${pageContext.request.contextPath}/js/linkify.min.js"></script>
-                        <script src="${pageContext.request.contextPath}/js/linkify-jquery.min.js"></script>
-                        <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
-                        <script src="${pageContext.request.contextPath}/js/Home.js"></script>
-                        <script src="${pageContext.request.contextPath}/js/linkify.js"></script>
+                    <div class="container col-md-4 policy" >
+                        <strong> Objectives: </strong><br>
+                            <p> • To establish educational and cultural exchange programs;</p>
+                            <p> • To create local, national, and international youth leadership programs;</p>
+                            <p> • To help the disadvantaged persons to meet their basic rights and needs;</p>
+                            <p> • To work with individual youth, families, communities, governments, 
+                                and countries to promote human rights, democracy, economic security and system 
+                                of justice that is consistent with international standard and international humanitarian laws;</p>
+                            <p> • To work with individual youth and families, communities, governments 
+                                and countries to strengthen and propel a peaceful bilateral relationship 
+                                between the people of Cambodia and of abroad based on the 1991 Paris Peace 
+                                Agreement on Cambodia and the principles of international laws;</p>
+                            <p> • To seek support from members of Congress and of Parliaments, 
+                                Executive Branch, and Prime Minister Office, Policymakers, news, media, 
+                                academics, non-governmental organizations, private businesses, and individuals 
+                                who share and support WNGA’s principles of human rights, democracy, economic security, 
+                                system of justice and free market enterprise for Cambodia. </p>
+                    </div>
+                    <hr class="col-md-10" id="footerspace"></hr>
+
+                    <footer id="footer"></footer>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>                  
+                    <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/linkify.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/linkify.min.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/linkify-jquery.min.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/Home.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/linkify.js"></script>
                 </body>
                 </html>
