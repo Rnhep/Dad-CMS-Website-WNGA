@@ -8,47 +8,48 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fi">
        <head>
-     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <title>WNGA Admin</title>
         <!-- Bootstrap core CSS -->
         <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
             <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
                 </head>
                 <body> 
-                 <div id="header-mobile"></div>
-                            
-                            <div class="logo logo-hide col-md-12">
-                            </div>
-                            <div class="col-md-12" id="header-desktop"></div>
-                            <div id="up"></div> 
-                            
-                            
-                    <div class="container">
+                    <div id="header-mobile"></div>
+
+                    <div class="logo logo-hide col-md-12">
+                    </div>
+                    <div class="col-md-12" id="header-desktop"></div>
+                    <div id="up"></div> 
+
+
+                    <div class="container col-md-12 admin-box">
                         <div class="container admin-note">
                             <h1> Admin </h1>
 
                         </div>
-                        <div class="container admin-note">
+                        <div class="container  admin-note">
                             <p> You have <c:out value="${postCount} Posts | ${newsFeedCount} News Feed | in your database"/></p>
 
                         </div>
-                        <hr></hr>
+                            
+                       
                         <div class="container pre-posts">
-                         
-                            <sf:form role="form" action="cleanUpNews" method="POST">
-                                <button type="submit" class="btn-danger"  onclick="return cleanUp()">
-                                    Delete 100 news 
-                                </button>
-                            </sf:form>
-                        
-                            <sf:form role="form" action="cleanUpPosts" method="POST">
-                                <button type="submit" class="btn-danger"  onclick="return cleanUp()">
-                                    Delete 100 posts 
-                                </button>
-                            </sf:form>
-                             
+                            <div class="btns-flex">
+                                <sf:form role="form" action="cleanUpNews" method="POST">
+                                    <button type="submit" class="btn-danger"  onclick="return cleanUp()">
+                                        Delete 100 news 
+                                    </button>
+                                </sf:form>
+
+                                <sf:form role="form" action="cleanUpPosts" method="POST">
+                                    <button type="submit" class="btn-danger"  onclick="return cleanUp()">
+                                        Delete 100 posts 
+                                    </button>
+                                </sf:form>
+                            </div> 
                         </div> 
                         <div class="container admin-note">
                             <p> Home Page Content</p>
@@ -91,99 +92,101 @@
                                 <c:out value="${contentFour.content}"/>
                             </p>
                         </div>
-                        <hr>
-                            <div class="container admin-note">
-                                <p> Current Events</p>
-                            </div>  
+                       
+                        <div class="container pre-posts admin-note">
+                            <p> Current Events</p>
+                        </div>  
 
 
-                            <div class="container pre-posts">
-                                <p><c:out value="${eventOne.name}"/>
-                                    <a  href="editContent?newsFeedId=${eventOne.newsFeedId}">
-                                        <button class="edit-btn btn btn-info" >Edit</button></a>
-                                </p>
-                                <p>
-                                    <c:out value="${eventOne.content}"/>
-                                </p>
-                            </div>
-                            <div class="container pre-posts">
-                                <p><c:out value="${eventTwo.name}"/>
-                                    <a  href="editContent?newsFeedId=${eventTwo.newsFeedId}">
-                                        <button class="edit-btn btn btn-info" >Edit</button></a>
-                                </p>
-                                <p>
-                                    <c:out value="${eventTwo.content}"/>
-                                </p>
-                            </div>
-                            <hr>
-
-                                <div class="container pre-posts">
-                                    <sf:form role="form" action="updateHomeImg" method="POST" >
-                                        <div class="form-group">
-                                            <div class="col-md-8">
-                                                <label><c:out value="${message}"/></label>
-                                                <input type="text" class="form-control" name="idInput" placeholder="Please enter a number '1' or '3'" required/>
-                                                <label><c:out value="${linkOut}"/></label>
-                                                <input type="text" class="form-control" name="imgLink" placeholder="Link to your Photo"/>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="col-md-8">
-                                                <input type="submit" class="btn btn-info" value="Update"/>
-                                            </div>
-                                        </div>
-                                    </sf:form>
+                        <div class="container pre-posts">
+                            <p><c:out value="${eventOne.name}"/>
+                                <a  href="editContent?newsFeedId=${eventOne.newsFeedId}">
+                                    <button class="edit-btn btn btn-info" >Edit</button></a>
+                            </p>
+                            <p>
+                                <c:out value="${eventOne.content}"/>
+                            </p>
+                        </div>
+                        <div class="container pre-posts">
+                            <p><c:out value="${eventTwo.name}"/>
+                                <a  href="editContent?newsFeedId=${eventTwo.newsFeedId}">
+                                    <button class="edit-btn btn btn-info" >Edit</button></a>
+                            </p>
+                            <p>
+                                <c:out value="${eventTwo.content}"/>
+                            </p>
+                        </div>
+                    
+                        <div class="container pre-posts">
+                            <sf:form role="form" action="updateHomeImg" method="POST" >
+                                <div class="form-group">
+                                    <div class="col-md-8">
+                                        <label><c:out value="${message}"/></label>
+                                        <input type="text" class="form-control" name="idInput" placeholder="Please enter a number '1' or '3'" required/>
+                                        <label><c:out value="${linkOut}"/></label>
+                                        <input type="text" class="form-control" name="imgLink" placeholder="Link to your Photo"/>
+                                    </div>
                                 </div>
-                                <hr>
-                                    <div class="container admin-note">
-
-                                        <p>
-                                            Current Users | ${usersCount} | 
-                                        </p>
-
+                                <div class="form-group">
+                                    <div class="col-md-8">
+                                        <input type="submit" class="btn btn-info" value="Update"/>
                                     </div>
+                                </div>
+                            </sf:form>
+                        </div>
+                   
+                        <div class="container pre-posts admin-note">
 
-                                    <!--All users-->
-                                    <div class="container user-box">
-                                        <c:forEach var="currentUser" items="${userList}">
-                                            <div class="container user-box" > 
-                                                <p > ${name}${currentUser.firstName} ${currentUser.lastName} |
-                                                    ${userName} ${currentUser.userName}
-                                                </p>   
+                            <p>
+                                Current Users | ${usersCount} | 
+                            </p>
 
-                                                <p>
-                                                    <c:if test="${currentUser.enable == true}">
-                                                        User is: Enabled
-                                                    </c:if>
-                                                    <c:if test="${currentUser.enable == false}">
-                                                        User is: Disabled
-                                                    </c:if> 
-                                                    <sf:form role="form" action="enabledUser" method="POST" >
-                                                        <input type="hidden" name="userId" value="${currentUser.userId}"/>
-                                                        <button type="submit" value="Endabled" id="btn" class="edit-btn btn btn-danger"  onclick="return confirmEnabled()">Enable</button>
-                                                    </sf:form>
+                        </div>
 
-                                                    <sf:form role="form" action="disabledUser" method="POST" >
+                        <!--All users-->
+                        <div class="container pre-posts">
+                            <c:forEach var="currentUser" items="${userList}">
+                                <div class="container user-box" > 
+                                    <p > ${name}${currentUser.firstName} ${currentUser.lastName} |
+                                        ${userName} ${currentUser.userName}
+                                    </p>   
 
-                                                        <input type="hidden"  name="userId"  value="${currentUser.userId}"/>
-                                                        <button type="submit" value="Disable" id="btn" class="btn btn-danger " onclick="return confirmDisabled()" >Disable</button>
-                                                    </sf:form>
-                                                </p>
-                                            </div>
-                                        </c:forEach>
-                                    </div>
-                                    </div>
-                                    <hr> </hr>         
-                                    <footer id="footer"></footer>
-                                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-                                    <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
-                                    <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
-                                    <script src="${pageContext.request.contextPath}/js/linkify.js"></script>
-                                    <script src="${pageContext.request.contextPath}/js/linkify.min.js"></script>
-                                    <script src="${pageContext.request.contextPath}/js/linkify-jquery.min.js"></script>
-                                    <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
-                                    <script src="${pageContext.request.contextPath}/js/Home.js"></script>
-                                    <script src="${pageContext.request.contextPath}/js/linkify.js"></script>
+                                    <p>
+                                        <c:if test="${currentUser.enable == true}">
+                                            User is: Enabled
+                                        </c:if>
+                                        <c:if test="${currentUser.enable == false}">
+                                            User is: Disabled
+                                        </c:if> 
+                                        <div class="btns-flex">
+                                            <sf:form role="form" action="enabledUser" method="POST" >
+                                                <input type="hidden" name="userId" value="${currentUser.userId}"/>
+                                                <button type="submit" value="Endabled" id="btn" class="edit-btn btn btn-danger"  onclick="return confirmEnabled()">Enable</button>
+                                            </sf:form>
 
-                                    </body>
-                                    </html>
+                                            <sf:form role="form" action="disabledUser" method="POST" >
+
+                                                <div> <input type="hidden"  name="userId"  value="${currentUser.userId}"/></div>
+                                                <div> <button type="submit" value="Disable" id="btn" class="btn btn-danger " onclick="return confirmDisabled()" >Disable</button></div>
+
+                                            </sf:form>
+                                        </div>
+                                    </p>
+                                </div>
+                            </c:forEach>
+                        </div>
+                    </div>
+                    <hr class="col-md-10"></hr>          
+                    <footer id="footer"></footer>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/linkify.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/linkify.min.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/linkify-jquery.min.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/Home.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/linkify.js"></script>
+
+                </body>
+                </html>

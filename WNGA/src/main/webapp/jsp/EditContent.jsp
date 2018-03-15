@@ -28,9 +28,6 @@
                             </div>
                             <div class="col-md-12" id="header-desktop"></div>
                             
-                            
-                            
-
                     <div class="container" id="expand">
                             <sf:form role="form" action="updateContent" 
                                      method="POST" modelAttribute="newsFeed">

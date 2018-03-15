@@ -49,7 +49,6 @@
                 <c:if test="${ pageContext.request.userPrincipal.name != null}">
                     Hello : ${pageContext.request.userPrincipal.name} |
                     <a href="userProfile?userName=${pageContext.request.userPrincipal.name}">Profile</a>
-
                 </c:if>
             </small>
            

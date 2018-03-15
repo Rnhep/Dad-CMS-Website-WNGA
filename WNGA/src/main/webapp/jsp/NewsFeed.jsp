@@ -24,58 +24,60 @@
     </head>
     <body>
         <div id="header-mobile"></div>
-                            
-                            <div class="logo logo-hide col-md-12">
-                            </div>
-                            <div class="col-md-12" id="header-desktop"></div>
-                            <div id="up"></div> 
-                            
-                            
-        <div class="container">
-            <!--Add post form for user/admin role-->
-            <sec:authorize access="hasRole('ROLE_ADMIN')">
+
+        <div class="logo logo-hide col-md-12">
+        </div>
+        <div class="col-md-12" id="header-desktop"></div>
+
+
+        <!--Add post form for user/admin role-->
+        <sec:authorize access="hasRole('ROLE_ADMIN')">
+            <div class="container col-md-12 postForm">
                 <sf:form  class="form-horizontal" 
                           role="form"  method="POST" 
                           action="createNewsFeed">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <div class="col-md-9">
-                                <div ><c:out value="${message}"/></div>
-<!--                                <div class="form-group container-fluid">
-                                    <input type="text" class="form-control" name="name" placeholder="Your Name"  required/>
-                                </div>-->
-                                <textarea  type="text" class="commentbox" name="content"   placeholder="Comment required" required>${commentOut}</textarea> 
-                                <input type="hidden" name="userName" value="${pageContext.request.userPrincipal.name}"/>
-                                <input type="submit" id="log-in-btn" class="form-control" value="Submit Post"/>
-                            </div>
-                        </div>
+                    <div class="form-group">
+
+                        <div ><c:out value="${message}"/></div>
+                        <!--                                <div class="form-group container-fluid">
+                                                            <input type="text" class="form-control" name="name" placeholder="Your Name"  required/>
+                                                        </div>-->
+                        <textarea  type="text" class="commentbox" name="content"   placeholder="Comment required" required>${commentOut}</textarea> 
+                        <input type="hidden" name="userName" value="${pageContext.request.userPrincipal.name}"/>
+                        <input type="submit" id="log-in-btn" class="form-control" value="Submit Post"/>
+
                     </div>
                 </sf:form> 
-
-            </sec:authorize>
-            <!------------------------------------------------------------------------------------------------------------------------------>                         
-            <div class="col-md-12 ">
-                <div class="form-group">
-                    <div  class="form-control to-center pre-posts">
-                        <p>  
-                            <%
-                                out.print("Today News");
-                            %>
-                        </p>
-                    </div>
-                </div>
             </div>
+        </sec:authorize>
+        <!------------------------------------------------------------------------------------------------------------------------------>                         
+        <div class="to-center col-md-12" id="date">
+            <p class="today"> 
+                <%
+                    out.print("Today News");
+                %>
+            </p>
+        </div>
+            
+        <div class="container display-post col-md-12">
             <c:forEach var="news" items="${allNews}">
                 <div class="container pre-posts">
-                    <p class="grey">
+                    
+                    <p>
+                        <span class="grey">
                         <c:out value="${admin}"/>
                         <fmt:parseDate pattern="yyyy-MM-dd" value=" ${news.date}" var="newsDate"/>
                         <fmt:formatDate value="${newsDate}" pattern="E MMM-dd-yyyy"/>
+                        </span>
                     </p>
+                     <div class="container postContents">
                     <p>
                         <c:out value="${news.content}"/>
                     </p>
-                    <hr class="newPost-Hr"></hr>
+                     </div>
+                    <div class="container img-center">
+                        
+                    </div>
                     <sec:authorize access="hasRole('ROLE_ADMIN')">
                         <p class="edit-delete">
                             <a class="grey" href="editNewsForm?newsFeedId=${news.newsFeedId}">edit</a> 
@@ -86,8 +88,8 @@
             </c:forEach>
         </div>
 
-        <hr></hr>
-       
+
+
         <footer id="footer"></footer>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="${pageContext.request.contextPath}/js/jquery.js"></script>

@@ -23,7 +23,7 @@
                     <div class="col-md-9" id="header-desktop"></div>
                      
 
-                    <div class="container col-md-12">
+                  
                         
                         <div class="container latestPost to-center col-md-12"> 
                             <p id="upComing"> Upcoming Events</p>
@@ -38,9 +38,10 @@
                             <c:out value="${eventTwo.name}"/>
                             <c:out value="${eventTwo.content}"/>
                         </pre>
-                    </div>
+                   
                     <div class="container latestPost to-center col-md-12"> 
-                        <p id="latestPost"> <c:out value="${latestPost}"/>
+                        <p id="latestPost">
+                            <c:out value="${latestPost}"/>
                         </p>
                     </div>
 

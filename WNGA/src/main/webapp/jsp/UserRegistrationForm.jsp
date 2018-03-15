@@ -34,7 +34,6 @@
                     <div class="col-md-10" id="header-desktop"></div>
                     
                     <div class="container col-md-12 register">
-
                         <sf:form role="form" action="createUser" method="POST" >
                            
                                     <h2>${registration}</h2>
@@ -76,7 +75,7 @@
                                     ${pswmessage}
                                </div>
                                  <div class="form-group">
-                                    <input id="registration-from" type="submit" class="btn btn-info"   value="Submit"/>
+                                    <input id="registration-from" type="submit" class="form-control" class="btn btn-info"   value="Submit"/>
                                     </div>
                          
 

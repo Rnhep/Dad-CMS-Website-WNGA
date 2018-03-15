@@ -79,6 +79,11 @@ public class MainController {
     public String contactUs(Model model) {
         return "ContactUs";
     }
+    @RequestMapping(value = "/TermAndCondition", method = RequestMethod.GET)
+   public String TermAndCondition(Model model)
+    {
+        return "TermAndCondition";
+    }
     
 
 }

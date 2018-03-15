@@ -19,7 +19,7 @@
    
     <center>|&copy;RNhepDev.com 2018|</center>
   A Non-Profit Organization 501(C)4|Not a business|Not a Tax Exemption|Not a political party|Not a business|
-  <a href="${pageContext.request.contextPath}/TermAndPolicy">Term of Use</a> | <a href="${pageContext.request.contextPath}/contactUs">Contact Us</a> |
+  <a href="${pageContext.request.contextPath}/TermAndCondition">Term of Use</a> | <a href="${pageContext.request.contextPath}/contactUs">Contact Us</a> |
 </fotter>
     </body>
 </html>
