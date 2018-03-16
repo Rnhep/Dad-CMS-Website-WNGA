@@ -108,7 +108,7 @@ public class AdminController {
     public String updateContent(@Valid @ModelAttribute("newsFeed") NewsFeed newsFeed,
             BindingResult result) {
         if (result.hasErrors()) {
-            return "customError";
+            return "CustomError";
         }
         NFDao.updateNewsFeed(newsFeed);
         return "redirect:admin";

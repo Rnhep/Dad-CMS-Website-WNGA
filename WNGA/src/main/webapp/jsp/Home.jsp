@@ -21,24 +21,25 @@
                     <div class="logo logo-hide col-md-12">
                     </div>
                     <div class="col-md-9" id="header-desktop"></div>
-                     
 
-                  
-                        
-                        <div class="container latestPost to-center col-md-12"> 
-                            <p id="upComing"> Upcoming Events</p>
-                        </div>
-                        
-                        <pre class="container post-preview">
-                            <c:out value="${eventOne.name}"/>
-                            <c:out value="${eventOne.content}"/>
-                        </pre>
-                        
-                        <pre  class="container post-preview">
-                            <c:out value="${eventTwo.name}"/>
-                            <c:out value="${eventTwo.content}"/>
-                        </pre>
-                   
+
+
+
+                    <div class="container latestPost to-center col-md-12"> 
+                        <p id="upComing"> Upcoming Events</p>
+                    </div>
+                    
+                    
+                    <pre class="container post-preview">
+                            <div><c:out value="${eventOne.name}"/> </div>
+                        <c:out value="${eventOne.content}"/>
+                    </pre>
+
+                    <pre  class="container post-preview">
+                      <div> <c:out value="${eventTwo.name}"/></div>
+                        <c:out value="${eventTwo.content}"/>
+                    </pre>
+
                     <div class="container latestPost to-center col-md-12"> 
                         <p id="latestPost">
                             <c:out value="${latestPost}"/>
@@ -47,12 +48,12 @@
 
                     <div class=" col-md-12" id="latestPostContent">
                         <c:forEach var="latestPost" items="${displayLatestPost}">
-                                
-                                <div class="latestPostContent">
-                               <p>
-                                <a href="${pageContext.request.contextPath}/displayPost">
+
+                            <div class="latestPostContent">
+                                <p>
+                                    <a href="${pageContext.request.contextPath}/displayPost">
                                         <c:out value="${latestPost.content}"/>
-                                </a> 
+                                    </a> 
                                 </p>
                                 <span class="grey">
                                     <c:out value="@${latestPost.user.userName}"/>
@@ -61,7 +62,7 @@
                                 </span>
                             </div>
                         </c:forEach>
-                      
+
                     </div>
 
                     <div class="col-md-12 container-fluid img-conainter " id="homepage-containerbg" 
@@ -109,7 +110,7 @@
                     </div>
                     <hr class="col-md-10"></hr>
                     <footer  id="footer"></footer>
-                
+
                     <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
                     <script src="${pageContext.request.contextPath}/js/linkify.js"></script>
                     <script src="${pageContext.request.contextPath}/js/linkify.min.js"></script>
