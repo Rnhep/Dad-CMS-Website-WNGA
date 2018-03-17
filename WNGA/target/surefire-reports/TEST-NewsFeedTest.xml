@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="0" name="NewsFeedTest" time="3.497" errors="0" skipped="0">
+<testsuite tests="5" failures="0" name="NewsFeedTest" time="3.644" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib"/>
@@ -65,9 +65,9 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="NewsFeedTest" name="testGetNewsById" time="2.214"/>
-  <testcase classname="NewsFeedTest" name="testUpdateNews" time="0.187"/>
-  <testcase classname="NewsFeedTest" name="testDeleteNews" time="0.304"/>
-  <testcase classname="NewsFeedTest" name="testAddGetNews" time="0.393"/>
-  <testcase classname="NewsFeedTest" name="testGetAll" time="0.399"/>
+  <testcase classname="NewsFeedTest" name="testGetNewsById" time="2.354"/>
+  <testcase classname="NewsFeedTest" name="testUpdateNews" time="0.197"/>
+  <testcase classname="NewsFeedTest" name="testDeleteNews" time="0.299"/>
+  <testcase classname="NewsFeedTest" name="testAddGetNews" time="0.324"/>
+  <testcase classname="NewsFeedTest" name="testGetAll" time="0.47"/>
 </testsuite>

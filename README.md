@@ -2,7 +2,7 @@ This project is not yet live. It is in developing process.
 
 WNGA (World New Generation Ankorean) is a non-profit organization.
 
-volunteered to create a website for this non-profit organization. November 2017 - present 
+volunteered to create a website for the non-profit organization. November 2017 - present 
 
 This is a small and basic CRUD web application.
 
