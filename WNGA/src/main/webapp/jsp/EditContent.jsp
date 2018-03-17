@@ -28,7 +28,7 @@
                             </div>
                             <div class="col-md-12" id="header-desktop"></div>
                             
-                    <div class="container" id="expand">
+                    <div class="container col-md-12 edit-content" >
                             <sf:form role="form" action="updateContent" 
                                      method="POST" modelAttribute="newsFeed">
                                         <sf:input type="text" class="form-control" id="title"
@@ -45,8 +45,10 @@
                             </sf:form>
                         
                     </div>
-
-                    <hr>             
+                            
+                            <div class="container col-md-12 register">
+                                
+                            </div>
                         <footer id="footer"></footer>
                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
                         <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
