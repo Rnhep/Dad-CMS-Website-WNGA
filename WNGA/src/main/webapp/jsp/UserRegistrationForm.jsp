@@ -82,7 +82,7 @@
 
                         </sf:form>
                     </div>
-                    <div class="container col-md-4 policy" >
+                    <div class="container col-md-12 policy" >
                         <strong> Objectives: </strong><br>
                             <p> • To establish educational and cultural exchange programs;</p>
                             <p> • To create local, national, and international youth leadership programs;</p>
@@ -100,8 +100,7 @@
                                 who share and support WNGA’s principles of human rights, democracy, economic security, 
                                 system of justice and free market enterprise for Cambodia. </p>
                     </div>
-                    <hr class="col-md-10" id="footerspace"></hr>
-
+                   <hr class=" container col-md-10 footerLine"></hr>
                     <footer id="footer"></footer>
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>                  
                     <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>

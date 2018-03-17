@@ -29,7 +29,7 @@
                     <div class="col-md-10" id="header-desktop"></div>
 
                     
-                    <div class="container col-md-12 register">
+                    <div class="container col-md-12 register" id="signIn">
                         <div class="container text-danger" id="passwordHelp" >
                             <c:if test="${param.login_error == 1}">
                                 <small>Wrong id or password!</small>
@@ -51,11 +51,11 @@
                         </sf:form> 
                         
                     </div>
-                    <div class="col-sm-12 newuser-box" >
+                    <div class="col-sm-12 newuser-box" id="signIn">
                             <a href="${pageContext.request.contextPath}/signUp">${signUp}</a> 
                         </div>
                       
-                    <hr class="col-md-10"></hr> 
+                    <hr class="col-md-10 footerLine"></hr> 
                     <footer id="footer" ></footer>
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
                     <script src="${pageContext.request.contextPath}/js/jquery.js"></script>

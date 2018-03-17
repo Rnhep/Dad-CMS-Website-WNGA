@@ -59,7 +59,7 @@
                                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("E MMM-dd-yyyy HH:mma  ");
                                 String dates = formatter.format(date);
                                 out.print("Today is " + dates);
-                            %>|
+                            %>
                         </p>
 
                     </div>

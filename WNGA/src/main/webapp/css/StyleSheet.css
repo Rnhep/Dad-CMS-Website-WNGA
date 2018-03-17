@@ -1,7 +1,5 @@
 /*
-
-
-@media only screen and (min-width:834px) and (max-width: 1112px) { 
+@media (min-width: 1025px) and (max-width: 1280px)  { 
 
     body
     {
@@ -434,8 +432,18 @@
 
     }
 
-}
-@media only screen and (max-width: 1024px){
+}*/
+
+
+
+
+/*        Tablets*/
+
+    /*Tablet landscape iPad pro 10.5"*/
+@media (min-width: 1111px)
+and (max-width: 1112px) 
+and (orientation: landscape)
+and (-webkit-min-device-pixel-ratio: 2){
 
     body
     {
@@ -645,20 +653,22 @@
     {  
         max-width: 80%;
     }
-    .signIn
-    {
-        padding-bottom: 203px;
-    }
+    
     .register
     {   
-        max-width: 99%;
+        margin-left:2.3%;
+        width: 100%;
+        max-width: 530px;
         height: auto;
-        margin: 30px;
+        margin-top: 60px;
         background: #204d74;
         color: #fff;
         border-radius:10px;
         padding-right: 30px;
-
+    }
+    #signIn
+    {
+       margin-left: 240px; 
     }
     textarea, 
     #log-in-btn, 
@@ -728,11 +738,11 @@
         max-width: 100%;
         padding-bottom: 10px;
     }
-     .newuser-box
+    .newuser-box
     {
-        margin-left: 40px;
-        margin-top: -20px;
-        margin-bottom: 299px;
+       
+        margin-bottom: 290px;
+        width: auto;
     }
     span
     {
@@ -764,7 +774,7 @@
         padding-top: 5px;
         padding-bottom: 5px;
         margin-top: 10px;
-        background-color:rgba(57,124,163,0.3)
+        background-color:rgba(57,124,163,0.3);
         height: auto;
         max-width: 100%;
         border: 1px solid silver;
@@ -805,14 +815,18 @@
         outline: none;
         border: none;
     }
-
-    footer
+    .footerLine
+    {
+        margin-top: 40px;
+        margin-left: 80px;
+        
+    }
+    .footer
     {  
-        font-size: 8px;
+        font-size: 12px;
         background-color: #122b40;
         color: #adadad;
-
-
+        padding: 20px 20px 20px 20px;
     } 
     .footer center{
         color: #fff;
@@ -851,27 +865,22 @@
     {
         padding: 30px;
         color: #fff;
-        margin-top: 30px;
-        height: auto;
-        width: 350px;
-        margin-left: auto;
-        margin-right: auto;
+        margin-top: 60px;
+        height: 100%;
+        max-height: 487px;
+        width: 100%;
+        max-width: 510px;
         border-radius:10px;
         background-color:  #337ab7;
+        margin-left: 2%;
+        overflow-y: scroll;
 
 
     } 
-
-
 }
-
-*/
-
-        /*Tablets*/
-
-@media only screen 
-and (min-width : 320px) 
-and (max-width : 500px) 
+        /* Tablet landscape*/
+@media (min-width: 768px)
+and (max-width: 1024px) 
 and (orientation: landscape)
 and (-webkit-min-device-pixel-ratio: 2){
 
@@ -951,9 +960,9 @@ and (-webkit-min-device-pixel-ratio: 2){
     }
     #dropdown{
         color: #3385ff;
-        /*background-color: #3385ff;*/
+        background-color: #3385ff;
         font-size: 30px;
-        /*background:none;*/
+        background:none;
         text-decoration: none;
         outline: none;
         border: 1px;
@@ -967,7 +976,7 @@ and (-webkit-min-device-pixel-ratio: 2){
 
     }
     #nav {
-        /*        color: #337ab7;*/
+                color: #337ab7;
         font-size: 16px;
         font-weight: bold;
 
@@ -1010,7 +1019,7 @@ and (-webkit-min-device-pixel-ratio: 2){
         font-size: 16px;
         font-weight: 900;
         text-decoration: none;
-        /*border: 1px solid black;*/
+        border: 1px solid black;
 
     } 
     .upcoming
@@ -1033,7 +1042,7 @@ and (-webkit-min-device-pixel-ratio: 2){
     {
         padding-top: 5px;
         margin-top: 10px;
-        /*background-color:rgba(57,124,163,0.3);*/
+        background-color:rgba(57,124,163,0.3);
         height: auto;
         width: auto;
         border: 1px solid silver;
@@ -1083,9 +1092,15 @@ and (-webkit-min-device-pixel-ratio: 2){
     {  
         max-width: 80%;
     }
-
+    
+    #signIn
+    {
+        padding-bottom: 65px;
+        margin-left: 150px;
+    }
     .register
     {   
+        margin-left: 200px;
         width: 100%;
         max-width: 610px;
         height: auto;
@@ -1164,11 +1179,9 @@ and (-webkit-min-device-pixel-ratio: 2){
         max-width: 100%;
         padding-bottom: 10px;
     }
-    .newuser-box
-    {
-        margin-left: 40px;
-        margin-top: 20px;
-        margin-bottom: 140px;
+.newuser-box 
+    { 
+        width: auto;
     }
     span
     {
@@ -1200,7 +1213,7 @@ and (-webkit-min-device-pixel-ratio: 2){
         padding-top: 5px;
         padding-bottom: 5px;
         margin-top: 10px;
-        /*background-color:rgba(57,124,163,0.3)*/
+        background-color:rgba(57,124,163,0.3);
         height: auto;
         max-width: 100%;
         border: 1px solid silver;
@@ -1242,13 +1255,12 @@ and (-webkit-min-device-pixel-ratio: 2){
         border: none;
     }
 
-    footer
+    .footer
     {  
-        font-size: 8px;
+        font-size: 12px;
         background-color: #122b40;
         color: #adadad;
-
-
+        padding: 20px 20px 20px 20px;
     } 
     .footer center{
         color: #fff;
@@ -1296,16 +1308,14 @@ and (-webkit-min-device-pixel-ratio: 2){
 
 
     } 
-
 }
-@media only screen 
-and (min-width : 768px) 
-and (max-width : 900px) 
-and (orientation: portrait)
+/*
+-------------------------------------------------
+*/
+/*        Tablet portrait*/
+@media (min-width: 768px) and (max-width: 1024px)
 and (-webkit-min-device-pixel-ratio: 2)
 {
-
-
     body
     {
 
@@ -1382,9 +1392,9 @@ and (-webkit-min-device-pixel-ratio: 2)
     }
     #dropdown{
         color: #3385ff;
-        /*background-color: #3385ff;*/
+        background-color: #3385ff;
         font-size: 30px;
-        /*background:none;*/
+        background:none;
         text-decoration: none;
         outline: none;
         border: 1px;
@@ -1398,7 +1408,7 @@ and (-webkit-min-device-pixel-ratio: 2)
 
     }
     #nav {
-        /*        color: #337ab7;*/
+                color: #337ab7;
         font-size: 16px;
         font-weight: bold;
 
@@ -1441,7 +1451,10 @@ and (-webkit-min-device-pixel-ratio: 2)
         font-size: 16px;
         font-weight: 900;
         text-decoration: none;
-        /*border: 1px solid black;*/
+        margin-left: 35%;
+        width: 100%;
+        max-width: 200px;
+        box-shadow: 1px 1px #000000;
 
     } 
     .upcoming
@@ -1464,7 +1477,7 @@ and (-webkit-min-device-pixel-ratio: 2)
     {
         padding-top: 5px;
         margin-top: 10px;
-        /*background-color:rgba(57,124,163,0.3);*/
+        background-color:rgba(57,124,163,0.3);
         height: auto;
         width: auto;
         border: 1px solid silver;
@@ -1525,6 +1538,7 @@ and (-webkit-min-device-pixel-ratio: 2)
         max-width: 80%;
     }
 
+    
     .register
     {   
         width: 100%;
@@ -1575,7 +1589,7 @@ and (-webkit-min-device-pixel-ratio: 2)
     }
     .aboutUs
     {
-        margin-top: 10px;
+        margin-top: 20px;
         background: #204d74;
         color: #fff;
         padding: 20px;
@@ -1584,7 +1598,7 @@ and (-webkit-min-device-pixel-ratio: 2)
 
     .aboutUs-top
     {
-        margin-top: 50px;
+        margin-top: 80px;
         background: #204d74;
         color: #fff;
         padding: 20px;
@@ -1607,9 +1621,10 @@ and (-webkit-min-device-pixel-ratio: 2)
     }
     .newuser-box
     {
+        width: auto;
         margin-left: 40px;
         margin-top: 30px;
-        margin-bottom: 440px;
+      
     }
     span
     {
@@ -1641,7 +1656,7 @@ and (-webkit-min-device-pixel-ratio: 2)
         padding-top: 5px;
         padding-bottom: 5px;
         margin-top: 10px;
-        /*background-color:rgba(57,124,163,0.3)*/
+        background-color:rgba(57,124,163,0.3);
         height: auto;
         max-width: 100%;
         border: 1px solid silver;
@@ -1685,6 +1700,10 @@ and (-webkit-min-device-pixel-ratio: 2)
         float: right;
         outline: none;
         border: none;
+    }
+    .footerLine
+    {
+        margin-top: 494px;
     }
 
     footer
@@ -1744,13 +1763,13 @@ and (-webkit-min-device-pixel-ratio: 2)
 }
 
 
-
+/*-------------------------------------------------*/
 
         /*Moblie device*/
         
-@media only screen 
-and (min-width : 320px) 
-and (max-width : 500px) 
+@media 
+(min-width: 481px) 
+and (max-width: 800px) 
 and (orientation: landscape)
 and (-webkit-min-device-pixel-ratio: 2){
 
@@ -1889,7 +1908,7 @@ and (-webkit-min-device-pixel-ratio: 2){
         font-size: 16px;
         font-weight: 900;
         text-decoration: none;
-        /*border: 1px solid black;*/
+       
 
     } 
     .upcoming
@@ -1936,6 +1955,7 @@ and (-webkit-min-device-pixel-ratio: 2){
         margin-top: 20px;
         color: black;
         height: auto;
+/*        box-shadow: 1px 1px #000000;*/
     }
     .img-conainter
     {
@@ -2177,9 +2197,11 @@ and (-webkit-min-device-pixel-ratio: 2){
     } 
 
 }
+
+        /*mobile portrait*/
 @media only screen 
 and (min-width : 320px) 
-and (max-width : 500px) 
+and (max-width : 768px) 
 and (orientation: portrait)
 and (-webkit-min-device-pixel-ratio: 2)
 {
@@ -2320,7 +2342,7 @@ and (-webkit-min-device-pixel-ratio: 2)
         font-size: 16px;
         font-weight: 900;
         text-decoration: none;
-        /*border: 1px solid black;*/
+       
 
     } 
     .upcoming
@@ -2394,6 +2416,12 @@ and (-webkit-min-device-pixel-ratio: 2)
         max-width: 80%;
     }
 
+    #signIn
+    {
+        padding-top: 30px;
+        padding-bottom: 80px 
+    }
+    
     .register
     {   
         width: 100%;
