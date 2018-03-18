@@ -100,7 +100,7 @@
                                 who share and support WNGA’s principles of human rights, democracy, economic security, 
                                 system of justice and free market enterprise for Cambodia. </p>
                     </div>
-                   <hr class=" container col-md-10 footerLine"></hr>
+                   <hr class=" container col-md-10 "></hr>
                     <footer id="footer"></footer>
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>                  
                     <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>

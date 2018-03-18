@@ -69,7 +69,7 @@
                          style=" background: linear-gradient(to bottom, 
                          rgba(0,0,0,0.2) 4%,rgba(0,0,0,0.2) 100%), 
                          url(${contentOne.link})no-repeat center; background-size:cover" >
-                        <p>
+                        <p >
                             <c:out value="${contentOne.name}"/>
                         </p>
                         <p>

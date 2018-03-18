@@ -51,7 +51,7 @@
                         </sf:form> 
                         
                     </div>
-                    <div class="col-sm-12 newuser-box" id="signIn">
+                    <div class="col-md-12 newuser-box">
                             <a href="${pageContext.request.contextPath}/signUp">${signUp}</a> 
                         </div>
                       
