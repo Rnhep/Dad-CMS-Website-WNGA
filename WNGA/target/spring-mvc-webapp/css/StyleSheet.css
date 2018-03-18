@@ -573,16 +573,19 @@ and (-webkit-min-device-pixel-ratio: 2){
         margin:10px;
         border-radius:10px;
     }
-    .img-conainter p, .to-center p,
+   .img-conainter p, .to-center p,
     .news p a
     {
+        padding-top: 20px;
+        margin-left: 18%;
         text-align: center;
-        font-size: 16px;
+        font-size: 24px;
         font-weight: 900;
         text-decoration: none;
-     
-
-    } 
+        width: 100%;
+        max-width: 650px;
+        padding-bottom: 20px;
+    }  
     .upcoming
     {
         text-align: center;
@@ -741,8 +744,7 @@ and (-webkit-min-device-pixel-ratio: 2){
     .newuser-box
     {
 
-        margin-bottom: 290px;
-        width: auto;
+        padding-left: 300px;
     }
     span
     {
@@ -766,6 +768,13 @@ and (-webkit-min-device-pixel-ratio: 2){
         border-radius: 10px;
         box-shadow: 1px 1px 1px #000000;
 
+    }
+      .latestPostContent p
+    {
+        width: 100%;
+        white-space: nowrap;  
+        overflow: hidden;
+        text-overflow: ellipsis; 
     }
     .pre-posts
     {   
@@ -817,12 +826,12 @@ and (-webkit-min-device-pixel-ratio: 2){
     }
     .footerLine
     {
-        margin-top: 40px;
+        margin-top: 315px;
         margin-left: 80px;
-
     }
     .footer
     {  
+        margin-top: 5px;
         font-size: 12px;
         background-color: #122b40;
         color: #adadad;
@@ -1038,6 +1047,7 @@ and (-webkit-min-device-pixel-ratio: 2){
 
 
     } 
+    
     .upcoming
     {
         text-align: center;
@@ -1083,7 +1093,6 @@ and (-webkit-min-device-pixel-ratio: 2){
         color: black;
         height: auto;
         
-       
     }
     .img-conainter
     {
@@ -1119,9 +1128,9 @@ and (-webkit-min-device-pixel-ratio: 2){
     }
     .register
     {   
-        
+        margin-left: 40px;
         width: 100%;
-        max-width: 700px;
+        max-width: 500px;
         height: auto;
         margin-top: 60px;
         background: #204d74;
@@ -1247,6 +1256,7 @@ and (-webkit-min-device-pixel-ratio: 2){
     .pre-posts
     {   
         word-break: break-all;
+        overflow-x: hidden;
         overflow-y: hidden;
         padding-top: 5px;
         padding-bottom: 5px;
@@ -1503,10 +1513,6 @@ and (-webkit-min-device-pixel-ratio: 2)
         width: 100%;
         max-width: 550px;
         padding-bottom: 20px;
-        
-
-
-
     } 
     .upcoming
     {
