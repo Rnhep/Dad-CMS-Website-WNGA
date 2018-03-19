@@ -44,7 +44,9 @@
                                 </div>
                                 <textarea  type="text" name="comment"   placeholder="Comment required" value="${fn:escapeXml(comment)}" required>${commentOut}</textarea> 
                                 <input type="hidden" name="userName" value="${pageContext.request.userPrincipal.name}"/>
+                               <div class="form-group">
                                 <input type="submit" id="log-in-btn" class="form-control" value="Submit Post"/>
+                               </div>
                             </sf:form> 
                         </div>
                     </sec:authorize>

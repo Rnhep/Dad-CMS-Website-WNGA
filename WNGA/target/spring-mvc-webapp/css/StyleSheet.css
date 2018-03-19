@@ -434,6 +434,469 @@
 
 }*/
 
+@media (min-width: 834px)
+and (max-width: 834px) 
+and (orientation: portrait)
+and (-webkit-min-device-pixel-ratio: 2){
+
+    body
+    {
+
+        padding-top: -200px;
+        vertical-align: baseline;
+        outline: 0;
+        background-color:rgba(188,188,188,0);
+    }
+
+    .logo
+    {
+
+        background: linear-gradient(to bottom, rgba(0,0,0,0.1) 6%,rgba(188,188,188,0.0) 100%), url('../Images/WNGA-M.png')no-repeat center white;
+        height: 100px;
+        width: 100%;
+        opacity: 1; 
+        background-size: contain;
+
+    }
+    #header-mobile{
+        position: relative;
+        margin-top: -20px;
+    }
+    .logo-hide
+    {
+        display: none;
+    }
+
+
+    #header-desktop
+    {
+        display: none;
+    }
+
+    #header-about-us{
+        position: relative;
+
+    }
+
+    #home a,
+    #news a,
+    #blog a,
+    #log-in a,
+    .profile a
+    {
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+        width: 100%;
+        display: block;
+
+    }
+
+    #home, 
+    #news,
+    #blog, 
+    #log-in
+    {
+        width: 100%;
+        text-align: center;
+        color: #337ab7;
+        border: 1px solid white;
+        border-radius: 0.2em 0.2em 0.2em 0.2em;
+        background: linear-gradient(to bottom, rgba(51,133,255,0.4) 0%,rgba(255,255,255,0.9) 100%)#000;
+    }
+    #home a:hover, 
+    #news a:hover,
+    #blog a:hover, 
+    #log-in a:hover{
+        color: #3385ff; 
+    }
+    button{
+        background:none;
+    }
+    #dropdown{
+        color: #3385ff;
+        background-color: #3385ff;
+        font-size: 30px;
+        background:none;
+        text-decoration: none;
+        outline: none;
+        border: 1px;
+    }
+    textarea 
+    {
+        width: 95%;
+
+        height: 150px;
+        border: 1px solid #adadad;
+
+    }
+    #nav {
+        color: #337ab7;
+        font-size: 16px;
+        font-weight: bold;
+
+    }
+    .username
+    {
+        float: right;
+        clear: both;
+        padding-right: 0px;
+    }
+    #user-img
+    {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+    }
+    #userprofile-img
+    {
+        width: 150px;
+        height: 150px;
+    }
+
+
+    textarea, 
+    #log-in-btn, 
+    #link, 
+    #registration-from
+    {
+        overflow:hidden;
+        max-width:380px;
+        font-size:14px;
+        display:block;
+        margin:10px;
+        border-radius:10px;
+    }
+   .img-conainter p, .to-center p,
+    .news p a
+    {
+        padding-top: 20px;
+        margin-left: 18%;
+        text-align: center;
+        font-size: 30px;
+        font-weight: 900;
+        text-decoration: none;
+        width: 100%;
+        max-width: 650px;
+        padding-bottom: 20px;
+    }  
+    .upcoming
+    {
+        text-align: center;
+        color: #337ab7;
+    }
+    .admin-note
+    {
+        text-align: center;
+        color: blue;
+    }
+    #bg
+    {
+        height: 200px; 
+
+    }
+    .post-preview,
+    .user-box
+    {
+        padding-top: 5px;
+        margin-top: 10px;
+        background-color:rgba(57,124,163,0.3);
+        height: auto;
+        width: auto;
+        border: 1px solid silver;
+        background: linear-gradient(to bottom, rgba(188,188,188,0.1) 10%,rgba(255,255,255,0.2) 40%),rgba(188,188,188,0.1)100%;
+    }
+    #user-table
+    {
+        height: auto;
+        overflow: scroll;
+        padding-bottom: 10px;
+    }
+    .post-preview p
+    {
+        width: 100%;
+        font-size: 24px;
+        white-space: nowrap;  
+        overflow: hidden;
+        text-overflow: ellipsis; 
+    }
+    .to-center
+    {
+        margin-top: 20px;
+        color: black;
+        height: auto;
+    }
+    .img-conainter
+    {
+        margin-top: 20px;
+        color: white;
+        font-size: 24px;
+        height: auto;
+    }
+    #events
+    {
+        text-align: center;
+        margin-top: 10px;
+        padding-top: 10px;
+        color: #000;
+        font-size: 12px;
+        height: auto;
+        word-wrap: break-word;
+        white-space: normal;
+        overflow: hidden;
+        background: linear-gradient(to bottom, rgba(188,188,188,0.1) 10%,rgba(255,255,255,0.2) 40%),rgba(188,188,188,0.1)100%;
+    }
+
+    .postForm
+    {  
+        max-width: 80%;
+    }
+
+    .register
+    {   
+        margin-left:2.3%;
+        width: 100%;
+        max-width: 530px;
+        height: auto;
+        margin-top: 60px;
+        background: #204d74;
+        color: #fff;
+        border-radius:10px;
+        padding-right: 30px;
+    }
+    #signIn
+    {
+        margin-left: 40px; 
+    }
+    textarea, 
+    #log-in-btn, 
+    #link, 
+    #registration-from
+    {
+
+        max-width:780px;
+        font-size:14px;
+        display:block;
+        border-radius:10px;
+    }
+    #log-in-btn
+    {
+        outline: 0px;
+        border: 0px;
+        color: #fff;
+        font-weight: bold;
+        font-size: 16px;
+        background: #3385ff;
+    }
+    #profile
+    {
+        outline: none;
+        border: none;
+        width: 36px;
+        padding-left: 0px;
+        background: none;
+        color:  #3385ff;
+    }
+    .profile{
+        margin-top: 45px; 
+        margin-bottom: 30px;
+        padding-top: 20px;
+        color: #fff;
+        background: linear-gradient(to bottom, rgba(188,188,188,0.1) 10%,rgba(255,255,255,0.2) 40%),rgba(188,188,188,0.1)100%;
+    }
+    .aboutUs
+    {
+        margin-top: 10px;
+        background: #204d74;
+        color: #fff;
+        padding: 20px;
+    }
+
+
+    .aboutUs-top
+    {
+        margin-top: 50px;
+        background: #204d74;
+        color: #fff;
+        padding: 20px;
+
+    }
+    .user-info
+    {
+        text-align: center;
+        outline: 0px;
+        border: 1px solid #fff;
+        color: #fff;
+        font-weight: bold;
+        font-size: 15px;
+        background: #3385ff;
+        padding-top: 0px;
+        margin-top: 20px;
+        height: auto;
+        max-width: 100%;
+        padding-bottom: 10px;
+    }
+    .newuser-box
+    {
+
+        padding-left: 300px;
+    }
+    span
+    {
+        display: block;
+    }
+    .postContents
+    {
+         border: 1px solid buttonface;
+        width: 100%;
+        padding: 10px;
+        max-width: 900px;
+        height: auto;
+        border-radius: 10px;
+        overflow: hidden;
+        font-size: 24px;
+    }
+    #latestPostContent
+    {
+        width: 100%;
+    }
+    .latestPostContent
+    {
+
+        height: auto;
+        padding-left: 30px;
+        border: 1px solid silver;
+        margin: 10px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 1px 1px 1px #000000;
+        font-size: 24px;
+
+    }
+      .latestPostContent p
+    {
+        width: 100%;
+        font-size: 24px;
+        white-space: nowrap;  
+        overflow: hidden;
+        text-overflow: ellipsis; 
+    }
+    .pre-posts
+    {   
+        word-break: break-all;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-top: 10px;
+        background-color:rgba(57,124,163,0.3);
+        height: auto;
+        max-width: 100%;
+        border: 1px solid silver;
+        background: linear-gradient(to bottom, rgba(188,188,188,0.1) 10%,rgba(255,255,255,0.2) 40%),rgba(188,188,188,0.1)100%;
+    }
+    .photo
+    {
+        padding: 2px;
+        margin-left: 9px;
+
+    }
+    img
+    {
+        width: 250px; 
+        padding: 5px;
+        border-radius: 3px;
+
+
+    }
+    .img-center
+    {
+        text-align: center;
+        padding-bottom: 10px;
+    }
+    .grey
+    {
+        color: #101010; 
+
+    }
+    #nav
+    {
+        color:#337ab7;
+        margin-top: 0px;
+    }
+    .edit-btn
+    {
+        float: right;
+        outline: none;
+        border: none;
+    }
+    .footerLine
+    {
+        padding-top: 50px;
+        margin-top: 800px;
+        margin-left: 0px;
+        
+    }
+    footer
+    {  
+        margin-top: 10px;
+        font-size: 24px;
+        background-color: #122b40;
+        color: #adadad;
+        padding: 20px 20px 20px 20px;
+    } 
+    .footer center{
+        color: #fff;
+    }
+
+    #strong
+    {
+        font-weight: bold;
+
+    }
+    .header-Hr
+    {
+        margin-top: -1px;
+    }
+    .newPost-Hr
+    {
+        margin-bottom: 5px;
+    }
+    .edit-delete
+    {
+        margin-bottom: -0px;
+    }
+    .userinfo-Hr
+    {
+        margin-top: -7px;  
+    }
+    .spaceBox
+    {
+        height: 450px;
+    }
+    .hideatmobile
+    {
+        display: none;
+    }
+    .policy
+    {
+        padding: 30px;
+        color: #fff;
+        margin-top: 60px;
+        height: 100%;
+        max-height: 487px;
+        width: 100%;
+        max-width: 510px;
+        border-radius:10px;
+        background-color:  #337ab7;
+        margin-left: 2%;
+        overflow-y: scroll;
+
+
+    } 
+
+}
+
 
 
 
@@ -750,13 +1213,21 @@ and (-webkit-min-device-pixel-ratio: 2){
     {
         display: block;
     }
+    .postContents
+    {
+         border: 1px solid buttonface;
+        width: 100%;
+        padding: 10px;
+        max-width: 900px;
+        height: auto;
+        border-radius: 10px;
+        overflow: hidden;
+        font-size: 24px;
+    }
     #latestPostContent
     {
-
         width: 100%;
-
     }
-
     .latestPostContent
     {
 
@@ -767,6 +1238,7 @@ and (-webkit-min-device-pixel-ratio: 2){
         background-color: #fff;
         border-radius: 10px;
         box-shadow: 1px 1px 1px #000000;
+        
 
     }
       .latestPostContent p
@@ -779,6 +1251,7 @@ and (-webkit-min-device-pixel-ratio: 2){
     .pre-posts
     {   
         word-break: break-all;
+        overflow-x: hidden;
         overflow-y: hidden;
         padding-top: 5px;
         padding-bottom: 5px;
@@ -832,7 +1305,7 @@ and (-webkit-min-device-pixel-ratio: 2){
     .footer
     {  
         margin-top: 5px;
-        font-size: 12px;
+        font-size: 18px;
         background-color: #122b40;
         color: #adadad;
         padding: 20px 20px 20px 20px;
@@ -888,11 +1361,6 @@ and (-webkit-min-device-pixel-ratio: 2){
     } 
 
 }
-
-
-
-
-
 
 
 
@@ -1038,7 +1506,7 @@ and (-webkit-min-device-pixel-ratio: 2){
         padding-top: 20px;
         margin-left: 19%;
         text-align: center;
-        font-size: 16px;
+        font-size: 24px;
         font-weight: 900;
         text-decoration: none;
         width: 100%;
@@ -1119,12 +1587,24 @@ and (-webkit-min-device-pixel-ratio: 2){
     .postForm
     {  
         max-width: 80%;
+        margin-left: 17%;
     }
-
+    
+    .postForm textarea
+    
+    {  
+        max-width: 80%;
+        resize: none;
+        
+    }
+    .postForm div
+    {
+        max-width: 80%;
+    }
     #signIn
     {
         padding-bottom: 65px;
-        margin-left: 150px;
+        margin-left: 250px;
     }
     .register
     {   
@@ -1192,6 +1672,7 @@ and (-webkit-min-device-pixel-ratio: 2){
         height: auto;
         border-radius: 10px;
         overflow: hidden;
+        font-size: 24px;
 
     }
     .aboutUs-top
@@ -1220,8 +1701,7 @@ and (-webkit-min-device-pixel-ratio: 2){
     .newuser-box 
     {
      
-      
-     padding-left: 200px;
+     padding-left: 300px;
     }
     span
     {
@@ -1308,7 +1788,7 @@ and (-webkit-min-device-pixel-ratio: 2){
     }
     .footer
     {  
-        font-size: 12px;
+        font-size: 18px;
         background-color: #122b40;
         color: #adadad;
         padding: 20px 20px 20px 20px;
@@ -1507,7 +1987,7 @@ and (-webkit-min-device-pixel-ratio: 2)
         padding-top: 20px;
         margin-left: 10%;
         text-align: center;
-        font-size: 16px;
+        font-size: 24px;
         font-weight: 900;
         text-decoration: none;
         width: 100%;
@@ -1555,6 +2035,7 @@ and (-webkit-min-device-pixel-ratio: 2)
         height: auto;
         border-radius: 10px;
         overflow: hidden;
+        font-size: 24px;
 
     }
     .latestPostContent p
@@ -1760,7 +2241,7 @@ and (-webkit-min-device-pixel-ratio: 2)
 
     footer
     {  
-        font-size: 8px;
+        font-size: 12px;
         background-color: #122b40;
         color: #adadad;
 
@@ -2217,7 +2698,7 @@ and (-webkit-min-device-pixel-ratio: 2){
 
     footer
     {  
-        font-size: 8px;
+        font-size: 12px;
         background-color: #122b40;
         color: #adadad;
 
@@ -2274,7 +2755,7 @@ and (-webkit-min-device-pixel-ratio: 2){
 
 /*mobile portrait*/
 @media only screen 
-and (min-width : 320px) 
+and (min-width : 300px) 
 and (max-width : 600px) 
 and (orientation: portrait)
 and (-webkit-min-device-pixel-ratio: 2)
@@ -2660,7 +3141,7 @@ and (-webkit-min-device-pixel-ratio: 2)
 
     footer
     {  
-        font-size: 8px;
+        font-size: 12px;
         background-color: #122b40;
         color: #adadad;
 
