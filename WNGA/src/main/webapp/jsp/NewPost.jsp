@@ -31,25 +31,27 @@
                     </div>
                     <div class="col-md-10" id="header-desktop"></div>
                     <!--Add post form for user/admin role-->
+
                     <sec:authorize access="isAuthenticated()">
-                        <div class="container col-md-12 postForm">
+                        <div class="container col-md-12 postForm ">
                             <sf:form role="form"  method="POST" 
                                      action="creatNewPost">
                                 <div ><c:out value="${message}"/></div>
                                 <div class="form-group">
-                                    <input id="link" type="text" class="form-control" name="photo" placeholder="Link to a photo only" value="${fn:escapeXml(param.photo)}" />
+                                    <input id="registration-from" type="text" class="form-control" name="photo" placeholder="Link to a photo only" value="${fn:escapeXml(param.photo)}" />
                                 </div>
                                 <div class="form-group">
-                                    <input id="link" type="text" class="form-control" name="photoTwo" placeholder="Link to a photo only"  />
+                                    <input id="registration-from" type="text" class="form-control" name="photoTwo" placeholder="Link to a photo only"  />
                                 </div>
                                 <textarea  type="text" name="comment"   placeholder="Comment required" value="${fn:escapeXml(comment)}" required>${commentOut}</textarea> 
                                 <input type="hidden" name="userName" value="${pageContext.request.userPrincipal.name}"/>
-                               <div class="form-group">
-                                <input type="submit" id="log-in-btn" class="form-control" value="Submit Post"/>
-                               </div>
+                                <div class="form-group">
+                                    <input type="submit" id="log-in-btn" class="form-control" value="Submit Post"/>
+                                </div>
                             </sf:form> 
                         </div>
                     </sec:authorize>
+
 
                     <!------------------------------------------------------------------------------------------------------------------------------>                         
 
@@ -108,8 +110,8 @@
                         </c:forEach>
                     </div>
 
-                    <hr class="col-md-10"></hr>
-                    <footer id="footer"></footer>
+                    <hr class="col-md-10 footerLine"></hr>
+                    <footer class="col-md-12" id="footer"></footer>
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
                     <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
                     <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>

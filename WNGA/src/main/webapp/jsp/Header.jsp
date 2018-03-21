@@ -21,17 +21,17 @@
     </head>
     <body>
         <div class="col-md-12 logo"> 
-           
-                <c:if test="${!empty pageContext.request.userPrincipal.name}">
-                    <small class="username"> 
-                        <c:if test="${ pageContext.request.userPrincipal.name != null}">
-                            Hello : ${pageContext.request.userPrincipal.name} |
-                            <a href="userProfile?userName=${pageContext.request.userPrincipal.name}">Profile</a>
-                        
+
+            <c:if test="${!empty pageContext.request.userPrincipal.name}">
+                <small class="username"> 
+                    <c:if test="${ pageContext.request.userPrincipal.name != null}">
+                        Hello : ${pageContext.request.userPrincipal.name} |
+                        <a href="userProfile?userName=${pageContext.request.userPrincipal.name}">Profile</a>
+
                     </c:if>
-                            </small>
-                </c:if>
-      
+                </small>
+            </c:if>
+
         </div>
         <div class="btn-group dropdown" id="nav">
 
@@ -75,7 +75,7 @@
             </ul>
 
         </div>
-                    <hr class="header-Hr">
+        <hr class="header-Hr">
 
 
     </body>

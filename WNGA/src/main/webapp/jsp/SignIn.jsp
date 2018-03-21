@@ -27,36 +27,42 @@
                     <div class="logo logo-hide col-md-12">
                     </div>
                     <div class="col-md-10" id="header-desktop"></div>
+                  
+                    <section id="signInSection">
 
-                    
-                    <div class="container col-md-12 register" id="signIn">
-                        <div class="container text-danger" id="passwordHelp" >
-                            <c:if test="${param.login_error == 1}">
-                                <small>Wrong id or password!</small>
-                            </c:if>
-                        </div>
-                        <sf:form  class="form-horizontal" 
-                                  role="form"  method="POST" 
-                                  action="j_spring_security_check">
-                            <div class="form-group">
-                                    <input id="registration-from" type="text" class="form-control" name="j_username" placeholder="UserName" required  />                                     
-                               
+                        <div class="container col-md-12 signIn">
+                            <div class="container text-danger" id="passwordHelp" >
+                                <c:if test="${param.login_error == 1}">
+                                    <small>Wrong id or password!</small>
+                                </c:if>
                             </div>
-                            <div class="form-group">
-                                    <input id="registration-from" type="password" class="form-control" name="j_password" placeholder="Password" required/> 
-                               
-                            </div>
-                            <input id="registration-from" type="submit" id="log-in-btn" class="form-control" value="Log In"/>
+                            <sf:form  class="form-horizontal" 
+                                      role="form"  method="POST" 
+                                      action="j_spring_security_check">
+                                <div class="form-group">
+                                    <input id="signInForm" type="text" class="form-control" name="j_username" placeholder="UserName" required  />                                     
 
-                        </sf:form> 
-                        
-                    </div>
-                    <div class="col-md-12 newuser-box">
-                            <a href="${pageContext.request.contextPath}/signUp">${signUp}</a> 
+                                </div>
+                                <div class="form-group">
+                                    <input id="signInForm" type="password" class="form-control" name="j_password" placeholder="Password" required/> 
+
+                                </div>
+                                <input id="signInForm" type="submit" id="log-in-btn" class="form-control" value="Log In"/>
+
+                            </sf:form> 
+
                         </div>
-                      
-                    <hr class="col-md-10 footerLine"></hr> 
-                    <footer id="footer" ></footer>
+                    </section>
+                    <section id="newUserSection">
+                        <div class="col-md-12 newuser-box">
+                            <a href="${pageContext.request.contextPath}/signUp">${signUp}</a>
+                            Forgot password
+                        </div>
+                    </section>
+                            <section id="">
+                                <hr class="col-md-10 signInFooterLine"></hr> 
+                            </section>
+                    <footer id="footer" class="col-md-12"></footer>
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
                     <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
                     <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>

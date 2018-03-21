@@ -15,8 +15,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fi">
        <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <title>WNGA Edit Post</title>
         <!-- Bootstrap core CSS -->
         <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
@@ -25,13 +25,13 @@
                 <body> 
 
                     <div id="header-mobile"></div>
-                            
-                            <div class="logo logo-hide col-md-12">
-                            </div>
-                            <div class="col-md-12" id="header-desktop"></div>
-                            <div id="up"></div> 
-                            
-                            
+
+                    <div class="logo logo-hide col-md-12">
+                    </div>
+                    <div class="col-md-12" id="header-desktop"></div>
+                    <div id="up"></div> 
+
+
                     <div class="container" id="expand">
                         <sf:form role="form" action="updatePost" method="POST" modelAttribute="newPost">
 
@@ -61,7 +61,7 @@
                     </div>
 
                     <hr>             
-                        <footer id="footer"></footer>
+                        <footer class="col-md-12" id="footer"></footer>
                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
                         <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
                         <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>

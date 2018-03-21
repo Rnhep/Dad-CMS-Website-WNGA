@@ -23,46 +23,46 @@
                 <body> 
 
                     <div id="header-mobile"></div>
-                            
-                            <div class="logo logo-hide col-md-12">
-                            </div>
-                            <div class="col-md-12" id="header-desktop"></div>
-                            <div id="up"></div> 
-                            
-                            
-                    <div class="container-fluid " id="contain">
+
+                    <div class="logo logo-hide col-md-12">
+                    </div>
+                    <div class="col-md-12" id="header-desktop"></div>
+                    <div id="up"></div> 
+
+
+                    <div class="container col-md-12 postForm">
                         <sf:form role="form" action="updateNews" method="POST" modelAttribute="newsFeed">
                             <div class="form-group">
-                                <div class="col-md-8">
-                                    <sf:input type="text" class="form-control" id="title"
-                                              path="name" placeholder="Enter your Title here"/>
-                                    <sf:errors path="name" cssclass="error"></sf:errors>
-                                    </div>
+
+                                <sf:input type="text" class="form-control" id="link"
+                                          path="name" placeholder="Enter your Title here"/>
+                                <sf:errors path="name" cssclass="error"></sf:errors>
+
                                 </div>
                                 <div class="form-group">
-                                    <div class="col-md-8">
-                                    <sf:hidden path="date" value="${date}"/>
-                                    <sf:textarea type="text"  id="content"
-                                                 path="content" placeholder="Enter your news Feed here"/>
-                                    <sf:errors path="content" cssclass="error"></sf:errors>
-                                    <sf:hidden path="newsFeedId"/>
-                                    <input type="submit" class="btn btn-default" value="Update Content"/>
-                                </div>
+                                <sf:hidden path="date" value="${date}"/>
+                                <sf:textarea type="text"  id="content"
+                                             path="content" placeholder="Enter your news Feed here"/>
+                                <sf:errors path="content" cssclass="error"></sf:errors>
+                                <sf:hidden path="newsFeedId"/>
+                                <input type="submit" class="btn btn-default" id="link" value="Update Content"/>
+
                             </div>
                         </sf:form>
                     </div>
-
-                   <hr class="col-md-10"></hr>            
-                        <footer id="footer"></footer>
-                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-                        <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
-                        <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
-                        <script src="${pageContext.request.contextPath}/js/linkify.js"></script>
-                        <script src="${pageContext.request.contextPath}/js/linkify.min.js"></script>
-                        <script src="${pageContext.request.contextPath}/js/linkify-jquery.min.js"></script>
-                        <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
-                        <script src="${pageContext.request.contextPath}/js/Home.js"></script>
-                        <script src="${pageContext.request.contextPath}/js/linkify.js"></script>
+                    <section id="">
+                        <hr class="col-md-10 signInFooterLine"></hr> 
+                    </section>          
+                    <footer class="col-md-12" id="footer"></footer>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/linkify.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/linkify.min.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/linkify-jquery.min.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/Home.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/linkify.js"></script>
 
                 </body>
                 </html>

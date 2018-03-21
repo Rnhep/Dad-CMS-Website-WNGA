@@ -31,25 +31,23 @@
 
 
         <!--Add post form for user/admin role-->
-        <sec:authorize access="hasRole('ROLE_ADMIN')">
-            <div class="container col-md-12 postForm">
+        <div class="container postForm col-md-12">
+            <sec:authorize access="hasRole('ROLE_ADMIN')">
+
                 <sf:form  class="form-horizontal" 
                           role="form"  method="POST" 
                           action="createNewsFeed">
                     <div class="form-group">
-
                         <div ><c:out value="${message}"/></div>
-                        <!--                                <div class="form-group container-fluid">
-                                                            <input type="text" class="form-control" name="name" placeholder="Your Name"  required/>
-                                                        </div>-->
                         <textarea  type="text" class="commentbox" name="content"   placeholder="Comment required" required>${commentOut}</textarea> 
                         <input type="hidden" name="userName" value="${pageContext.request.userPrincipal.name}"/>
                         <input type="submit" id="log-in-btn" class="form-control" value="Submit Post"/>
 
                     </div>
                 </sf:form> 
-            </div>
-        </sec:authorize>
+
+            </sec:authorize>
+        </div>
         <!------------------------------------------------------------------------------------------------------------------------------>                         
         <div class="to-center col-md-12" id="date">
             <p class="today"> 
@@ -58,25 +56,25 @@
                 %>
             </p>
         </div>
-            
-        <div class="container display-post col-md-12">
+
+        <div class="container displayNews col-md-12">
             <c:forEach var="news" items="${allNews}">
                 <div class="container pre-posts">
-                    
+
                     <p>
                         <span class="grey">
-                        <c:out value="${admin}"/>
-                        <fmt:parseDate pattern="yyyy-MM-dd" value=" ${news.date}" var="newsDate"/>
-                        <fmt:formatDate value="${newsDate}" pattern="E MMM-dd-yyyy"/>
+                            <c:out value="${admin}"/>
+                            <fmt:parseDate pattern="yyyy-MM-dd" value=" ${news.date}" var="newsDate"/>
+                            <fmt:formatDate value="${newsDate}" pattern="E MMM-dd-yyyy"/>
                         </span>
                     </p>
-                     <div class="container postContents">
-                    <p>
-                        <c:out value="${news.content}"/>
-                    </p>
-                     </div>
+                    <div class="container newsContents">
+                        <p>
+                            <c:out value="${news.content}"/>
+                        </p>
+                    </div>
                     <div class="container img-center">
-                        
+
                     </div>
                     <sec:authorize access="hasRole('ROLE_ADMIN')">
                         <p class="edit-delete">
@@ -89,8 +87,8 @@
         </div>
 
 
-<hr class="col-md-10"></hr>
-        <footer id="footer"></footer>
+        <hr class="col-md-10" id="newsFooter"></hr>
+        <footer class="col-md-12" id="footer"></footer>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
         <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>

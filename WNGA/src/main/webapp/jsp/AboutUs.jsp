@@ -30,8 +30,7 @@
                     </div>
                     <div class="col-md-9" id="header-desktop"></div>
                     
-                    
-                    <div class="container col-md-12 aboutUs-top">
+                    <div class="container col-md-12 aboutUs">
                 <div id="strong">    
                     <p>
                         WHAT IS WNGA?      
@@ -78,8 +77,8 @@
                 
             </div>
       
-         <hr class="col-md-10"></hr>
-        <footer id="footer"></footer>
+         <hr class="col-md-10 aboutUsFooterLine"></hr>
+        <footer class="col-md-12" id="footer"></footer>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
         <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>

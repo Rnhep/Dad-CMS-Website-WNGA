@@ -28,12 +28,13 @@
             <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
                 </head>
                 <body > 
+                    <main>
                     <div id="header-mobile"></div>
-                    <div class="logo logo-hide col-md-12">
+                    <div class="logo home logo-hide col-md-12">
                     </div>
                     <div class="col-md-10" id="header-desktop"></div>
-                    
-                    <div class="container col-md-12 register">
+                    <section id="registration">
+                        <div class="container col-md-12 register">
                         <sf:form role="form" action="createUser" method="POST" >
                            
                                     <h2>${registration}</h2>
@@ -99,9 +100,16 @@
                                 academics, non-governmental organizations, private businesses, and individuals 
                                 who share and support WNGA’s principles of human rights, democracy, economic security, 
                                 system of justice and free market enterprise for Cambodia. </p>
+                             <p> • To seek support from members of Congress and of Parliaments, 
+                                Executive Branch, and Prime Minister Office, Policymakers, news, media, 
+                                academics, non-governmental organizations, private businesses, and individuals 
+                                who share and support WNGA’s principles of human rights, democracy, economic security, 
+                                system of justice and free market enterprise for Cambodia. </p>
                     </div>
-                   <hr class=" container col-md-10 "></hr>
-                    <footer id="footer"></footer>
+                    </section>
+                    </main>
+                   <hr class=" container col-md-10 footerLine"></hr>
+                    <footer id="footer" class="col-md-12"></footer>
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>                  
                     <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
                     <script src="${pageContext.request.contextPath}/js/linkify.js"></script>

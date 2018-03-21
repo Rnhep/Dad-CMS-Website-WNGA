@@ -21,13 +21,13 @@
             <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
                 </head>
                 <body>
-                 <div id="header-mobile"></div>
-                            
-                            <div class="logo logo-hide col-md-12"> </div>
-                            <div class="col-md-12" id="header-desktop"></div>
-                            <div id="up"></div> 
-                            
-                            
+                    <div id="header-mobile"></div>
+
+                    <div class="logo logo-hide col-md-12"> </div>
+                    <div class="col-md-12" id="header-desktop"></div>
+                    <div id="up"></div> 
+
+
                     <div class="container-fluid">
                         <sf:form role="form" modelAttribute="currentUser" action="updateProfile" method="POST" >
                             ${updateProfileMessage}

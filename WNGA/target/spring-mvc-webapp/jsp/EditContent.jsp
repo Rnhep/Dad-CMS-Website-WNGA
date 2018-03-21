@@ -22,42 +22,44 @@
                 </head>
                 <body> 
 
-                 <div id="header-mobile"></div>
-                            
-                            <div class="logo logo-hide col-md-12">
-                            </div>
-                            <div class="col-md-12" id="header-desktop"></div>
-                            
-                    <div class="container col-md-12 edit-content" >
-                            <sf:form role="form" action="updateContent" 
-                                     method="POST" modelAttribute="newsFeed">
-                                        <sf:input type="text" class="form-control" id="title"
-                                                  path="name" placeholder="Enter your Title here"/>
-                                        <sf:errors path="name" cssclass="error"></sf:errors>
-                                        <sf:hidden path="date" value="${date}"/>
-                                        <sf:textarea type="text"  
-                                                     path="content" placeholder="Enter your news Feed here" maxlength="250" />
-                                        <sf:errors path="content" cssclass="error"></sf:errors>
-                                        <sf:hidden path="link"/>
-                                        <sf:hidden path="newsFeedId"/>
-                                        <input type="submit" class="btn btn-default" value="Update Content"/>
-                                
-                            </sf:form>
-                        
+                    <div id="header-mobile"></div>
+
+                    <div class="logo logo-hide col-md-12">
                     </div>
-                            
-                            <div class="container col-md-12 register">
-                                
-                            </div>
-                        <footer id="footer"></footer>
-                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-                        <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
-                        <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
-                        <script src="${pageContext.request.contextPath}/js/linkify.js"></script>
-                        <script src="${pageContext.request.contextPath}/js/linkify.min.js"></script>
-                        <script src="${pageContext.request.contextPath}/js/linkify-jquery.min.js"></script>
-                        <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
-                        <script src="${pageContext.request.contextPath}/js/Home.js"></script>
-                        <script src="${pageContext.request.contextPath}/js/linkify.js"></script>
+                    <div class="col-md-12" id="header-desktop"></div>
+
+                    <div class="container col-md-12 postForm">
+                        <sf:form role="form" action="updateContent" 
+                                 method="POST" modelAttribute="newsFeed">
+                            <div class="form-group">
+                                <sf:input type="text" class="form-control" id="link"
+                                          path="name" placeholder="Enter your Title here"/>
+                                <sf:errors path="name" cssclass="error"></sf:errors>
+                                </div>    
+                            <sf:hidden path="date" value="${date}"/>
+                            <sf:textarea type="text"  
+                                         path="content" placeholder="Enter your news Feed here" maxlength="900" />
+                            <sf:errors path="content" cssclass="error"></sf:errors>
+                            <sf:hidden path="link"/>
+                            <sf:hidden path="newsFeedId"/>
+                            <input type="submit" class="btn btn-default" value="Update Content"/>
+
+                        </sf:form>
+
+                    </div>
+                    <section id="">
+                        <hr class="col-md-10 signInFooterLine"></hr> 
+                    </section>
+
+                    <footer class="col-md-12" id="footer"></footer>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/linkify.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/linkify.min.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/linkify-jquery.min.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/Home.js"></script>
+                    <script src="${pageContext.request.contextPath}/js/linkify.js"></script>
                 </body>
                 </html>

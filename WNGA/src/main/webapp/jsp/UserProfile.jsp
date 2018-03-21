@@ -22,37 +22,39 @@
                 </head>
                 <body>
                     <div id="header-mobile"></div>
-                            
-                            <div class="logo logo-hide col-md-12">
-                            </div>
-                            <div class="col-md-12" id="header-desktop"></div>
-                            <div id="up"></div> 
-                            
-                            
-                    <div class="container user-info">
-                       
-                            <p> ${msg} </p>
-                            <img src="${currentLogInUser.photo}"/>
-                            <p><a href="updateProfileForm?userId=${currentLogInUser.userId}">
-                                    <input  type="button" class="form-control"  value="Update Profile"/></a></p>
-                            <hr></hr>
-                            <p> User Name: ${currentLogInUser.userName}</p>
-                            <hr></hr>
-                            <p> Member Since: 
-                                <fmt:parseDate pattern="yyyy-MM-dd" value="${currentLogInUser.joinDate}" var="joindate"/>
-                                <fmt:formatDate value="${joindate}" pattern="MMM-dd-yyyy"/></p>
-                            <hr></hr>
-                            <p>   First Name: ${currentLogInUser.firstName}  </p>
-                            <hr></hr>
-                            <p>   Last Name: ${currentLogInUser.lastName} </p>
-                            <hr></hr>
-                            <p>Email:  ${currentLogInUser.email}</p>
 
-                     
+                    <div class="logo logo-hide col-md-12">
+                    </div>
+                    <div class="col-md-12" id="header-desktop"></div>
+                    <div id="up"></div> 
+
+
+                    <div class="container user-info">
+
+                        <p> ${msg} </p>
+
+                        <img src="${currentLogInUser.photo}"/>
+
+                        <p><a href="updateProfileForm?userId=${currentLogInUser.userId}">
+                                <input  type="button" class="form-control"  value="Update Profile"/></a></p>
+                        <hr></hr>
+                        <p> User Name: ${currentLogInUser.userName}</p>
+                        <hr></hr>
+                        <p> Member Since: 
+                            <fmt:parseDate pattern="yyyy-MM-dd" value="${currentLogInUser.joinDate}" var="joindate"/>
+                            <fmt:formatDate value="${joindate}" pattern="MMM-dd-yyyy"/></p>
+                        <hr></hr>
+                        <p>   First Name: ${currentLogInUser.firstName}  </p>
+                        <hr></hr>
+                        <p>   Last Name: ${currentLogInUser.lastName} </p>
+                        <hr></hr>
+                        <p>Email:  ${currentLogInUser.email}</p>
+
+
                     </div>
 
-                    <hr></hr>
-                    <footer id="footer"></footer>
+                    <hr class="col-md-10 profileFooterLine"></hr>
+                    <footer class="col-md-12" id="footer"></footer>
                     <!-- Placed at the end of the document so the pages load faster -->
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
                     <script src="${pageContext.request.contextPath}/js/jquery.js"></script>

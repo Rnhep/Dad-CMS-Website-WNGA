@@ -34,8 +34,8 @@
                             <p> You have <c:out value="${postCount} Posts | ${newsFeedCount} News Feed | in your database"/></p>
 
                         </div>
-                            
-                       
+
+
                         <div class="container pre-posts">
                             <div class="btns-flex">
                                 <sf:form role="form" action="cleanUpNews" method="POST">
@@ -51,7 +51,7 @@
                                 </sf:form>
                             </div> 
                         </div> 
-                        <div class="container admin-note">
+                        <div class="container pre-posts admin-note">
                             <p> Home Page Content</p>
                         </div>  
                         <div class="container pre-posts">
@@ -92,7 +92,7 @@
                                 <c:out value="${contentFour.content}"/>
                             </p>
                         </div>
-                       
+
                         <div class="container pre-posts admin-note">
                             <p> Current Events</p>
                         </div>  
@@ -116,7 +116,7 @@
                                 <c:out value="${eventTwo.content}"/>
                             </p>
                         </div>
-                    
+
                         <div class="container pre-posts">
                             <sf:form role="form" action="updateHomeImg" method="POST" >
                                 <div class="form-group">
@@ -134,7 +134,7 @@
                                 </div>
                             </sf:form>
                         </div>
-                   
+
                         <div class="container pre-posts admin-note">
 
                             <p>
@@ -146,7 +146,7 @@
                         <!--All users-->
                         <div class="container pre-posts">
                             <c:forEach var="currentUser" items="${userList}">
-                                <div class="container user-box" > 
+                                <div class="container currentUsers" > 
                                     <p > ${name}${currentUser.firstName} ${currentUser.lastName} |
                                         ${userName} ${currentUser.userName}
                                     </p>   
@@ -176,8 +176,8 @@
                             </c:forEach>
                         </div>
                     </div>
-                    <hr class="col-md-10"></hr>          
-                    <footer id="footer"></footer>
+                    <hr class="col-md-10 adimFooterLine"></hr>          
+                    <footer class="col-md-12" id="footer"></footer>
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
                     <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
                     <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
