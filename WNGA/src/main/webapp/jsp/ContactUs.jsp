@@ -33,47 +33,38 @@
                     </div>
                     <div class="col-md-10" id="header-desktop"></div>
                     
-                    <div class="container col-md-12">
-                        <h1> If you’ve any queries, or wants to help please contact one of the following members below
-                        </h1>
+                    <div class="container col-md-12 contact-text">
+                        <p> If you have any queries, or wants to help please contact one of the following members 
+                        </p>
                         <p>
-                            password Forgotten please contact one of the following members below
+                            password porgotten please contact one of the following members 
                         </p>
                         <p>**Please allows 24 to 48 hrs for admins to reset your password. </p>
-                            
-                            
+                         
                     </div>
                     <div class="container col-md-12 contact0">
-                     <strong>  </strong><br>
-                           To report site issue please report to
-                           Rithee Nhep
-                           Email:ritheenhep@gmail.com
-                           
+                     <strong>Site Related</strong><br>
+                         To report site issue please contact <strong> ritheenhep@gmail.com</strong>
                            
                     </div>
                     <div class="container col-md-12 contact1">
-                        <strong> Sopha Nhep: Original Founder </strong><br>
-                          Have questions about the organization or questions on how to help please contact
-                           Email:sopahnhep@hotmail.com
-                     
+                        Information about the organization: <br>
+                        <strong> Sopha Nhep:  </strong><br>
+                           Email: sopahnhep@hotmail.com
                     </div>
                      <div class="container col-md-12 contact2">
-                     <strong> Sothea Pouch: Original Founder </strong><br>
-                          Have questions about the organization or questions how to help please contact
-                           Email:ssek71@gmail.com
+                          Information about the organization: <br>
+                     <strong> Sothea Pouch: </strong><br>
+                           
+                           Email: ssek71@gmail.com
                     </div>
                      <div class="container col-md-12 contact3">
-                     <strong> Leoung Khi: Original Founder  </strong><br>
-                         Have questions about the organization or questions how to help please contact
-                         Email:lkangkor@gmail.com
+                          Information about the organization: <br>
+                     <strong>  Leoung Khi:   </strong><br>
+                        Email: lkangkor@gmail.com
                            
                     </div>
-                    <div class="container col-md-12 contact3">
-                     
-                    </div>
-                    <div class="container col-md-12 contact3">
-                     
-                    </div>
+                   
                     <hr class="col-md-10" ></hr>
                     
                     <footer class="col-md-12" id="footer"></footer>
