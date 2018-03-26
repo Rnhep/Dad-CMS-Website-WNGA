@@ -4,8 +4,9 @@
  * and open the template in the editor.
  */
 $('document').ready(function () {
+ 
     console.log("testing");
-     $('#header-desktop').load('jsp/HeaderDesktop.jsp');
+    $('#header-desktop').load('jsp/HeaderDesktop.jsp');
     $('#footer').load('jsp/Footer.jsp');
 //look for link in plain text
     $('p , pre').linkify({
@@ -14,15 +15,18 @@ $('document').ready(function () {
 });
 
 
-function headerReload(){
-       if ($(window).width() >= 1536) {
+    alert("Your screen resolution is: " + "heigh" + $(window).height() +  " " +'width' + $(window).width());
+
+
+function headerReload() {
+    if ($(window).width() >= 1536) {
 //        alert($(window).width());
-           $('#header-desktop').load('jsp/HeaderDesktop.jsp');
-       }else{
-         $('#header-mobile').load('jsp/Header.jsp');
-       }
-   }
-   $(window).on('load resize', headerReload);
+        $('#header-desktop').load('jsp/HeaderDesktop.jsp');
+    } else {
+        $('#header-mobile').load('jsp/Header.jsp');
+    }
+}
+$(window).on('load resize', headerReload);
 
 //virify delete button
 var deleteLinks = document.querySelectorAll('#delete');
@@ -38,7 +42,7 @@ for (var i = 0; i < deleteLinks.length; i++) {
 ;
 
 
-////
+//virify user are being disable
 function confirmDisabled()
 {
 

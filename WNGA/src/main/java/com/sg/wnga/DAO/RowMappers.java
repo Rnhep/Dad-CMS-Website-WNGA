@@ -65,6 +65,15 @@ public class RowMappers {
            return NF;
         }
         
+    }
+     protected static final class Reply implements RowMapper<Reply>{
+
+        @Override
+        public Reply mapRow(ResultSet rs, int i) throws SQLException {
+            Reply reply = new Reply();
+          
+           return reply;
+        }
         
     }
 }

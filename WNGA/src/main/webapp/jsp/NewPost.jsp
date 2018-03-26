@@ -30,11 +30,11 @@
                     <div class="logo logo-hide col-md-12">
                     </div>
                     <div class="col-md-10" id="header-desktop"></div>
-                    <!--Add post form for user/admin role-->
+                    
 
                     <sec:authorize access="isAuthenticated()">
                         <div class="container col-md-12 postForm ">
-                            <sf:form role="form"  method="POST" 
+                            <sf:form role="form"  method="POST" class="form-horizontal"
                                      action="creatNewPost">
                                 <div ><c:out value="${message}"/></div>
                                 <div class="form-group">
@@ -56,7 +56,7 @@
                     <!------------------------------------------------------------------------------------------------------------------------------>                         
 
 
-                    <div class="to-center col-md-12" id="date">
+                    <div class="to-center col-md-12" id="displayDate">
                         <p class="today">
                             <%
                                 LocalDateTime date = LocalDateTime.now();

@@ -35,6 +35,19 @@ FOREIGN KEY (`UserId`)
 REFERENCES `User` (`UserId`))
 ENGINE = InnoDB;
 
+CREATE TABLE IF NOT EXISTS `Comment` (
+`CommentId` INT NOT NULL AUTO_INCREMENT,
+`Comment` NVARCHAR(5000) NULL,
+`UserId` INT NOT NULL,
+`PostId` INT NOT NULL,
+PRIMARY KEY (`CommentId`),
+FOREIGN KEY (`UserId`)
+REFERENCES `User` (`UserId`),
+FOREIGN KEY (`PostId`)
+REFERENCES `New_Post` (`PostId`))
+ENGINE = InnoDB;
+
+
 CREATE TABLE IF NOT EXISTS `News_Feed` (
 `NewsFeedId` INT NOT NULL AUTO_INCREMENT,
 `Title` NVARCHAR(100),
@@ -1239,6 +1252,22 @@ INSERT INTO `Authorities` (`Username`, `Authority`) VALUES ('rnhep', 'ROLE_USER'
 -- inner join User u on u.userId = np.UserId
 -- where np.postId = 2;
 -- 
+
+-- ***select comment , user name and post ***
+select c.Comment, u.UserName, np.content from comment c
+inner join user u on u.UserId = c.UserId
+inner join New_Post np on np.PostId = c.PostId
+where c.CommentId = 3;
+ 
+ 
+
+-- select c.*, u.username, np.content from New_Post np
+-- inner join comment c on c.CommentId = np.postId
+-- inner join user u on u.userId = np.userId
+-- where np.postId=2;
+-- 
+
+
 -- select * from New_Post np
 -- inner join user u on u.userId = np.UserId
 -- where np.postId = 2;
@@ -1248,9 +1277,9 @@ INSERT INTO `Authorities` (`Username`, `Authority`) VALUES ('rnhep', 'ROLE_USER'
 -- inner join User u on u.userId = np.userId
 -- where u.userId=1;
 -- 
--- select np.* from New_Post np
--- inner join User u on u.userId = np.userId
--- where u.userId=1;
+select np.* from New_Post np
+inner join User u on u.userId = np.userId
+where u.userId=1;
 -- 
 -- select np.title, s.Status, u.FirstName from  New_Post np
 -- inner join  Status s on s.StatusId = np.StatusId
@@ -1272,6 +1301,14 @@ INSERT INTO `Authorities` (`Username`, `Authority`) VALUES ('rnhep', 'ROLE_USER'
 -- delete  from New_post where PostId <4;
 -- 
 -- 
+insert into `comment` (`comment`,  `UserId`, `PostId`)VALUE('postid2 test3' , 1, 2);
+
+-- ****select all reply from post****
+select u.username, c.comment from `comment` c
+inner join New_Post np on np.postId = c.postid
+inner join user u on u.userId=c.postid
+where np.postId= 2;
+
 delete from New_Post where PostId order by PostId asc limit 3;
 update user set UserPassword = '$2a$10$x0jGRt/4WrYLJWclm/DVvOTnJtFzNK3TpFluYt5sR4PhvwLFrlUE6', enabled=1 where userid=1;
 
@@ -1281,6 +1318,6 @@ use wnga;
  select * from new_Post;
  select * from news_Feed;
 
-
+select * from `comment`;
 -- select userId from user;
 -- select userName , userId, userpassword from user where LastName= 'nhep';

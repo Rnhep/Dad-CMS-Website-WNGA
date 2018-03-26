@@ -48,7 +48,7 @@
                                 </p>
                             </div>
 
-                            <div class=" col-md-12" id="latestPostContent">
+                            <div class=" col-md-12" id="latestPostContentHolding">
                                 <c:forEach var="latestPost" items="${displayLatestPost}">
 
                                     <div class="latestPostContent">

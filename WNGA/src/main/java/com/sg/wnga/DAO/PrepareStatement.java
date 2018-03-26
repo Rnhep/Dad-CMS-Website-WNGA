@@ -117,8 +117,20 @@ public class PrepareStatement {
             = "select count(*)from News_Feed";
 
     protected static final String SQL_GET_COUNT_FROM_NEW_POST
-            = " select count(*)from New_Post";
+            = "select count(*)from New_Post";
 
+    protected static final String SQL_INSERT_INTO_COMMENT
+            = "inser into Comment (Comment, UserId, PostId)value(?, ?, ?)";
+
+    protected static final String SQL_DELET_COMMENT
+            = "delet from Comment where CommentId = ?";
+
+    protected static final String SQL_SELECT_REPLY_PER_POST
+            = "select u.username, c.comment from comment "
+            + "inner join New_Post np on np.postId = c.postid "
+            + "inner join user u on u.userId=c.postid "
+            + "where np.postId= ? ";
+    
     protected static final String SQL_CLEANUP_NEWS
             = "delete from News_Feed where NewsFeedId>=8 limit 100";
 

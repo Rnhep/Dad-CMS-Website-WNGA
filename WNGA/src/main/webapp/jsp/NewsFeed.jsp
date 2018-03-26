@@ -24,32 +24,30 @@
     </head>
     <body>
         <div id="header-mobile"></div>
-
         <div class="logo logo-hide col-md-12">
         </div>
         <div class="col-md-12" id="header-desktop"></div>
 
 
         <!--Add post form for user/admin role-->
-        <div class="container postForm col-md-12">
-            <sec:authorize access="hasRole('ROLE_ADMIN')">
 
+        <sec:authorize access="hasRole('ROLE_ADMIN')">
+            <div class="container postFormNewsPage col-md-12">
                 <sf:form  class="form-horizontal" 
                           role="form"  method="POST" 
                           action="createNewsFeed">
-                    <div class="form-group">
                         <div ><c:out value="${message}"/></div>
-                        <textarea  type="text" class="commentbox" name="content"   placeholder="Comment required" required>${commentOut}</textarea> 
+                        <textarea  type="text" name="content" placeholder="Comment required" required>${commentOut}</textarea> 
                         <input type="hidden" name="userName" value="${pageContext.request.userPrincipal.name}"/>
                         <input type="submit" id="log-in-btn" class="form-control" value="Submit Post"/>
 
-                    </div>
+                    
                 </sf:form> 
+            </div>
+        </sec:authorize>
 
-            </sec:authorize>
-        </div>
         <!------------------------------------------------------------------------------------------------------------------------------>                         
-        <div class="to-center col-md-12" id="date">
+        <div class="to-center col-md-12" id="displayDate">
             <p class="today"> 
                 <%
                     out.print("Today News");

@@ -92,14 +92,14 @@ public class NewPost {
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 17 * hash + this.postId;
-        hash = 17 * hash + Objects.hashCode(this.title);
-        hash = 17 * hash + Objects.hashCode(this.content);
-        hash = 17 * hash + Objects.hashCode(this.imagePath);
-        hash = 17 * hash + Objects.hashCode(this.imagePathTwo);
-        hash = 17 * hash + Objects.hashCode(this.publishDate);
-        hash = 17 * hash + Objects.hashCode(this.user);
+        int hash = 7;
+        hash = 23 * hash + this.postId;
+        hash = 23 * hash + Objects.hashCode(this.title);
+        hash = 23 * hash + Objects.hashCode(this.content);
+        hash = 23 * hash + Objects.hashCode(this.imagePath);
+        hash = 23 * hash + Objects.hashCode(this.imagePathTwo);
+        hash = 23 * hash + Objects.hashCode(this.publishDate);
+        hash = 23 * hash + Objects.hashCode(this.user);
         return hash;
     }
 
@@ -138,7 +138,7 @@ public class NewPost {
         }
         return true;
     }
+    
 
-  
-
+   
 }

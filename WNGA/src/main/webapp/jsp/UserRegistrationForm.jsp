@@ -27,7 +27,7 @@
         <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
             <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
                 </head>
-                <body > 
+                <body>
                     <main>
                     <div id="header-mobile"></div>
                     <div class="logo home logo-hide col-md-12">
