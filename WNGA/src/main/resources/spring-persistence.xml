@@ -55,6 +55,12 @@
          <property name="jdbcTemplate" ref="jdbcTemplate"/>
     </bean> 
     
+    <bean id="commentDao"
+          class= "com.sg.wnga.DAO.CommentDaoImpl">
+         <property name="jdbcTemplate" ref="jdbcTemplate"/>
+    </bean> 
+    
+    
     <bean id="getCountDao"
           class= "com.sg.wnga.DAO.GetCountDaoImpl">
          <property name="jdbcTemplate" ref="jdbcTemplate"/>

@@ -54,6 +54,7 @@ public class UserDaoImpl implements UserDao {
     @Transactional(propagation = Propagation.REQUIRED, readOnly = false)
     public void deleteUser(String userName) {
         jdbcTemplate.update(SQL_DELETE_AUTHORITIES, userName);
+        jdbcTemplate.update(SQL_DELETE_USER_FROM_COMMENT, userName);
         jdbcTemplate.update(SQL_DELETE_USER, userName);
     }
 

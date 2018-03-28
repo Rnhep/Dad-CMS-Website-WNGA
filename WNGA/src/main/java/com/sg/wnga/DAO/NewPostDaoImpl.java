@@ -43,6 +43,7 @@ public class NewPostDaoImpl implements NewPostDao {
     @Override
     @Transactional(propagation = Propagation.REQUIRED, readOnly = false)
     public void deletePost(int newPostId) {
+        jdbcTemplate.update(SQL_DELETE_POST_FROM_COMMENT, newPostId);
         jdbcTemplate.update(SQL_DELETE_NEW_POST, newPostId);
 
     }
@@ -63,7 +64,8 @@ public class NewPostDaoImpl implements NewPostDao {
     @Override
     public NewPost getPostById(int newPostId) {
         try {
-            NewPost newPost = jdbcTemplate.queryForObject(SQL_SELECT_NEW_POST_BY_ID, new NewPostMapper(), newPostId);
+            NewPost newPost = jdbcTemplate.queryForObject(SQL_SELECT_NEW_POST_BY_ID, 
+                    new NewPostMapper(), newPostId);
             newPost.setUser(findUserForPost(newPost));
             return newPost;
         } catch (EmptyResultDataAccessException ex) {
@@ -75,7 +77,8 @@ public class NewPostDaoImpl implements NewPostDao {
     public NewPost getUserByPostId(int newPostId) {
         try {
 
-            NewPost newPost = jdbcTemplate.queryForObject(SQL_SELECT_USER_BY_POST_ID, new NewPostMapper(), newPostId);
+            NewPost newPost = jdbcTemplate.queryForObject(SQL_SELECT_USER_BY_POST_ID, 
+                    new NewPostMapper(), newPostId);
             newPost.setUser(findUserForPost(newPost));
             return newPost;
         } catch (EmptyResultDataAccessException ex) {

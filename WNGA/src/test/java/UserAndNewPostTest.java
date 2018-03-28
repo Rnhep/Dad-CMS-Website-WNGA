@@ -4,12 +4,16 @@
  * and open the template in the editor.
  */
 
+import com.sg.wnga.DAO.CommentDao;
 import com.sg.wnga.DAO.NewPostDao;
 import com.sg.wnga.DAO.UserDao;
+import com.sg.wnga.Model.Comment;
 import com.sg.wnga.Model.NewPost;
 import com.sg.wnga.Model.User;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.After;
@@ -29,6 +33,8 @@ public class UserAndNewPostTest {
 
     private UserDao userDao;
     private NewPostDao newPostDao;
+    private CommentDao commentDao;
+    
     LocalDateTime timeStamp = LocalDateTime.now();
 
     public UserAndNewPostTest() {
@@ -50,18 +56,24 @@ public class UserAndNewPostTest {
 
         userDao = ctx.getBean("userDao", UserDao.class);
         newPostDao = ctx.getBean("newPostDao", NewPostDao.class);
+        commentDao = ctx.getBean("commentDao", CommentDao.class);
 //        locationDao = ctx.getBean("locationDao", LocationDao.class);
 //        sightingDao = ctx.getBean("sightingDao", SightingDao.class);
+
         List<NewPost> posts = newPostDao.getAllPost();
         for (NewPost currentPost : posts) {
             newPostDao.deletePost(currentPost.getPostId());
         }
-
+        
         List<User> users = userDao.getAllUsers();
         for (User currentUser : users) {
             userDao.deleteUser(currentUser.getUserName());
         }
-
+        
+        List<Comment> comment =commentDao.getAllComment();
+        for(Comment currentComment : comment){
+            commentDao.deleteComment(currentComment.getCommentId());
+        } 
     }
 
     @After
@@ -197,29 +209,31 @@ public class UserAndNewPostTest {
         assertEquals(2, allUsers.size());
     }
 
-//    @Test
-//    public void testAddGetNewPost() {
-//
-//        User user1 = new User();
-//        user1.setFirstName("Rithee");
-//        user1.setLastName("Nhep");
-//        user1.setUserName("RitheeN");
-//        user1.setPassWord("password");
-//        user1.setEmail("user.user");
-//        user1.setPhone("123465");
-//        user1.setEnable(true);
-//        userDao.addUser(user1);
-//        NewPost np = new NewPost();
-//        np.setTitle("UnitTest");
-//        np.setContent("Tommorow is the Future");
-//        np.setImagePath("test");
-//        np.setPublishDate(timeStamp);
-//        np.setExpireDate(timeStamp);
-//        np.setUser(user1);
-//        newPostDao.addNewPost(np);
-//        NewPost fromDB = newPostDao.getPostById(np.getPostId());
-//        assertEquals(fromDB.getPublishDate(), np.getPublishDate());
-//    }
+    @Test
+    public void testAddGetNewPost() {
+
+         User user1 = new User();
+        user1.setFirstName("person1");
+        user1.setLastName("person1");
+        user1.setUserName("person1");
+        user1.setPassWord("password");
+        user1.setEmail("user.user");
+        user1.setJoinDate(LocalDate.now());
+        user1.setEnable(true);
+        user1.setPhoto("test");
+      
+        userDao.addUser(user1);
+        
+        NewPost np = new NewPost();
+        np.setTitle("UnitTest");
+        np.setContent("Tommorow is the Future");
+        np.setImagePath("test");
+        np.setPublishDate(timeStamp);
+        np.setUser(user1);
+        newPostDao.addNewPost(np);
+        NewPost fromDB = newPostDao.getPostById(np.getPostId());
+        assertEquals("Tommorow is the Future", fromDB.getContent());
+    }
     @Test
     public void testDeleteNewPost() {
 
@@ -370,5 +384,166 @@ public class UserAndNewPostTest {
         NewPost fromDB = newPostDao.getUserByPostId(np.getPostId());
         assertEquals("RitheeN", fromDB.getUser().getUserName());
     }
+        
+    @Test
+    public void testAddGetComment(){
+        
+            User user = new User();
+        user.setFirstName("Rithee");
+        user.setLastName("Nhep");
+        user.setUserName("RitheeN");
+        user.setPassWord("password");
+        user.setEmail("user.user");
+        user.setJoinDate(LocalDate.now());
+        user.setPhoto("test");
+        user.setEnable(true);
+        userDao.addUser(user);
+        
+        NewPost np = new NewPost();
+        np.setTitle("UnitTest");
+        np.setContent("Tommorow is the Future");
+        np.setImagePath("test");
+        np.setPublishDate(LocalDateTime.now());
+        np.setUser(user);
+        newPostDao.addNewPost(np);
+        
+        Comment comment = new Comment();
+        comment.setComment("comment1");
+        comment.setPublishDate(LocalDateTime.now());
+        comment.setUser(user);
+        comment.setNewPost(np);
+        commentDao.addComment(comment);
+        
+        Comment fromDB = commentDao.getCommentById(comment.getCommentId());
+        assertEquals("comment1", fromDB.getComment());
+    }
+    @Test
+    public void testDeleteComment(){
+        
+            User user = new User();
+        user.setFirstName("Rithee");
+        user.setLastName("Nhep");
+        user.setUserName("RitheeN");
+        user.setPassWord("password");
+        user.setEmail("user.user");
+        user.setJoinDate(LocalDate.now());
+        user.setPhoto("test");
+        user.setEnable(true);
+        userDao.addUser(user);
+        
+        NewPost np = new NewPost();
+        np.setTitle("UnitTest");
+        np.setContent("Tommorow is the Future");
+        np.setImagePath("test");
+        np.setPublishDate(LocalDateTime.now());
+        np.setUser(user);
+        newPostDao.addNewPost(np);
+        
+        Comment comment = new Comment();
+        comment.setComment("comment1");
+        comment.setPublishDate(LocalDateTime.now());
+        comment.setUser(user);
+        comment.setNewPost(np);
+        commentDao.addComment(comment);
+        
+        Comment fromDao = commentDao.getCommentById(comment.getCommentId());
+        assertEquals(fromDao.getClass(), comment.getClass());
+        
+        commentDao.deleteComment(comment.getCommentId());
+        assertNull(commentDao.getCommentById(comment.getCommentId()));
+        
+    }
+    
+    @Test
+    public void testGetCommentById(){
+        
+            User user = new User();
+        user.setFirstName("Rithee");
+        user.setLastName("Nhep");
+        user.setUserName("RitheeN");
+        user.setPassWord("password");
+        user.setEmail("user.user");
+        user.setJoinDate(LocalDate.now());
+        user.setPhoto("test");
+        user.setEnable(true);
+        userDao.addUser(user);
+        
+        NewPost np = new NewPost();
+        np.setTitle("UnitTest");
+        np.setContent("Tommorow is the Future");
+        np.setImagePath("test");
+        np.setPublishDate(LocalDateTime.now());
+        np.setUser(user);
+        newPostDao.addNewPost(np);
+        
+        Comment comment = new Comment();
+        comment.setComment("comment1");
+        comment.setPublishDate(LocalDateTime.now());
+        comment.setUser(user);
+        comment.setNewPost(np);
+        commentDao.addComment(comment);
+        
+        Comment fromDao = commentDao.getCommentById(comment.getCommentId());
+        assertEquals(fromDao.getComment(), comment.getComment());
+    }
 
+    @Test
+    public void testGetAllComment(){
+            User user = new User();
+        user.setFirstName("Rithee");
+        user.setLastName("Nhep");
+        user.setUserName("RitheeN");
+        user.setPassWord("password");
+        user.setEmail("user.user");
+        user.setJoinDate(LocalDate.now());
+        user.setPhoto("test");
+        user.setEnable(true);
+        userDao.addUser(user);
+        
+        NewPost np = new NewPost();
+        np.setTitle("UnitTest");
+        np.setContent("Tommorow is the Future");
+        np.setImagePath("test");
+        np.setPublishDate(LocalDateTime.now());
+        np.setUser(user);
+        newPostDao.addNewPost(np);
+        
+        Comment comment = new Comment();
+        comment.setComment("comment1");
+        comment.setPublishDate(LocalDateTime.now());
+        comment.setUser(user);
+        comment.setNewPost(np);
+        commentDao.addComment(comment);
+        
+        
+            User user1 = new User();
+        user.setFirstName("Rithee");
+        user.setLastName("Nhep");
+        user.setUserName("RitheeN");
+        user.setPassWord("password");
+        user.setEmail("user.user");
+        user.setJoinDate(LocalDate.now());
+        user.setPhoto("test");
+        user.setEnable(true);
+        userDao.addUser(user);
+        
+        NewPost np1 = new NewPost();
+        np.setTitle("UnitTest");
+        np.setContent("Tommorow is the Future");
+        np.setImagePath("test");
+        np.setPublishDate(LocalDateTime.now());
+        np.setUser(user);
+        newPostDao.addNewPost(np);
+        
+        Comment comment1 = new Comment();
+        comment.setComment("comment1");
+        comment.setPublishDate(LocalDateTime.now());
+        comment.setUser(user);
+        comment.setNewPost(np);
+        commentDao.addComment(comment);
+        
+        List<Comment> fromDB = commentDao.getAllComment();
+        assertEquals(2, fromDB.size());
+        
+}
 }

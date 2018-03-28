@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package com.sg.wnga.DAO;
-
+import com.sg.wnga.Model.Comment;
 import com.sg.wnga.Model.NewPost;
 import com.sg.wnga.Model.NewsFeed;
 import com.sg.wnga.Model.User;
@@ -36,6 +36,19 @@ public class RowMappers {
             return user;
         }
     }
+    
+    protected static final class CommentMapper implements RowMapper<Comment>{
+
+        @Override
+        public Comment mapRow(ResultSet rs, int i) throws SQLException {
+           Comment comment = new Comment();
+           comment.setComment(rs.getString("Comment"));
+           comment.setPublishDate(rs.getTimestamp("PublishDate").toLocalDateTime());
+           comment.setCommentId(rs.getInt("CommentId"));
+           return comment;
+        }
+        
+    }
 
     protected static final class NewPostMapper implements RowMapper<NewPost> {
 
@@ -50,7 +63,6 @@ public class RowMappers {
             newPost.setPostId(rs.getInt("PostId"));
             return newPost;
         }
-
     }
     protected static final class NewsFeedMapper implements RowMapper<NewsFeed>{
 
@@ -66,14 +78,8 @@ public class RowMappers {
         }
         
     }
-     protected static final class Reply implements RowMapper<Reply>{
+    
+    
 
-        @Override
-        public Reply mapRow(ResultSet rs, int i) throws SQLException {
-            Reply reply = new Reply();
-          
-           return reply;
-        }
-        
-    }
 }
+     

@@ -57,7 +57,12 @@ public class PrepareStatement {
             = "select u.* from User u "
             + "inner join New_Post np on np.UserId = u.UserId "
             + "where np.PostId = ?";
-
+    
+    protected static final String SQL_SELECT_USER_BY_COMMENT
+            = "select u.* from User u "
+            + "inner join Comment c on c.userId = u.userId "
+            + "where c.CommentId=? ";
+    
     protected static final String SQL_DELETE_NEW_POST
             = "delete from New_Post where PostId = ? ";
 
@@ -120,16 +125,36 @@ public class PrepareStatement {
             = "select count(*)from New_Post";
 
     protected static final String SQL_INSERT_INTO_COMMENT
-            = "inser into Comment (Comment, UserId, PostId)value(?, ?, ?)";
+            = "insert into Comment (Comment, PublishDate, UserId, PostId)value(?, ?, ?, ?)";
+    
+    protected static final String SQL_UPDATE_COMMENT
+            = "update Comment set Comment= ?, PubishDate = ? UserId = ? PostId = ? "
+            + "where CommentId = ? ";
+    protected static final String SQL_DELETE_POST_FROM_COMMENT
+            = "delete from Comment where PostId = ? ";
+    
+    protected static final String SQL_DELETE_USER_FROM_COMMENT
+            = "delete from Comment where UserId = ? "; 
+    
+    protected static final String SQL_SELECT_COMMENT_BYID
+            = "select * from Comment where CommentId=?";
+    
+    protected static final String SQL_DELETE_COMMENT
+            = "delete from Comment where CommentId = ?";
 
-    protected static final String SQL_DELET_COMMENT
-            = "delet from Comment where CommentId = ?";
-
-    protected static final String SQL_SELECT_REPLY_PER_POST
+    protected static final String SQL_SELECT_COMMENT_PER_POST
             = "select u.username, c.comment from comment "
             + "inner join New_Post np on np.postId = c.postid "
             + "inner join user u on u.userId=c.postid "
             + "where np.postId= ? ";
+    
+     protected static final String SQL_SELECT_POST_BY_COMMENT
+            = "select np.* from New_Post np "
+            + "inner join Comment c on c.PostId = np.PostId "
+            + "where c.CommentId=?";
+    
+    protected static final String SQL_SELECT_ALL_COMMENT
+            = "select * from Comment ";
     
     protected static final String SQL_CLEANUP_NEWS
             = "delete from News_Feed where NewsFeedId>=8 limit 100";

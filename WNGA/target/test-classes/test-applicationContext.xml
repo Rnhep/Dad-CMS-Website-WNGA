@@ -54,5 +54,8 @@
           class= "com.sg.wnga.DAO.NewsFeedDaoImpl">
          <property name="jdbcTemplate" ref="jdbcTemplate"/>
     </bean>    
-    
+    <bean id="commentDao"
+          class= "com.sg.wnga.DAO.CommentDaoImpl">
+         <property name="jdbcTemplate" ref="jdbcTemplate"/>
+    </bean>  
 </beans>

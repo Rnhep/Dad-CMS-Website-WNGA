@@ -17,7 +17,10 @@ public interface CommentDao {
     
     public void deleteComment(int commentId);
     
-    public void getCommentById(int commentId);
+    public void updateComment(Comment comment);
+    
+    public Comment getCommentById(int commentId);
     
     public List<Comment> getAllComment();
+    
 }
