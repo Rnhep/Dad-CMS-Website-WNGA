@@ -34,21 +34,23 @@
 
                     <sec:authorize access="isAuthenticated()">
                         <div class="container col-md-12 postForm ">
+                            <div class="inner-postform">
                             <sf:form role="form"  method="POST" class="form-horizontal"
                                      action="creatNewPost">
                                 <div ><c:out value="${message}"/></div>
-                                <div class="form-group">
+                                <div class="form-group " >
                                     <input id="registration-from" type="text" class="form-control" name="photo" placeholder="Link to a photo only" value="${fn:escapeXml(param.photo)}" />
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group ">
                                     <input id="registration-from" type="text" class="form-control" name="photoTwo" placeholder="Link to a photo only"  />
                                 </div>
                                 <textarea  type="text" name="comment"   placeholder="Comment required" value="${fn:escapeXml(comment)}" required>${commentOut}</textarea> 
                                 <input type="hidden" name="userName" value="${pageContext.request.userPrincipal.name}"/>
-                                <div class="form-group">
+                                <div class="form-group ">
                                     <input type="submit" id="log-in-btn" class="form-control" value="Submit Post"/>
                                 </div>
                             </sf:form> 
+                            </div>
                         </div>
                     </sec:authorize>
 
@@ -69,9 +71,10 @@
                     </div>
 
 
-                    <div class="container display-post col-md-12">
+                    <div class="container display-post col-md-10">
                         <c:forEach var="allPosts" items="${displayAllPost}">
                             <div class="container pre-posts">
+                                
                                 <p>
                                     <span class="grey">
                                         <c:if test="${!empty allPosts.user.photo}">
@@ -83,6 +86,8 @@
                                         <fmt:formatDate value="${Postdate}" pattern=" MMM-dd-yyyy @hh:mma"/>
                                     </span>
                                 </p>
+                                        <p class="member-since"> Member since:<c:out value="${allPosts.user.joinDate}"/>
+                                        </p>
                                 <div class="container postContents">
                                     <p>
                                         <c:out value="${allPosts.content}"/>
@@ -100,18 +105,19 @@
                                         </c:if>
                                     </c:if>                 
                                 </div>
+                                   
+                                    
+                                   <hr></hr>
                                     <div>
                                         <p class="commentCount">  
                                         Comment
                                         </p>
                                     </div>
-                                    
-                                   <hr></hr>
                                 <c:if test="${pageContext.request.userPrincipal.name == allPosts.user.userName}">
                                     <p class="edit-delete">
                                         | <a class="grey " href="editPostForm?postId=${allPosts.postId}">edit</a> |
                                         <a class="grey" href="deletePost?postId=${allPosts.postId}" id="delete" data-confirm=" WARNING!!!!: Are you sure to delete this comment? CANNOT BE UNDONE!!!">delete</a> |
-                                        <a class="grey " href="editPostForm?postId=${allPosts.postId}">comment</a> |
+                                        <a class="grey " href="comment?postId=${allPosts.postId}">comment</a> |
                                     </p>
                                 </c:if>
                             </div> 

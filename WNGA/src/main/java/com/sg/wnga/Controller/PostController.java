@@ -5,10 +5,12 @@
  */
 package com.sg.wnga.Controller;
 
+import com.sg.wnga.DAO.CommentDao;
 import com.sg.wnga.DAO.GetCountDao;
 import com.sg.wnga.DAO.NewPostDao;
 import com.sg.wnga.DAO.NewsFeedDao;
 import com.sg.wnga.DAO.UserDao;
+import com.sg.wnga.Model.Comment;
 import com.sg.wnga.Model.NewPost;
 import com.sg.wnga.Model.NewsFeed;
 import com.sg.wnga.Model.User;
@@ -33,14 +35,16 @@ public class PostController {
     private final UserDao userDao;
     private final NewPostDao NPDao;
     private final NewsFeedDao NFDao;
+    private final CommentDao commentDao;
 
     private String commentOut;
 
     @Inject
-    public PostController(UserDao userDao, NewPostDao NPDao, NewsFeedDao NFDao, GetCountDao getCountDao) {
+    public PostController(UserDao userDao, NewPostDao NPDao, NewsFeedDao NFDao, GetCountDao getCountDao, CommentDao commentDao) {
         this.userDao = userDao;
         this.NPDao = NPDao;
         this.NFDao = NFDao;
+        this.commentDao=commentDao;
 
     }
 
@@ -144,5 +148,39 @@ public class PostController {
         NPDao.deletePost(newsFeedId);
         return "redirect:displayPost";
 
+    }
+    
+     @RequestMapping(value = "/comment", method = RequestMethod.GET)
+    public String comment(HttpServletRequest rq, Model model) {
+        String postIdParameter = rq.getParameter("postId");
+        int postId = Integer.parseInt(postIdParameter);
+        NewPost newPost = NPDao.getPostById(postId);
+        model.addAttribute("newPost", newPost);
+        List<Comment> comments = commentDao.getAllComment();
+        model.addAttribute("comments", comments);
+        return "Comment";
+    }
+    
+      @RequestMapping(value = "/creatComment", method = RequestMethod.POST)
+    public String createComment(HttpServletRequest rq, Model model) {
+       LocalDateTime timeStamp = LocalDateTime.now();
+        //check for empty fields
+        String userName = rq.getParameter("userName");
+        String postIdIn = rq.getParameter("postId");
+        String commentIn = rq.getParameter("comment");
+        
+        if(commentIn==null || commentIn.trim().length()==0){
+            return "costumerror";
+        }
+        int postId  = Integer.parseInt(postIdIn);//convert string to integer
+        NewPost post = NPDao.getPostById(postId);//get post by Id
+        User user = userDao.getUserByUserName(userName);//get user by username
+        Comment comment = new Comment();
+        comment.setComment(commentIn);
+        comment.setPublishDate(timeStamp);
+        comment.setUser(user);//insert user to comment
+        comment.setNewPost(post);//insert post to comment
+        commentDao.addComment(comment);
+        return "NewPost";
     }
 }

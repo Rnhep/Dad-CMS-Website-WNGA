@@ -29,12 +29,12 @@
                                 <p id="upComing"> Upcoming Events</p>
                             </div>
                             <div class="content-wrap">
-                                <pre class="container post-preview">
+                                <pre class="container">
                             <div><c:out value="${eventOne.name}"/> </div>
                                     <c:out value="${eventOne.content}"/>
                                 </pre>
 
-                                <pre  class="container post-preview">
+                                <pre  class="container ">
                       <div> <c:out value="${eventTwo.name}"/></div>
                                     <c:out value="${eventTwo.content}"/>
                                 </pre>

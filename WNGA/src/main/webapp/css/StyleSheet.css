@@ -1,11 +1,17 @@
 body
 {
+    align-content: center;
     margin: 0;
     padding: 0;
     vertical-align: baseline;
     outline: 0;
     background: linear-gradient(to bottom, rgba(188,188,188,0.2) 6%,rgba(188,188,188,0.7) 100%)no-repeat center white;
 }
+
+/*
+==================================================================
+            STARTING OF 25602PX DESKTOP VIEW
+*/
 @media (min-width: 2562px){
 
     .user-info {
@@ -31,7 +37,11 @@ body
         font-size: 32px;
         width: auto;
         height:auto;
-
+    }
+    
+    .member-since{
+        margin-left: 4em;
+        margin-top: -1em;
     }
 
     .home  {
@@ -67,15 +77,7 @@ body
         padding: 2px;
 
     }
-    /*
-        .flex-signIn {
-            width:auto;
-            display: flex;
-            margin-left: 500px;
-            margin-top: -80px;
-            border:1px solid black;
-        }*/
-
+   
     .flex-container > div 
     {
         width: 100%;
@@ -104,22 +106,14 @@ body
 
     .aboutUs {
         font-size: 32px;
-        margin-top: 10px;
+        margin-top: 30px;
         margin-left: 20%;
         padding: 10px;
         max-width: 60%;
         height:auto;
         background-color: #fff;
     }
-
-    #aboutUsFooter {
-        margin-top: 828px;
-    }
-
-    #aboutUsFooter {
-        margin-top: 573px;
-    }
-
+    
     #header-mobile,
     #header-about-us,
     #signIn-display {
@@ -136,6 +130,7 @@ body
         padding: 10px 10px 10px 10px;
         font-size: 32px;
     }
+    
     .latestPost-Content {
         width: 100%;
         max-width: 999px;
@@ -159,11 +154,12 @@ body
         margin-left: 28%;
         width: auto;
     }
+    
+     
 
     .newsContents {
         width: 100%;
         max-width: 85em;
-        border:  1px solid #000000;
         border-radius: 10px;
         font-size: 32px;
     }
@@ -185,40 +181,50 @@ body
         padding-bottom: 20px; 
     }
 
+     .postForm {  
+
+        width: 95.7%;
+        margin-top: -90px;
+        padding-bottom: 80px;
+        border: 1px solid black
+    }
+
+    .inner-postform{
+        margin: 0 auto;
+        width: 90em;
+     
+    }
+     .display-post {
+        margin: 0 auto;
+        margin-top: 25px;
+        width: 95.7%;
+        height:auto;
+        border: 1px solid black;
+        
+    }
     .pre-posts
     {
        
         font-size: 18px;
         padding: 10px;
-        margin: 10px;
+        margin: 0 auto;
         height: auto;
         width: 100%;
         max-width: 90em;
         background-color: #fff;
         border-radius:10px;
         box-shadow:  5px 10px 18px #888888;
-        margin: 50px;
+       
     }
-
-    .display-post {
-        margin-top: -25px;
-        margin-left: 23.7%;
-        padding: 20px;
-        padding-top: 20px;
-        width: auto;
-        height:auto;
-
-    }
-
+    
     .postContents {
-        border: 1px solid black;
+        /*border: 1px solid black;*/
+        margin-left: 30px;
         width: 100%;
         padding: 10px;
         max-width: 85em;
         height: auto;
         border-radius: 10px;
-        
-
     }
 
     .postContents
@@ -226,8 +232,6 @@ body
 
         font-size: 32px;
     }
-
-
 
     #displayDate {    
         margin-top: -60px;
@@ -238,7 +242,7 @@ body
     }
 
     #displayDate p {
-        font-size: 16px;
+        font-size: 42px;
         color: #000000;
     }
 
@@ -317,7 +321,7 @@ body
 
     .signInFooterLine {
 
-        margin-top: 58em;
+        margin-top: 60em;
         margin-left: 8%;
     }
 
@@ -327,14 +331,16 @@ body
         margin-left: 8%;
 
     }
+    
     .homeFooterLine
     {
         margin-left: 8%;
     }
+    
     .aboutUsFooterLine
     {
         margin-left: 8%;
-        margin-top: 23em;
+        margin-top: 25em;
     }
 
     .footerLine {
@@ -363,7 +369,6 @@ body
         color: #fff;
     }
 
-
     .postFormNewsPage {  
 
         width: 100%;
@@ -373,14 +378,6 @@ body
         padding-bottom: 80px;
     }
     
-    .postForm {  
-        font-size: 32px;
-        width: 100%;
-        margin-top: -90px;
-        max-width: 40em;
-        margin-left: 32%;
-        padding-bottom: 80px;
-    }
     #signInForm {
 
         width: 100%;
@@ -532,8 +529,7 @@ body
         border-radius:10px;
         box-shadow:  1px 1px 1px #000000;
     }
-
-
+    
     #user-img {
 
         width: 60px;
@@ -565,7 +561,7 @@ body
         margin-left: 13%;
         padding: 10px;
         color: #000;
-        margin-top: 40px;
+        margin-top: 90px;
         height: 990px;
         width: 100%;
         max-width: 60em;
@@ -580,7 +576,12 @@ body
 
 
 }
+/*         END OF 2562PX  DESKTOP VIEW
+-----------------------------------------------*/
 
+/*=================================================
+            STARTING AT OF 1906PX TO 2561PX DESKTOP VIEW
+*/
 /*browswer res at 1681 to 2230*/
 @media (min-width: 1906px) and (max-width : 2561px){
 
@@ -748,7 +749,14 @@ body
         background-color: #fff;
         border-radius: 10px;
     }
+    .postForm {  
 
+        width: 100%;
+        margin-top: -90px;
+        max-width: 60em;
+        margin-left: 29.5%;
+        padding-bottom: 80px;
+    }
     #recent-post {
         font-weight: bold;
         color: #000;
@@ -762,16 +770,15 @@ body
         margin: 10px;
         height: auto;
         width: 100%;
-        max-width: 90em;
+        max-width: 50em;
         background-color: #fff;
         border-radius:10px;
-        box-shadow:  1px 1px 2px #000000;
+        box-shadow: 5px 10px 18px #888888;
     }
 
-
-    .display-post {
+ .display-post {
         margin-top: -25px;
-        margin-left: 17%;
+        margin-left: 27%;
         padding: 20px;
         padding-top: 20px;
         width: auto;
@@ -779,24 +786,36 @@ body
 
     }
 
+
     .postContents {
-        border: 1px solid buttonface;
+        /*border: 1px solid black;*/
+        margin-left: 30px;
         width: 100%;
         padding: 10px;
-        max-width: 85em;
+        max-width: 50em;
         height: auto;
         border-radius: 10px;
-
+       
     }
 
     .postContents
     {
 
-        font-size: 32px;
+        font-size: 18px;
     }
 
+  span {
+        font-size: 18px;
+    }
 
+    .commentCount{
 
+        margin-top: 10px;
+        margin-left: 80px;
+        font-size: 18px;
+        color: #adadad;
+    }
+    
     #displayDate {    
         margin-top: -60px;
         padding: 5px;
@@ -939,14 +958,7 @@ body
         margin-left: 38%;
         padding-bottom: 80px;
     }
-    .postForm {  
 
-        width: 100%;
-        margin-top: -90px;
-        max-width: 850px;
-        margin-left: 39%;
-        padding-bottom: 80px;
-    }
     #signInForm {
 
         width: 100%;
@@ -1097,25 +1109,16 @@ body
         border-radius: 50%;
 
     }
-    .commentCount{
-
-        margin-top: 10px;
-        margin-left: 98px;
-        font-size: 28px;
-        color: #adadad;
-    }
+   
     .edit-delete{
 
         margin-bottom: -0px;
         margin-left: 28px;
-        font-size: 28px;
+        font-size: 18px;
 
     }
 
-    span {
-        font-size: 28px;
-    }
-
+   
     .policy {
 
         margin-left: 30px;
@@ -1134,7 +1137,13 @@ body
 
 
 }
+/*        END OF 1906PX TO 2561 DESKTOP VIEW
+---------------------------------------------------------------*/
 
+
+/*================================================================
+        STARTING OF 1281PX TO 1905PX DESKTOP VIEW
+*/
 @media (min-width: 1281px) and (max-width:1905px) {
 
 
@@ -1304,38 +1313,68 @@ body
         color: #000;
         padding-bottom: 20px; 
     }
+      .postForm {  
 
+        width: 95.7%;
+        margin-top: -90px;
+        padding-bottom: 80px;
+    }
+
+    .inner-postform{
+        margin: 0 auto;
+        width: 800px;
+     
+    }
+     .display-post {
+        margin: 0 auto;
+        margin-top: 25px;
+        width: 95.7%;
+        height:auto;
+        border: 1px solid black;
+        
+    }
+    
     .pre-posts
     {
         padding: 10px;
-        margin: 10px;
+        margin: 0 auto;
         height: auto;
         width: 100%;
-        max-width: 580px;
+        max-width: 680px;
         background-color: #fff;
         border-radius:10px;
-        box-shadow:  1px 1px 1px #000000;
-    }
-
-      .display-post {
-        margin-top: -25px;
-        margin-left: 27.7%;
-        padding: 20px;
-        padding-top: 20px;
-        width: auto;
-        height:auto;
-
+        box-shadow:  5px 10px 18px #888888;
     }
 
     .postContents {
-        border: 1px solid buttonface;
+        margin: 0 auto;
+        /*border: 1px solid buttonface;*/
         width: 100%;
         padding: 10px;
         max-width: 650px;
         height: auto;
         border-radius: 10px;
     }
+    .commentCount{
+        color: #adadad;
+        margin-left: 20px;
+    }
+    
+.postContents
+    {
 
+        font-size: 18px;
+    }
+
+  span {
+        font-size: 18px;
+    }
+
+    .member-since{
+        font-size: 10px;
+        margin-left: 30px;
+        margin-top: -1.3em;
+    }
     #displayDate {    
         margin-top: -60px;
         padding: 5px;
@@ -1468,14 +1507,7 @@ body
         margin-left: 32.5%;
         padding-bottom: 80px;
     }
-    .postForm {  
-
-        width: 100%;
-        margin-top: -90px;
-        max-width: 550px;
-        margin-left: 35%;
-        padding-bottom: 80px;
-    }
+  
     #signInForm {
 
         width: 100%;
@@ -1858,9 +1890,19 @@ body
         box-shadow:  1px 1px 1px #000000;
 
     }
+      .postForm { 
+
+        width: 100%;
+        margin-top: -90px;
+        max-width: 550px;
+        margin-left: 24%;
+        padding-bottom: 80px;
+
+    }
+    
     .display-post {
         margin-top: -25px;
-        margin-left: 23.7%;
+        margin-left: 20%;
         padding: 20px;
         padding-top: 20px;
         width: auto;
@@ -1869,13 +1911,12 @@ body
     }
 
     .postContents {
-        border: 1px solid buttonface;
+        /*border: 1px solid buttonface;*/
         width: 100%;
         padding: 10px;
         max-width: 85em;
         height: auto;
         border-radius: 10px;
-
     }
 
     .postContents
@@ -1883,8 +1924,16 @@ body
 
         font-size: 12px;
     }
-
-    
+    .member-since{
+        font-size: 8px;
+        margin-left: 30px;
+        margin-top: -1.3em;
+    }
+    .commentCount
+    {
+        color: #adadad;
+        margin-left: 30px;
+    }
     #displayDate {    
         margin-top: -60px;
         padding: 5px;
@@ -2014,16 +2063,6 @@ body
         margin-top: -90px;
         max-width: 550px;
         margin-left: 33%;
-        padding-bottom: 80px;
-
-    }
-
-    .postForm { 
-
-        width: 100%;
-        margin-top: -90px;
-        max-width: 550px;
-        margin-left: 28%;
         padding-bottom: 80px;
 
     }
