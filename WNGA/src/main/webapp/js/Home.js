@@ -19,6 +19,7 @@ $('document').ready(function () {
 // loadd nav
 function headerReload() {
     if ($(window).width() >= 1536) {
+//             alert($(window).width());
         $('#header-desktop').load('jsp/HeaderDesktop.jsp');
     } else {
         $('#header-mobile').load('jsp/Header.jsp');
