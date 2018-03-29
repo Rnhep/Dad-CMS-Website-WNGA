@@ -48,21 +48,22 @@
                                 </p>
                             </div>
 
-                            <div class=" col-md-12" id="latestPostContentHolding">
+                            <div class=" col-md-12" id="latestPost-ContentHolding">
                                 <c:forEach var="latestPost" items="${displayLatestPost}">
-
-                                    <div class="latestPostContent">
-                                        <p>
+                                   
+                                    <div class="latestPost-Content">
+                                        <p class="latestest-Text">
                                             <a href="${pageContext.request.contextPath}/displayPost">
                                                 <c:out value="${latestPost.content}"/>
                                             </a> 
                                         </p>
-                                        <span class="grey">
+                                            <p class="latestest-Text">
                                             <c:out value="@${latestPost.user.userName}"/>
                                             <fmt:parseDate pattern="yyyy-MM-dd'T'HH:mm:ss" value="${latestPost.publishDate}" var="joindate"/>
                                             <fmt:formatDate value="${joindate}" pattern="E MMM-dd-yyyy @hh:mm a"/>
-                                        </span>
+                                            </p>
                                     </div>
+                                  
                                 </c:forEach>
 
                             </div>

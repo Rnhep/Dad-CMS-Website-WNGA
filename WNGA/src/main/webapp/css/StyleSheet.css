@@ -6,9 +6,7 @@ body
     outline: 0;
     background: linear-gradient(to bottom, rgba(188,188,188,0.2) 6%,rgba(188,188,188,0.7) 100%)no-repeat center white;
 }
-
-/*browswer res at 1681 to 2230*/
-@media (min-width: 1681px) and (max-width : 2239px){
+@media (min-width: 2562px){
 
 
     .user-info img {   
@@ -22,10 +20,14 @@ body
     }
 
     .username {
+        margin-top: 10px; 
         float: right;
         clear: both;
-        font-size: 12px;
-        margin-top: 15px;
+        margin-left: 30px;
+        font-size: 32px;
+        width: auto;
+        height:auto;
+
     }
 
     .home  {
@@ -41,7 +43,6 @@ body
     }
 
     #header-desktop {
-
         top: -146px;
         overflow: hidden;
         margin-left: 25%;
@@ -56,25 +57,28 @@ body
 
     .flex-container {
         width:100%;
-        max-width: 500px;
         display: flex;
-        margin-left: -10px;
-        margin-top: 60px;
+        margin-left: 10px;
+        margin-top: 39px;
         padding: 2px;
-    }
 
-    .flex-signIn {
-        width:100%;
-        max-width: 250px;
-        display: flex;
-        margin-left: 500px;
-        margin-top: -37px;
     }
+    /*
+        .flex-signIn {
+            width:auto;
+            display: flex;
+            margin-left: 500px;
+            margin-top: -80px;
+            border:1px solid black;
+        }*/
 
-    .flex-container > div,
-    .flex-signIn > div  {
+    .flex-container > div 
+    {
+        width: 100%;
+        max-width: 158px;
+        font-size: 22px;
         font-weight: bold;
-        margin-right: 30px;
+        margin-left: 90px;
         padding: 5px;
         border-top: 3px solid #4286f4;
         border-left: 3px solid #4286f4;
@@ -87,7 +91,7 @@ body
     .flex-signIn a  {
         color: #000;
         text-decoration: none;
-        font-size: 16px;
+        font-size: 32px;
     }
 
     .aboutus-header {
@@ -117,16 +121,20 @@ body
         display: none;
     }
 
-    #latestPostContent {
+    #latestPost-ContentHolding {
         margin-left: 35%;
         width: 100%;
-        max-width: 450px;
-    }
+        max-width: 100em;
 
-    .latestPostContent {
+    }
+    .latestest-Text {
+        padding: 10px 10px 10px 10px;
+        font-size: 32px;
+    }
+    .latestPost-Content {
         width: 100%;
-        max-width: 450px;
-        height: auto;
+        max-width: 950px;
+        height: 150px;
         padding-left: 30px;
         border: 1px solid silver;
         margin: 10px;
@@ -136,22 +144,23 @@ body
 
     }
 
-    .latestPostContent p {
+    .latestPost-Content p {
         white-space: nowrap;  
         overflow: hidden;
         text-overflow: ellipsis;
     }
 
     .displayNews {
-        margin-left: 30%;
+        margin-left: 28%;
         width: auto;
     }
 
     .newsContents {
         width: 100%;
-        max-width: 580px;
+        max-width: 85em;
         border:  1px solid #000000;
         border-radius: 10px;
+        font-size: 32px;
     }
 
     .post-preview
@@ -173,11 +182,12 @@ body
 
     .pre-posts
     {
+        font-size: 18px;
         padding: 10px;
         margin: 10px;
         height: auto;
         width: 100%;
-        max-width: 580px;
+        max-width: 90em;
         background-color: #fff;
         border-radius:10px;
         box-shadow:  1px 1px 1px #000000;
@@ -185,21 +195,31 @@ body
 
     .display-post {
         margin-top: -25px;
-        margin-left: 32.7%;
+        margin-left: 27.7%;
         padding: 20px;
         padding-top: 20px;
         width: auto;
         height:auto;
+
     }
 
     .postContents {
         border: 1px solid buttonface;
         width: 100%;
         padding: 10px;
-        max-width: 650px;
+        max-width: 85em;
         height: auto;
         border-radius: 10px;
+
     }
+
+    .postContents
+    {
+
+        font-size: 32px;
+    }
+
+
 
     #displayDate {    
         margin-top: -60px;
@@ -213,7 +233,6 @@ body
         font-size: 16px;
         color: #000000;
     }
-
 
     #upComing,
     #latestPost {
@@ -273,6 +292,7 @@ body
         margin-top: 35px;
         height: 490px; 
     }
+
     .post-preview p {
 
         width: 100%;
@@ -280,6 +300,7 @@ body
         overflow: hidden;
         text-overflow: ellipsis; 
     }
+
     #footerspace {
 
         margin-top: 240px;
@@ -288,7 +309,7 @@ body
 
     .signInFooterLine {
 
-        margin-top: 298px;
+        margin-top: 70em;
         margin-left: 8%;
     }
 
@@ -296,6 +317,15 @@ body
 
         margin-top: 90px;
 
+    }
+    .homeFooterLine
+    {
+        margin-left: 8%;
+    }
+    .aboutUsFooterLine
+    {
+        margin-left: 8%;
+        margin-top: 51em;
     }
 
     .footerLine {
@@ -329,16 +359,573 @@ body
 
         width: 100%;
         margin-top: -90px;
+        max-width: 850px;
+        margin-left: 38%;
+        padding-bottom: 80px;
+    }
+    .postForm {  
+        font-size: 32px;
+        width: 100%;
+        margin-top: -90px;
+        max-width: 850px;
+        margin-left: 39%;
+        padding-bottom: 80px;
+    }
+    #signInForm {
+
+        width: 100%;
+        max-width: 50%;
+        margin-left: 25%;
+        border-radius: 10px;
+    }
+
+    .signIn {
+
+        padding-top: 55px;
+
+    }
+
+    .plainText-content {
+
+        background-color: #fff;
+    }
+
+    .plainText-content p {
+
+        padding: 10px;
+        color: #000;
+
+    }
+
+    .register {   
+
+        margin-top: -60px;
+        margin-left: 40px;
+        width: 100%;
+        max-width: 450px;
+        height: auto;
+        color: #000;
+        background-color: #fff;
+        border-radius:10px;
+        padding: 20px;
+
+    }
+    .contact0, 
+    .contact1,
+    .contact2,
+    .contact3 {  
+
+        margin-left: 60px;
+        margin-top: 40px;
+        padding: 40px;
+        width: 100%;
         max-width: 550px;
-        margin-left: 32%;
+        height: auto;
+        color: #000;
+        font-weight: bold;
+        border: 1px solid black;
+        background-color: whitesmoke;
+
+    }
+    .contact-text {
+
+        font-size: 24px;
+        background-color: whitesmoke;
+        padding: 5em;
+
+    }
+
+    textarea, 
+    #log-in-btn, 
+    #link, 
+    #registration-from {  
+
+        border: 1px solid #000;
+        width:100%;
+        max-width: 850px;
+        font-size:18px;
+
+    }
+
+    textarea {
+        
+        font-size: 32px;
+        height: 250px;
+        padding: 10px;
+        resize: none;
+        overflow: auto;
+
+    }
+
+    .btns-flex {
+
+        display: flex;
+        width: auto;
+        padding: 10px;
+
+    }
+
+    .flex-flex div {
+
+        padding: 10px;
+
+    }
+
+    .user-box {
+
+        box-shadow: 1px 1px #000000;
+        width:100%;
+        max-width: 550px;
+        border-radius: 20px;
+        background-color: whitesmoke;
+        margin: 10px;
+
+    }
+
+    .newuser-box {
+
+        margin-left: 25%;
+        margin-bottom: 99px;
+        width: auto;
+
+    }
+
+    .admin-box {
+
+        margin-left: 22%;
+        width: 100%;
+        max-width: 100em;
+       
+
+    }
+    .admin-box p {
+
+        font-size: 32px;
+
+    }
+    .admin-content
+    {
+        font-size: 18px;
+        padding: 10px;
+        margin: 10px;
+        height: auto;
+        width: 100%;
+        max-width: 100em;
+        background-color: #fff;
+        border-radius:10px;
+        box-shadow:  1px 1px 1px #000000;
+    }
+
+
+    #user-img {
+
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+
+    }
+    .commentCount{
+
+        margin-top: 10px;
+        margin-left: 98px;
+        font-size: 28px;
+        color: #adadad;
+    }
+    .edit-delete{
+
+        margin-bottom: -0px;
+        margin-left: 28px;
+        font-size: 28px;
+
+    }
+
+    span {
+        font-size: 28px;
+    }
+
+    .policy {
+
+        margin-left: 30px;
+        padding: 10px;
+        color: #000;
+        margin-top: -60px;
+        height: auto;
+        width: 100%;
+        max-width: 450px;
+        border-radius:10px;
+        background-color:  #fff;
+        overflow-y: scroll;
+
+    } 
+
+
+
+}
+
+/*browswer res at 1681 to 2230*/
+@media (min-width: 1906px) and (max-width : 2561px){
+
+
+    .user-info img {   
+        width: 100%;
+        max-width: 150px;
+        height: auto;
+    }
+
+    .user-info input {
+        width: 120px;
+    }
+
+    .username {
+        margin-top: -5px;
+        float: right;
+        clear: both;
+        margin-left: 30px;
+        font-size: 32px;
+        width: auto;
+        height:auto;
+
+    }
+
+    .home  {
+        margin-top: -20px;
+    }
+
+    .logo {
+        background: linear-gradient(to bottom, rgba(0,0,0,0.2) 4%,rgba(0,0,0,0.0) 100%), url('../Images/WNGA-M.png')no-repeat center white;
+        min-height: 120px;
+        max-width: 25%;
+        background-size: contain;
+        border: 1px solid #fff;
+    }
+
+    #header-desktop {
+        top: -146px;
+        overflow: hidden;
+        margin-left: 25%;
+        margin-top: 46.2px;
+        max-height: 150px;
+        max-width: 75%;
+        height: 100px;
+        opacity: 1;   
+        background-size: contain;
+        border-bottom: 3px solid #fff;
+    }
+
+    .flex-container {
+        width:100%;
+        display: flex;
+        margin-left: 10px;
+        margin-top: 62px;
+        padding: 2px;
+
+    }
+    /*
+        .flex-signIn {
+            width:auto;
+            display: flex;
+            margin-left: 500px;
+            margin-top: -80px;
+            border:1px solid black;
+        }*/
+
+    .flex-container > div >a
+    {
+        width: 100%;
+        max-width: 158px;
+        font-size: 22px;
+        font-weight: bold;
+        margin-left: 90px;
+        padding: 5px;
+        border-top: 3px solid #4286f4;
+        border-left: 3px solid #4286f4;
+        border-right: 3px solid #4286f4;
+        border-radius: 2px 15px  2px 15px;
+        box-shadow: 1px  1px 2px #080808;
+    }
+
+    .flex-container a,
+    .flex-signIn a  {
+        color: #000;
+        text-decoration: none;
+        font-size: 32px;
+    }
+
+    .aboutus-header {
+        padding-top: -18px;
+    }
+
+    .aboutUs {
+        margin-top: 10px;
+        margin-left: 20%;
+        padding: 10px;
+        max-width: 60%;
+        height:auto;
+        background-color: #fff;
+    }
+
+    #aboutUsFooter {
+        margin-top: 828px;
+    }
+
+    #aboutUsFooter {
+        margin-top: 573px;
+    }
+
+    #header-mobile,
+    #header-about-us,
+    #signIn-display {
+        display: none;
+    }
+
+    #latestPost-ContentHolding {
+        margin-left: 29%;
+        width: 100%;
+        max-width: 100em;
+
+    }
+    .latestest-Text {
+        padding: 10px 10px 10px 10px;
+        font-size: 32px;
+    }
+    .latestPost-Content {
+        width: 100%;
+        max-width: 950px;
+        height: 150px;
+        padding-left: 30px;
+        border: 1px solid silver;
+        margin: 10px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 1px 1px 1px #000000;
+
+    }
+
+    .latestPost-Content p {
+        white-space: nowrap;  
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .displayNews {
+        margin-left: 18%;
+        width: auto;
+    }
+
+    .newsContents {
+        width: 100%;
+        max-width: 85em;
+        border:  1px solid #000000;
+        border-radius: 10px;
+        font-size: 32px;
+    }
+
+    .post-preview
+    .user-box {
+        padding-top: 5px;
+        margin-top: 20px;
+        height: auto;
+        max-width: 81%;
+        border: 1px solid silver;
+        background-color: #fff;
+        border-radius: 10px;
+    }
+
+    #recent-post {
+        font-weight: bold;
+        color: #000;
+        padding-bottom: 20px; 
+    }
+
+    .pre-posts
+    {
+        font-size: 18px;
+        padding: 10px;
+        margin: 10px;
+        height: auto;
+        width: 100%;
+        max-width: 90em;
+        background-color: #fff;
+        border-radius:10px;
+        box-shadow:  1px 1px 1px #000000;
+    }
+
+
+    .display-post {
+        margin-top: -25px;
+        margin-left: 17%;
+        padding: 20px;
+        padding-top: 20px;
+        width: auto;
+        height:auto;
+
+    }
+
+    .postContents {
+        border: 1px solid buttonface;
+        width: 100%;
+        padding: 10px;
+        max-width: 85em;
+        height: auto;
+        border-radius: 10px;
+
+    }
+
+    .postContents
+    {
+
+        font-size: 32px;
+    }
+
+
+
+    #displayDate {    
+        margin-top: -60px;
+        padding: 5px;
+        background-color: #fff;
+        height: auto;
+
+    }
+
+    #displayDate p {
+        font-size: 16px;
+        color: #000000;
+    }
+
+    #upComing,
+    #latestPost {
+        color: #4286f4;
+        font-weight: bold;
+    }
+
+    .latestPost {
+        padding-top: 20px;
+        padding-bottom: 40px;
+        border-top: 9px solid  #4286f4;
+        border-bottom: 9px solid #5393fc;
+        width: 50%;
+        margin-left: 25%;
+        max-width: 100%;
+        border-radius: 20px;
+        margin-bottom: 29px;
+    }
+    #events {
+        background-color: white;
+        margin-top: 80px;
+        width: 100%;
+    }
+
+    .policy {
+        background: #fff;
+        overflow: hidden;
+        max-height: 480px;
+        max-width: 100%;
+        margin-left: 10%;
+    }
+
+    .img-container {
+
+        margin-top: 20px;
+        color:#fff;
+        font-size: 30px;
+        max-height: 100%;
+    }
+
+    .to-center {
+        margin-top: 20px;
+        color: black;
+        height: 10px;
+    }
+
+    .img-container p, h3, .to-center p,
+    .news p a {
+        text-align: center;
+        font-size: 25px;
+        font-weight: 900;
+        color: #fff;
+        text-decoration: none;
+    } 
+
+    #homepage-containerbg {
+        margin-top: 35px;
+        height: 490px; 
+    }
+
+    .post-preview p {
+
+        width: 100%;
+        white-space: nowrap;  
+        overflow: hidden;
+        text-overflow: ellipsis; 
+    }
+
+    #footerspace {
+
+        margin-top: 240px;
+        margin-left: 8%;
+    }
+
+    .signInFooterLine {
+
+        margin-top: 298px;
+        margin-left: 8%;
+    }
+
+    .profileFooterLine {
+
+        margin-top: 90px;
+
+    }
+    .homeFooterLine
+    {
+        margin-left: 8%;
+    }
+    .aboutUsFooterLine
+    {
+        margin-left: 8%;
+        margin-top: 51em;
+    }
+
+    .footerLine {
+
+        margin-top: 168px;
+        margin-left: 8%;
+
+    }
+
+    footer {  
+
+        padding:  1.2em;
+        font-size: 12px;
+        color: #adadad;
+        height: 120px;
+        text-align: center;
+        background-color: #122b40; 
+        position: relative;
+        bottom: 0x;
+        width: 100%;
+        border: 1px #fff;
+    } 
+
+    footer center {
+
+        color: #fff;
+    }
+
+
+    .postFormNewsPage {  
+
+        width: 100%;
+        margin-top: -90px;
+        max-width: 850px;
+        margin-left: 38%;
         padding-bottom: 80px;
     }
     .postForm {  
 
         width: 100%;
         margin-top: -90px;
-        max-width: 550px;
-        margin-left: 35%;
+        max-width: 850px;
+        margin-left: 39%;
         padding-bottom: 80px;
     }
     #signInForm {
@@ -458,12 +1045,31 @@ body
         width: auto;
 
     }
+
     .admin-box {
 
-        margin-left: 35%;
+        margin-left: 14%;
         width: 100%;
-        max-width: 650px;
+        max-width: 100em;
+       
 
+    }
+    .admin-box p {
+
+        font-size: 22px;
+
+    }
+    .admin-content
+    {
+        font-size: 18px;
+        padding: 10px;
+        margin: 10px;
+        height: auto;
+        width: 100%;
+        max-width: 100em;
+        background-color: #fff;
+        border-radius:10px;
+        box-shadow:  1px 1px 1px #000000;
     }
     #user-img {
 
@@ -472,11 +1078,23 @@ body
         border-radius: 50%;
 
     }
-    .edit-delete {
+    .commentCount{
+
+        margin-top: 10px;
+        margin-left: 98px;
+        font-size: 28px;
+        color: #adadad;
+    }
+    .edit-delete{
 
         margin-bottom: -0px;
-        margin-left: 10px;
+        margin-left: 28px;
+        font-size: 28px;
 
+    }
+
+    span {
+        font-size: 28px;
     }
 
     .policy {
@@ -498,7 +1116,7 @@ body
 
 }
 
-@media (min-width: 1281px) and (max-width:1680px) {
+@media (min-width: 1281px) and (max-width:1905px) {
 
 
     .user-info img {   
@@ -512,10 +1130,12 @@ body
     }
 
     .username {
+        margin-left: 10px;
         float: right;
         clear: both;
-        font-size: 12px;
-        margin-top: 15px;
+        font-size: 22px;
+        margin-top: px;
+        
     }
 
     .home  {
@@ -544,27 +1164,30 @@ body
         border-bottom: 3px solid #fff;
     }
 
-    .flex-container {
+   .flex-container {
         width:100%;
-        max-width: 500px;
         display: flex;
-        margin-left: -10px;
-        margin-top: 60px;
+        margin-left: 0px;
+        margin-top: 69px;
         padding: 2px;
-    }
 
-    .flex-signIn {
-        width:100%;
-        max-width: 250px;
-        display: flex;
-        margin-left: 500px;
-        margin-top: -37px;
     }
+    /*
+        .flex-signIn {
+            width:auto;
+            display: flex;
+            margin-left: 500px;
+            margin-top: -80px;
+            border:1px solid black;
+        }*/
 
-    .flex-container > div,
-    .flex-signIn > div  {
+    .flex-container > div >a
+    {
+        width: 100%;
+        max-width: 158px;
+        font-size: 18px;
         font-weight: bold;
-        margin-right: 30px;
+        margin-left: 30px;
         padding: 5px;
         border-top: 3px solid #4286f4;
         border-left: 3px solid #4286f4;
@@ -577,9 +1200,8 @@ body
     .flex-signIn a  {
         color: #000;
         text-decoration: none;
-        font-size: 16px;
+        font-size: 18px;
     }
-
     .aboutus-header {
         padding-top: -18px;
     }
@@ -607,16 +1229,20 @@ body
         display: none;
     }
 
-    #latestPostContent {
-        margin-left: 35%;
+  #latestPost-ContentHolding {
+        margin-left: 29%;
         width: 100%;
-        max-width: 450px;
-    }
+        max-width: 100em;
 
-    .latestPostContent {
+    }
+    .latestest-Text {
+        padding: 10px 10px 10px 10px;
+        font-size: 32px;
+    }
+    .latestPost-Content {
         width: 100%;
-        max-width: 450px;
-        height: auto;
+        max-width: 950px;
+        height: 150px;
         padding-left: 30px;
         border: 1px solid silver;
         margin: 10px;
@@ -626,7 +1252,7 @@ body
 
     }
 
-    .latestPostContent p {
+    .latestPost-Content p {
         white-space: nowrap;  
         overflow: hidden;
         text-overflow: ellipsis;
@@ -673,13 +1299,14 @@ body
         box-shadow:  1px 1px 1px #000000;
     }
 
-    .display-post {
+      .display-post {
         margin-top: -25px;
-        margin-left: 32.7%;
+        margin-left: 27.7%;
         padding: 20px;
         padding-top: 20px;
         width: auto;
         height:auto;
+
     }
 
     .postContents {
@@ -948,12 +1575,30 @@ body
         width: auto;
 
     }
-    .admin-box {
+   .admin-box {
 
-        margin-left: 35%;
+        margin-left: -5px;
         width: 100%;
-        max-width: 650px;
+        max-width: 100em;
+        
 
+    }
+    .admin-box p {
+
+        font-size: 12px;
+
+    }
+    .admin-content
+    {
+        font-size: 18px;
+        padding: 10px;
+        margin: 10px;
+        height: auto;
+        width: 100%;
+        max-width: 100em;
+        background-color: #fff;
+        border-radius:10px;
+        box-shadow:  1px 1px 1px #000000;
     }
     #user-img {
 
@@ -1005,11 +1650,11 @@ body
 
     }
     .username {
-
+        margin-left: 10px;
         float: right;
         clear: both;
         font-size: 12px;
-        margin-top: 15px;
+        margin-top: 5px;
 
     }
 
@@ -1044,48 +1689,43 @@ body
 
     }
 
-    .flex-container {
-
+  .flex-container {
         width:100%;
-        max-width: 500px;
         display: flex;
-        margin-left: -10px;
-        margin-top: 60px;
+        margin-left: 10px;
+        margin-top: 72px;
         padding: 2px;
 
     }
+    /*
+        .flex-signIn {
+            width:auto;
+            display: flex;
+            margin-left: 500px;
+            margin-top: -80px;
+            border:1px solid black;
+        }*/
 
-    .flex-signIn {
-
-        width:100%;
-        max-width: 250px;
-        display: flex;
-        margin-left: 500px;
-        margin-top: -37px;
-
-    }
-
-    .flex-container > div,
-    .flex-signIn > div {
-
+    .flex-container > div >a
+    {
+        width: 100%;
+        max-width: 158px;
+        font-size: 12px;
         font-weight: bold;
-        margin-right: 30px;
+        margin-left: 30px;
         padding: 5px;
         border-top: 3px solid #4286f4;
         border-left: 3px solid #4286f4;
         border-right: 3px solid #4286f4;
         border-radius: 2px 15px  2px 15px;
         box-shadow: 1px  1px 2px #080808;
-
     }
 
     .flex-container a,
-    .flex-signIn a {
-
+    .flex-signIn a  {
         color: #000;
         text-decoration: none;
-        font-size: 16px;
-
+        font-size: 12px;
     }
 
     .aboutus-header {
@@ -1119,14 +1759,14 @@ body
 
     }
 
-    #latestPostContentHolding {
+    #latestPost-ContentHolding {
 
         margin-left: 31%;
         width: 100%;
         max-width: 450px;
     }
 
-    .latestPostContent {
+    .latestPost-Content {
 
         width: 100%;
         max-width: 450px;
@@ -1139,14 +1779,22 @@ body
         box-shadow: 1px 1px 1px #000000;
 
     }
-    .latestPostContent p  {
+    .latestPost-Content p  {
 
         white-space: nowrap;  
         overflow: hidden;
         text-overflow: ellipsis;
 
     }
-
+    .latestPost {
+        padding-top: 20px;
+        padding-bottom: 40px;
+        border-top: 9px solid  #4286f4;
+        border-bottom: 9px solid #5393fc;
+        width: 100%;
+        border-radius: 20px;
+        margin-bottom: 29px;
+    }
     .displayNews {
 
         margin-left: 30%;
@@ -1193,25 +1841,32 @@ body
 
     }
     .display-post {
-
         margin-top: -25px;
-        margin-left: 29.7%;
+        margin-left: 23.7%;
         padding: 20px;
         padding-top: 20px;
         width: auto;
         height:auto;
 
     }
-    .postContents {
 
+    .postContents {
         border: 1px solid buttonface;
         width: 100%;
         padding: 10px;
-        max-width: 650px;
+        max-width: 85em;
         height: auto;
         border-radius: 10px;
 
     }
+
+    .postContents
+    {
+
+        font-size: 12px;
+    }
+
+    
     #displayDate {    
         margin-top: -60px;
         padding: 5px;
@@ -1231,15 +1886,7 @@ body
         font-weight: bold;
     }
 
-    .latestPost {
-        padding-top: 20px;
-        padding-bottom: 40px;
-        border-top: 9px solid  #4286f4;
-        border-bottom: 9px solid #5393fc;
-        width: 100%;
-        border-radius: 20px;
-        margin-bottom: 29px;
-    }
+
     #events {
 
         background-color: white;
@@ -1358,7 +2005,7 @@ body
         width: 100%;
         margin-top: -90px;
         max-width: 550px;
-        margin-left: 34%;
+        margin-left: 28%;
         padding-bottom: 80px;
 
     }
@@ -1473,10 +2120,28 @@ body
     }
     .admin-box {
 
-        margin-left: 35%;
+        margin-left: -5px;
         width: 100%;
-        max-width: 650px;
+        max-width: 100em;
+        
 
+    }
+    .admin-box p {
+
+        font-size: 12px;
+
+    }
+    .admin-content
+    {
+        font-size: 18px;
+        padding: 10px;
+        margin: 10px;
+        height: auto;
+        width: 100%;
+        max-width: 100em;
+        background-color: #fff;
+        border-radius:10px;
+        box-shadow:  1px 1px 1px #000000;
     }
 
     #user-img {
@@ -1715,17 +2380,12 @@ body
         padding-bottom: 10px;
     }
 
-    .latestPostContent p
+    .latestPost-Content p
     {
         width: 100%;
         white-space: nowrap;  
         overflow: hidden;
         text-overflow: ellipsis; 
-    }
-
-    .postContents
-    {
-        word-break:keep-all;
     }
 
     .to-center
@@ -1871,7 +2531,7 @@ body
         display: block;
     }
 
-    #latestPostContent {
+    #latestPost-ContentHolding {
 
         width: 100%;
     }
@@ -1881,7 +2541,7 @@ body
         width: 100%;
         max-width: 600px;
     }
-    .latestPostContent {
+    .latestPost-Content {
 
         height: auto;
         padding-left: 30px;
@@ -1945,6 +2605,32 @@ body
     .newuser-box {
 
         margin-left: 14%;
+    }
+    
+     .admin-box {
+
+        margin-left: -10px;
+        width: 100%;
+        max-width: 100em;
+        
+
+    }
+    .admin-box p {
+
+        font-size: 12px;
+
+    }
+    .admin-content
+    {
+        font-size: 18px;
+/*        padding: 10px;*/
+        margin: 10px;
+        height: auto;
+        width: 100%;
+        max-width: 100em;
+        background-color: #fff;
+        border-radius:10px;
+     
     }
 
     .signInFooterLine {
@@ -2289,7 +2975,7 @@ body
         padding-bottom: 10px;
     }
 
-    .latestPostContent p {
+    .latestPost-Content p {
 
         width: 100%;
         white-space: nowrap;  
@@ -2436,7 +3122,7 @@ body
         display: block;
     }
 
-    #latestPostContent {
+    #latestPost-ContentHolding {
 
         width: 100%;
     }
@@ -2446,7 +3132,7 @@ body
         max-width: 600px;
     }
 
-    .latestPostContent {
+    .latestPost-Content {
 
         height: auto;
         padding-left: 30px;
@@ -2508,7 +3194,43 @@ body
         outline: none;
         border: none;
     }
+     .admin-box {
 
+        margin-left: -10px;
+        width: 100%;
+        max-width: 100em;
+        
+
+    }
+    .admin-box p {
+
+        font-size: 12px;
+
+    }
+    .admin-content
+    {
+        font-size: 18px;
+/*        padding: 10px;*/
+        margin: 10px;
+        height: auto;
+        width: 100%;
+        max-width: 100em;
+        background-color: #fff;
+        border-radius:10px;
+     
+    }
+    .admin-content
+    {
+        font-size: 18px;
+        padding: 10px;
+        margin: 10px;
+        height: auto;
+        width: 100%;
+        max-width: 100em;
+        background-color: #fff;
+        border-radius:10px;
+        box-shadow:  1px 1px 1px #000000;
+    }
     .newuser-box {
 
         margin-left: 20%;
@@ -2796,7 +3518,7 @@ body
         padding-bottom: 10px;
     }
 
-    .latestPostContent p {
+    .latestPost-Content p {
 
         width: 100%;
         white-space: nowrap;  
@@ -2934,7 +3656,7 @@ body
         display: block;
     }
 
-    #latestPostContent {
+    #latestPost-ContentHolding {
 
         width: 100%;
     }
@@ -2945,7 +3667,7 @@ body
         max-width: 600px;
     }
 
-    .latestPostContent {
+    .latestPost-Content {
 
         height: auto;
         padding-left: 30px;
@@ -3068,6 +3790,31 @@ body
 
         display: none;
     }
+    .admin-box {
+
+        margin-left: -10px;
+        width: 100%;
+        max-width: 100em;
+        
+
+    }
+    .admin-box p {
+
+        font-size: 12px;
+
+    }
+    .admin-content
+    {
+        font-size: 18px;
+/*        padding: 10px;*/
+        margin: 10px;
+        height: auto;
+        width: 100%;
+        max-width: 100em;
+        background-color: #fff;
+        border-radius:10px;
+     
+    }
 
     .policy {
 
@@ -3082,7 +3829,7 @@ body
     } 
 }
 
-@media (min-width: 320px) and (max-width: 480px) {
+@media (min-width: 300px) and (max-width: 480px) {
 
 
     .logo {
@@ -3431,7 +4178,7 @@ body
         display: block;
     }
 
-    #latestPostContent {
+    #latestPostContentHolding {
 
         width: 100%;
     }
@@ -3510,6 +4257,31 @@ body
         margin-left: 14%;
     }
 
+    .admin-box {
+
+        
+        width: 100%;
+        max-width: 100em;
+       
+
+    }
+    .admin-box p {
+
+        font-size: 12px;
+
+    }
+    .admin-content
+    {
+        font-size: 18px;
+        padding: 10px;
+        margin: 10px;
+        height: auto;
+        width: 100%;
+        max-width: 100em;
+        background-color: #fff;
+        border-radius:10px;
+      
+    }
     .signInFooterLine {
 
         margin-top: 27em;

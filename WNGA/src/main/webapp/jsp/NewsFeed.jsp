@@ -74,10 +74,11 @@
                     <div class="container img-center">
 
                     </div>
+                        <hr></hr>
                     <sec:authorize access="hasRole('ROLE_ADMIN')">
                         <p class="edit-delete">
-                            <a class="grey" href="editNewsForm?newsFeedId=${news.newsFeedId}">edit</a> 
-                            <a class="grey" href="deleteNews?newsFeedId=${news.newsFeedId} "id="delete" data-confirm=" WARNING!!!!: Are you sure to delete this comment? CANNOT BE UNDONE!!!"">delete</a>
+                            | <a class="grey" href="editNewsForm?newsFeedId=${news.newsFeedId}">edit</a> 
+                            | <a class="grey" href="deleteNews?newsFeedId=${news.newsFeedId} "id="delete" data-confirm=" WARNING!!!!: Are you sure to delete this comment? CANNOT BE UNDONE!!!">delete</a> |
                         </p>
                     </sec:authorize>
                 </div>

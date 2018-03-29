@@ -33,24 +33,20 @@
                     <a  href="${pageContext.request.contextPath}/admin">Admin</a>
                 </div>
             </sec:authorize>
-        </div>
-        <div class="flex-signIn ">
             <c:if test="${empty pageContext.request.userPrincipal.name }">
-                <div>  <a  href="${pageContext.request.contextPath}/signIn">Sign In</a></div>
-
-                <div>  <a  href="${pageContext.request.contextPath}/signUp">Sing Up</a></div>
+                <div><a  href="${pageContext.request.contextPath}/signIn">Sign In</a></div>
+                <div><a  href="${pageContext.request.contextPath}/signUp">Sing Up</a></div>
             </c:if>
             <c:if test="${ pageContext.request.userPrincipal.name != null}">
-                <div> <a  href="<c:url value="/j_spring_security_logout"/>"> Sign Out</a> </div>
+                <div><a  href="<c:url value="/j_spring_security_logout"/>"> Sign Out</a> </div>
             </c:if>
-
             <c:if test="${!empty pageContext.request.userPrincipal.name}">
-                <small class="username"> 
+                <p class="username"> 
                     <c:if test="${ pageContext.request.userPrincipal.name != null}">
                         Hello : ${pageContext.request.userPrincipal.name} |
                         <a href="userProfile?userName=${pageContext.request.userPrincipal.name}">Profile</a>
                     </c:if>
-                </small>
+                </p>
 
             </c:if>
         </div>

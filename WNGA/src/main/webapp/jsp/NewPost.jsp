@@ -100,10 +100,18 @@
                                         </c:if>
                                     </c:if>                 
                                 </div>
+                                    <div>
+                                        <p class="commentCount">  
+                                        Comment
+                                        </p>
+                                    </div>
+                                    
+                                   <hr></hr>
                                 <c:if test="${pageContext.request.userPrincipal.name == allPosts.user.userName}">
                                     <p class="edit-delete">
-                                        <a class="grey " href="editPostForm?postId=${allPosts.postId}">edit</a> 
-                                        <a class="grey" href="deletePost?postId=${allPosts.postId}"  id="delete" data-confirm=" WARNING!!!!: Are you sure to delete this comment? CANNOT BE UNDONE!!!">delete</a>
+                                        | <a class="grey " href="editPostForm?postId=${allPosts.postId}">edit</a> |
+                                        <a class="grey" href="deletePost?postId=${allPosts.postId}" id="delete" data-confirm=" WARNING!!!!: Are you sure to delete this comment? CANNOT BE UNDONE!!!">delete</a> |
+                                        <a class="grey " href="editPostForm?postId=${allPosts.postId}">comment</a> |
                                     </p>
                                 </c:if>
                             </div> 

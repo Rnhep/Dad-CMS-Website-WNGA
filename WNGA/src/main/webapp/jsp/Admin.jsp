@@ -36,7 +36,7 @@
                         </div>
 
 
-                        <div class="container pre-posts">
+                        <div class="container admin-content">
                             <div class="btns-flex">
                                 <sf:form role="form" action="cleanUpNews" method="POST">
                                     <button type="submit" class="btn-danger"  onclick="return cleanUp()">
@@ -51,10 +51,10 @@
                                 </sf:form>
                             </div> 
                         </div> 
-                        <div class="container pre-posts admin-note">
+                        <div class="container admin-content admin-note">
                             <p> Home Page Content</p>
                         </div>  
-                        <div class="container pre-posts">
+                        <div class="container admin-content">
 
 
                             <p><c:out value="${contentOne.name}"/>
@@ -65,7 +65,7 @@
                                 <c:out value="${contentOne.content}"/>
                             </p>
                         </div>
-                        <div class="container pre-posts">
+                        <div class="container admin-content">
                             <p><c:out value="${contentTwo.name}"/>
                                 <a  href="editContent?newsFeedId=${contentTwo.newsFeedId}">
                                     <button class="edit-btn btn btn-info" >Edit</button></a>
@@ -74,7 +74,7 @@
                                 <c:out value="${contentTwo.content}"/>
                             </p>
                         </div>
-                        <div class="container pre-posts" >
+                        <div class="container admin-content" >
                             <p> <c:out value="${contentThree.name}"/>
                                 <a  href="editContent?newsFeedId=${contentThree.newsFeedId}">
                                     <button class="edit-btn btn btn-info" >Edit</button></a>
@@ -83,7 +83,7 @@
                                 <c:out value="${contentThree.content}"/>
                             </p>
                         </div>
-                        <div class="container pre-posts">
+                        <div class="container admin-content">
                             <p> <c:out value="${contentThree.name}"/>
                                 <a  href="editContent?newsFeedId=${contentFour.newsFeedId}">
                                     <button class="edit-btn btn btn-info" >Edit</button></a>
@@ -93,12 +93,12 @@
                             </p>
                         </div>
 
-                        <div class="container pre-posts admin-note">
+                        <div class="container admin-content admin-note">
                             <p> Current Events</p>
                         </div>  
 
 
-                        <div class="container pre-posts">
+                        <div class="container admin-content">
                             <p><c:out value="${eventOne.name}"/>
                                 <a  href="editContent?newsFeedId=${eventOne.newsFeedId}">
                                     <button class="edit-btn btn btn-info" >Edit</button></a>
@@ -107,7 +107,7 @@
                                 <c:out value="${eventOne.content}"/>
                             </p>
                         </div>
-                        <div class="container pre-posts">
+                        <div class="container admin-content">
                             <p><c:out value="${eventTwo.name}"/>
                                 <a  href="editContent?newsFeedId=${eventTwo.newsFeedId}">
                                     <button class="edit-btn btn btn-info" >Edit</button></a>
@@ -117,13 +117,13 @@
                             </p>
                         </div>
 
-                        <div class="container pre-posts">
+                        <div class="container admin-content">
                             <sf:form role="form" action="updateHomeImg" method="POST" >
                                 <div class="form-group">
                                     <div class="col-md-8">
-                                        <label><c:out value="${message}"/></label>
+                                        <label><p><c:out value="${message}"/></p></label>
                                         <input type="text" class="form-control" name="idInput" placeholder="Please enter a number '1' or '3'" required/>
-                                        <label><c:out value="${linkOut}"/></label>
+                                        <label><p><c:out value="${linkOut}"/></p></label>
                                         <input type="text" class="form-control" name="imgLink" placeholder="Link to your Photo"/>
                                     </div>
                                 </div>
@@ -135,7 +135,7 @@
                             </sf:form>
                         </div>
 
-                        <div class="container pre-posts admin-note">
+                        <div class="container admin-content admin-note">
 
                             <p>
                                 Current Users | ${usersCount} | 
@@ -144,7 +144,7 @@
                         </div>
 
                         <!--All users-->
-                        <div class="container pre-posts">
+                        <div class="container admin-content">
                             <c:forEach var="currentUser" items="${userList}">
                                 <div class="container currentUsers" > 
                                     <p > ${name}${currentUser.firstName} ${currentUser.lastName} |

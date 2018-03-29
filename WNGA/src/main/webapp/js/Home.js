@@ -8,19 +8,17 @@ $('document').ready(function () {
     console.log("testing");
     $('#header-desktop').load('jsp/HeaderDesktop.jsp');
     $('#footer').load('jsp/Footer.jsp');
+
+});
+//    alert("Your screen resolution is: " + "heigh" + $(window).height() +  " " +'width' + $(window).width());
 //look for link in plain text
     $('p , pre').linkify({
         target: '_blank'
     });
-});
-
-
-    alert("Your screen resolution is: " + "heigh" + $(window).height() +  " " +'width' + $(window).width());
-
-
+    //     alert($(window).width());
+// loadd nav
 function headerReload() {
     if ($(window).width() >= 1536) {
-//        alert($(window).width());
         $('#header-desktop').load('jsp/HeaderDesktop.jsp');
     } else {
         $('#header-mobile').load('jsp/Header.jsp');
@@ -28,7 +26,7 @@ function headerReload() {
 }
 $(window).on('load resize', headerReload);
 
-//virify delete button
+//virify content will be deleted to all users
 var deleteLinks = document.querySelectorAll('#delete');
 for (var i = 0; i < deleteLinks.length; i++) {
     deleteLinks[i].addEventListener('click', function (event) {
@@ -38,14 +36,10 @@ for (var i = 0; i < deleteLinks.length; i++) {
             window.location.href = this.getAttribute('href');
         }
     });
-}
-;
-
+};
 
 //virify user are being disable
-function confirmDisabled()
-{
-
+function confirmDisabled(){
     var disabled = confirm('This user will be disabled');
     if (disabled)
         return true;
@@ -53,10 +47,8 @@ function confirmDisabled()
         return false;
 
 }
-
-function confirmEnabled()
-{
-
+//verifiy user are beeing enable
+function confirmEnabled(){
     var disabled = confirm('This user will be enabled');
     if (disabled)
         return true;
@@ -64,11 +56,11 @@ function confirmEnabled()
         return false;
 
 }
-
+// verify content will be deleted from Database for admin ***
 function cleanUp()
 {
     var cleanUp = confirm('This action will delete 100 items '
-            + ' out from your database  do you wish to continue? ');
+            + ' from your database do you wish to continue? ');
     if (cleanUp)
         return true;
     else
