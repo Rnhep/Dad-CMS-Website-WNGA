@@ -4,22 +4,26 @@
  * and open the template in the editor.
  */
 $('document').ready(function () {
- 
+
     console.log("testing");
     $('#header-desktop').load('jsp/HeaderDesktop.jsp');
     $('#footer').load('jsp/Footer.jsp');
+ $('.comments-Section').hide();
+
+  
 
 });
-//    alert("Your screen resolution is: " + "heigh" + $(window).height() +  " " +'width' + $(window).width());
+  
+  
+    
 //look for link in plain text
-    $('p , pre').linkify({
-        target: '_blank'
-    });
-    //     alert($(window).width());
+$('p , pre').linkify({
+    target: '_blank'
+});
+//    alert($(window).width());
 // loadd nav
 function headerReload() {
     if ($(window).width() >= 1536) {
-//             alert($(window).width());
         $('#header-desktop').load('jsp/HeaderDesktop.jsp');
     } else {
         $('#header-mobile').load('jsp/Header.jsp');
@@ -37,10 +41,11 @@ for (var i = 0; i < deleteLinks.length; i++) {
             window.location.href = this.getAttribute('href');
         }
     });
-};
+}
+;
 
 //virify user are being disable
-function confirmDisabled(){
+function confirmDisabled() {
     var disabled = confirm('This user will be disabled');
     if (disabled)
         return true;
@@ -49,7 +54,7 @@ function confirmDisabled(){
 
 }
 //verifiy user are beeing enable
-function confirmEnabled(){
+function confirmEnabled() {
     var disabled = confirm('This user will be enabled');
     if (disabled)
         return true;
@@ -67,3 +72,14 @@ function cleanUp()
     else
         return false;
 }
+// toggle comments-section
+$('.show-Comments').click(function () {
+    $(this).closest('div').find('.comments-Section').toggle("blind");
+     var switchText = $(this);
+  switchText.text() === switchText.data("text-swap") 
+    ? switchText.text(switchText.data("text-original")) 
+    : switchText.text(switchText.data("text-swap"));
+});
+
+
+ 

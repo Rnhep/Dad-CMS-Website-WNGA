@@ -33,16 +33,18 @@
 
         <sec:authorize access="hasRole('ROLE_ADMIN')">
             <div class="container postFormNewsPage col-md-12">
+                 <div class="inner-postform">
                 <sf:form  class="form-horizontal" 
                           role="form"  method="POST" 
                           action="createNewsFeed">
                         <div ><c:out value="${message}"/></div>
-                        <textarea  type="text" name="content" placeholder="Comment required" required>${commentOut}</textarea> 
+                        <textarea class="news-Textarea" type="text" name="content" placeholder="Comment required" required>${commentOut}</textarea> 
                         <input type="hidden" name="userName" value="${pageContext.request.userPrincipal.name}"/>
                         <input type="submit" id="log-in-btn" class="form-control" value="Submit Post"/>
 
                     
                 </sf:form> 
+                 </div>
             </div>
         </sec:authorize>
 
@@ -70,9 +72,6 @@
                         <p>
                             <c:out value="${news.content}"/>
                         </p>
-                    </div>
-                    <div class="container img-center">
-
                     </div>
                         <hr></hr>
                     <sec:authorize access="hasRole('ROLE_ADMIN')">

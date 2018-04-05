@@ -23,4 +23,5 @@ public interface CommentDao {
     
     public List<Comment> getAllComment();
     
+    public long getCommentCountById(int commentId);
 }

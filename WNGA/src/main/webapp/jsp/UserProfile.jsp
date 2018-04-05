@@ -29,8 +29,8 @@
                     <div id="up"></div> 
 
 
-                    <div class="container user-info">
-
+                    <div class="container-fluid col-md-12 user-info">
+                        <div class="container">
                         <p> ${msg} </p>
 
                         <img src="${currentLogInUser.photo}"/>
@@ -49,7 +49,7 @@
                         <hr></hr>
                         <p>Email:  ${currentLogInUser.email}</p>
 
-
+                        </div>
                     </div>
 
                     <hr class="col-md-10 profileFooterLine"></hr>

@@ -21,25 +21,22 @@
                         <div class="logo home logo-hide col-md-12">
                         </div>
                         <div class="col-md-9" id="header-desktop"></div>
-
-
-                        <section id="section-a" class="grid">
-
-                            <div class="container latestPost to-center col-md-12"> 
-                                <p id="upComing"> Upcoming Events</p>
-                            </div>
-                            <div class="content-wrap">
-                                <pre class="container">
-                            <div><c:out value="${eventOne.name}"/> </div>
-                                    <c:out value="${eventOne.content}"/>
-                                </pre>
-
-                                <pre  class="container ">
-                      <div> <c:out value="${eventTwo.name}"/></div>
-                                    <c:out value="${eventTwo.content}"/>
-                                </pre>
-                            </div>
-                        </section>
+                                <div class="container latestPost to-center col-md-12"> 
+                                    <p id="upComing"> Upcoming Events</p>
+                                </div>
+                            
+                                <div class="col-md-12" id="latestPost-ContentHolding">
+                                    <div class="events latestPost-Content ">
+                                        <c:out value="${eventOne.name}"/>
+                                        <c:out value="${eventOne.content}"/>
+                                    </div>
+                                    
+                                    <div class="events latestPost-Content">
+                                        <c:out value="${eventTwo.name}"/>
+                                        <c:out value="${eventTwo.content}"/>
+                                    </div>
+                                </div>
+                       
 
                         <section id="section-b" class="grid">
                             <div class="container latestPost to-center col-md-12"> 
@@ -50,20 +47,20 @@
 
                             <div class=" col-md-12" id="latestPost-ContentHolding">
                                 <c:forEach var="latestPost" items="${displayLatestPost}">
-                                   
+
                                     <div class="latestPost-Content">
-                                        <p class="latestest-Text">
+                                        <p class="latestestPost-Text">
                                             <a href="${pageContext.request.contextPath}/displayPost">
                                                 <c:out value="${latestPost.content}"/>
                                             </a> 
                                         </p>
-                                            <p class="latestest-Text">
+                                        <p class="latestestPost-Text">
                                             <c:out value="@${latestPost.user.userName}"/>
                                             <fmt:parseDate pattern="yyyy-MM-dd'T'HH:mm:ss" value="${latestPost.publishDate}" var="joindate"/>
                                             <fmt:formatDate value="${joindate}" pattern="E MMM-dd-yyyy @hh:mm a"/>
-                                            </p>
+                                        </p>
                                     </div>
-                                  
+
                                 </c:forEach>
 
                             </div>

@@ -36,15 +36,17 @@ public class PostController {
     private final NewPostDao NPDao;
     private final NewsFeedDao NFDao;
     private final CommentDao commentDao;
+    private final GetCountDao getCountDao;
 
     private String commentOut;
 
     @Inject
-    public PostController(UserDao userDao, NewPostDao NPDao, NewsFeedDao NFDao, GetCountDao getCountDao, CommentDao commentDao) {
+    public PostController(UserDao userDao, NewPostDao NPDao, NewsFeedDao NFDao, GetCountDao getCountDao, CommentDao commentDao, GetCountDao countDao) {
         this.userDao = userDao;
         this.NPDao = NPDao;
         this.NFDao = NFDao;
         this.commentDao=commentDao;
+        this.getCountDao = getCountDao;
 
     }
 
@@ -52,12 +54,11 @@ public class PostController {
     @RequestMapping(value = "/displayPost", method = RequestMethod.GET)
     public String displayLatesPost(HttpServletRequest rq, Model model) {
         String newPost = "Latest Posts";
-        String logIn = "To post your comment ";
         List<NewPost> displayAllPost = NPDao.getAllPost();
         model.addAttribute("displayAllPost", displayAllPost);
         model.addAttribute("newPost", newPost);
-        model.addAttribute("logIn", logIn);
-
+        List<Comment> displayAllComments = commentDao.getAllComment();
+        model.addAttribute("displayAllComments", displayAllComments);
         return "NewPost";
 
     }
@@ -161,14 +162,13 @@ public class PostController {
         return "Comment";
     }
     
-      @RequestMapping(value = "/creatComment", method = RequestMethod.POST)
-    public String createComment(HttpServletRequest rq, Model model) {
-       LocalDateTime timeStamp = LocalDateTime.now();
+      @RequestMapping(value = "/createComment", method = RequestMethod.POST)
+        public String createComment(HttpServletRequest rq, Model model) {
+         LocalDateTime timeStamp = LocalDateTime.now();
         //check for empty fields
         String userName = rq.getParameter("userName");
         String postIdIn = rq.getParameter("postId");
         String commentIn = rq.getParameter("comment");
-        
         if(commentIn==null || commentIn.trim().length()==0){
             return "costumerror";
         }
@@ -181,6 +181,6 @@ public class PostController {
         comment.setUser(user);//insert user to comment
         comment.setNewPost(post);//insert post to comment
         commentDao.addComment(comment);
-        return "NewPost";
+       return "redirect:displayPost";
     }
 }

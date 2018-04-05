@@ -31,33 +31,29 @@
                     <div class="col-md-12" id="header-desktop"></div>
                     <div id="up"></div> 
 
-
                     <div class="container col-md-12 postForm">
-                        <sf:form role="form" action="updatePost" method="POST" modelAttribute="newPost">
-
-                            <div class="form-group">
-                                <div class="col-md-8">
-                                    <sf:input path="imagePath" class="form-control photo-link" placeholder="Link to photo"/>
+                        <div class="inner-postform">
+                            <sf:form role="form" action="updatePost" method="POST" modelAttribute="newPost">                           
+                                <div class="form-group">       
+                                    <sf:input path="imagePath" id="registration-from" type="text" class="form-control" placeholder="Link to photo"/>                               
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-8">
-                                    <sf:input path="imagePathTwo" class="form-control photo-link" placeholder="Link to photo"/>
+                                <div class="form-group">
+                                    <sf:input path="imagePathTwo" id="registration-from" type="text" class="form-control" placeholder="Link to photo"/>                             
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-8">
-                                    <sf:textarea type="text" class="photo-link"  name="content"
-                                                 path="content" placeholder="Enter your comment here" />
-                                    <sf:errors path="content" cssclass="error"></sf:errors>
-                                    <sf:input name="date" type="hidden" path="publishDate"/>
-                                    <input type="hidden" name="userId" value="${newPost.user.userId}"reqiured/>
-                                    <sf:hidden path="postId"/>
-                                    <sf:hidden path="title"/>
-                                    <input class="photo-link" type="submit" class="btn btn-default" value="Update"/>
+                                 <div class="form-group">
+                                <sf:textarea type="text" class="news-Textarea"  name="content"
+                                             path="content" placeholder="Enter your comment here" />
+                                <sf:errors path="content" cssclass="error"></sf:errors>
+                                <sf:input name="date" type="hidden" path="publishDate"/>
+                                <input type="hidden" name="userId" value="${newPost.user.userId}"reqiured/>
+                                <sf:hidden path="postId"/>
+                                <sf:hidden path="title"/>
+                                 </div>
+                                <div class="form-group">
+                                    <input id="log-in-btn" type="submit" class="form-control" value="Update"/>
                                 </div>
-                            </div>
-                        </sf:form>
+                            </sf:form>
+                        </div>
                     </div>
                     <section id="">
                         <hr class="col-md-10 signInFooterLine"></hr> 

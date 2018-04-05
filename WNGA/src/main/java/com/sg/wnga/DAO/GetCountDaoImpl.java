@@ -6,6 +6,7 @@
 package com.sg.wnga.DAO;
 
 import static com.sg.wnga.DAO.PrepareStatement.*;
+import com.sg.wnga.DAO.RowMappers.CommentMapper;
 import javax.sql.DataSource;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -64,4 +65,6 @@ public class GetCountDaoImpl implements GetCountDao {
     jdbcTemplate.update(SQL_CLEANUP_POSTS);
     }
 
+ 
 }
+

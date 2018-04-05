@@ -30,7 +30,7 @@
                             <h1> Admin </h1>
 
                         </div>
-                        <div class="container  admin-note">
+                        <div class="container admin-note">
                             <p> You have <c:out value="${postCount} Posts | ${newsFeedCount} News Feed | in your database"/></p>
 
                         </div>
@@ -55,8 +55,6 @@
                             <p> Home Page Content</p>
                         </div>  
                         <div class="container admin-content">
-
-
                             <p><c:out value="${contentOne.name}"/>
                                 <a  href="editContent?newsFeedId=${contentOne.newsFeedId}">
                                     <button class="edit-btn btn btn-info" >Edit</button></a>

@@ -23,29 +23,29 @@
                 <body> 
 
                     <div id="header-mobile"></div>
-
                     <div class="logo logo-hide col-md-12">
                     </div>
                     <div class="col-md-12" id="header-desktop"></div>
 
                     <div class="container col-md-12 postForm">
+                         <div class="inner-postform">
                         <sf:form role="form" action="updateContent" 
                                  method="POST" modelAttribute="newsFeed">
                             <div class="form-group">
-                                <sf:input type="text" class="form-control" id="link"
-                                          path="name" placeholder="Enter your Title here"/>
+                                <sf:input id="registration-from" type="text" class="form-control" path="name" placeholder="Enter your Title here"/>
                                 <sf:errors path="name" cssclass="error"></sf:errors>
-                                </div>    
+                                </div>   
+                             <div class="form-group">
                             <sf:hidden path="date" value="${date}"/>
-                            <sf:textarea type="text"  
-                                         path="content" placeholder="Enter your news Feed here" maxlength="900" />
+                            <sf:textarea id="registration-from" type="text" class="form-control" path="content" placeholder="Enter your news Feed here" maxlength="900" />
                             <sf:errors path="content" cssclass="error"></sf:errors>
                             <sf:hidden path="link"/>
                             <sf:hidden path="newsFeedId"/>
-                            <input type="submit" class="btn btn-default" value="Update Content"/>
+                             </div>
+                            <input id="log-in-btn" type="submit" class="form-control"  value="Update Content"/>
 
                         </sf:form>
-
+                         </div>
                     </div>
                     <section id="">
                         <hr class="col-md-10 signInFooterLine"></hr> 

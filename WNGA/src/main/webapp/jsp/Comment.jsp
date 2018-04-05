@@ -26,28 +26,25 @@
         <div class="logo logo-hide col-md-12">
         </div>
         <div class="col-md-12" id="header-desktop"></div>
-
-
         <!--Add post form for user/admin role-->
-
-        
-                    <div class="container col-md-12 postForm">
-                        <sf:form role="form" action="createComment" method="POST" >
-                            <div class="form-group">
-                                <div class="col-md-8">
-                                    <p><c:out value="${newPost.content}"/></p>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-8">
-                                    <textarea type="text" class="photo-link"  name="content"
-                                              placeholder="Enter your comment here" ></textarea>
-                                    
-                                </div>
-                            </div>
-                                
-                        </sf:form>
+        <div class="container col-md-12 postForm">
+            <sf:form role="form" action="createComment" method="POST" >
+                <div class="form-group">
+                    <div class="col-md-8">
+                        <p><c:out value="${newPost.content}"/></p>
                     </div>
+                </div>
+                <textarea type="text" class="photo-link"  name="comment"
+                          placeholder="Enter your comment here">
+
+                </textarea>
+                <input type="hidden" name="userName" value="${pageContext.request.userPrincipal.name}"/>
+                <input type="hidden" name="postId" value="${newPost.postId}"/>
+                <div class="form-group ">
+                    <input type="submit" id="log-in-btn" class="form-control" value="Submit Post"/>
+                </div>
+            </sf:form>
+        </div>
 
         <hr class="col-md-10" id="newsFooter"></hr>
         <footer class="col-md-12" id="footer"></footer>

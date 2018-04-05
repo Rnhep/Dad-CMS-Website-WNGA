@@ -97,4 +97,11 @@ public class CommentDaoImpl implements CommentDao {
         return commentList;
     }
 
+    @Override
+    public long getCommentCountById(int commentId) {
+      long count = jdbcTemplate.queryForObject(SQL_GET_COMMENTS_COUNT, Integer.class, commentId);
+      return count;
+    }
+
+
 }

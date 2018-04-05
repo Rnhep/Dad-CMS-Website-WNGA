@@ -33,16 +33,17 @@
                     <div class="logo home logo-hide col-md-12">
                     </div>
                     <div class="col-md-10" id="header-desktop"></div>
-                    <section id="registration">
+                    <section class="col-md-12" id="registration">
                         <div class="container col-md-12 register">
                         <sf:form role="form" action="createUser" method="POST" >
                            
                                     <h2>${registration}</h2>
                                     <div class="alert-danger">
-                                        ${termBox}
+                                           <c:out value=" ${termBox}"/>
                                         <c:if test="${!empty message}"> 
                                             ${message}
                                         </c:if>
+                                       
                                     </div>
                                          <div class="form-group">
                                     <input type="checkbox" name="agreement" value="true"/> ${iAgree}
@@ -73,7 +74,7 @@
                                            name="confirmPassword" placeholder="password" 
                                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
                                            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/>
-                                    ${pswmessage}
+                                    <p> ${pswmessage}</p>
                                </div>
                                  <div class="form-group">
                                     <input id="registration-from" type="submit" class="form-control" class="btn btn-info"   value="Submit"/>
