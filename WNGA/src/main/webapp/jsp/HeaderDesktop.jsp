@@ -38,7 +38,7 @@
                 <div><a  href="${pageContext.request.contextPath}/signUp">Sing Up</a></div>
             </c:if>
             <c:if test="${ pageContext.request.userPrincipal.name != null}">
-                <div><a  href="<c:url value="/j_spring_security_logout"/>"> Sign Out</a> </div>
+                <div><a  href="<c:url value="/j_spring_security_logout"/>">Sign Out</a> </div>
             </c:if>
             <c:if test="${!empty pageContext.request.userPrincipal.name}">
                 <p class="username"> 

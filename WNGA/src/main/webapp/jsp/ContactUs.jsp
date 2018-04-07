@@ -32,41 +32,31 @@
                     <div class="logo logo-hide col-md-12">
                     </div>
                     <div class="col-md-10" id="header-desktop"></div>
-                    
-                    <div class="container col-md-12 contact-text">
-                        <p> If you have any queries, or wants to help please contact one of the following members 
-                        </p>
-                        <p>
+
+                    <div class="container col-md-12 contactUs-Section">
+
+                        <h1> If you have any queries, or wants to help please contact one of the following members 
+                        </h1>
+                        <h1>
                             password porgotten please contact one of the following members 
-                        </p>
-                        <p>**Please allows 24 to 48 hrs for admins to reset your password. </p>
-                         
+                        </h1>
+                        <h1>**Please allows 24 to 48 hrs for admins to reset your password. </h1>
+
+                        <div class=" contact0">
+                            <h1>Site Related: contact</h1>
+                            <h1> ritheenhep@gmail.com</h1>
+                        </div>
+                        
+                        <div class="contact1">
+                            <h1> Information about the organization </h1>
+                            <h1> Sopha Nhep: sopahnhep@hotmail.com</h1>
+                            <h1>Sothea Pouch:  ssek71@gmail.com</h1>
+                            <h1>Leoung Khi: lkangkor@gmail.com</h1> 
+                        </div>
+                        
                     </div>
-                    <div class="container col-md-12 contact0">
-                     <strong>Site Related</strong><br>
-                         To report site issue please contact <strong> ritheenhep@gmail.com</strong>
-                           
-                    </div>
-                    <div class="container col-md-12 contact1">
-                        Information about the organization: <br>
-                        <strong> Sopha Nhep:  </strong><br>
-                           Email: sopahnhep@hotmail.com
-                    </div>
-                     <div class="container col-md-12 contact2">
-                          Information about the organization: <br>
-                     <strong> Sothea Pouch: </strong><br>
-                           
-                           Email: ssek71@gmail.com
-                    </div>
-                     <div class="container col-md-12 contact3">
-                          Information about the organization: <br>
-                     <strong>  Leoung Khi:   </strong><br>
-                        Email: lkangkor@gmail.com
-                           
-                    </div>
-                   
-                    <hr class="col-md-10" ></hr>
-                    
+                    <hr class="col-md-10 footerLine"></hr>
+
                     <footer class="col-md-12" id="footer"></footer>
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>                  
                     <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>

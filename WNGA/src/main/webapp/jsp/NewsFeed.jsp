@@ -40,9 +40,9 @@
                         <div ><c:out value="${message}"/></div>
                         <textarea class="news-Textarea" type="text" name="content" placeholder="Comment required" required>${commentOut}</textarea> 
                         <input type="hidden" name="userName" value="${pageContext.request.userPrincipal.name}"/>
-                        <input type="submit" id="log-in-btn" class="form-control" value="Submit Post"/>
+                       <hr></hr>
+                        <input type="submit" id="post-in-btn" class="form-control" value="Submit Post"/>
 
-                    
                 </sf:form> 
                  </div>
             </div>
@@ -75,7 +75,7 @@
                     </div>
                         <hr></hr>
                     <sec:authorize access="hasRole('ROLE_ADMIN')">
-                        <p class="edit-delete">
+                        <p class="edit-delete grey">
                             | <a class="grey" href="editNewsForm?newsFeedId=${news.newsFeedId}">edit</a> 
                             | <a class="grey" href="deleteNews?newsFeedId=${news.newsFeedId} "id="delete" data-confirm=" WARNING!!!!: Are you sure to delete this comment? CANNOT BE UNDONE!!!">delete</a> |
                         </p>

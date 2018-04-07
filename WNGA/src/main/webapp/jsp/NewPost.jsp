@@ -36,16 +36,16 @@
                                 <sf:form role="form"  method="POST" class="form-horizontal"
                                          action="creatNewPost">
                                     <div ><c:out value="${message}"/></div>
-                                    <div class="form-group " >
-                                        <input id="registration-from" type="text" class="form-control" name="photo" placeholder="Link to a photo only" value="${fn:escapeXml(param.photo)}" />
+                                    <div class="row photo-link" >
+                                        <input id="post-form" type="text" class="col-md-6 " name="photo" placeholder="Link to a photo only" value="${fn:escapeXml(param.photo)}"/>
+                                        <input id="post-form" type="text" class="col-md-6 " name="photoTwo" placeholder="Link to a photo only"  />
                                     </div>
-                                    <div class="form-group ">
-                                        <input id="registration-from" type="text" class="form-control" name="photoTwo" placeholder="Link to a photo only"  />
-                                    </div>
+                                        <hr></hr>
                                     <textarea class="post-textarea" type="text" name="comment"   placeholder="Comment required" value="${fn:escapeXml(comment)}" required>${commentOut}</textarea> 
                                     <input type="hidden" name="userName" value="${pageContext.request.userPrincipal.name}"/>
-                                    <div class="form-group ">
-                                        <input type="submit" id="log-in-btn" class="form-control" value="Submit Post"/>
+                                    <hr></hr>
+                                    <div class="f">
+                                        <input type="submit" id="post-in-btn" class="form-control" value="Submit Post"/>
                                     </div>
                                 </sf:form> 
                             </div>
@@ -82,7 +82,7 @@
                                     </span>
                                 </p>
 
-                                <div class="container postContents">
+                                <div class=" postContents">
                                     <p>
                                         <c:out value="${allPosts.content}"/>
                                     </p>
@@ -137,7 +137,7 @@
                                                 <input type="hidden" name="userName" value="${pageContext.request.userPrincipal.name}"/>
                                                 <input type="hidden" name="postId" value="${allPosts.postId}"/>
                                                 <div class="form-group ">
-                                                    <input type="submit" id="log-in-btn" class="form-control" value="Submit Comment"/>
+                                                    <input type="submit" id="post-in-btn" class="form-control" value="Submit Comment"/>
                                                 </div>
                                             </sf:form>
                                         </div>
@@ -146,9 +146,9 @@
 
                                     <c:if test="${pageContext.request.userPrincipal.name == allPosts.user.userName}">
                                         <p class="edit-delete">
-                                            | <a class="grey " href="editPostForm?postId=${allPosts.postId}">edit</a> |
+                                            <a class="grey" href="editPostForm?postId=${allPosts.postId}">edit</a> |
                                             <a class="grey" href="deletePost?postId=${allPosts.postId}" id="delete" data-confirm=" WARNING!!!!: Are you sure to delete this comment? CANNOT BE UNDONE!!!">delete</a> |
-                                            <!--<a class="grey " href="comment?postId=${allPosts.postId}">comment</a> |-->
+                                            
                                         </p>
                                     </c:if>
                                 </div>

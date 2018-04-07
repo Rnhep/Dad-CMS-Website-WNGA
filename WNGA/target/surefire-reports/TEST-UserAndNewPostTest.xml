@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="14" failures="0" name="UserAndNewPostTest" time="4.6" errors="0" skipped="0">
+<testsuite tests="14" failures="0" name="UserAndNewPostTest" time="7.752" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib"/>
@@ -47,7 +47,7 @@
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/java/maven-nblib/netbeans-eventspy.jar install"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/java/maven-nblib/netbeans-eventspy.jar clean install"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
@@ -65,18 +65,18 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="UserAndNewPostTest" name="testGetPostById" time="0.295"/>
-  <testcase classname="UserAndNewPostTest" name="testDeleteComment" time="0.636"/>
-  <testcase classname="UserAndNewPostTest" name="testGetUserNameByPostId" time="0.35"/>
-  <testcase classname="UserAndNewPostTest" name="testGetAllUsers" time="0.432"/>
-  <testcase classname="UserAndNewPostTest" name="testUpdatePost" time="0.565"/>
-  <testcase classname="UserAndNewPostTest" name="testUpdateUser" time="0.526"/>
-  <testcase classname="UserAndNewPostTest" name="testDeleteNewPost" time="0.294"/>
-  <testcase classname="UserAndNewPostTest" name="testGetAllPost" time="0.214"/>
-  <testcase classname="UserAndNewPostTest" name="testAddGetComment" time="0.127"/>
-  <testcase classname="UserAndNewPostTest" name="testGetAllComment" time="0.19"/>
-  <testcase classname="UserAndNewPostTest" name="testGetCommentById" time="0.193"/>
-  <testcase classname="UserAndNewPostTest" name="testAddGetNewPost" time="0.305"/>
-  <testcase classname="UserAndNewPostTest" name="testGetUserByUserName" time="0.339"/>
-  <testcase classname="UserAndNewPostTest" name="testDeleteUser" time="0.134"/>
+  <testcase classname="UserAndNewPostTest" name="testGetPostById" time="0.363"/>
+  <testcase classname="UserAndNewPostTest" name="testDeleteComment" time="0.565"/>
+  <testcase classname="UserAndNewPostTest" name="testGetUserNameByPostId" time="0.774"/>
+  <testcase classname="UserAndNewPostTest" name="testGetAllUsers" time="0.564"/>
+  <testcase classname="UserAndNewPostTest" name="testUpdatePost" time="0.699"/>
+  <testcase classname="UserAndNewPostTest" name="testUpdateUser" time="0.583"/>
+  <testcase classname="UserAndNewPostTest" name="testDeleteNewPost" time="0.577"/>
+  <testcase classname="UserAndNewPostTest" name="testGetAllPost" time="0.432"/>
+  <testcase classname="UserAndNewPostTest" name="testAddGetComment" time="0.458"/>
+  <testcase classname="UserAndNewPostTest" name="testGetAllComment" time="0.516"/>
+  <testcase classname="UserAndNewPostTest" name="testGetCommentById" time="0.673"/>
+  <testcase classname="UserAndNewPostTest" name="testAddGetNewPost" time="0.422"/>
+  <testcase classname="UserAndNewPostTest" name="testGetUserByUserName" time="0.468"/>
+  <testcase classname="UserAndNewPostTest" name="testDeleteUser" time="0.658"/>
 </testsuite>

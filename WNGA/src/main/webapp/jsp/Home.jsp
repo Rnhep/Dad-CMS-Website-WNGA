@@ -21,10 +21,12 @@
                         <div class="logo home logo-hide col-md-12">
                         </div>
                         <div class="col-md-9" id="header-desktop"></div>
-                                <div class="container latestPost to-center col-md-12"> 
+                        
+                        <div class="col-md-12 upComing-outterDiv">
+                             <div class="latestPost to-center "> 
                                     <p id="upComing"> Upcoming Events</p>
                                 </div>
-                            
+                    </div>
                                 <div class="col-md-12" id="latestPost-ContentHolding">
                                     <div class="events latestPost-Content ">
                                         <c:out value="${eventOne.name}"/>
@@ -39,12 +41,13 @@
                        
 
                         <section id="section-b" class="grid">
-                            <div class="container latestPost to-center col-md-12"> 
+                            <div class="col-md-12 upComing-outterDiv">
+                            <div class="latestPost to-center"> 
                                 <p id="latestPost">
                                     <c:out value="${latestPost}"/>
                                 </p>
                             </div>
-
+                            </div>
                             <div class=" col-md-12" id="latestPost-ContentHolding">
                                 <c:forEach var="latestPost" items="${displayLatestPost}">
 

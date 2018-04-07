@@ -5,7 +5,7 @@ body
     padding: 0;
     vertical-align: baseline;
     outline: 0;
-    background: linear-gradient(to bottom, rgba(255,255,255,0.7) 6%,rgba(188,188,188,0.2) 100%)no-repeat center white;
+    background: menu;
 }
 
 /*
@@ -29,13 +29,14 @@ body
     }
 
     .username {
-        margin-top: -5px;
+        
         float: right;
         clear: both;
         margin-left: 30px;
         font-size: 32px;
         width: auto;
-        height:auto;
+        height:20px;
+        border: 1px solid black;
     }
 
     .home  {
@@ -46,9 +47,10 @@ body
         white-space:pre-line;
     }
     .logo {
-        background:  url('../Images/WNGA-M.png')no-repeat center white;
-        min-height: 250px;
-        max-width: 25%;
+        background: url('../Images/WNGA-M.png')no-repeat white;
+        min-height: 290px;
+        margin-top: -19px;
+        max-width: 100%;
         background-size: contain;
         border: 1px solid #fff;
     }
@@ -57,25 +59,26 @@ body
         top: -146px;
         overflow: hidden;
         margin-left: 25%;
-        margin-top: 46.2px;
+        margin-top: 45.2px;
         max-height: 150px;
-        max-width: 75%;
+        max-width: 100%;
         height: 100px;
         opacity: 1;   
         background-size: contain;
-        border-bottom: 3px solid #fff;
+        border-bottom: 25px solid #fff;
     }
+    
     #section-a{
         width: 100%;
     }
 
     .flex-container {
-        width:100%;
-        display: flex;
-        margin-left: 10px;
-        margin-top: 30px;
+        position: absolute;
+        display:flex;
+        margin-left: 42em;
+        width: auto;
+        margin-top: 20px;
         padding: 2px;
-
     }
     /*
         .flex-signIn {
@@ -87,12 +90,13 @@ body
         }*/
 
     .flex-container > div >a
-    {
+    {   
+        background-color: menu;
         width: 100%;
         max-width: 158px;
-        font-size: 42px;
+        font-size: 32px;
         font-weight: bold;
-        margin-left: 90px;
+        margin-left: 15px;
         padding: 5px;
         border-top: 4px solid #4286f4;
         border-left: 3px solid #4286f4;
@@ -143,7 +147,6 @@ body
     }
 
     .postFormNewsPage {  
-
         width: 100%;
         margin-top: -90px;
         max-width: 100%;
@@ -159,7 +162,7 @@ body
         resize: none;
         overflow: auto;
         font-size: 28px;
-        border: 1px solid black;
+        border: none;
     }
 
     .displayNews {
@@ -171,9 +174,9 @@ body
     .newsContents {
         margin-top: 30px;
         margin-left: 30px;
-        width: 100%;
+        width:auto;
         padding: 10px;
-        max-width: 50em;
+        
         height: auto;
         border-radius: 10px;
         font-size: 24px;
@@ -194,26 +197,56 @@ body
         width: 100%;
         margin-top: -90px;
         padding-bottom: 80px;
-
     }
+    
+     .inner-postform{
+        padding: 5px;
+       margin: 0 auto;
+       width: 60em;
+       height: auto;
+       background-color: #fff;
+       border-radius: 10px;
+    }
+    
+    #post-form{
+        border: none;
+        display: block;
+        margin-left: 0.5em;
+        margin-top: 5px;
+        width:100%;
+        max-width: 18.8em;
+        height: 80px;
+        resize: none;
+        font-size: 28px;
+    }
+    
+    .post-textarea {
+        display: block;
+        margin: 0 auto;
+        width:100%;
+        height: 250px;
+        max-width: 100em;
+        resize: none;
+        font-size: 28px;
+        border: none;
+    }
+    
     #latestPost-ContentHolding {
         width: 100%;
         margin: 0 auto;
-
     }
 
-
     .latestPost-Content {
+        font-size: 24px;
         width: 100%;
-        max-width: 950px;
-        height: 150px;
+        max-width: 650px;
+        height: auto;
         padding-left: 30px;
         margin: 0 auto;
         margin-bottom: 30px;
         background-color: #fff;
         border-radius: 10px;
-        box-shadow: 15px 5px 18px #888888;
-
+        box-shadow: 5px 5px 5px #888888;
     }
 
     .latestPost-Content p {
@@ -223,12 +256,7 @@ body
         font-size: 22px;
     }
 
-    .inner-postform{
-        margin: 0 auto;
-        width: 100em;
-        height: auto;
-    }
-
+   
     #recent-post {
         font-weight: bold;
         color: #000;
@@ -250,10 +278,10 @@ body
         margin-top: 30px;
         height:auto;
         width: 100%;
-        max-width:  70em;
+        max-width:  60em;
         background-color: #fff;
         border-radius:10px;
-        box-shadow:  5px 10px 18px #888888;
+        box-shadow:  1px 1px 2px #888888;
 
     }
 
@@ -262,7 +290,7 @@ body
         margin-left: 30px;
         width: 100%;
         padding: 10px;
-        max-width: 50em;
+        max-width: 40em;
         height: auto;
         border-radius: 10px;
         font-size: 24px;
@@ -299,7 +327,7 @@ body
         height: 90px;
         font-size: 28px;
         overflow: hidden;
-        border-radius: 10px;
+        border: none;
     }
 
     .comments-Block{
@@ -312,7 +340,6 @@ body
         border: 1px solid gainsboro ;
     }
 
-
     .commentForm-Section{
         padding: 20px;
         margin-top: 30px;
@@ -324,18 +351,6 @@ body
         margin-left: 50px;
         font-size: 22px;
 
-    }
-
-
-    .post-textarea {
-        margin: 0 auto;
-        width: 100%;
-        max-width: 100em;
-        height: 250px;
-        resize: none;
-        overflow: hidden;
-        font-size: 28px;
-        border: 1px solid black;
     }
 
     .latestPost {
@@ -497,29 +512,35 @@ body
         border: 1px solid black;
     }
 
+    .contactUs-Section {
+        text-align: center;
+        padding-top: 2em;
+        padding-bottom: 4em;
+        margin-top: 5em;
+        width: 100%;
+        height: 990px;
+        font-size: 42px;
+        color:#fff;
+        background-color: #204d74;
+        border: 1px solid black;
+    }
+
     .contact0, 
     .contact1,
     .contact2,
-    .contact3 {  
-
-        margin-left: 60px;
-        margin-top: 40px;
+    .contact3{ 
+        text-align:center;
+        margin-top: 50px;
+        margin: 0 auto;
         padding: 40px;
-        width: 100%;
-        max-width: 550px;
+        max-width: 40%;
         height: auto;
-        color: #000;
         font-weight: bold;
-        border: 1px solid black;
-        background-color: whitesmoke;
-
-    }
-    .contact-text {
-
-        font-size: 24px;
-        background-color: whitesmoke;
-        padding: 5em;
-
+        font-size: 32px;
+        color:#fff;
+        border: 1px solid #fff;
+        background-color:  #4286f4;
+        text-decoration: none;
     }
 
 
@@ -534,14 +555,29 @@ body
         font-size:26px;
         border-radius: 20px;
     }
-
-    #log-in-btn {
-        width: 80%;
+    
+    #post-in-btn {
+        padding: 5px;
+        width: auto;
+        height: auto;
         outline: 0px;
         border: 0px;
         color: #fff;
+        display:block;
+        margin-right: 0 !important;
+        margin-left: auto !important;
         font-weight: bold;
-        font-size: 26px;
+        font-size: 28px;
+        background: #3385ff;
+    }
+    
+    #log-in-btn {
+        width: 80%;
+        outline: 0px;
+        border: none;
+        color: #fff;
+        font-weight: bold;
+        font-size: 32px;
         background: #3385ff;
     }
 
@@ -568,9 +604,7 @@ body
         background-color: whitesmoke;
         margin: 10px;
         border: 1px solid  #adadad;
-
     }
-
 
     .admin-box {
         width: 100%;
@@ -578,10 +612,9 @@ body
     }
 
     .admin-box p {
-
         font-size: 28px;
-
     }
+    
     .admin-content{
         margin-top: 10px;
         font-size: 18px;
@@ -591,9 +624,8 @@ body
         max-width: 100em;
         background-color: #fff;
         border-radius:10px;
-        box-shadow:  1px 1px 2px #000000;
+        box-shadow: 5px 5px 5px #888888;
     }
-
 
     .admin-note{
         text-align: center;
@@ -605,16 +637,18 @@ body
         width: 90px;
         height: 90px;
         border-radius: 50%;
-
     }
-
-
+    
+    .grey{
+        color: #adadad;
+    }
+    
     .edit-delete{
-        margin-bottom: -0px;
-        margin-left: 28px;
-        font-size: 28px;
-
-
+       margin-bottom: -0px;
+       margin-left: 28px;
+       font-size: 28px;
+       color: #adadad;
+       text-decoration: none;
     }
 
     #footerspace {
@@ -635,22 +669,18 @@ body
 
     }
 
-    .homeFooterLine
-    {
+    .homeFooterLine{
         margin-left: 8%;
     }
 
-    .aboutUsFooterLine
-    {
+    .aboutUsFooterLine {
         margin-left: 8%;
         margin-top: 22em;
     }
 
     .footerLine {
-
         margin-top: 30em;
         margin-left: 8%;
-
     }
 
     footer {  
@@ -700,23 +730,24 @@ body
     }
 
     .username {
-        margin-top: -5px;
+       
         float: right;
         clear: both;
         margin-left: 30px;
-        font-size: 32px;
+        font-size: 18px;
         width: auto;
-        height:auto;
+        height:10px;
     }
 
     .home  {
         margin-top: -20px;
     }
 
-    .logo {
-        background:  url('../Images/WNGA-M.png')no-repeat center white;
-        min-height: 250px;
-        max-width: 25%;
+     .logo {
+        background: url('../Images/WNGA-M.png')no-repeat white;
+        min-height: 190px;
+        margin-top: -19px;
+        max-width: 100%;
         background-size: contain;
         border: 1px solid #fff;
     }
@@ -742,34 +773,35 @@ body
     }
 
     .flex-container {
-        width:100%;
-        display: flex;
-        margin-left: 10px;
-        margin-top: 55px;
+        position: absolute;
+        display:flex;
+        margin-left: 19em;
+        width: auto;
+        margin-top: 29px;
         padding: 2px;
     }
 
     .flex-container > div >a
-    {
+    {   
+        background-color: menu;
         width: 100%;
         max-width: 158px;
-        font-size: 22px;
+        font-size: 18px;
         font-weight: bold;
-        margin-left: 90px;
+        margin-left: 15px;
         padding: 5px;
         border-top: 4px solid #4286f4;
         border-left: 3px solid #4286f4;
         border-right: 3px solid #4286f4;
         border-bottom: 3px solid #4286f4;
         border-radius: 2px 15px  2px 15px;
-        box-shadow: 3px  3px 5px #080808;
+        box-shadow: 4px  4px 5px #080808;
     }
 
-    .flex-container a,
-    .flex-signIn a  {
+    .flex-container a {
         color: #000;
         text-decoration: none;
-        font-size: 32px;
+        font-size: 18px;
     }
 
     .aboutus-header {
@@ -815,8 +847,8 @@ body
 
     .latestPost-Content {
         width: 100%;
-        max-width: 950px;
-        height: 150px;
+        max-width: 550px;
+        height:auto;
         padding-left: 30px;
         border: 1px solid silver;
         margin: 0 auto;
@@ -831,7 +863,7 @@ body
         white-space: nowrap;  
         overflow: hidden;
         text-overflow: ellipsis;
-        font-size: 22px;
+        font-size: 18px;
     }
 
 
@@ -847,7 +879,7 @@ body
         max-width: 100%;
         border-radius: 10px;
         padding: 20px;
-        font-size: 20px;
+        font-size: 14px;
     }
 
     .post-preview
@@ -868,18 +900,44 @@ body
         padding-bottom: 80px;
     }
 
-    .inner-postform{
+     .inner-postform{
         margin: 0 auto;
-        width: 48em;
-
+        width: 100%;
+        max-width: 51em;
+        background: #fff;
+        border-radius: 10px;
+        padding: 5px;
     }
+
+   #post-form{
+        border: none;
+        display: block;
+        margin-left: 0.8em;
+        margin-top: 5px;
+        width:100%;
+        max-width: 25em;
+        height: 40px;
+        resize: none;
+        font-size: 14px;
+    }
+    
+    .post-textarea {
+        display: block;
+        margin: 0 auto;
+        width:100%;
+        height: 130px;
+        max-width: 100em;
+        resize: none;
+        font-size: 14px;
+        border: none;
+    } 
+    
 
     #recent-post {
         font-weight: bold;
         color: #000;
         padding-bottom: 20px; 
     }
-
 
     .display-post {
         margin: 0 auto;
@@ -893,21 +951,19 @@ body
         margin-top: 30px;
         height: auto;
         width: 100%;
-        max-width: 60em;
+        max-width: 39.8em;
         background-color: #fff;
         border-radius:10px;
-        box-shadow:  5px 10px 18px #888888;
+        box-shadow:  1px 1px 1px #888888;
     }
 
     .postContents {
         margin-top: 30px;
         margin-left: 30px;
-        width: 100%;
+        width:auto;
         padding: 10px;
-        max-width: 56em;
         height: auto;
         border-radius: 10px;
-        font-size: 24px;
     }
 
     .postContents{
@@ -922,17 +978,6 @@ body
         height: 150px;
         resize: none;
         overflow: auto;
-        border: 1px solid black;
-    }
-
-
-    .post-textarea {
-        margin: 0 auto;
-        width: 100%;
-        height: 150px;
-        resize: none;
-        overflow: auto;
-        border: 1px solid black;
     }
 
     span {
@@ -957,7 +1002,7 @@ body
         margin-top: 30px;
         padding-top: 20px;
         padding-bottom: 20px;
-        width: 100%;
+        width: auto;
         height: 650px;
         background-color:#edeeef;
         font-size: 18px;
@@ -981,9 +1026,10 @@ body
         width: 100%;
         max-height: 100%;
         height: 40px;
-        font-size: 18px;
+        font-size: 14px;
         overflow: hidden;
         border-radius: 10px;
+        border: none;
     }
 
     .comments-Block{
@@ -1191,31 +1237,38 @@ body
         color: #000;
 
     }
+ .contactUs-Section {
+        text-align: center;
+        padding-top: 2em;
+        padding-bottom: 4em;
+        margin-top: 5em;
+        width: 100%;
+        height: 990px;
+        color:#fff;
+        background-color: #204d74;
+        border: 1px solid black;
+    }
 
+     h1{
+         font-size: 22px;
+    }
+    
     .contact0, 
     .contact1,
     .contact2,
-    .contact3 {  
-
-        margin-left: 60px;
-        margin-top: 40px;
+    .contact3{ 
+        text-align:center;
+        margin-top: 50px;
+        margin: 0 auto;
         padding: 40px;
-        width: 100%;
-        max-width: 550px;
+        max-width: 40%;
         height: auto;
-        color: #000;
         font-weight: bold;
-        border: 1px solid black;
-        background-color: whitesmoke;
-
+        color:#fff;
+        border: 1px solid #fff;
+        background-color:  #4286f4;
+        text-decoration: none;
     }
-    .contact-text {
-        font-size: 24px;
-        background-color: whitesmoke;
-        padding: 5em;
-
-    }
-
 
     #log-in-btn, 
     #link, 
@@ -1229,6 +1282,22 @@ body
         border-radius: 20px;
 
     }
+    
+       #post-in-btn {
+        padding: 5px;
+        width: auto;
+        height: auto;
+        outline: 0px;
+        border: 0px;
+        color: #fff;
+        display:block;
+        margin-right: 0 !important;
+        margin-left: auto !important;
+        font-weight: bold;
+        font-size: 17px;
+        background: #3385ff;
+    }
+    
 
     #log-in-btn {
 
@@ -1280,7 +1349,7 @@ body
         max-width: 60em;
         background-color: #fff;
         border-radius:10px;
-        box-shadow:  1px 1px 2px #000000;
+        box-shadow:  5px 5px 5px #888888;
     }
 
     .admin-note{
@@ -1369,18 +1438,19 @@ body
     }
 
     .logo {
-        background: url('../Images/WNGA-M.png')no-repeat center white;
-        min-height: 220px;
-        max-width: 25%;
+        background: url('../Images/WNGA-M.png')no-repeat white;
+        min-height: 135px;
+        margin-top: -19px;
+        max-width: 100%;
         background-size: contain;
         border: 1px solid #fff;
     }
-
+    
     #header-desktop {
 
         top: -146px;
         overflow: hidden;
-        margin-left: 25%;
+        margin-left: 20%;
         margin-top: 46.2px;
         max-height: 150px;
         max-width: 75%;
@@ -1393,15 +1463,15 @@ body
         margin-left: 30px;
         float: right;
         clear: both;
-        font-size: 22px;
-        margin-top: 5px;
+        font-size: 18px;
+        margin-top: 0px;
 
     }
 
     #section-a{
         width: 100%;
     }
-    
+
     .events {
         white-space:pre-line;
     }
@@ -1409,7 +1479,7 @@ body
     .flex-container {
         width:100%;
         display: flex;
-        margin-left: 10px;
+        margin-left: 330px;
         margin-top: 48px;
         padding: 2px;
     }
@@ -1417,9 +1487,9 @@ body
     .flex-container > div >a {
         width: 100%;
         max-width: 158px;
-        font-size: 18px;
+        font-size: 14px;
         font-weight: bold;
-        margin-left: 30px;
+        margin-left: 10px;
         padding: 5px;
         border-top: 3px solid #4286f4;
         border-left: 3px solid #4286f4;
@@ -1467,7 +1537,7 @@ body
         width:100%;
 
     }
-    
+
     .latestPost-Content {
         width: 100%;
         max-width: 450px;
@@ -1481,11 +1551,12 @@ body
         box-shadow: 1px 1px 1px #000000;
 
     }
-    
+
     .latestPost-Content p  {
         white-space: nowrap;  
         overflow: hidden;
         text-overflow: ellipsis;
+        font-size: 12px;
     }
 
     .displayNews {
@@ -1495,8 +1566,8 @@ body
     }
 
     .newsContents {
-        width: 100%;
-        max-width: 580px;
+        width: auto;
+        font-size: 18px;
         border-radius: 10px;
     }
 
@@ -1525,7 +1596,7 @@ body
         width: 100%;
         height: 650px;
         background-color:#edeeef;
-        font-size: 12px;
+        font-size: 14px;
         overflow: hidden;
         overflow-x: hidden;
         overflow-y: scroll;
@@ -1545,10 +1616,11 @@ body
         resize: none;
         width: 100%;
         max-height: 100%;
-        height: 40px;
-        font-size: 12px;
+        height: 50px;
+        font-size: 10px;
         overflow: hidden;
         border-radius: 10px;
+        border: none;
     }
 
     .comments-Block{
@@ -1558,11 +1630,11 @@ body
         width: 100%;
         background-color: #fff;
         border-radius:10px;
-        border: 1px solid gainsboro ;
     }
 
     .comments-Text{
-        margin-left: 30px
+        font-size: 10px
+          
     }
 
     .commentForm-Section{
@@ -1575,33 +1647,48 @@ body
         width: auto;
         margin-top: 10px;
         margin-left: 80px;
-        font-size: 12px;
+        font-size: 10px;
         color: #adadad;
     }
 
     .postForm {  
-
         width: 100%;
         margin-top: -90px;
         padding-bottom: 80px;
-
     }
 
     .inner-postform{
         margin: 0 auto;
         width: 100%;
-        max-width: 46.2em;
+        max-width: 30.2em;
+        background: #fff;
+        border-radius: 10px;
+        padding: 5px;
     }
 
-    .post-textarea {
-        margin: 0 auto;
-        width: 46em;
-        height: 150px;
+   #post-form{
+        border: none;
+        display: block;
+        margin-left: 0.8em;
+        margin-top: 5px;
+        width:100%;
+        max-width: 26.5em;
+        height: 35px;
         resize: none;
-        overflow: auto;
-        border: 1px solid black;
+        font-size: 12px;
     }
-
+    
+    .post-textarea {
+        display: block;
+        margin: 0 auto;
+        width:100%;
+        height: 135px;
+        max-width: 100em;
+        resize: none;
+        font-size: 14px;
+        border: none;
+    } 
+    
     .display-post {
         margin: 0 auto;
         margin-top: 25px;
@@ -1610,20 +1697,21 @@ body
     }
 
     .pre-posts{
-        font-size: 18px;
+        font-size: 22px;
         /*padding: 10px;*/
         margin-top: 30px;
         height: auto;
         width: 100%;
-        max-width: 50em;
+        max-width: 19em;
         background-color: #fff;
         border-radius:10px;
-        box-shadow:  5px 10px 18px #888888;
+        box-shadow:  1px 1px 1px #888888;
     }
     .postContents {
         width: 100%;
         padding: 10px;
         height: auto;
+         font-size: 10px;
     }
 
     .commentCount{
@@ -1631,12 +1719,9 @@ body
         margin-left: 20px;
     }
 
-    .postContents{
-        font-size: 12px;
-    }
 
     span {
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .member-since{
@@ -1656,23 +1741,33 @@ body
         font-size: 16px;
         color: #000000;
     }
-
+    
+    .upComing-outterDiv{
+        width: 100%;
+        height: auto;
+        padding: 10px;
+       
+    }
+    
     #upComing,
     #latestPost {
+        margin: 0 auto;
         color: #4286f4;
         font-weight: bold;
+        width: auto;
+        font-size: 18px;
     }
-
+    
     .latestPost {
-        padding-top: 20px;
-        padding-bottom: 40px;
+        margin: 0 auto;
+        padding-bottom: 23px;
         border-top: 9px solid  #4286f4;
         border-bottom: 9px solid #5393fc;
-        width: 50%;
-        margin-left: 25%;
-        max-width: 100%;
+        width:350px;
+        height: 250px;
+        
         border-radius: 20px;
-        margin-bottom: 29px;
+       
     }
 
     .img-container {
@@ -1707,7 +1802,7 @@ body
         overflow: hidden;
         text-overflow: ellipsis; 
     }
-    
+
     #footerspace {
         margin-top: 240px;
         margin-left: 8%;
@@ -1759,7 +1854,8 @@ body
         height: 250px;
         resize: none;
         overflow: auto;
-        border: 1px solid black;
+        border: none;
+        
     }
 
     #log-in-btn, 
@@ -1774,6 +1870,36 @@ body
         border-radius: 10px;
     }
 
+     #post-in-btn {
+        padding: 5px;
+        width: auto;
+        height: auto;
+        outline: 0px;
+        border: 0px;
+        color: #fff;
+        display:block;
+        margin-right: 0 !important;
+        margin-left: auto !important;
+        font-weight: bold;
+        font-size: 18px;
+        background: #3385ff;
+    }
+    
+    #post-in-btn {
+        padding: 5px;
+        width: auto;
+        height: auto;
+        outline: 0px;
+        border: 0px;
+        color: #fff;
+        display:block;
+        margin-right: 0 !important;
+        margin-left: auto !important;
+        font-weight: bold;
+        font-size: 12px;
+        background: #3385ff;
+    }
+    
     #log-in-btn {
         outline: 0px;
         border: 0px;
@@ -1803,39 +1929,49 @@ body
         color: #000;
 
     }
+    
+     .contactUs-Section {
+        text-align: center;
+        padding-top: 2em;
+        margin-top: 5em;
+        width: 100%;
+        height: 990px;
+        font-size: 12px;
+        color:#fff;
+        background-color: #204d74;
+        border: 1px solid black;
+    }
 
+    h1{
+         font-size: 22px;
+    }
+    
     .contact0, 
     .contact1,
     .contact2,
-    .contact3 {  
-        margin-left: 60px;
-        margin-top: 40px;
+    .contact3{ 
+        text-align:center;
+        margin-top: 50px;
+        margin: 0 auto;
         padding: 40px;
-        width: 100%;
-        max-width: 550px;
+        max-width: 40%;
         height: auto;
-        color: #000;
         font-weight: bold;
-        border: 1px solid black;
-        background-color: whitesmoke;
-    }
-    .contact-text {
-        font-size: 24px;
-        background-color: whitesmoke;
-        padding: 5em;
-
+        font-size: 12px;
+        color:#fff;
+        border: 1px solid #fff;
+        background-color:  #4286f4;
+        text-decoration: none;
     }
 
     .btns-flex {
         display: flex;
         width: auto;
         padding: 10px;
-
     }
 
     .flex-flex div {
         padding: 10px;
-
     }
 
     .user-box {
@@ -1848,12 +1984,12 @@ body
     }
 
     .newuser-box {
+
         margin-left: 25%;
         margin-bottom: 99px;
         width: auto;
     }
-
-
+    
     .admin-box {
         width: 100%;
         max-width: 100%;
@@ -1881,13 +2017,18 @@ body
     }
 
     #user-img {
-        width: 60px;
-        height: 60px;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
     }
     
+    .grey{
+        color: #adadad;
+    }
+    
     .edit-delete {
-        font-size: 10px;
+        color: #dcdcdc;
+        font-size: 14px;
         margin-bottom: -0px;
         margin-left: 10px;
     }
@@ -1908,7 +2049,6 @@ body
         background-color:  #fff;
         font-size: 14px;
         border: 1px solid black;
-
     } 
 
     .register { 
@@ -1926,6 +2066,13 @@ body
 
 
 }
+
+/*        END OF 1281PX TO 1906 DESKTOP VIEW
+---------------------------------------------------------------*/
+
+
+/*================================================================
+        STARTING OF 1025PX TO 1280PX DESKTOP VIEW */
 
 @media (min-width: 1025px) and (max-width: 1280px) {
 
@@ -1972,7 +2119,7 @@ body
         font-size: 12px;
         margin-top: 5px;
     }
-    
+
     .flex-container {
         width:100%;
         display: flex;
@@ -1987,7 +2134,7 @@ body
         max-width: 158px;
         font-size: 14px;
         font-weight: bold;
-        margin-left: 30px;
+        margin-left: 40px;
         padding: 5px;
         border-top: 3px solid #4286f4;
         border-bottom: 3px solid #4286f4;
@@ -2044,13 +2191,13 @@ body
         border-radius: 10px;
         box-shadow: 1px 1px 1px #000000;
     }
-    
+
     .latestPost-Content p {
         white-space: nowrap;  
         overflow: hidden;
         text-overflow: ellipsis;
     }
-    
+
     .latestPost {
         padding-top: 20px;
         padding-bottom: 40px;
@@ -2060,7 +2207,7 @@ body
         border-radius: 20px;
         margin-bottom: 29px;
     }
-    
+
     .displayNews {
         margin: 0 auto;
         width: 100%;
@@ -2069,8 +2216,9 @@ body
 
     .newsContents {
         width: 100%;
-        max-width: 580px;
+        max-width: 680px;
         border-radius: 10px;
+        font-size: 10px;
     }
 
     .post-preview
@@ -2100,7 +2248,7 @@ body
         margin: 0 auto;
         width: 600px;
     }
-    
+
     .display-post {
         margin: 0 auto;
         margin-top: 25px;
@@ -2115,7 +2263,7 @@ body
         max-width: 680px;
         background-color: #fff;
         border-radius:10px;
-        box-shadow:  5px 10px 18px #888888;
+        box-shadow:  1px 2px 2px #888888;
     }
 
     .postContents {
@@ -2137,7 +2285,7 @@ body
     .postContents{
         font-size: 12px;
     }
-    
+
     .display-Comments{
         margin-top: 30px;
         padding-top: 20px;
@@ -2183,24 +2331,24 @@ body
         border-radius:10px;
         border: 1px solid gainsboro ;
     }
-    
+
     .comments-Text {
         margin-left: 30px
     }
-    
+
     .commentForm-Section {
         margin-top: 30px;
         background: #edeeef;
         height: auto;
     }
-    
+
     .show-Comments {
         margin-top: 10px;
         margin-left: 80px;
         font-size: 10px;
         color: #adadad;
     }
-    
+
     span {
         font-size: 12px;
     }
@@ -2238,18 +2386,18 @@ body
         color: #4286f4;
         font-weight: bold;
     }
-    
+
     .events {
         white-space:pre-line;
     }
-    
+
     .img-container {
         margin-top: 20px;
         color:#fff;
         font-size: 30px;
         max-height: 100%;
     }
-    
+
     .to-center {
         margin-top: 20px;
         color: black;
@@ -2342,7 +2490,7 @@ body
     .signIn {
         padding-top: 55px;
     }
-    
+
     .plainText-content {
         background-color: #fff;
     }
@@ -2354,23 +2502,28 @@ body
     .contact0, 
     .contact1,
     .contact2,
-    .contact3 {   
-        margin-left: 22%;
+    .contact3 {  
+        text-align: left;
         margin-top: 40px;
         padding: 40px;
-        width: 100%;
-        max-width: 650px;
+        width:auto;
         height: auto;
         color: #000;
         font-weight: bold;
+        color: #fff;
         border: 1px solid black;
-        background-color: whitesmoke;
+        background-color: #4286f4;
     }
     
-    .contact-text {
-        font-size: 24px;
-        background-color: whitesmoke;
-        padding: 5em;
+    h1{
+         font-size: 18px;
+    }
+    
+    .contactUs-Section {
+        text-align: center;
+        color: #fff;
+        background-color: #204d74;
+        padding-top: 3em;
     }
 
 
@@ -2425,7 +2578,7 @@ body
     .admin-box p {
         font-size: 10px;
     }
-    
+
     .admin-content{
         margin-top: 10px;
         font-size: 10px;
@@ -2442,19 +2595,19 @@ body
         text-align: center;
         color: blue;
     }
-    
+
     #user-img {
         width: 60px;
         height: 60px;
         border-radius: 50%;
     }
-    
+
     .edit-delete {
         margin-bottom: -0px;
         margin-left: 10px;
         font-size: 10px;
     }
-    
+
     #registration{
         width: 100%;
         max-width: 100%;
@@ -2487,6 +2640,7 @@ body
 
 
 }
+
 
 @media (min-width: 768px) and (max-width: 1024px) {
 
@@ -2538,27 +2692,39 @@ body
         display: block
     }
 
+
+   .contactUs-Section {
+        text-align: center;
+        padding-top: 2em;
+        padding-bottom: 1em;
+        margin-top: 5em;
+        width: 100%;
+        height: 990px;
+        color:#fff;
+        background-color: #204d74;
+        border: 1px solid black;
+    }
+
     .contact0, 
     .contact1,
     .contact2,
-    .contact3 {  
-        margin-top: 40px;
+    .contact3{ 
+        text-align:center;
+        margin-top: 50px;
+        margin: 0 auto;
         padding: 40px;
-        width: 100%;
-        max-width: 650px;
+        max-width: 60%;
         height: auto;
-        color: #000;
         font-weight: bold;
-        border: 1px solid black;
-        background-color: whitesmoke;
+        color:#fff;
+        border: 1px solid #fff;
+        background-color:  #4286f4;
+        text-decoration: none;
     }
 
-    .contact-text {
-        font-size: 24px;
-        background-color: whitesmoke;
-        padding: 5em;
+    h1{
+         font-size: 18px;
     }
-
 
     #home, 
     #news,
@@ -2693,11 +2859,11 @@ body
         overflow: hidden;
         text-overflow: ellipsis; 
     }
-    
+
     .display-post{
         width: 100%;
     }
-    
+
     .to-center {
         margin-top: 20px;
         color: black;
@@ -2714,7 +2880,7 @@ body
     .events {
         white-space:pre-line;
     }
-    
+
     .postForm { 
         margin: 0 auto;
         width:100%;
@@ -2725,7 +2891,7 @@ body
         width: 560px;
         margin: auto;
     }
-    
+
     .post-textarea{
         resize: none;
         width: 100%;
@@ -2815,10 +2981,8 @@ body
         padding-bottom: 10px;
     }
 
-    span {
-        display: block;
-    }
     
+
     .display-Comments{
         margin-top: 30px;
         padding-top: 20px;
@@ -2880,22 +3044,7 @@ body
         color: #adadad;
     }
 
-    .pre-posts { 
-        overflow-y: hidden;
-        margin-top: 20px;
-        height: auto;
-        width: 100%;
-        max-width: 100%;
-        border: 1px solid silver;
-        background: #fff;
-    }
-    .postContents{
-        word-break: keep-all;
-        overflow-y: hidden;
-        font-size: 18px;
-    }
-
-
+   
     #latestPost-ContentHolding {
         width: 95.5%;
     }
@@ -2916,19 +3065,19 @@ body
     }
 
     .pre-posts { 
-        word-break: break-all;
-        overflow-y: hidden;
         margin-top: 20px;
         height: auto;
         width: 100%;
         max-width: 100%;
         border: 1px solid silver;
         background: #fff;
+       
     }
+
     .postContents{
-        word-break: break-all;
+        word-break: keep-all;
         overflow-y: hidden;
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .photo {
@@ -3143,27 +3292,32 @@ body
     #newUserSection {
         padding: 1.2em;
     }
-    
+
     .contact0, 
     .contact1,
     .contact2,
-    .contact3 { 
-        margin-top: 40px;
+    .contact3 {
+        margin-top: 20px;
         padding: 40px;
-        margin-left: 19%;
-        width: 100%;
-        max-width: 650px;
+        width:100%;
         height: auto;
         color: #000;
         font-weight: bold;
+        color: #fff;
         border: 1px solid black;
-        background-color: whitesmoke;
+        background-color: #4286f4;
+    }
+    
+    h1{
+         font-size: 12px;
     }
 
-    .contact-text {
-        font-size: 24px;
-        background-color: whitesmoke;
-        padding: 5em;
+    .contactUs-Section {
+        margin-top: 60px; 
+        margin: 0 auto;
+        color: #fff;
+        background-color: #204d74;
+
     }
 
     #home a,
@@ -3173,7 +3327,7 @@ body
     .profile a {
         color: #fff;
         text-decoration: none;
-        font-size: 14px;
+        font-size: 1px;
         width: 100%;
         display: block
     }
@@ -3195,6 +3349,14 @@ body
     #blog a:hover, 
     #log-in a:hover {
         color: #3385ff; 
+    }
+
+    .newsContents {
+        width: 100%;
+        max-width: 980px;
+        border-radius: 10px;
+        font-size: 12px;
+        word-break: keep-all;
     }
 
     button {
@@ -3237,7 +3399,7 @@ body
     .img-container  p, h3, .to-center p,
     .news p a {
         text-align: center;
-        font-size: 16px;
+        font-size: 12px;
         font-weight: 900;
         text-decoration: none;
     } 
@@ -3305,6 +3467,13 @@ body
         margin: 0 auto;
     }
 
+    .displayNews {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 100%;
+    }
+
+
     .news-Textarea{
         resize: none;
         width: 100%;
@@ -3319,13 +3488,13 @@ body
         max-width: 100%;
         margin: 0 auto;
     }
-    
+
     .inner-postform{
         width: 100%;
         max-width: 90%;
         margin: 0 auto;
     }
-    
+
     .post-textarea{
         resize: none;
         width: 100%;
@@ -3357,7 +3526,7 @@ body
     #log-in-btn, 
     #link, 
     #registration-from {
-        
+
         max-width:100%;
         font-size:14px;
         display:block;
@@ -3442,7 +3611,7 @@ body
         border-radius: 10px;
         box-shadow: 1px 1px 1px #000000;
     }
-    
+
     .latestPost-Content p {
         width: 100%;
         white-space: nowrap;  
@@ -3502,7 +3671,7 @@ body
         margin-top: 30px;
         background: #edeeef;
     }
-    
+
     .show-Comments{
         width: auto;
         margin-top: 10px;
@@ -3520,11 +3689,11 @@ body
         border: 1px solid silver;
         background: #fff;
     }
-    
+
     .events {
         white-space:pre-line;
     }
-    
+
     .postContents{
         word-break: keep-all;
         overflow-y: hidden;
@@ -3561,7 +3730,7 @@ body
         outline: none;
         border: none;
     }
-    
+
     .admin-box {
         width: 100%;
         max-width: 100em;
@@ -3580,7 +3749,7 @@ body
         background-color: #fff;
         border-radius:10px;
     }
-    
+
     .admin-content {
         font-size: 18px;
         padding: 10px;
@@ -3592,7 +3761,7 @@ body
         border-radius:10px;
         box-shadow:  1px 1px 2px #000000;
     }
-    
+
     .newuser-box {
         margin-left: 20%;
         width: auto;
@@ -3698,25 +3867,30 @@ body
     .contact0, 
     .contact1,
     .contact2,
-    .contact3 { 
-        font-size: 12px;
+    .contact3 {  
         margin-top: 40px;
         padding: 40px;
-        width: 100%;
-        max-width: 550px;
+        width:auto;
         height: auto;
         color: #000;
         font-weight: bold;
+        color: #fff;
+         font-size: 12px;
         border: 1px solid black;
-        background-color: whitesmoke;
+        background-color: #4286f4;
+    }
+    
+    h1{
+         font-size: 16px;
     }
 
-    .contact-text {
+    .contactUs-Section {
         font-size: 18px;
-        background-color: whitesmoke;
-        padding: 5em;
+        color: #fff;
+        background-color: #204d74;
+        padding-top: 3em;
+        padding-bottom: 4em;
     }
-
     #home a,
     #news a,
     #blog a,
@@ -3784,7 +3958,7 @@ body
         width: 150px;
         height: 150px;
     }
-    
+
     #log-in-btn, 
     #link, 
     #registration-from {
@@ -3833,7 +4007,7 @@ body
         overflow: scroll;
         padding-bottom: 10px;
     }
-    
+
     .latestPost-Content p {
         width: 100%;
         white-space: nowrap;  
@@ -3876,7 +4050,7 @@ body
         margin: 0 auto;
         height: 140px;
     }
-    
+
     .postForm {
         width: 100%;
         max-width: 100%;
@@ -4089,11 +4263,11 @@ body
         padding: 5px;
         border-radius: 3px;
     }
-    
+
     .events {
         white-space:pre-line;
     }
-    
+
     .img-center {
         text-align: center;
         padding-bottom: 10px;
@@ -4171,7 +4345,7 @@ body
     .admin-box p {
         font-size: 12px;
     }
-    
+
     .admin-content{
         margin-top: 10px;
         font-size: 18px;
@@ -4246,22 +4420,27 @@ body
     .contact0, 
     .contact1,
     .contact2,
-    .contact3 { 
-        font-size: 12px;
+    .contact3 {  
+
         margin-top: 40px;
         padding: 40px;
-        width: auto;
+        width:auto;
         height: auto;
         color: #000;
         font-weight: bold;
+        color: #fff;
         border: 1px solid black;
-        background-color: whitesmoke;
+        background-color: #4286f4;
+    }
+     h1{
+         font-size: 14px;
     }
 
-    .contact-text {
-        font-size: 18px;
-        background-color: whitesmoke;
-        padding: 2em;
+    .contactUs-Section {
+        color: #fff;
+        background-color: #204d74;
+        padding-top: 3em;
+        padding-bottom: 4em;
     }
 
     #home, 
@@ -4411,13 +4590,13 @@ body
         max-width: 100%;
         margin: 0 auto;
     }
-    
+
     .inner-postform{
         width: 100%;
         max-width: 90%;
         margin: 0 auto;
     }
-    
+
     .post-textarea{
         resize: none;
         width: 100%;
@@ -4465,7 +4644,7 @@ body
         background: none;
         color:  #3385ff;
     }
-    
+
     .profile {
         margin-top: 45px; 
         margin-bottom: 30px;
@@ -4608,7 +4787,7 @@ body
         border: 1px solid silver;
         background: #fff;
     }
-    
+
     .postContents{
         word-break: keep-all;
         overflow-y: hidden;
