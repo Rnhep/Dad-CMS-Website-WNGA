@@ -145,7 +145,7 @@
                                     </div>
 
                                     <c:if test="${pageContext.request.userPrincipal.name == allPosts.user.userName}">
-                                        <p class="edit-delete">
+                                        <p class="edit-delete grey">
                                             <a class="grey" href="editPostForm?postId=${allPosts.postId}">edit</a> |
                                             <a class="grey" href="deletePost?postId=${allPosts.postId}" id="delete" data-confirm=" WARNING!!!!: Are you sure to delete this comment? CANNOT BE UNDONE!!!">delete</a> |
                                             
