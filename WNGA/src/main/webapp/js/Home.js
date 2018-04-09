@@ -8,28 +8,43 @@ $('document').ready(function () {
     console.log("testing");
     $('#header-desktop').load('jsp/HeaderDesktop.jsp');
     $('#footer').load('jsp/Footer.jsp');
- $('.comments-Section').hide();
+    $('.comments-Section, .backto-Top').hide();
 
-  
+    //look for link
+    $('p , pre').linkify({
+        target: '_blank' //open new window
+    });
 
-});
-  
-  
-    
-//look for link in plain text
-$('p , pre').linkify({
-    target: '_blank'
-});
-//    alert($(window).width());
 // loadd nav
-function headerReload() {
-    if ($(window).width() >= 1536) {
-        $('#header-desktop').load('jsp/HeaderDesktop.jsp');
+    function headerReload() {
+        if ($(window).width() >= 1536) {
+            $('#header-desktop').load('jsp/HeaderDesktop.jsp');
+        } else {
+            $('#header-mobile').load('jsp/Header.jsp');
+        }
+    }
+    $(window).on('load resize', headerReload);
+
+
+});
+
+//   alert($(window).width());
+//    
+//freeze post and news band  
+window.addEventListener('scroll', headerFreeze);
+var eL = document.getElementById('displayDate');
+var postSticky = eL.offsetTop;
+
+function headerFreeze() {
+    if (window.pageYOffset >= postSticky) {
+        $('#displayDate').addClass('headerFreeze');
+        $('.backto-Top').show();
     } else {
-        $('#header-mobile').load('jsp/Header.jsp');
+        $('.backto-Top').hide();
+        $('#displayDate').removeClass('headerFreeze');
     }
 }
-$(window).on('load resize', headerReload);
+
 
 //virify content will be deleted to all users
 var deleteLinks = document.querySelectorAll('#delete');
@@ -60,8 +75,8 @@ function confirmEnabled() {
         return true;
     else
         return false;
-
 }
+
 // verify content will be deleted from Database for admin ***
 function cleanUp()
 {
@@ -72,14 +87,39 @@ function cleanUp()
     else
         return false;
 }
-// toggle comments-section
+
+// toggle comments-section to see posted comments
 $('.show-Comments').click(function () {
-    $(this).closest('div').find('.comments-Section').toggle("blind");
-     var switchText = $(this);
-  switchText.text() === switchText.data("text-swap") 
-    ? switchText.text(switchText.data("text-original")) 
-    : switchText.text(switchText.data("text-swap"));
+    $(this).closest('div').find('.comments-Section').toggle();
+    var switchText = $(this);
+    switchText.text() === switchText.data("text-swap")
+            ? switchText.text(switchText.data("text-original"))
+            : switchText.text(switchText.data("text-swap"));
+});
+
+//back to top function
+$('.backto-Top').click(function () {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
 });
 
 
- 
+// doesn't work well with long post and comments
+//    $(function () {
+//        var elements = $(document), fadeElements = $('.pre-posts, .newsContents');
+//        elements.on('scroll', function () {
+//            var currentScrollPosition = elements.scrollTop();
+//
+//            fadeElements.each(function () {
+//                var thisEl = $(this), 
+//                elementOffsetTop = thisEl.offset().top  + 200;
+//                
+//                if (currentScrollPosition > elementOffsetTop)
+//                    thisEl.css('opacity',1 - (currentScrollPosition - elementOffsetTop) /1750);
+//                else 
+//                    thisEl.css('opacity',9 - (currentScrollPosition - elementOffsetTop) /400);
+//            });
+//        });
+//    });
+//
+//    

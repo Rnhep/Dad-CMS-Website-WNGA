@@ -1,3 +1,16 @@
+
+/*@font-face {
+  font-family: 'MyWebFont';
+  src: url('webfont.eot');  IE9 Compat Modes 
+  src: url('webfont.eot?#iefix') format('embedded-opentype'),  IE6-IE8 
+       url('webfont.woff2') format('woff2'),  Super Modern Browsers 
+       url('webfont.woff') format('woff'),  Pretty Modern Browsers 
+       url('webfont.ttf')  format('truetype'),  Safari, Android, iOS 
+       url('webfont.svg#svgFontName') format('svg');  Legacy iOS 
+}*/
+*{
+     font-family:Helvetica,Courier New, Myriad Pro Bold;
+}
 body
 {
     align-content: center;
@@ -6,6 +19,7 @@ body
     vertical-align: baseline;
     outline: 0;
     background: #edeeef;
+    font-family:Helvetica,Courier New, Myriad Pro Bold;
 }
 
 /*
@@ -14,6 +28,20 @@ body
 */
 @media (min-width: 2562px){
 
+    .headerFreeze{
+        position: fixed;
+        z-index: 1;
+        top: -53px;
+    }
+   
+    #displayDate > .backto-Top {
+        margin-top: -59px;
+        float: right;
+        font-size: 32px;
+        width: 230px;
+        color: #fff;
+    }
+    
     .user-info img { 
         width: 100%;
         max-width: 450px;
@@ -34,7 +62,8 @@ body
         width: auto;
         height:20px;
     }
-
+    
+    
     .home {
         margin-top: -20px;
     }
@@ -42,7 +71,7 @@ body
     .events {
         white-space:pre-line;
     }
-    
+
     .logo {
         background: url('../Images/WNGA-M.png')no-repeat white;
         min-height: 290px;
@@ -62,7 +91,7 @@ body
         height: 100px;
         opacity: 1;   
         background-size: contain;
-        border-bottom: 25px solid #fff;
+
     }
 
     #section-a{
@@ -74,7 +103,7 @@ body
         display:flex;
         margin-left: 42em;
         width: auto;
-        margin-top: 20px;
+        margin-top: 40px;
         padding: 2px;
     }
     /*
@@ -93,7 +122,7 @@ body
         max-width: 158px;
         font-size: 32px;
         font-weight: bold;
-        margin-left: 15px;
+        margin-left: 30px;
         padding: 5px;
         border-top: 4px solid #4286f4;
         border-left: 3px solid #4286f4;
@@ -145,10 +174,9 @@ body
 
     .postFormNewsPage {  
         width: 100%;
-        margin-top: -90px;
+        /*margin-top: 20em;*/
         max-width: 100%;
-        padding-bottom: 80px;
-        margin: 0 auto;
+        /*margin: 0 auto;*/
     }
 
     .news-Textarea {
@@ -158,7 +186,7 @@ body
         height: 250px;
         resize: none;
         overflow: auto;
-        font-size: 28px;
+        font-size: 24px;
         border: none;
         border-radius: 10px;
     }
@@ -167,6 +195,7 @@ body
         width: 100%;
         max-width: 100%;
         margin: 0 auto;
+        padding-top: 20px;
     }
 
     .newsContents {
@@ -174,7 +203,6 @@ body
         margin-left: 30px;
         width:auto;
         padding: 10px;
-
         height: auto;
         border-radius: 10px;
         font-size: 24px;
@@ -189,12 +217,6 @@ body
         border: 1px solid silver;
         background-color: #fff;
         border-radius: 10px;
-    }
-
-    .postForm {  
-        width: 100%;
-        margin-top: -90px;
-        padding-bottom: 80px;
     }
 
     .inner-postform{
@@ -271,12 +293,12 @@ body
 
     .pre-posts {
 
-        font-size: 18px;
+        font-size: 24px;
         padding: 10px;
         margin-top: 30px;
         height:auto;
         width: 100%;
-        max-width:  60em;
+        max-width:  45em;
         background-color: #fff;
         border-radius:10px;
         box-shadow:  1px 1px 2px #888888;
@@ -286,12 +308,12 @@ body
     .postContents {
         margin-top: 30px;
         margin-left: 30px;
-        width: 100%;
+        width:auto;
         padding: 10px;
-        max-width: 40em;
         height: auto;
         border-radius: 10px;
         font-size: 24px;
+      
     }
 
     .display-Comments{
@@ -326,6 +348,7 @@ body
         font-size: 28px;
         overflow: hidden;
         border: none;
+        border-radius: 20px;
     }
 
     .comments-Block{
@@ -351,18 +374,6 @@ body
 
     }
 
-    .latestPost {
-        padding-top: 20px;
-        padding-bottom: 40px;
-        border-top: 9px solid  #4286f4;
-        border-bottom: 9px solid #5393fc;
-        width: 50%;
-        margin-left: 25%;
-        max-width: 100%;
-        border-radius: 20px;
-        margin-bottom: 29px;
-    }
-
     span {
         font-size: 24px;
     }
@@ -385,24 +396,38 @@ body
         margin-top: -1em;
     }
 
-    #displayDate {    
-        margin-top: -60px;
-        padding: 5px;
-        background-color: #fff;
-        height: auto;
-
-    }
 
     #displayDate p {
         font-size: 42px;
         color: #000000;
     }
 
+    .latestPost {
+        margin: 0 auto;
+        padding-bottom: 28px;
+        border-top: 9px solid  #4286f4;
+        border-bottom: 9px solid #5393fc;
+        width:350px;
+        height: 250px;
+        border-radius: 20px;
+    }
+
+    .upComing-outterDiv{
+        width: 100%;
+        height: auto;
+        padding: 10px;
+       
+    }
+  
     #upComing,
     #latestPost {
+        margin: 0 auto;
         color: #4286f4;
         font-weight: bold;
+        width: auto;
+        font-size: 24px;
     }
+
 
     .img-container {
 
@@ -475,8 +500,6 @@ body
         width: 100%;
         max-width: 100%;
         height: auto;
-
-
     }
 
     .policy {
@@ -585,7 +608,6 @@ body
     .flex-flex div {
 
         padding: 10px;
-
     }
 
     .user-box {
@@ -619,7 +641,15 @@ body
         border-radius:10px;
         box-shadow: 5px 5px 5px #888888;
     }
+    
+      #displayDate {    
+        margin-top: 50px;
+        padding: 5px;
+        background-color: #fff;
+        height: auto;
 
+    }
+    
     .admin-note{
         text-align: center;
         color: blue;
@@ -707,7 +737,20 @@ body
 /*browswer res at 1681 to 2230*/
 @media (min-width: 1906px) and (max-width : 2561px){
 
-
+      .headerFreeze{
+        position: fixed;
+        z-index: 1;
+        top: 53px;
+    }
+   
+    #displayDate > .backto-Top {
+        margin-top: -45px;
+        float: right;
+        font-size: 18px;
+        width: 130px;
+        color: #fff;
+    }
+    
     .user-info img {   
         width: 100%;
         max-width: 250px;
@@ -768,9 +811,9 @@ body
     .flex-container {
         position: absolute;
         display:flex;
-        margin-left: 19em;
+        margin-left: 33em;
         width: auto;
-        margin-top: 29px;
+        margin-top: 59px;
         padding: 2px;
     }
 
@@ -885,14 +928,7 @@ body
         background-color: #fff;
         border-radius: 10px;
     }
-
-    .postForm {  
-
-        width: 100%;
-        margin-top: -90px;
-        padding-bottom: 80px;
-    }
-
+    
     .inner-postform{
         margin: 0 auto;
         width: 100%;
@@ -1062,26 +1098,33 @@ body
     }
 
     #displayDate p {
-        font-size: 16px;
+        font-size: 28px;
         color: #000000;
+    }
+
+    .latestPost {
+        margin: 0 auto;
+        padding-bottom: 28px;
+        border-top: 9px solid  #4286f4;
+        border-bottom: 9px solid #5393fc;
+        width:350px;
+        height: 250px;
+        border-radius: 20px;
+    }
+
+    .upComing-outterDiv{
+        width: 100%;
+        height: auto;
+        padding: 10px;
     }
 
     #upComing,
     #latestPost {
+        margin: 0 auto;
         color: #4286f4;
         font-weight: bold;
-    }
-
-    .latestPost {
-        padding-top: 20px;
-        padding-bottom: 40px;
-        border-top: 9px solid  #4286f4;
-        border-bottom: 9px solid #5393fc;
-        width: 50%;
-        margin-left: 25%;
-        max-width: 100%;
-        border-radius: 20px;
-        margin-bottom: 29px;
+        width: auto;
+        font-size: 24px;
     }
 
     .img-container {
@@ -1213,7 +1256,7 @@ body
         color: #000;
 
     }
-    
+
     .contactUs-Section {
         text-align: center;
         padding-top: 2em;
@@ -1287,7 +1330,7 @@ body
         font-size: 16px;
         background: #3385ff;
     }
-    
+
     .btns-flex {
         display: flex;
         width: auto;
@@ -1312,7 +1355,7 @@ body
     .admin-box p {
         font-size: 18px;
     }
-    
+
     .admin-content{
         margin-top: 10px;
         font-size: 18px;
@@ -1343,7 +1386,7 @@ body
         font-size: 18px;
 
     }
-    
+
     #registration{
         width: 100%;
         max-width: 100%;
@@ -1387,7 +1430,20 @@ body
 */
 @media (min-width: 1281px) and (max-width:1905px) {
 
-
+ .headerFreeze{
+        position: fixed;
+        z-index: 1;
+        top: 53px;
+    }
+   
+    #displayDate > .backto-Top {
+        margin-top: -25px;
+        float: right;
+        font-size: 12px;
+        width: 130px;
+        color: #fff;
+    }
+    
     .user-info img {   
         width: 100%;
         max-width: 250px;
@@ -1410,6 +1466,7 @@ body
         background: url('../Images/WNGA-M.png')no-repeat white;
         min-height: 135px;
         margin-top: -19px;
+        width: 100%;
         max-width: 100%;
         background-size: contain;
         border: 1px solid #fff;
@@ -1448,17 +1505,17 @@ body
     .flex-container {
         width:100%;
         display: flex;
-        margin-left: 330px;
-        margin-top: 48px;
+        margin-left: 18em;
+        margin-top: 68px;
         padding: 2px;
     }
 
     .flex-container > div >a {
         width: 100%;
         max-width: 158px;
-        font-size: 14px;
+        font-size: 12px;
         font-weight: bold;
-        margin-left: 10px;
+        margin-left: 40px;
         padding: 5px;
         border-top: 3px solid #4286f4;
         border-left: 3px solid #4286f4;
@@ -1612,7 +1669,7 @@ body
         background: #edeeef;
 
     }
-    
+
     .show-Comments{
         width: auto;
         margin-top: 10px;
@@ -1666,6 +1723,7 @@ body
     }
 
     .pre-posts{
+        padding-top: 10px;
         font-size: 22px;
         /*padding: 10px;*/
         margin-top: 30px;
@@ -1690,7 +1748,7 @@ body
 
 
     span {
-        font-size: 10px;
+        font-size: 16px;
     }
 
     .member-since{
@@ -1734,9 +1792,7 @@ body
         border-bottom: 9px solid #5393fc;
         width:350px;
         height: 250px;
-
         border-radius: 20px;
-
     }
 
     .img-container {
@@ -1765,7 +1821,7 @@ body
         margin-top: 35px;
         height: 490px; 
     }
-    
+
     .post-preview p {
         width: 100%;
         white-space: nowrap;  
@@ -2045,7 +2101,21 @@ body
 
 @media (min-width: 1025px) and (max-width: 1280px) {
 
-
+ .headerFreeze{
+        position: fixed;
+        z-index: 1;
+        top: 53px;
+    }
+   
+    #displayDate > .backto-Top {
+        margin-top: -30px;
+        float: right;
+        font-size: 10px;
+        width: 130px;
+        color: #fff;
+    }
+    
+    
     .user-info img { 
         width: 100%;
         max-width: 150px;
@@ -2095,7 +2165,7 @@ body
         width:100%;
         display: flex;
         margin-left: 0px;
-        margin-top: 60px;
+        margin-top: 66px;
         padding: 2px;
     }
 
@@ -2105,7 +2175,7 @@ body
         max-width: 158px;
         font-size: 10px;
         font-weight: bold;
-        margin-left: 40px;
+        margin-left: 50px;
         padding: 5px;
         border-top: 3px solid #4286f4;
         border-bottom: 3px solid #4286f4;
@@ -2169,18 +2239,9 @@ body
         text-overflow: ellipsis;
     }
 
-    .latestPost {
-        padding-top: 20px;
-        padding-bottom: 40px;
-        border-top: 9px solid  #4286f4;
-        border-bottom: 9px solid #5393fc;
-        width: 100%;
-        border-radius: 20px;
-        margin-bottom: 29px;
-    }
 
     .displayNews {
-        margin: 0 auto;
+        margin-top: 20px;
         width: 100%;
         max-width: 100%;
     }
@@ -2202,7 +2263,7 @@ body
         background-color: #fff;
         border-radius: 10px;
     }
-
+    
     #recent-post {
         font-weight: bold;
         color: #000;
@@ -2216,6 +2277,7 @@ body
     }
 
     .inner-postform{
+        
         margin: 0 auto;
         width: 100%;
         max-width: 27em;
@@ -2348,7 +2410,7 @@ body
     }
 
     span {
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .member-since{
@@ -2370,10 +2432,29 @@ body
         color: #000000;
     }
 
+    .latestPost {
+        margin: 0 auto;
+        padding-bottom: 28px;
+        border-top: 9px solid  #4286f4;
+        border-bottom: 9px solid #5393fc;
+        width:350px;
+        height: 250px;
+        border-radius: 20px;
+    }
+
+    .upComing-outterDiv{
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
     #upComing,
     #latestPost {
+        margin: 0 auto;
         color: #4286f4;
         font-weight: bold;
+        width: auto;
+        font-size: 24px;
     }
 
     .events {
@@ -2406,6 +2487,7 @@ body
         margin-top: 35px;
         height: 490px; 
     }
+    
     .post-preview p {
         width: 100%;
         white-space: nowrap;  
@@ -2601,8 +2683,8 @@ body
     }
 
     #user-img {
-        width: 60px;
-        height: 60px;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
     }
 
@@ -2647,7 +2729,7 @@ body
 
 
 @media (min-width: 768px) and (max-width: 1024px) {
-
+ 
 
     .logo {
         background: linear-gradient(to bottom, rgba(0,0,0,0.1) 6%,rgba(188,188,188,0.0) 100%), url('../Images/WNGA-M.png')no-repeat center white;
@@ -2665,7 +2747,11 @@ body
     .logo-hide {
         display: none;
     }
-
+    
+     
+    #displayDate  {
+       display: none;
+    }
     #header-desktop {
         display: none;
     }
@@ -3297,7 +3383,9 @@ body
         opacity: 1; 
         background-size: contain;
     }
-
+    #displayDate{
+        display: none;
+    }
     #header-mobile {
         position: relative;
         margin-top: -20px;
@@ -3357,7 +3445,7 @@ body
     .profile a {
         color: #fff;
         text-decoration: none;
-        font-size: 1px;
+        font-size: 12px;
         width: 100%;
         display: block
     }
@@ -3895,6 +3983,9 @@ body
         width: 100%;
         opacity: 1; 
         background-size: contain;
+    }
+    #displayDate{
+        display: none;
     }
 
     #header-mobile {
@@ -4476,6 +4567,9 @@ body
         position: relative;
         margin-top: -20px;
     }
+    #displayDate{
+        display: none;
+    }
     .logo-hide {
         display: none;
     }
@@ -4581,8 +4675,8 @@ body
     }
 
     #user-img {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
     }
 
@@ -4642,7 +4736,8 @@ body
     }
 
     .display-post{
-        width: 95.5%;
+        width: 100%;
+        padding: 0;
 
     }
 
@@ -4809,6 +4904,8 @@ body
 
     span{
         display: block;
+        font-weight: bold;
+        font-size: 10px;
     }
 
     #latestPostContentHolding {
@@ -4862,6 +4959,7 @@ body
         height: auto;
         width: 100%;
         padding: 0;
+        background-color: #edeeef;
     }
 
     .comment-Form{
@@ -4908,9 +5006,10 @@ body
         margin-top: 20px;
         height: auto;
         width: 100%;
-        max-width: 100%;
+        max-width: 95.5%;
         border: 1px solid silver;
         background: #fff;
+        padding: 5px;
     }
 
     .postContents{

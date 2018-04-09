@@ -9,6 +9,7 @@
     Created on : Jan 13, 2018, 4:44:54 PM
     Author     : ritheenhep
 --%>
+
 <%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags"%>
@@ -34,8 +35,7 @@
                     </div>
                     <div class="col-md-12" id="header-desktop"></div>
                     <div id="up"></div> 
-
-
+                    
                     <div class="container-fluid">
                         <div class="container">
                             <h3>AN ERROR HAS OCCURRED!!!!....PLEASE CHECK YOUR UPDATE</h3>

@@ -13,6 +13,7 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page language="java" %>
 <?xml version="1.0" encoding="UTF-8"?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fi" >
        <head>
@@ -23,31 +24,13 @@
         <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet"/>
     </head>
     <body>
-        <div id="header-mobile"></div>
-        <div class="logo logo-hide col-md-12">
-        </div>
-        <div class="col-md-12" id="header-desktop"></div>
-
-
-        <!--Add post form for user/admin role-->
-
-        <sec:authorize access="hasRole('ROLE_ADMIN')">
-            <div class="container postFormNewsPage col-md-12">
-                 <div class="inner-postform">
-                <sf:form  class="form-horizontal" 
-                          role="form"  method="POST" 
-                          action="createNewsFeed">
-                        <div ><c:out value="${message}"/></div>
-                        <textarea class="news-Textarea" type="text" name="content" placeholder="Comment required" required>${commentOut}</textarea> 
-                        <input type="hidden" name="userName" value="${pageContext.request.userPrincipal.name}"/>
-                       <hr></hr>
-                        <input type="submit" id="post-in-btn" class="form-control" value="Submit Post"/>
-
-                </sf:form> 
-                 </div>
+        <div id="headerFreeze">
+            <div id="header-mobile"></div>
+            <div class="logo home logo-hide col-md-12">
             </div>
-        </sec:authorize>
-
+            <div class="col-md-9" id="header-desktop"></div>
+        </div>
+       
         <!------------------------------------------------------------------------------------------------------------------------------>                         
         <div class="to-center col-md-12" id="displayDate">
             <p class="today"> 
@@ -55,12 +38,26 @@
                     out.print("Today News");
                 %>
             </p>
+             <button class="btn-info backto-Top" id="backto-Top"> back to top</button>
         </div>
 
         <div class="container displayNews col-md-12">
+             <sec:authorize access="hasRole('ROLE_ADMIN')">
+                <div class="inner-postform">
+                    <sf:form  class="form-horizontal" 
+                              role="form"  method="POST" 
+                              action="createNewsFeed">
+                        <div ><c:out value="${message}"/></div>
+                        <textarea class="news-Textarea" type="text" name="content" placeholder="Comment required" required>${commentOut}</textarea> 
+                        <input type="hidden" name="userName" value="${pageContext.request.userPrincipal.name}"/>
+                        <hr></hr>
+                        <input type="submit" id="post-in-btn" class="form-control" value="Submit Post"/>
+
+                    </sf:form> 
+                </div>
+        </sec:authorize>
             <c:forEach var="news" items="${allNews}">
                 <div class="container pre-posts">
-
                     <p>
                         <span class="grey">
                             <c:out value="${admin}"/>
@@ -68,12 +65,15 @@
                             <fmt:formatDate value="${newsDate}" pattern="E MMM-dd-yyyy"/>
                         </span>
                     </p>
+                        
                     <div class="container newsContents">
                         <p>
                             <c:out value="${news.content}"/>
                         </p>
                     </div>
-                        <hr></hr>
+                        
+                    <hr></hr>
+                    
                     <sec:authorize access="hasRole('ROLE_ADMIN')">
                         <p class="edit-delete grey">
                             | <a class="grey" href="editNewsForm?newsFeedId=${news.newsFeedId}">edit</a> 
@@ -83,8 +83,8 @@
                 </div>
             </c:forEach>
         </div>
-
-
+            
+            
         <hr class="col-md-10" id="newsFooter"></hr>
         <footer class="col-md-12" id="footer"></footer>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

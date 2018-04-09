@@ -26,12 +26,31 @@
             <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
                 </head>
                 <body>
-                    <div id="header-mobile"></div>
-                    <div class="logo logo-hide col-md-12">
+                    <div id="headerFreeze">
+                        <div id="header-mobile"></div>
+                        <div class="logo home logo-hide col-md-12">
+                        </div>
+                        <div class="col-md-9" id="header-desktop"></div>
                     </div>
-                    <div class="col-md-10" id="header-desktop"></div>
-                    <sec:authorize access="isAuthenticated()">
-                        <div class="container col-md-12 postForm ">
+                    
+                    <div class="to-center col-md-12" id="displayDate">
+                                <p class="today">
+                                    <%
+//                                        LocalDateTime date = LocalDateTime.now();
+//                                        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("E MMM-dd-yyyy HH:mma  ");
+//                                        String dates = formatter.format(date);
+//                                        out.print("Today is " + dates);
+                                            out.print("Most recent posts");
+                                    %>
+                                </p>
+                                    <button class="btn-info backto-Top"> back to top</button>
+                            </div>
+
+
+
+                    <div class="container display-post col-md-10">
+                         <div>
+                        <sec:authorize access="isAuthenticated()">
                             <div class="inner-postform">
                                 <sf:form role="form"  method="POST" class="form-horizontal"
                                          action="creatNewPost">
@@ -40,34 +59,17 @@
                                         <input id="post-form" type="text" class="col-md-6 " name="photo" placeholder="Link to a photo only" value="${fn:escapeXml(param.photo)}"/>
                                         <input id="post-form" type="text" class="col-md-6 " name="photoTwo" placeholder="Link to a photo only"  />
                                     </div>
-                                        <hr></hr>
+                                    <hr></hr>
                                     <textarea class="post-textarea" type="text" name="comment"   placeholder="Comment required" value="${fn:escapeXml(comment)}" required>${commentOut}</textarea> 
                                     <input type="hidden" name="userName" value="${pageContext.request.userPrincipal.name}"/>
                                     <hr></hr>
-                                    <div class="f">
+                                    <div class="">
                                         <input type="submit" id="post-in-btn" class="form-control" value="Submit Post"/>
                                     </div>
                                 </sf:form> 
                             </div>
-                        </div>
-                    </sec:authorize>
-
-                    <!------------------------------------------------------------------------------------------------------------------------------>                         
-
-
-                    <div class="to-center col-md-12" id="displayDate">
-                        <p class="today">
-                            <%
-                                LocalDateTime date = LocalDateTime.now();
-                                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("E MMM-dd-yyyy HH:mma  ");
-                                String dates = formatter.format(date);
-                                out.print("Today is " + dates);
-                            %>
-                        </p>
+                        </sec:authorize>
                     </div>
-
-
-                    <div class="container display-post col-md-10">
                         <c:forEach var="allPosts" items="${displayAllPost}">
                             <div class="container pre-posts">
                                 <p>
@@ -87,7 +89,7 @@
                                         <c:out value="${allPosts.content}"/>
                                     </p>
                                 </div>
-
+                                    
                                 <div class="container img-center">
                                     <c:if test="${!empty allPosts.imagePath}">
                                         <a href="${allPosts.imagePath}">
@@ -130,33 +132,34 @@
                                                 </c:if>
                                             </c:forEach>
                                         </div>
-                                         <sec:authorize access="isAuthenticated()">
-                                        <div class="commentForm-Section">
-                                            <sf:form role="form" action="createComment" method="POST" >
-                                                <textarea class="comment-Form" type="text" name="comment" placeholder="Comment required" required></textarea> 
-                                                <input type="hidden" name="userName" value="${pageContext.request.userPrincipal.name}"/>
-                                                <input type="hidden" name="postId" value="${allPosts.postId}"/>
-                                                <div class="form-group ">
-                                                    <input type="submit" id="post-in-btn" class="form-control" value="Submit Comment"/>
-                                                </div>
-                                            </sf:form>
-                                        </div>
-                                         </sec:authorize>
+                                        
+                                        <sec:authorize access="isAuthenticated()">
+                                            <div class="commentForm-Section">
+                                                <sf:form role="form" action="createComment" method="POST" >
+                                                    <textarea class="comment-Form" type="text" name="comment" placeholder="Comment required" required></textarea> 
+                                                    <input type="hidden" name="userName" value="${pageContext.request.userPrincipal.name}"/>
+                                                    <input type="hidden" name="postId" value="${allPosts.postId}"/>
+                                                    <div class="form-group ">
+                                                        <input type="submit" id="post-in-btn" class="form-control" value="Submit Comment"/>
+                                                    </div>
+                                                </sf:form>
+                                            </div>
+                                        </sec:authorize>
                                     </div>
 
                                     <c:if test="${pageContext.request.userPrincipal.name == allPosts.user.userName}">
                                         <p class="edit-delete grey">
                                             <a class="grey" href="editPostForm?postId=${allPosts.postId}">edit</a> |
                                             <a class="grey" href="deletePost?postId=${allPosts.postId}" id="delete" data-confirm=" WARNING!!!!: Are you sure to delete this comment? CANNOT BE UNDONE!!!">delete</a> |
-                                            
+
                                         </p>
                                     </c:if>
                                 </div>
                             </div> 
                         </c:forEach>
-
+                         
                     </div>
-
+                               
                     <hr class="col-md-10 footerLine"></hr>
                     <footer class="col-md-12" id="footer"></footer>
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
