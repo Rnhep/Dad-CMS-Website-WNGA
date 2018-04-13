@@ -28,18 +28,51 @@ body
 */
 @media (min-width: 2562px){
 
+    .user-info input { width: 220px;
+    }
+
+    .user-info p {font-size: 22px;
+    }
+
     .headerFreeze{
         position: fixed;
         z-index: 1;
         top: -53px;
     }
-   
+    
     #displayDate > .backto-Top {
         margin-top: -59px;
         float: right;
         font-size: 32px;
         width: 230px;
         color: #fff;
+        background-color: #3385ff;
+    }
+    
+    #userImg-inNav{
+        width: 100%;
+        float: right;
+        top:-8em;
+        z-index: 10;
+        position: relative;
+        background-color: #3385ff;
+        padding: 5px;
+    }
+    
+    #userImg-inNav > p {
+        float: right;
+        margin-right: 40px;
+        margin-top: 23px;
+        color: #fff;
+        font-size: 30px;
+    }
+    
+    #userImg-inNav > img{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        float: right;
+        margin-right: 10em;
     }
     
     .user-info img { 
@@ -47,22 +80,50 @@ body
         max-width: 450px;
         height: auto;
     }
-
-    .user-info input { width: 220px;
-    }
-
-    .user-info p {font-size: 22px;
-    }
-
-    .username {
-        float: right;
-        clear: both;
-        margin-left: 30px;
-        font-size: 32px;
+    
+     .username {
+       font-size: 34px;
+       margin-top: 28%;
         width: auto;
-        height:20px;
+        height:10px;
     }
     
+    .profileBoxFreeze{
+        position: fixed;
+        z-index: 1;
+        top: 4.4em;
+    }
+    
+    .userprofile-photo > img{
+        border-radius: 50%;
+        margin-top: 8%;
+        width: 210px;
+        height: 210px;   
+    }
+    
+    .userprofile-photo{
+        background-color: #3385ff;
+        height: 100%;
+        max-height: 150px;
+    }
+   
+    #userprofile-Box{
+        text-align: center;
+        margin-top: 5px;
+        margin-left: 18%;
+        padding: 10px;
+        height:330px;
+        width: 10%;
+        max-width:  25em;
+        background-color: #fff;
+        border-radius:10px;
+        box-shadow: 1px 1px 2px #888888;
+    }
+    
+    .update-profile-btn{
+        margin-top: 10px;
+        height: 60px;
+    }
     
     .home {
         margin-top: -20px;
@@ -82,6 +143,7 @@ body
     }
 
     #header-desktop {
+        position: relative;
         top: -146px;
         overflow: hidden;
         margin-left: 25%;
@@ -99,24 +161,22 @@ body
     }
 
     .flex-container {
-        position: absolute;
+        position:relative;
         display:flex;
         margin-left: 42em;
         width: auto;
-        margin-top: 40px;
+        margin-top: 35px;
         padding: 2px;
     }
-    /*
-        .flex-signIn {
-            width:auto;
-            display: flex;
-            margin-left: 500px;
-            margin-top: -80px;
-            border:1px solid black;
-        }*/
-
-    .flex-container > div >a
-    {   
+ 
+    .userprofile-headerPhoto > img{
+        width: 10px;
+        height: 10px;
+        margin-top: -100px;
+    }
+    
+    .flex-container > div >a { 
+        position: relative;
         background-color: menu;
         width: 100%;
         max-width: 158px;
@@ -221,7 +281,8 @@ body
 
     .inner-postform{
         padding: 5px;
-        margin: 0 auto;
+        margin-top: -300px;
+        margin-left: 33.7%;
         width: 60em;
         height: auto;
         background-color: #fff;
@@ -340,37 +401,40 @@ body
 
     .comment-Form
     {
-        padding: 30px;
+        padding: 20px;
         resize: none;
         width: 100%;
+        max-width: 95%;
         max-height: 100%;
         height: 90px;
         font-size: 28px;
         overflow: hidden;
         border: none;
         border-radius: 20px;
+        margin-left:20px;
+        border: 0.1em solid #dcdcdc;
     }
 
     .comments-Block{
-        padding-top: 10px;
+        padding-top: 30px;
         margin-top: 30px;
+        margin-left: 20px;
         height:auto;
         width: 100%;
-        background-color: #fff;
         border-radius:10px;
-        border: 1px solid gainsboro ;
+         
     }
 
     .commentForm-Section{
-        padding: 20px;
-        margin-top: 30px;
+       padding-top: 10px;
         background: #edeeef;
 
     }
 
     .comments-Text{
-        margin-left: 50px;
+        margin-left: 90px;
         font-size: 22px;
+        font-weight: bold;
 
     }
 
@@ -379,9 +443,9 @@ body
     }
 
     .show-Comments{
-
         margin-top: 10px;
-        margin-left: 80px;
+        margin-right: 35px;
+        float: right;
         font-size: 26px;
         color: #adadad;
     }
@@ -609,6 +673,8 @@ body
 
         padding: 10px;
     }
+    
+    
 
     .user-box {
 
@@ -737,21 +803,7 @@ body
 /*browswer res at 1681 to 2230*/
 @media (min-width: 1906px) and (max-width : 2561px){
 
-      .headerFreeze{
-        position: fixed;
-        z-index: 1;
-        top: 53px;
-    }
-   
-    #displayDate > .backto-Top {
-        margin-top: -45px;
-        float: right;
-        font-size: 18px;
-        width: 130px;
-        color: #fff;
-    }
-    
-    .user-info img {   
+     .user-info img {   
         width: 100%;
         max-width: 250px;
         height: auto;
@@ -765,16 +817,96 @@ body
         font-size: 22px;
     }
 
-    .username {
-
-        float: right;
-        clear: both;
-        margin-left: 30px;
-        font-size: 18px;
-        width: auto;
-        height:10px;
+    .headerFreeze{
+        position: fixed;
+        z-index: 1;
+        top: 62px;
     }
-
+   
+    #displayDate > .backto-Top {
+        margin-top: -45px;
+        float: right;
+        font-size: 18px;
+        width: 130px;
+        color: #fff;
+    }
+    
+     #userImg-inNav{
+        width: 100%;
+        float: right;
+        top:-10.2em;
+        z-index: 10;
+        position: relative;
+        background-color: #3385ff;
+        padding: 5px;
+    }
+    
+    #userImg-inNav > p {
+        float: right;
+        margin-right: 40px;
+        margin-top: 8px;
+        color: #fff;
+        font-size: 22px;
+    }
+    
+    #userImg-inNav > img{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        float: right;
+        margin-right: 10em;
+    }
+    
+    .user-info img { 
+        width: 100%;
+        max-width: 450px;
+        height: auto;
+    }
+    
+     .username {
+       font-size: 18px;
+       margin-top: 18%;
+       width: auto;
+       height:10px;
+    }
+    
+    .profileBoxFreeze{
+        position: fixed;
+        z-index: 1;
+        top: 4.4em;
+    }
+    
+    .userprofile-photo > img{
+        border-radius: 50%;
+        margin-top: 8%;
+        width: 150px;
+        height: 150px;   
+    }
+    
+    .userprofile-photo{
+        background-color: #3385ff;
+        height: 100%;
+        max-height: 130px;
+    }
+   
+    #userprofile-Box{
+        text-align: center;
+        margin-top: 5px;
+        margin-left: 18%;
+        padding: 10px;
+        height: 230px;
+        width: 10%;
+        max-width:  25em;
+        background-color: #fff;
+        border-radius:10px;
+        box-shadow: 1px 1px 2px #888888;
+    }
+    
+    .update-profile-btn{
+        margin-top: 10px;
+        height: 60px;
+    }
+   
     .home  {
         margin-top: -20px;
     }
@@ -915,7 +1047,7 @@ body
         max-width: 100%;
         border-radius: 10px;
         padding: 20px;
-        font-size: 14px;
+        font-size: 18px;
     }
 
     .post-preview
@@ -930,9 +1062,10 @@ body
     }
     
     .inner-postform{
-        margin: 0 auto;
+         margin-top: -200px;
+        margin-left: 35%;
         width: 100%;
-        max-width: 51em;
+        max-width: 47em;
         background: #fff;
         border-radius: 10px;
         padding: 5px;
@@ -974,13 +1107,14 @@ body
         width: 100%;
         height:auto;
     }
+    
     .pre-posts{
-        font-size: 18px;
-        padding: 10px;
+        
+        padding: 5px;
         margin-top: 30px;
         height: auto;
         width: 100%;
-        max-width: 39.8em;
+        max-width: 46.8em;
         background-color: #fff;
         border-radius:10px;
         box-shadow:  1px 1px 1px #888888;
@@ -988,7 +1122,6 @@ body
 
     .postContents {
         margin-top: 30px;
-        margin-left: 30px;
         width:auto;
         padding: 10px;
         height: auto;
@@ -1014,7 +1147,6 @@ body
     }
 
     .commentCount{
-
         margin-top: 10px;
         margin-left: 80px;
         font-size: 18px;
@@ -1059,21 +1191,17 @@ body
         overflow: hidden;
         border-radius: 10px;
         border: none;
+        border: 1px solid #dcdcdc;
     }
-
-    .comments-Block{
-        padding-top: 10px;
-        margin-top: 30px;
-        height:auto;
-        width: 100%;
-        background-color: #fff;
-        border-radius:10px;
-        border: 1px solid gainsboro ;
-    }
-
+    
     .comments-Text{
-        margin-left: 30px
-    } 
+        margin-left: 60px;
+        font-size: 18px;
+        font-weight: bold;
+        padding-right: 10px;
+
+    }
+
 
     .commentForm-Section{
         padding: 20px;
@@ -1084,9 +1212,12 @@ body
     .show-Comments{
 
         margin-top: 10px;
-        margin-left: 80px;
+        margin-left: 25em;
         font-size: 16px;
         color: #adadad;
+    }
+    .comments-Block{
+        margin-left: 10px;
     }
 
     #displayDate {    
@@ -1457,6 +1588,12 @@ body
     .user-info {
         font-size: 22px;
     }
+    
+    .update-profile-btn{
+        margin-top: 10px;
+        font-size: 16px;
+    }
+    
 
     .home  {
         margin-top: -20px;
@@ -1630,6 +1767,7 @@ body
 
     .display-Comments::-webkit-scrollbar {
         display: none;
+        
     }
 
     .comments-Section{
@@ -1649,22 +1787,23 @@ body
         border: none;
     }
 
-    .comments-Block{
-        padding-top: 10px;
+     .commentForm-Section{
         margin-top: 30px;
-        height:auto;
+        background: #edeeef;
         width: 100%;
-        background-color: #fff;
-        border-radius:10px;
+        padding: 0;
     }
 
     .comments-Text{
-        font-size: 14px
-
+        margin-left: 60px;
+        font-size: 12px;
+        font-weight: bold;
+        width: 100%;
     }
 
+
     .commentForm-Section{
-        padding: 20px;
+        /*padding: 20px;*/
         margin-top: 30px;
         background: #edeeef;
 
@@ -1724,21 +1863,19 @@ body
 
     .pre-posts{
         padding-top: 10px;
-        font-size: 22px;
-        /*padding: 10px;*/
+        padding: 5px;
         margin-top: 30px;
         height: auto;
         width: 100%;
-        max-width: 24.2em;
+        max-width: 38.2em;
         background-color: #fff;
         border-radius:10px;
         box-shadow:  1px 1px 1px #888888;
     }
     .postContents {
         width: 100%;
-        padding: 10px;
         height: auto;
-        font-size: 16px;
+        font-size: 12px;
     }
 
     .commentCount{
@@ -1748,7 +1885,11 @@ body
 
 
     span {
-        font-size: 16px;
+        font-size: 12px;
+    }
+    
+    .comments-Block{
+        margin-left: 20px;
     }
 
     .member-since{
@@ -2277,7 +2418,6 @@ body
     }
 
     .inner-postform{
-        
         margin: 0 auto;
         width: 100%;
         max-width: 27em;
@@ -2315,11 +2455,11 @@ body
         height:auto;
     }
     .pre-posts{
-        padding: 10px;
+        padding: 5px;
         margin-top: 30px;
         height: auto;
         width: 100%;
-        max-width: 28em;
+        max-width: 26em;
         background-color: #fff;
         border-radius:10px;
         box-shadow:  1px 2px 2px #888888;
@@ -2329,12 +2469,15 @@ body
         margin-top: 20px;
         margin: 0 auto;
         width: auto;
-        padding: 10px;
+        /*padding: 5px;*/
         max-width: 650px;
         height: auto;
         border-radius: 10px;
     }
 
+    .comments-Block{
+        margin-left: 10px;
+    }
     .commentCount{
         color: #adadad;
         margin-left: 30px;
@@ -2342,7 +2485,7 @@ body
     }
 
     .postContents{
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .display-Comments{
@@ -2352,7 +2495,7 @@ body
         width: 100%;
         height: 650px;
         background-color:#edeeef;
-        font-size: 18px;
+        font-size: 12px;
         overflow: hidden;
         overflow-x: hidden;
         overflow-y: scroll;
@@ -2365,11 +2508,12 @@ body
     .comments-Section{
         height: auto;
         width: 100%;
+        padding: 0;
     }
 
     .comment-Form {
         margin-top: 20px;
-        padding: 10px;
+        /*padding: 10px;*/
         resize: none;
         width: 100%;
         max-height: 100%;
@@ -2379,27 +2523,22 @@ body
         border-radius: 5px;
         border: none;
     }
-
-    .comments-Block {
-        font-size: 10px;
-        padding-top: 10px;
-        padding-left:10px;
-        margin-top: 10px;
-        height:auto;
+    .comments-Block{
         width: 100%;
-        background-color: #fff;
-        border-radius:10px;
-        border: 1px solid gainsboro ;
     }
 
-    .comments-Text {
-        margin-left: 30px
-    }
-
-    .commentForm-Section {
+     .commentForm-Section{
+        /*padding: 0px;*/
         margin-top: 30px;
         background: #edeeef;
-        height: auto;
+    }
+
+    .comments-Text{
+        margin-left: 70px;
+        font-size: 12px;
+        font-weight: bold;
+        padding-right: 10px;
+
     }
 
     .show-Comments {
@@ -3095,7 +3234,7 @@ body
         width: 100%;
         height: 650px;
         background-color:#edeeef;
-        font-size: 18px;
+        font-size: 14px;
         overflow: hidden;
         overflow-x: hidden;
         overflow-y: scroll;
@@ -3177,6 +3316,7 @@ body
         max-width: 100%;
         border: 1px solid silver;
         background: #fff;
+        padding: 0;
 
     }
 

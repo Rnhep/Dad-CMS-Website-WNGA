@@ -32,48 +32,63 @@
                         </div>
                         <div class="col-md-9" id="header-desktop"></div>
                     </div>
-                    
+
                     <div class="to-center col-md-12" id="displayDate">
-                                <p class="today">
-                                    <%
+                        <p class="today">
+                            <%
 //                                        LocalDateTime date = LocalDateTime.now();
 //                                        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("E MMM-dd-yyyy HH:mma  ");
 //                                        String dates = formatter.format(date);
 //                                        out.print("Today is " + dates);
-                                            out.print("Most recent posts");
-                                    %>
-                                </p>
-                                    <button class="btn-info backto-Top"> back to top</button>
-                            </div>
-
-
-
-                    <div class="container display-post col-md-10">
-                         <div>
-                        <sec:authorize access="isAuthenticated()">
-                            <div class="inner-postform">
-                                <sf:form role="form"  method="POST" class="form-horizontal"
-                                         action="creatNewPost">
-                                    <div ><c:out value="${message}"/></div>
-                                    <div class="row photo-link" >
-                                        <input id="post-form" type="text" class="col-md-6 " name="photo" placeholder="Link to a photo only" value="${fn:escapeXml(param.photo)}"/>
-                                        <input id="post-form" type="text" class="col-md-6 " name="photoTwo" placeholder="Link to a photo only"  />
-                                    </div>
-                                    <hr></hr>
-                                    <textarea class="post-textarea" type="text" name="comment"   placeholder="Comment required" value="${fn:escapeXml(comment)}" required>${commentOut}</textarea> 
-                                    <input type="hidden" name="userName" value="${pageContext.request.userPrincipal.name}"/>
-                                    <hr></hr>
-                                    <div class="">
-                                        <input type="submit" id="post-in-btn" class="form-control" value="Submit Post"/>
-                                    </div>
-                                </sf:form> 
-                            </div>
-                        </sec:authorize>
+                                out.print("Most recent posts");
+                            %>
+                        </p>
+                        <button class="backto-Top"> back to top</button>
                     </div>
+                    <c:if test="${ pageContext.request.userPrincipal.name != null}">
+                        <div class="col-md-12" id="userprofile-Box"> 
+                            <c:if test="${!empty pageContext.request.userPrincipal.name}">
+                                <div class="userprofile-photo">
+                                    <c:forEach var="user" items="${allUsers}">
+                                        <c:if test="${pageContext.request.userPrincipal.name == user.userName}">
+                                            <img src="${user.photo}"/>
+                                        </c:if>
+                                    </c:forEach>
+                                </div>
+                                <p class="username"> 
+                                    ${pageContext.request.userPrincipal.name} | 
+                                    <a href="userProfile?userName=${pageContext.request.userPrincipal.name}">Profile</a>
+                                </p>
+                            </c:if>
+                        </div> 
+                    </c:if>    
+                    <div class="container display-post col-md-10">
+
+                        <div>
+                            <sec:authorize access="isAuthenticated()">
+                                <div class="inner-postform">
+                                    <sf:form role="form"  method="POST" class="form-horizontal"
+                                             action="creatNewPost">
+                                        <div ><c:out value="${message}"/></div>
+                                        <div class="row photo-link" >
+                                            <input id="post-form" type="text" class="col-md-6 " name="photo" placeholder="Link to a photo only" value="${fn:escapeXml(param.photo)}"/>
+                                            <input id="post-form" type="text" class="col-md-6 " name="photoTwo" placeholder="Link to a photo only"  />
+                                        </div>
+                                        <hr></hr>
+                                        <textarea class="post-textarea" type="text" name="comment"   placeholder="Comment required" value="${fn:escapeXml(comment)}" required>${commentOut}</textarea> 
+                                        <input type="hidden" name="userName" value="${pageContext.request.userPrincipal.name}"/>
+                                        <hr></hr>
+                                        <div class="">
+                                            <input type="submit" id="post-in-btn" class="form-control" value="Submit Post"/>
+                                        </div>
+                                    </sf:form> 
+                                </div>
+                            </sec:authorize>
+                        </div>
                         <c:forEach var="allPosts" items="${displayAllPost}">
                             <div class="container pre-posts">
                                 <p>
-                                    <span class="grey">
+                                    <span class="">
                                         <c:if test="${!empty allPosts.user.photo}">
                                             <img  id="user-img" 
                                                   src="${allPosts.user.photo}"/>
@@ -89,7 +104,7 @@
                                         <c:out value="${allPosts.content}"/>
                                     </p>
                                 </div>
-                                    
+
                                 <div class="container img-center">
                                     <c:if test="${!empty allPosts.imagePath}">
                                         <a href="${allPosts.imagePath}">
@@ -102,12 +117,10 @@
                                         </c:if>
                                     </c:if>                 
                                 </div>
-
                                 <hr class="comment-line"></hr>
-
                                 <div>
-                                    <p class="show-Comments" data-text-swap="Hide" data-text-original="Show Comments" id="id">  
-                                        Show Comments 
+                                    <p class="show-Comments" data-text-swap="Hide" data-text-original="Comments" id="id">  
+                                        Comments 
                                     </p>
                                     <div class="comments-Section">
                                         <div class="display-Comments">
@@ -115,7 +128,7 @@
                                                 <c:if test="${allComments.newPost.postId == allPosts.postId}">
                                                     <div class="comments-Block">
                                                         <p>
-                                                            <span class="grey">
+                                                            <span>
                                                                 <c:if test="${!empty allComments.user.photo}">
                                                                     <img  id="user-img" 
                                                                           src="${allComments.user.photo}"/>
@@ -132,21 +145,19 @@
                                                 </c:if>
                                             </c:forEach>
                                         </div>
-                                        
-                                        <sec:authorize access="isAuthenticated()">
-                                            <div class="commentForm-Section">
-                                                <sf:form role="form" action="createComment" method="POST" >
-                                                    <textarea class="comment-Form" type="text" name="comment" placeholder="Comment required" required></textarea> 
-                                                    <input type="hidden" name="userName" value="${pageContext.request.userPrincipal.name}"/>
-                                                    <input type="hidden" name="postId" value="${allPosts.postId}"/>
-                                                    <div class="form-group ">
-                                                        <input type="submit" id="post-in-btn" class="form-control" value="Submit Comment"/>
-                                                    </div>
-                                                </sf:form>
-                                            </div>
-                                        </sec:authorize>
                                     </div>
-
+                                    <sec:authorize access="isAuthenticated()">
+                                        <div class="commentForm-Sectio">
+                                            <sf:form role="form" action="createComment" method="POST" >
+                                                <textarea class="comment-Form" type="text" name="comment" placeholder="Whats on your mind" required></textarea> 
+                                                <input type="hidden" name="userName" value="${pageContext.request.userPrincipal.name}"/>
+                                                <input type="hidden" name="postId" value="${allPosts.postId}"/>
+                                                <div class="form-group ">
+                                                    <input type="submit" id="post-in-btn" class="form-control" value="Submit Comment"/>
+                                                </div>
+                                            </sf:form>
+                                        </div>
+                                    </sec:authorize>
                                     <c:if test="${pageContext.request.userPrincipal.name == allPosts.user.userName}">
                                         <p class="edit-delete grey">
                                             <a class="grey" href="editPostForm?postId=${allPosts.postId}">edit</a> |
@@ -157,9 +168,9 @@
                                 </div>
                             </div> 
                         </c:forEach>
-                         
+
                     </div>
-                               
+
                     <hr class="col-md-10 footerLine"></hr>
                     <footer class="col-md-12" id="footer"></footer>
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

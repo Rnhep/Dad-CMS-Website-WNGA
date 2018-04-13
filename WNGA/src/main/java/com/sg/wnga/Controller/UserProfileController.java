@@ -38,6 +38,12 @@ public class UserProfileController {
 
     @RequestMapping(value = "/userProfile", method = RequestMethod.GET)
     public String userProfile(HttpServletRequest rq, Model model) {
+        // Get user name from the principal
+        String logInUserName = rq.getParameter("userName");
+        User currentLogInUser = userDao.getUserByUserName(logInUserName);
+        model.addAttribute("currentLogInUser", currentLogInUser);
+        return "UserProfile";
+
         // Found a better to get user object without having to iterate through list.
         //   int userId = 0;
         //   List<User> allUsers = userDao.getAllUsers();
@@ -50,11 +56,6 @@ public class UserProfileController {
 //            }
 //            
 //        }
-        // Get user name from the principal
-        String logInUserName = rq.getParameter("userName");
-        User currentLogInUser = userDao.getUserByUserName(logInUserName);
-        model.addAttribute("currentLogInUser", currentLogInUser);
-        return "UserProfile";
     }
 
     //custom error endopint

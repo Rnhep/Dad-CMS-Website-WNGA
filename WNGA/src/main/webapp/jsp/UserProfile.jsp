@@ -35,7 +35,7 @@
 
                         <img src="${currentLogInUser.photo}"/>
                         <p><a href="updateProfileForm?userId=${currentLogInUser.userId}">
-                          <input  type="button" class="form-control"  value="Update Profile"/></a></p>
+                          <input  type="button" class="update-profile-btn"  value="Update Profile"/></a></p>
                         <hr></hr>
                         <p> User Name: ${currentLogInUser.userName}</p>
                         <hr></hr>
@@ -48,7 +48,6 @@
                         <p>   Last Name: ${currentLogInUser.lastName} </p>
                         <hr></hr>
                         <p>Email:  ${currentLogInUser.email}</p>
-
                         </div>
                     </div>
 

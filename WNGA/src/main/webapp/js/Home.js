@@ -24,9 +24,18 @@ $('document').ready(function () {
         }
     }
     $(window).on('load resize', headerReload);
-
+    
+    
+//  var imgForHeader = document.getElementById('imgLink').value;
+//    var img = document.createElement('IMG');
+//    img.style.borderRadius = '50%';
+//    img.setAttribute('src', imgForHeader);
+//    img.setAttribute('width', '80');
+//    img.setAttribute('height', '80');
+//  $('#userImg-inNav').append(img);
 
 });
+
 
 //   alert($(window).width());
 //    
@@ -38,12 +47,15 @@ var postSticky = eL.offsetTop;
 function headerFreeze() {
     if (window.pageYOffset >= postSticky) {
         $('#displayDate').addClass('headerFreeze');
+        $('#userprofile-Box').addClass('profileBoxFreeze');
         $('.backto-Top').show();
     } else {
         $('.backto-Top').hide();
         $('#displayDate').removeClass('headerFreeze');
+        $('#userprofile-Box').removeClass('profileBoxFreeze');
     }
 }
+
 
 
 //virify content will be deleted to all users

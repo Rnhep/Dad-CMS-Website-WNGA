@@ -24,7 +24,7 @@
 
 
         <div class="flex-container ">
-            <div>  <a href="${pageContext.request.contextPath}/home">Home</a></div>
+            <div >  <a href="${pageContext.request.contextPath}/home">Home</a></div>
             <div>  <a  href="${pageContext.request.contextPath}/aboutUs"> About Us</a></div>
             <div>  <a  href="${pageContext.request.contextPath}/newsFeed">News</a></div> 
             <div>  <a  href="${pageContext.request.contextPath}/displayPost">Posts</a></div>
@@ -40,15 +40,7 @@
             <c:if test="${ pageContext.request.userPrincipal.name != null}">
                 <div><a  href="<c:url value="/j_spring_security_logout"/>">Sign Out</a> </div>
             </c:if>
-            <c:if test="${!empty pageContext.request.userPrincipal.name}">
-                <p class="username"> 
-                    <c:if test="${ pageContext.request.userPrincipal.name != null}">
-                        Hello : ${pageContext.request.userPrincipal.name} |
-                        <a href="userProfile?userName=${pageContext.request.userPrincipal.name}">Profile</a>
-                    </c:if>
-                </p>
-
-            </c:if>
+                
         </div>
 
 

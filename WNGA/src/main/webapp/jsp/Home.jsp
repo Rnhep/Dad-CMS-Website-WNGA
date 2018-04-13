@@ -17,20 +17,30 @@
                 </head>
                 <body> 
                     <main>
-                         <section id="fade-out" class="grid">
-                        <div id="headerFreeze">
-                            <div id="header-mobile"></div>
-                            <div class="logo home logo-hide col-md-12">
-                            </div>
-                            <div class="col-md-9" id="header-desktop"></div>
-                        </div>
 
-                        <div class="col-md-12 upComing-outterDiv">
-                            <div class="latestPost to-center "> 
-                                <p id="upComing"> Upcoming Events</p>
+                        <section id="fade-out" class="grid">
+                            <div id="headerFreeze">
+                                <div id="header-mobile"></div>
+                                <div class="logo home logo-hide col-md-12">
+                                </div>
+                                <div class="col-md-9" id="header-desktop">
+                                </div>
                             </div>
-                        </div>
-                         </section>
+
+                            <div id="userImg-inNav">
+                                <c:forEach var="user" items="${allUsers}">
+                                    <c:if test="${pageContext.request.userPrincipal.name == user.userName}">
+                                        <img src="${user.photo}"/>
+                                        <p>Hello: ${pageContext.request.userPrincipal.name}</p>
+                                    </c:if>
+                                </c:forEach>
+                            </div>
+                            <div class="col-md-12 upComing-outterDiv">
+                                <div class="latestPost to-center "> 
+                                    <p id="upComing"> Upcoming Events</p>
+                                </div>
+                            </div>
+                        </section>
                         <div class="col-md-12" id="latestPost-ContentHolding" >
                             <div class="events latestPost-Content ">
                                 <c:out value="${eventOne.name}"/>
@@ -52,7 +62,7 @@
                                     </p>
                                 </div>
                             </div>
-                                    
+
                             <div class=" col-md-12" id="latestPost-ContentHolding">
                                 <c:forEach var="latestPost" items="${displayLatestPost}">
 
@@ -96,7 +106,7 @@
                                 </p>
                             </div>
                         </div>
-                            <div id="fade-out" class="grid">     
+                        <div id="fade-out" class="grid">     
                             <div class=" col-md-12 container-fluid img-container" id="homepage-containerbg" 
                                  style=" background: linear-gradient(to bottom, 
                                  rgba(0,0,0,0.4) 4%,rgba(0,0,0,0.4) 100%), 
@@ -122,7 +132,7 @@
                             </div>
                         </div>
                     </main>
-                                
+
                     <hr class="col-md-10 homeFooterLine"></hr>
                     <footer  class="col-md-12" id="footer"></footer>
                     <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>

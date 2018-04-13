@@ -8,8 +8,10 @@ package com.sg.wnga.Controller;
 import static com.sg.wnga.Controller.Contents.*;
 import com.sg.wnga.DAO.NewPostDao;
 import com.sg.wnga.DAO.NewsFeedDao;
+import com.sg.wnga.DAO.UserDao;
 import com.sg.wnga.Model.NewPost;
 import com.sg.wnga.Model.NewsFeed;
+import com.sg.wnga.Model.User;
 import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
@@ -25,12 +27,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 public class MainController {
-
+ private final UserDao userDao;
     NewPostDao NPDao;
     NewsFeedDao NFDao;
 
     @Inject
-    public MainController(NewPostDao NPDao, NewsFeedDao NFDao) {
+    public MainController(UserDao userDao, NewPostDao NPDao, NewsFeedDao NFDao) {
+        this.userDao = userDao;
         this.NPDao = NPDao;
         this.NFDao = NFDao;
     }
@@ -56,6 +59,8 @@ public class MainController {
         model.addAttribute("displayLatestPost", displayLatestPost);
         String latestPost = "Recent Posts";
         model.addAttribute("latestPost", latestPost);
+        List<User> allUsers = userDao.getAllUsers();
+        model.addAttribute("allUsers", allUsers);
         return "Home";
     }
 
@@ -72,6 +77,9 @@ public class MainController {
         model.addAttribute("allNews", allNews);
         String admin = "(Admin)";
         model.addAttribute("admin", admin);
+        
+        List<User> allUsers = userDao.getAllUsers();
+        model.addAttribute("allUsers", allUsers);
         return "NewsFeed";
     }
     

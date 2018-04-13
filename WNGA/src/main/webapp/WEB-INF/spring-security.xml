@@ -29,15 +29,16 @@
        
         <intercept-url pattern="/" 
                        access="IS_AUTHENTICATED_ANONYMOUSLY" />
+        
         <intercept-url pattern="/Home.jsp" 
                        access="IS_AUTHENTICATED_ANONYMOUSLY" />
-        
+<!--        
         <intercept-url pattern="/UserRegistrationForm.jsp" 
                        access="IS_AUTHENTICATED_ANONYMOUSLY" />
         
         <intercept-url pattern="/post" 
                        access="IS_AUTHENTICATED_ANONYMOUSLY" />
-        
+        -->
         
         <intercept-url pattern="/admin" 
                        access="ROLE_ADMIN" />

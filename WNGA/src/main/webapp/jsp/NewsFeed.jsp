@@ -30,7 +30,7 @@
             </div>
             <div class="col-md-9" id="header-desktop"></div>
         </div>
-       
+
         <!------------------------------------------------------------------------------------------------------------------------------>                         
         <div class="to-center col-md-12" id="displayDate">
             <p class="today"> 
@@ -38,11 +38,29 @@
                     out.print("Today News");
                 %>
             </p>
-             <button class="btn-info backto-Top" id="backto-Top"> back to top</button>
+            <button class="btn-info backto-Top" id="backto-Top"> back to top</button>
         </div>
+    <c:if test="${ pageContext.request.userPrincipal.name != null}">
+                        <div class="col-md-12" id="userprofile-Box"> 
+                            <c:if test="${!empty pageContext.request.userPrincipal.name}">
+                                <div class="userprofile-photo">
+                                    <c:forEach var="user" items="${allUsers}">
+                                        <c:if test="${pageContext.request.userPrincipal.name == user.userName}">
+                                            <img src="${user.photo}"/>
+                                        </c:if>
+                                    </c:forEach>
+                                </div>
+                                <p class="username"> 
+                                    ${pageContext.request.userPrincipal.name} |
+                                    <a href="userProfile?userName=${pageContext.request.userPrincipal.name}">Profile</a>
 
+                                </p>
+                            </c:if>
+                        </div> 
+                    </c:if> 
         <div class="container displayNews col-md-12">
-             <sec:authorize access="hasRole('ROLE_ADMIN')">
+
+            <sec:authorize access="hasRole('ROLE_ADMIN')">
                 <div class="inner-postform">
                     <sf:form  class="form-horizontal" 
                               role="form"  method="POST" 
@@ -55,7 +73,7 @@
 
                     </sf:form> 
                 </div>
-        </sec:authorize>
+            </sec:authorize>
             <c:forEach var="news" items="${allNews}">
                 <div class="container pre-posts">
                     <p>
@@ -65,15 +83,15 @@
                             <fmt:formatDate value="${newsDate}" pattern="E MMM-dd-yyyy"/>
                         </span>
                     </p>
-                        
+
                     <div class="container newsContents">
                         <p>
                             <c:out value="${news.content}"/>
                         </p>
                     </div>
-                        
+
                     <hr></hr>
-                    
+
                     <sec:authorize access="hasRole('ROLE_ADMIN')">
                         <p class="edit-delete grey">
                             | <a class="grey" href="editNewsForm?newsFeedId=${news.newsFeedId}">edit</a> 
@@ -83,8 +101,8 @@
                 </div>
             </c:forEach>
         </div>
-            
-            
+
+
         <hr class="col-md-10" id="newsFooter"></hr>
         <footer class="col-md-12" id="footer"></footer>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

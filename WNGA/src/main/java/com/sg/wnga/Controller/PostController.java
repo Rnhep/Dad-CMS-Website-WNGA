@@ -59,6 +59,8 @@ public class PostController {
         model.addAttribute("newPost", newPost);
         List<Comment> displayAllComments = commentDao.getAllComment();
         model.addAttribute("displayAllComments", displayAllComments);
+        List<User> allUsers = userDao.getAllUsers();
+        model.addAttribute("allUsers", allUsers);
         return "NewPost";
 
     }
