@@ -259,8 +259,9 @@ body
     }
 
     .newsContents {
+        text-align: justify;
         margin-top: 30px;
-        margin-left: 30px;
+        margin-left: 0px;
         width:auto;
         padding: 10px;
         height: auto;
@@ -280,9 +281,10 @@ body
     }
 
     .inner-postform{
+        margin-top: -19em;
         padding: 5px;
-        margin-top: -300px;
-        margin-left: 33.7%;
+        margin-right: auto;
+        margin-left: auto;
         width: 60em;
         height: auto;
         background-color: #fff;
@@ -355,7 +357,7 @@ body
     .pre-posts {
 
         font-size: 24px;
-        padding: 10px;
+        padding: 30px;
         margin-top: 30px;
         height:auto;
         width: 100%;
@@ -367,8 +369,8 @@ body
     }
 
     .postContents {
+        text-align: justify;
         margin-top: 30px;
-        margin-left: 30px;
         width:auto;
         padding: 10px;
         height: auto;
@@ -378,9 +380,7 @@ body
     }
 
     .display-Comments{
-        margin-top: 30px;
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding: 20px;
         width: 100%;
         height: 650px;
         background-color:#edeeef;
@@ -412,27 +412,25 @@ body
         border: none;
         border-radius: 20px;
         margin-left:20px;
+        margin-top: 10px;
         border: 0.1em solid #dcdcdc;
     }
 
     .comments-Block{
-        padding-top: 30px;
-        margin-top: 30px;
-        margin-left: 20px;
         height:auto;
         width: 100%;
-        border-radius:10px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #dcdcdc;
+        
          
     }
 
     .commentForm-Section{
-       padding-top: 10px;
-        background: #edeeef;
-
+       background: #edeeef;
     }
 
     .comments-Text{
-        margin-left: 90px;
+        text-align: justify;
         font-size: 22px;
         font-weight: bold;
 
@@ -803,12 +801,7 @@ body
 /*browswer res at 1681 to 2230*/
 @media (min-width: 1906px) and (max-width : 2561px){
 
-     .user-info img {   
-        width: 100%;
-        max-width: 250px;
-        height: auto;
-    }
-
+    
     .user-info input {
         width: 220px;
     }
@@ -829,6 +822,7 @@ body
         font-size: 18px;
         width: 130px;
         color: #fff;
+        background-color: #3385ff;
     }
     
      #userImg-inNav{
@@ -859,13 +853,13 @@ body
     
     .user-info img { 
         width: 100%;
-        max-width: 450px;
+        max-width: 250px;
         height: auto;
     }
     
      .username {
-       font-size: 18px;
-       margin-top: 18%;
+       font-size: 22px;
+       margin-top: 27%;
        width: auto;
        height:10px;
     }
@@ -879,22 +873,22 @@ body
     .userprofile-photo > img{
         border-radius: 50%;
         margin-top: 8%;
-        width: 150px;
-        height: 150px;   
+        width: 140px;
+        height: 140px;   
     }
     
     .userprofile-photo{
         background-color: #3385ff;
         height: 100%;
-        max-height: 130px;
+        max-height: 100px;
     }
    
     #userprofile-Box{
         text-align: center;
         margin-top: 5px;
         margin-left: 18%;
-        padding: 10px;
-        height: 230px;
+        padding: 6px;
+        height: 220px;
         width: 10%;
         max-width:  25em;
         background-color: #fff;
@@ -1042,6 +1036,7 @@ body
     }
 
     .newsContents {
+        text-align: justify;
         margin: 0 auto;
         width: 100%;
         max-width: 100%;
@@ -1062,8 +1057,9 @@ body
     }
     
     .inner-postform{
-         margin-top: -200px;
-        margin-left: 35%;
+        margin-top: -14em;
+        margin-right: auto;
+        margin-left: auto;
         width: 100%;
         max-width: 47em;
         background: #fff;
@@ -1073,11 +1069,11 @@ body
 
     #post-form{
         border: none;
-        display: block;
-        margin-left: 0.8em;
+        display: inline-block;
+        margin-left: 1em;
         margin-top: 5px;
         width:100%;
-        max-width: 25em;
+        max-width: 22em;
         height: 40px;
         resize: none;
         font-size: 14px;
@@ -1109,8 +1105,7 @@ body
     }
     
     .pre-posts{
-        
-        padding: 5px;
+        padding: 10px;
         margin-top: 30px;
         height: auto;
         width: 100%;
@@ -1121,29 +1116,22 @@ body
     }
 
     .postContents {
+        text-align: justify;
         margin-top: 30px;
         width:auto;
         padding: 10px;
         height: auto;
         border-radius: 10px;
+        
     }
 
     .postContents{
-        font-size: 18px;
+        font-size: 16px;
     }
 
-    .news-Textarea {
-        margin: 0 auto;
-        width: 100%;
-        max-width: 100%;
-        margin-left: 25em;
-        height: 150px;
-        resize: none;
-        overflow: auto;
-    }
-
+   
     span {
-        font-size: 20px;
+        font-size: 14px;
     }
 
     .commentCount{
@@ -1160,7 +1148,7 @@ body
     }
 
     .display-Comments{
-        margin-top: 30px;
+        margin-top: 35px;
         padding-top: 20px;
         padding-bottom: 20px;
         width: auto;
@@ -1182,11 +1170,12 @@ body
     }
 
     .comment-Form {
-        padding: 30px;
+        padding: 10px;
+        margin-left: 16px;
         resize: none;
-        width: 100%;
+        width: 95%;
         max-height: 100%;
-        height: 40px;
+        height: 65px;
         font-size: 14px;
         overflow: hidden;
         border-radius: 10px;
@@ -1195,11 +1184,10 @@ body
     }
     
     .comments-Text{
-        margin-left: 60px;
-        font-size: 18px;
+        text-align: justify;
+        font-size: 14px;
         font-weight: bold;
         padding-right: 10px;
-
     }
 
 
@@ -1210,14 +1198,15 @@ body
 
     }
     .show-Comments{
-
         margin-top: 10px;
         margin-left: 25em;
         font-size: 16px;
         color: #adadad;
     }
+    
     .comments-Block{
         margin-left: 10px;
+        border-bottom: 1px solid #dcdcdc;
     }
 
     #displayDate {    
@@ -1347,7 +1336,8 @@ body
     }
 
     .news-Textarea {
-        margin: 0 auto;
+       margin-right: auto;
+       margin-left: auto;
         width: 100%;
         max-width: 100em;
         height: 250px;
@@ -1561,20 +1551,6 @@ body
 */
 @media (min-width: 1281px) and (max-width:1905px) {
 
- .headerFreeze{
-        position: fixed;
-        z-index: 1;
-        top: 53px;
-    }
-   
-    #displayDate > .backto-Top {
-        margin-top: -25px;
-        float: right;
-        font-size: 12px;
-        width: 130px;
-        color: #fff;
-    }
-    
     .user-info img {   
         width: 100%;
         max-width: 250px;
@@ -1589,12 +1565,98 @@ body
         font-size: 22px;
     }
     
-    .update-profile-btn{
-        margin-top: 10px;
-        font-size: 16px;
+    
+    .headerFreeze{
+        position: fixed;
+        z-index: 1;
+        top: 62px;
+    }
+   
+    #displayDate > .backto-Top {
+        margin-top: -20px;
+        float: right;
+        font-size: 12px;
+        width: 90px;
+        color: #fff;
+        background-color: #3385ff;
     }
     
-
+     #userImg-inNav{
+        width: 100%;
+        float: right;
+        top:-10.2em;
+        z-index: 10;
+        position: relative;
+        background-color: #3385ff;
+        padding: 5px;
+    }
+    
+    #userImg-inNav > p {
+        float: right;
+        margin-right: 40px;
+        margin-top: 8px;
+        color: #fff;
+        font-size: 22px;
+    }
+    
+    #userImg-inNav > img{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        float: right;
+        margin-right: 10em;
+    }
+    
+    .user-info img { 
+        width: 100%;
+        max-width: 450px;
+        height: auto;
+    }
+    
+     .username {
+       font-size: 16px;
+       margin-top: 39%;
+       width: auto;
+       height:10px;
+    }
+    
+    .profileBoxFreeze{
+        position: fixed;
+        z-index: 1;
+        top: 4.7em;
+    }
+    
+    .userprofile-photo > img{
+        border-radius: 50%;
+        margin-top: 8%;
+        width: 98px;
+        height: 98px;   
+    }
+    
+    .userprofile-photo{
+        background-color: #3385ff;
+        height: 100%;
+        max-height: 59px;
+    }
+   
+    #userprofile-Box{
+        text-align: center;
+        margin-top: -13px;
+        margin-left: 18%;
+        padding: 5px;
+        height: 150px;
+        width: 10%;
+        max-width: 25em;
+        background-color: #fff;
+        border-radius:10px;
+        box-shadow: 0px 0px 0px #888888;
+    }
+    
+    .update-profile-btn{
+        margin-top: 10px;
+        height: 60px;
+    }
+    
     .home  {
         margin-top: -20px;
     }
@@ -1610,7 +1672,6 @@ body
     }
 
     #header-desktop {
-
         top: -146px;
         overflow: hidden;
         margin-left: 20%;
@@ -1622,14 +1683,7 @@ body
         background-size: contain;
         border-bottom: 3px solid #fff;
     }
-    .username {
-        margin-left: 30px;
-        float: right;
-        clear: both;
-        font-size: 18px;
-        margin-top: 0px;
-
-    }
+   
 
     #section-a{
         width: 100%;
@@ -1711,7 +1765,7 @@ body
         margin-bottom: 30px;
         background-color: #fff;
         border-radius: 10px;
-        box-shadow: 1px 1px 1px #000000;
+        box-shadow: 0px 0px 0px #000000;
 
     }
 
@@ -1729,6 +1783,7 @@ body
     }
 
     .newsContents {
+       text-align: justify;
         width: auto;
         font-size: 15px;
         border-radius: 10px;
@@ -1775,48 +1830,47 @@ body
         width: 100%;
     }
 
-    .comment-Form{
-        padding: 5px;
+    .comment-Form {
+        padding: 10px;
+        margin-top: 10px;
+        margin-left: 16px;
         resize: none;
-        width: 100%;
+        width: 95%;
         max-height: 100%;
-        height: 50px;
-        font-size: 10px;
+        height: 55px;
+        font-size: 14px;
         overflow: hidden;
         border-radius: 10px;
         border: none;
+        border: 1px solid #dcdcdc;
     }
-
-     .commentForm-Section{
-        margin-top: 30px;
-        background: #edeeef;
-        width: 100%;
-        padding: 0;
-    }
-
+    
     .comments-Text{
-        margin-left: 60px;
-        font-size: 12px;
+        
+        margin-right: 12px;
+        text-align: justify;
+        font-size: 14px;
         font-weight: bold;
-        width: 100%;
     }
-
 
     .commentForm-Section{
-        /*padding: 20px;*/
+       
+        padding: 20px;
         margin-top: 30px;
         background: #edeeef;
 
     }
-
     .show-Comments{
-        width: auto;
         margin-top: 10px;
-        margin-left: 80px;
+        margin-left: 33em;
         font-size: 12px;
         color: #adadad;
     }
-
+    
+    .comments-Block{
+        border-bottom: 1px solid #dcdcdc;
+    }
+    
     .postForm {  
         width: 100%;
         margin-top: -90px;
@@ -1824,7 +1878,9 @@ body
     }
 
     .inner-postform{
-        margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -10.3em;
         width: 100%;
         max-width: 38.2em;
         background: #fff;
@@ -1843,6 +1899,7 @@ body
         resize: none;
         font-size: 12px;
     }
+    
     .post-textarea {
         display: block;
         margin: 0 auto;
@@ -1870,9 +1927,12 @@ body
         max-width: 38.2em;
         background-color: #fff;
         border-radius:10px;
-        box-shadow:  1px 1px 1px #888888;
+        box-shadow:  0.1px 0px 0px #888888;
     }
+    
     .postContents {
+        padding: 10px;
+        text-align: justify;
         width: 100%;
         height: auto;
         font-size: 12px;
@@ -2174,7 +2234,7 @@ body
         max-width: 50em;
         background-color: #fff;
         border-radius:10px;
-        box-shadow:  1px 1px 2px #000000;
+        box-shadow:  1px 1px 1px #000000;
     }
 
     .admin-note{
@@ -2242,21 +2302,7 @@ body
 
 @media (min-width: 1025px) and (max-width: 1280px) {
 
- .headerFreeze{
-        position: fixed;
-        z-index: 1;
-        top: 53px;
-    }
-   
-    #displayDate > .backto-Top {
-        margin-top: -30px;
-        float: right;
-        font-size: 10px;
-        width: 130px;
-        color: #fff;
-    }
-    
-    
+ 
     .user-info img { 
         width: 100%;
         max-width: 150px;
@@ -2267,6 +2313,97 @@ body
         width: 120px;
     }
 
+      .headerFreeze{
+        position: fixed;
+        z-index: 1;
+        top: 62px;
+    }
+   
+    #displayDate > .backto-Top {
+        margin-top: -20px;
+        float: right;
+        font-size: 12px;
+        width: 90px;
+        color: #fff;
+        background-color: #3385ff;
+    }
+    
+     #userImg-inNav{
+        width: 100%;
+        float: right;
+        top:-10.2em;
+        z-index: 10;
+        position: relative;
+        background-color: #3385ff;
+        padding: 5px;
+    }
+    
+    #userImg-inNav > p {
+        float: right;
+        margin-right: 40px;
+        margin-top: 8px;
+        color: #fff;
+        font-size: 22px;
+    }
+    
+    #userImg-inNav > img{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        float: right;
+        margin-right: 10em;
+    }
+    
+    .user-info img { 
+        width: 100%;
+        max-width: 450px;
+        height: auto;
+    }
+    
+     .username {
+       font-size: 14px;
+       margin-top: 40%;
+       width: auto;
+       height:10px;
+    }
+    
+    .profileBoxFreeze{
+        position: fixed;
+        z-index: 1;
+        top: 4.7em;
+    }
+    
+    .userprofile-photo > img{
+        border-radius: 50%;
+        margin-top: 8%;
+        width: 78px;
+        height: 78px;   
+    }
+    
+    .userprofile-photo{
+        background-color: #3385ff;
+        height: 100%;
+        max-height: 50px;
+    }
+   
+    #userprofile-Box{
+        text-align: center;
+        margin-top: -13px;
+        margin-left: 18%;
+        padding: 5px;
+        height: 140px;
+        width: 10%;
+        max-width: 25em;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 0px #888888;
+    }
+    
+    .update-profile-btn{
+        margin-top: 10px;
+        height: 60px;
+    }
+    
     .home {
         margin-top: -20px;
     }
@@ -2294,13 +2431,7 @@ body
         border-bottom: 3px solid #fff;
     }
 
-    .username {
-        margin-left: 10px;
-        float: right;
-        clear: both;
-        font-size: 12px;
-        margin-top: 5px;
-    }
+   
 
     .flex-container {
         width:100%;
@@ -2388,6 +2519,7 @@ body
     }
 
     .newsContents {
+        text-align: justify;
         width: 100%;
         max-width: 680px;
         border-radius: 10px;
@@ -2418,7 +2550,9 @@ body
     }
 
     .inner-postform{
-        margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -10em;
         width: 100%;
         max-width: 27em;
         background: #fff;
@@ -2462,14 +2596,14 @@ body
         max-width: 26em;
         background-color: #fff;
         border-radius:10px;
-        box-shadow:  1px 2px 2px #888888;
+        box-shadow:  0px 0px 0px #888888;
     }
 
     .postContents {
+        text-align: justify;
         margin-top: 20px;
         margin: 0 auto;
         width: auto;
-        /*padding: 5px;*/
         max-width: 650px;
         height: auto;
         border-radius: 10px;
@@ -2513,7 +2647,7 @@ body
 
     .comment-Form {
         margin-top: 20px;
-        /*padding: 10px;*/
+        padding: 3px;
         resize: none;
         width: 100%;
         max-height: 100%;
@@ -2877,7 +3011,9 @@ body
         opacity: 1; 
         background-size: contain;
     }
-
+    #userprofile-Box{
+        display: none;
+    }
     #header-mobile{
         position: relative;
         margin-top: -20px;
@@ -3272,9 +3408,12 @@ body
     }
 
     .comments-Text{
-        margin-left: 30px
-    } 
-
+        text-align: justify;
+        font-size: 12px;
+        font-weight: bold;
+        width: 100%;
+    }
+    
     .commentForm-Section{
         padding: 20px;
         margin-top: 30px;
@@ -3516,6 +3655,10 @@ body
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
 
+     #userprofile-Box{
+        display: none;
+    }
+    
     .logo {
         background: linear-gradient(to bottom, rgba(0,0,0,0.1) 6%,rgba(188,188,188,0.0) 100%), url('../Images/WNGA-M.png')no-repeat center white;
         height: 100px;
@@ -4116,7 +4259,10 @@ body
 }
 
 @media (min-width: 481px) and (max-width: 767px) {
-
+     
+    #userprofile-Box{
+        display: none;
+    }
     .logo {
         background: linear-gradient(to bottom, rgba(0,0,0,0.1) 6%,rgba(188,188,188,0.0) 100%), url('../Images/WNGA-M.png')no-repeat center white;
         height: 100px;

@@ -104,7 +104,7 @@
                                         <c:out value="${allPosts.content}"/>
                                     </p>
                                 </div>
-
+                                    
                                 <div class="container img-center">
                                     <c:if test="${!empty allPosts.imagePath}">
                                         <a href="${allPosts.imagePath}">
@@ -119,10 +119,11 @@
                                 </div>
                                 <hr class="comment-line"></hr>
                                 <div>
-                                    <p class="show-Comments" data-text-swap="Hide" data-text-original="Comments" id="id">  
-                                        Comments 
+                                    <p class="show-Comments" data-text-swap="Hide" data-text-original="Show Comments" id="id">  
+                                       Show Comment(s) 
                                     </p>
                                     <div class="comments-Section">
+                                        
                                         <div class="display-Comments">
                                             <c:forEach var="allComments" items="${displayAllComments}">
                                                 <c:if test="${allComments.newPost.postId == allPosts.postId}">
@@ -134,8 +135,8 @@
                                                                           src="${allComments.user.photo}"/>
                                                                 </c:if>
                                                                 <c:out value="${allComments.user.userName}"/>
-                                                                <fmt:parseDate pattern="yyyy-MM-dd'T'HH:mm:ss"  value=" ${allComments.publishDate}" var="Postdate"/>
-                                                                <fmt:formatDate value="${Postdate}" pattern=" MMM-dd-yyyy @hh:mma"/>
+                                                                <%--<fmt:parseDate pattern="yyyy-MM-dd'T'HH:mm:ss"  value=" ${allComments.publishDate}" var="Postdate"/>--%>
+                                                                <%--<fmt:formatDate value="${Postdate}" pattern=" MMM-dd-yyyy @hh:mma"/>--%>
                                                             </span>
                                                         </p>
                                                         <p class="comments-Text">
@@ -146,6 +147,7 @@
                                             </c:forEach>
                                         </div>
                                     </div>
+                                    
                                     <sec:authorize access="isAuthenticated()">
                                         <div class="commentForm-Sectio">
                                             <sf:form role="form" action="createComment" method="POST" >

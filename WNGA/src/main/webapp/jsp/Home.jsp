@@ -27,14 +27,16 @@
                                 </div>
                             </div>
 
-                            <div id="userImg-inNav">
+                            
                                 <c:forEach var="user" items="${allUsers}">
                                     <c:if test="${pageContext.request.userPrincipal.name == user.userName}">
+                                        <div id="userImg-inNav">
                                         <img src="${user.photo}"/>
                                         <p>Hello: ${pageContext.request.userPrincipal.name}</p>
+                                    </div>
                                     </c:if>
                                 </c:forEach>
-                            </div>
+                            
                             <div class="col-md-12 upComing-outterDiv">
                                 <div class="latestPost to-center "> 
                                     <p id="upComing"> Upcoming Events</p>
