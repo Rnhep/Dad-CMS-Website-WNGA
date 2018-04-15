@@ -47,6 +47,7 @@ body
         width: 230px;
         color: #fff;
         background-color: #3385ff;
+        border-radius: 12px;
     }
     
     #userImg-inNav{
@@ -2589,6 +2590,7 @@ body
         height:auto;
     }
     .pre-posts{
+        text-align: justify;
         padding: 5px;
         margin-top: 30px;
         height: auto;
@@ -2655,7 +2657,7 @@ body
         font-size: 10px;
         overflow: hidden;
         border-radius: 5px;
-        border: none;
+        border: 1px solid  #edeeef;
     }
     .comments-Block{
         width: 100%;
@@ -2668,7 +2670,7 @@ body
     }
 
     .comments-Text{
-        margin-left: 70px;
+        text-align: justify;
         font-size: 12px;
         font-weight: bold;
         padding-right: 10px;
@@ -3003,7 +3005,14 @@ body
 
 @media (min-width: 768px) and (max-width: 1024px) {
  
-
+   #userprofile-Box{
+        display: none;
+    }
+    
+     #userImg-inNav{
+        display: none;
+    }
+    
     .logo {
         background: linear-gradient(to bottom, rgba(0,0,0,0.1) 6%,rgba(188,188,188,0.0) 100%), url('../Images/WNGA-M.png')no-repeat center white;
         height: 100px;
@@ -3169,6 +3178,14 @@ body
         margin: 0 auto;
     }
 
+    .newsContents {
+        width: 100%;
+        max-width: 980px;
+        border-radius: 10px;
+        font-size: 12px;
+        word-break: keep-all;
+    }
+    
     .news-Textarea {
         margin: 0 auto;
         width: 100%;
@@ -3262,7 +3279,7 @@ body
 
     #post-form{
         border: none;
-        display: block;
+        display: inline-block;
         margin-left: 1.8em;
         margin-top: 5px;
         width:100%;
@@ -3361,8 +3378,6 @@ body
         padding-bottom: 10px;
     }
 
-
-
     .display-Comments{
         margin-top: 30px;
         padding-top: 20px;
@@ -3412,6 +3427,7 @@ body
         font-size: 12px;
         font-weight: bold;
         width: 100%;
+        padding: 10px;
     }
     
     .commentForm-Section{
@@ -3448,14 +3464,15 @@ body
         box-shadow: 1px 1px 1px #000000;
     }
 
-    .pre-posts { 
+    .pre-posts {
+        text-align: justify;
         margin-top: 20px;
         height: auto;
         width: 100%;
         max-width: 100%;
         border: 1px solid silver;
         background: #fff;
-        padding: 0;
+        padding: 10px;
 
     }
 
@@ -3656,6 +3673,10 @@ body
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
 
      #userprofile-Box{
+        display: none;
+    }
+    
+     #userImg-inNav{
         display: none;
     }
     
@@ -4066,11 +4087,12 @@ body
         font-size: 13px;
         overflow: hidden;
         border-radius: 10px;
-        border: none;
+        border: 1px solid #dcdcdc;
     }
 
     .comments-Block{
-        padding-top: 10px;
+        text-align: justify;
+        padding: 10px;
         margin-top: 30px;
         height:auto;
         width: 100%;
@@ -4079,9 +4101,6 @@ body
         border: 1px solid gainsboro ;
     }
 
-    .comments-Text{
-        margin-left: 30px
-    } 
 
     .commentForm-Section{
         padding: 20px;
@@ -4263,6 +4282,12 @@ body
     #userprofile-Box{
         display: none;
     }
+    
+     #userImg-inNav{
+        display: none;
+    }
+    
+    
     .logo {
         background: linear-gradient(to bottom, rgba(0,0,0,0.1) 6%,rgba(188,188,188,0.0) 100%), url('../Images/WNGA-M.png')no-repeat center white;
         height: 100px;
@@ -4498,15 +4523,16 @@ body
 
     #post-form{
         border: none;
-        display: block;
-        margin-left: 1.4em;
+        display: inline-block;
+        margin-left: 1.9em;
         margin-top: 5px;
         width:100%;
-        max-width: 10.5em;
+        max-width: 22.8em;
         height: 25px;
         resize: none;
         font-size: 12px;
     }
+    
     .post-textarea {
         display: block;
         margin: 0 auto;
@@ -4526,7 +4552,6 @@ body
     }
 
     .newuser-box {
-
         margin-top: 10px;
     }
 
@@ -4566,7 +4591,6 @@ body
     }
 
     .profile {
-
         margin-top: 45px; 
         margin-bottom: 30px;
         padding-top: 20px;
@@ -4652,11 +4676,13 @@ body
     }
 
     .comments-Section{
+        margin-top: 40px;
         height: auto;
         width: 100%;
     }
 
     .comment-Form{
+         margin-top: 40px;
         padding: 20px;
         resize: none;
         width: 100%;
@@ -4665,7 +4691,7 @@ body
         font-size: 13px;
         overflow: hidden;
         border-radius: 10px;
-        border: none;
+        border: 1px solid  #edeeef;
     }
     .comments-Block{
         padding-top: 10px;
@@ -4677,7 +4703,7 @@ body
     }
 
     .comments-Text{
-        margin-left: 30px
+       padding: 10px;
     } 
 
     .commentForm-Section{
@@ -4695,6 +4721,7 @@ body
     }
 
     .pre-posts { 
+        text-align: justify;
         overflow-y: hidden;
         margin-top: 20px;
         height: auto;
@@ -4841,7 +4868,14 @@ body
 
 @media (min-width: 300px) and (max-width: 480px) {
 
-
+    #userprofile-Box{
+        display: none;
+    }
+    
+    #userImg-inNav{
+        display: none;
+    }
+    
     .logo {
         background: linear-gradient(to bottom, rgba(0,0,0,0.1) 6%,rgba(188,188,188,0.0) 100%), url('../Images/WNGA-M.png')no-repeat center white;
         height: 100px;
@@ -4849,6 +4883,7 @@ body
         opacity: 1; 
         background-size: contain;
     }
+    
     #header-mobile {
         position: relative;
         margin-top: -20px;
@@ -5022,6 +5057,7 @@ body
     }
 
     .display-post{
+        text-align: justify;
         width: 100%;
         padding: 0;
 
@@ -5048,7 +5084,7 @@ body
 
     }
 
-    .news-Textarea{
+/*    .news-Textarea{
         resize: none;
         width: 100%;
         max-width: 100%;
@@ -5057,7 +5093,7 @@ body
         height: 90px;
         border: none;
 
-    }
+    }*/
 
     .postForm {
         width: 100%;
@@ -5092,10 +5128,10 @@ body
     #post-form{
         border: none;
         display:inline-block;
-        margin-left: 1.4em;
+        margin-left: 2em;
         margin-top: 5px;
         width:100%;
-        max-width: 12.5em;
+        max-width: 16.5em;
         height: 25px;
         resize: none;
         font-size: 10px;
@@ -5249,6 +5285,7 @@ body
     }
 
     .comment-Form{
+        margin-top: 30px;
         padding: 5px;
         resize: none;
         width: 100%;
@@ -5257,10 +5294,12 @@ body
         font-size: 13px;
         overflow: hidden;
         border-radius: 10px;
-        border: none;
+        border:1px solid  #edeeef;
     }
 
     .comments-Block{
+        padding: 5px;
+        text-align: justify;
         margin-top: 30px;
         height:auto;
         width: 100%;
@@ -5268,10 +5307,6 @@ body
         border-radius:10px;
 
     }
-
-    .comments-Text{
-        margin-left: 30px
-    } 
 
     .commentForm-Section{
         padding: 20px;
@@ -5288,6 +5323,7 @@ body
     }
 
     .pre-posts { 
+        text-align: justify;
         overflow-y: hidden;
         margin-top: 20px;
         height: auto;
@@ -5295,10 +5331,11 @@ body
         max-width: 95.5%;
         border: 1px solid silver;
         background: #fff;
-        padding: 5px;
+        padding: 15px;
     }
 
     .postContents{
+        text-align: justify;
         word-break: keep-all;
         overflow-y: hidden;
         font-size: 13px;
