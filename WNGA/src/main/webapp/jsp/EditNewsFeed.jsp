@@ -27,15 +27,23 @@
                     </div>
                     <div class="col-md-12" id="header-desktop"></div>
                     <div id="up"></div> 
-
-
-                    <div class="container col-md-12 postForm">
+                    <div class="to-center col-md-12" id="displayDate">
+                        <p class="today"> 
+                            <%
+                                out.print("Today News");
+                            %>
+                        </p>
+                        <button class="btn-info backto-Top" id="backto-Top"> back to top</button>
+                    </div>
+                  
+                    <div class="container col-md-12  displayNews">
                         <div class="inner-postform">
                             <sf:form role="form" action="updateNews" method="POST" modelAttribute="newsFeed">
                                 <div class="form-group">
                                     <sf:input  id="registration-from" type="text" class="form-control" path="name" placeholder="Enter your Title here"/>
                                     <sf:errors path="name" cssclass="error"></sf:errors>
                                     </div>
+                                    <hr></hr>
                                     <div class="form-group">
                                     <sf:hidden path="date" value="${date}"/>
                                     <sf:textarea type="text" class="news-Textarea" path="content" placeholder="Enter your news Feed here"/>
@@ -47,10 +55,7 @@
                             </sf:form>
                         </div>
                     </div>
-                    <section id="">
-                        <hr class="col-md-10 signInFooterLine"></hr> 
-                    </section>          
-                    <footer class="col-md-12" id="footer"></footer>
+
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
                     <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
                     <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>

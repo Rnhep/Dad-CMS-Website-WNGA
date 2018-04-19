@@ -30,8 +30,24 @@
                     </div>
                     <div class="col-md-12" id="header-desktop"></div>
                     <div id="up"></div> 
+                    <c:forEach var="user" items="${allUsers}">
+                        <c:if test="${pageContext.request.userPrincipal.name == user.userName}">
+                            <div id="userImg-inNav">
+                                <img src="${user.photo}"/>
+                                <p>Hello: ${pageContext.request.userPrincipal.name}</p>
+                            </div>
+                        </c:if>
+                    </c:forEach>
+                    <div class="to-center col-md-12" id="displayDate">
+                        <p class="today">
+                            <%
+                                out.print("Most recent posts");
+                            %>
+                        </p>
+                        <button class="backto-Top"> back to top</button>
+                    </div>
 
-                    <div class="container col-md-12 postForm">
+                    <div class="container col-md-12  displayNews">
                         <div class="inner-postform">
                             <sf:form role="form" action="updatePost" method="POST" modelAttribute="newPost">                           
                                 <div class="form-group">       
@@ -40,21 +56,23 @@
                                 <div class="form-group">
                                     <sf:input path="imagePathTwo" id="registration-from" type="text" class="form-control" placeholder="Link to photo"/>                             
                                 </div>
-                                 <div class="form-group">
-                                <sf:textarea type="text" class="news-Textarea"  name="content"
-                                             path="content" placeholder="Enter your comment here" />
-                                <sf:errors path="content" cssclass="error"></sf:errors>
-                                <sf:input name="date" type="hidden" path="publishDate"/>
-                                <input type="hidden" name="userId" value="${newPost.user.userId}"reqiured/>
-                                <sf:hidden path="postId"/>
-                                <sf:hidden path="title"/>
-                                 </div>
+                                <hr></hr>
+                                <div class="form-group">
+                                    <sf:textarea type="text" class="news-Textarea"  name="content"
+                                                 path="content" placeholder="Enter your comment here" />
+                                    <sf:errors path="content" cssclass="error"></sf:errors>
+                                    <sf:input name="date" type="hidden" path="publishDate"/>
+                                    <input type="hidden" name="userId" value="${newPost.user.userId}"reqiured/>
+                                    <sf:hidden path="postId"/>
+                                    <sf:hidden path="title"/>
+                                </div>
                                 <div class="form-group">
                                     <input id="log-in-btn" type="submit" class="form-control" value="Update"/>
                                 </div>
                             </sf:form>
                         </div>
                     </div>
+
                     <section id="">
                         <hr class="col-md-10 signInFooterLine"></hr> 
                     </section>           

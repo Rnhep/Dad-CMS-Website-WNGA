@@ -9,7 +9,7 @@
        url('webfont.svg#svgFontName') format('svg');  Legacy iOS 
 }*/
 *{
-     font-family:Helvetica,Courier New, Myriad Pro Bold;
+    font-family:Helvetica,Courier New, Myriad Pro Bold;
 }
 body
 {
@@ -39,7 +39,7 @@ body
         z-index: 1;
         top: -53px;
     }
-    
+
     #displayDate > .backto-Top {
         margin-top: -59px;
         float: right;
@@ -49,7 +49,7 @@ body
         background-color: #3385ff;
         border-radius: 12px;
     }
-    
+
     #userImg-inNav{
         width: 100%;
         float: right;
@@ -60,6 +60,11 @@ body
         padding: 5px;
     }
     
+    #userImg-inNav a {
+        text-decoration: none;
+        color: #fff;
+    }
+    
     #userImg-inNav > p {
         float: right;
         margin-right: 40px;
@@ -67,7 +72,7 @@ body
         color: #fff;
         font-size: 30px;
     }
-    
+
     #userImg-inNav > img{
         width: 80px;
         height: 80px;
@@ -75,39 +80,39 @@ body
         float: right;
         margin-right: 10em;
     }
-    
+
     .user-info img { 
         width: 100%;
         max-width: 450px;
         height: auto;
     }
-    
-     .username {
-       font-size: 34px;
-       margin-top: 28%;
+
+    .username {
+        font-size: 34px;
+        margin-top: 28%;
         width: auto;
         height:10px;
     }
-    
+
     .profileBoxFreeze{
         position: fixed;
         z-index: 1;
         top: 4.4em;
     }
-    
+
     .userprofile-photo > img{
         border-radius: 50%;
         margin-top: 8%;
         width: 210px;
         height: 210px;   
     }
-    
+
     .userprofile-photo{
         background-color: #3385ff;
         height: 100%;
         max-height: 150px;
     }
-   
+
     #userprofile-Box{
         text-align: center;
         margin-top: 5px;
@@ -120,12 +125,12 @@ body
         border-radius:10px;
         box-shadow: 1px 1px 2px #888888;
     }
-    
+
     .update-profile-btn{
         margin-top: 10px;
         height: 60px;
     }
-    
+
     .home {
         margin-top: -20px;
     }
@@ -169,13 +174,13 @@ body
         margin-top: 35px;
         padding: 2px;
     }
- 
+
     .userprofile-headerPhoto > img{
         width: 10px;
         height: 10px;
         margin-top: -100px;
     }
-    
+
     .flex-container > div >a { 
         position: relative;
         background-color: menu;
@@ -282,7 +287,7 @@ body
     }
 
     .inner-postform{
-        margin-top: -19em;
+        margin-top: 50px;
         padding: 5px;
         margin-right: auto;
         margin-left: auto;
@@ -377,7 +382,7 @@ body
         height: auto;
         border-radius: 10px;
         font-size: 24px;
-      
+
     }
 
     .display-Comments{
@@ -422,12 +427,12 @@ body
         width: 100%;
         padding-bottom: 20px;
         border-bottom: 1px solid #dcdcdc;
-        
-         
+
+
     }
 
     .commentForm-Section{
-       background: #edeeef;
+        background: #edeeef;
     }
 
     .comments-Text{
@@ -479,9 +484,9 @@ body
         width: 100%;
         height: auto;
         padding: 10px;
-       
+
     }
-  
+
     #upComing,
     #latestPost {
         margin: 0 auto;
@@ -672,8 +677,8 @@ body
 
         padding: 10px;
     }
-    
-    
+
+
 
     .user-box {
 
@@ -706,15 +711,15 @@ body
         border-radius:10px;
         box-shadow: 5px 5px 5px #888888;
     }
-    
-      #displayDate {    
+
+    #displayDate {    
         margin-top: 50px;
         padding: 5px;
         background-color: #fff;
         height: auto;
 
     }
-    
+
     .admin-note{
         text-align: center;
         color: blue;
@@ -802,7 +807,7 @@ body
 /*browswer res at 1681 to 2230*/
 @media (min-width: 1906px) and (max-width : 2561px){
 
-    
+
     .user-info input {
         width: 220px;
     }
@@ -816,7 +821,7 @@ body
         z-index: 1;
         top: 62px;
     }
-   
+
     #displayDate > .backto-Top {
         margin-top: -45px;
         float: right;
@@ -825,8 +830,8 @@ body
         color: #fff;
         background-color: #3385ff;
     }
-    
-     #userImg-inNav{
+
+    #userImg-inNav{
         width: 100%;
         float: right;
         top:-10.2em;
@@ -834,6 +839,11 @@ body
         position: relative;
         background-color: #3385ff;
         padding: 5px;
+    }
+
+     #userImg-inNav a {
+        text-decoration: none;
+        color: #fff;
     }
     
     #userImg-inNav > p {
@@ -843,7 +853,7 @@ body
         color: #fff;
         font-size: 22px;
     }
-    
+
     #userImg-inNav > img{
         width: 50px;
         height: 50px;
@@ -851,39 +861,39 @@ body
         float: right;
         margin-right: 10em;
     }
-    
+
     .user-info img { 
         width: 100%;
         max-width: 250px;
         height: auto;
     }
-    
-     .username {
-       font-size: 22px;
-       margin-top: 27%;
-       width: auto;
-       height:10px;
+
+    .username {
+        font-size: 22px;
+        margin-top: 27%;
+        width: auto;
+        height:10px;
     }
-    
+
     .profileBoxFreeze{
         position: fixed;
         z-index: 1;
         top: 4.4em;
     }
-    
+
     .userprofile-photo > img{
         border-radius: 50%;
         margin-top: 8%;
         width: 140px;
         height: 140px;   
     }
-    
+
     .userprofile-photo{
         background-color: #3385ff;
         height: 100%;
         max-height: 100px;
     }
-   
+
     #userprofile-Box{
         text-align: center;
         margin-top: 5px;
@@ -896,12 +906,12 @@ body
         border-radius:10px;
         box-shadow: 1px 1px 2px #888888;
     }
-    
+
     .update-profile-btn{
         margin-top: 10px;
         height: 60px;
     }
-   
+
     .home  {
         margin-top: -20px;
     }
@@ -1056,9 +1066,9 @@ body
         background-color: #fff;
         border-radius: 10px;
     }
-    
+
     .inner-postform{
-        margin-top: -14em;
+        margin-top: 40px;
         margin-right: auto;
         margin-left: auto;
         width: 100%;
@@ -1104,7 +1114,7 @@ body
         width: 100%;
         height:auto;
     }
-    
+
     .pre-posts{
         padding: 10px;
         margin-top: 30px;
@@ -1123,14 +1133,14 @@ body
         padding: 10px;
         height: auto;
         border-radius: 10px;
-        
+
     }
 
     .postContents{
         font-size: 16px;
     }
 
-   
+
     span {
         font-size: 14px;
     }
@@ -1183,7 +1193,7 @@ body
         border: none;
         border: 1px solid #dcdcdc;
     }
-    
+
     .comments-Text{
         text-align: justify;
         font-size: 14px;
@@ -1204,7 +1214,7 @@ body
         font-size: 16px;
         color: #adadad;
     }
-    
+
     .comments-Block{
         margin-left: 10px;
         border-bottom: 1px solid #dcdcdc;
@@ -1337,8 +1347,8 @@ body
     }
 
     .news-Textarea {
-       margin-right: auto;
-       margin-left: auto;
+        margin-right: auto;
+        margin-left: auto;
         width: 100%;
         max-width: 100em;
         height: 250px;
@@ -1565,14 +1575,14 @@ body
     .user-info {
         font-size: 22px;
     }
-    
-    
+
+
     .headerFreeze{
         position: fixed;
         z-index: 1;
         top: 62px;
     }
-   
+
     #displayDate > .backto-Top {
         margin-top: -20px;
         float: right;
@@ -1581,8 +1591,8 @@ body
         color: #fff;
         background-color: #3385ff;
     }
-    
-     #userImg-inNav{
+
+    #userImg-inNav{
         width: 100%;
         float: right;
         top:-10.2em;
@@ -1590,6 +1600,11 @@ body
         position: relative;
         background-color: #3385ff;
         padding: 5px;
+    }
+
+     #userImg-inNav a {
+        text-decoration: none;
+        color: #fff;
     }
     
     #userImg-inNav > p {
@@ -1599,7 +1614,7 @@ body
         color: #fff;
         font-size: 22px;
     }
-    
+
     #userImg-inNav > img{
         width: 50px;
         height: 50px;
@@ -1607,39 +1622,39 @@ body
         float: right;
         margin-right: 10em;
     }
-    
+
     .user-info img { 
         width: 100%;
-        max-width: 450px;
+        max-width: 150px;
         height: auto;
     }
-    
-     .username {
-       font-size: 16px;
-       margin-top: 39%;
-       width: auto;
-       height:10px;
+
+    .username {
+        font-size: 16px;
+        margin-top: 39%;
+        width: auto;
+        height:10px;
     }
-    
+
     .profileBoxFreeze{
         position: fixed;
         z-index: 1;
         top: 4.7em;
     }
-    
+
     .userprofile-photo > img{
         border-radius: 50%;
         margin-top: 8%;
         width: 98px;
         height: 98px;   
     }
-    
+
     .userprofile-photo{
         background-color: #3385ff;
         height: 100%;
         max-height: 59px;
     }
-   
+
     #userprofile-Box{
         text-align: center;
         margin-top: -13px;
@@ -1652,12 +1667,13 @@ body
         border-radius:10px;
         box-shadow: 0px 0px 0px #888888;
     }
-    
+
     .update-profile-btn{
         margin-top: 10px;
-        height: 60px;
+        height: 40px;
+        font-size: 12px;
     }
-    
+
     .home  {
         margin-top: -20px;
     }
@@ -1684,7 +1700,7 @@ body
         background-size: contain;
         border-bottom: 3px solid #fff;
     }
-   
+
 
     #section-a{
         width: 100%;
@@ -1784,7 +1800,7 @@ body
     }
 
     .newsContents {
-       text-align: justify;
+        text-align: justify;
         width: auto;
         font-size: 15px;
         border-radius: 10px;
@@ -1823,7 +1839,7 @@ body
 
     .display-Comments::-webkit-scrollbar {
         display: none;
-        
+
     }
 
     .comments-Section{
@@ -1845,9 +1861,9 @@ body
         border: none;
         border: 1px solid #dcdcdc;
     }
-    
+
     .comments-Text{
-        
+
         margin-right: 12px;
         text-align: justify;
         font-size: 14px;
@@ -1855,7 +1871,7 @@ body
     }
 
     .commentForm-Section{
-       
+
         padding: 20px;
         margin-top: 30px;
         background: #edeeef;
@@ -1867,11 +1883,11 @@ body
         font-size: 12px;
         color: #adadad;
     }
-    
+
     .comments-Block{
         border-bottom: 1px solid #dcdcdc;
     }
-    
+
     .postForm {  
         width: 100%;
         margin-top: -90px;
@@ -1881,7 +1897,7 @@ body
     .inner-postform{
         margin-left: auto;
         margin-right: auto;
-        margin-top: -10.3em;
+        /*margin-top: -10.3em;*/
         width: 100%;
         max-width: 38.2em;
         background: #fff;
@@ -1900,7 +1916,7 @@ body
         resize: none;
         font-size: 12px;
     }
-    
+
     .post-textarea {
         display: block;
         margin: 0 auto;
@@ -1930,7 +1946,7 @@ body
         border-radius:10px;
         box-shadow:  0.1px 0px 0px #888888;
     }
-    
+
     .postContents {
         padding: 10px;
         text-align: justify;
@@ -1948,7 +1964,7 @@ body
     span {
         font-size: 12px;
     }
-    
+
     .comments-Block{
         margin-left: 20px;
     }
@@ -2303,7 +2319,7 @@ body
 
 @media (min-width: 1025px) and (max-width: 1280px) {
 
- 
+
     .user-info img { 
         width: 100%;
         max-width: 150px;
@@ -2314,12 +2330,12 @@ body
         width: 120px;
     }
 
-      .headerFreeze{
+    .headerFreeze{
         position: fixed;
         z-index: 1;
         top: 62px;
     }
-   
+
     #displayDate > .backto-Top {
         margin-top: -20px;
         float: right;
@@ -2328,65 +2344,67 @@ body
         color: #fff;
         background-color: #3385ff;
     }
-    
-     #userImg-inNav{
+
+    #userImg-inNav{
         width: 100%;
         float: right;
         top:-10.2em;
         z-index: 10;
         position: relative;
         background-color: #3385ff;
-        padding: 5px;
+        padding: 0px;
+        height: auto;
     }
-    
+
     #userImg-inNav > p {
         float: right;
-        margin-right: 40px;
+        margin-right: 20px;
         margin-top: 8px;
         color: #fff;
-        font-size: 22px;
+        font-size: 14px;
+    }
+
+     #userImg-inNav a {
+        text-decoration: none;
+        color: #fff;
     }
     
     #userImg-inNav > img{
-        width: 50px;
-        height: 50px;
+        width: 30px;
+        height: 30px;
         border-radius: 50%;
         float: right;
+        margin-top: 4px;
         margin-right: 10em;
     }
-    
-    .user-info img { 
-        width: 100%;
-        max-width: 450px;
-        height: auto;
+
+
+    .username {
+        font-size: 14px;
+        margin-top: 40%;
+        width: auto;
+        height:10px;
     }
-    
-     .username {
-       font-size: 14px;
-       margin-top: 40%;
-       width: auto;
-       height:10px;
-    }
-    
+
     .profileBoxFreeze{
         position: fixed;
         z-index: 1;
         top: 4.7em;
     }
-    
+
     .userprofile-photo > img{
         border-radius: 50%;
         margin-top: 8%;
         width: 78px;
         height: 78px;   
     }
-    
+
     .userprofile-photo{
         background-color: #3385ff;
         height: 100%;
         max-height: 50px;
     }
-   
+
     #userprofile-Box{
         text-align: center;
         margin-top: -13px;
@@ -2399,12 +2417,12 @@ body
         border-radius: 10px;
         box-shadow: 0px 0px 0px #888888;
     }
-    
+
     .update-profile-btn{
         margin-top: 10px;
-        height: 60px;
+        height: 40px;
     }
-    
+
     .home {
         margin-top: -20px;
     }
@@ -2432,7 +2450,7 @@ body
         border-bottom: 3px solid #fff;
     }
 
-   
+
 
     .flex-container {
         width:100%;
@@ -2537,7 +2555,7 @@ body
         background-color: #fff;
         border-radius: 10px;
     }
-    
+
     #recent-post {
         font-weight: bold;
         color: #000;
@@ -2553,7 +2571,7 @@ body
     .inner-postform{
         margin-left: auto;
         margin-right: auto;
-        margin-top: -10em;
+        /*margin-top: -10em;*/
         width: 100%;
         max-width: 27em;
         background: #fff;
@@ -2663,7 +2681,7 @@ body
         width: 100%;
     }
 
-     .commentForm-Section{
+    .commentForm-Section{
         /*padding: 0px;*/
         margin-top: 30px;
         background: #edeeef;
@@ -2762,7 +2780,7 @@ body
         margin-top: 35px;
         height: 490px; 
     }
-    
+
     .post-preview p {
         width: 100%;
         white-space: nowrap;  
@@ -3004,15 +3022,15 @@ body
 
 
 @media (min-width: 768px) and (max-width: 1024px) {
- 
-   #userprofile-Box{
+
+    #userprofile-Box{
         display: none;
     }
-    
-     #userImg-inNav{
+
+    #userImg-inNav{
         display: none;
     }
-    
+
     .logo {
         background: linear-gradient(to bottom, rgba(0,0,0,0.1) 6%,rgba(188,188,188,0.0) 100%), url('../Images/WNGA-M.png')no-repeat center white;
         height: 100px;
@@ -3031,10 +3049,10 @@ body
     .logo-hide {
         display: none;
     }
-    
-     
+
+
     #displayDate  {
-       display: none;
+        display: none;
     }
     #header-desktop {
         display: none;
@@ -3148,8 +3166,8 @@ body
     }
 
     #user-img {
-        width: 60px;
-        height: 60px;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
     }
 
@@ -3185,7 +3203,7 @@ body
         font-size: 12px;
         word-break: keep-all;
     }
-    
+
     .news-Textarea {
         margin: 0 auto;
         width: 100%;
@@ -3429,7 +3447,7 @@ body
         width: 100%;
         padding: 10px;
     }
-    
+
     .commentForm-Section{
         padding: 20px;
         margin-top: 30px;
@@ -3672,14 +3690,14 @@ body
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
 
-     #userprofile-Box{
+    #userprofile-Box{
         display: none;
     }
-    
-     #userImg-inNav{
+
+    #userImg-inNav{
         display: none;
     }
-    
+
     .logo {
         background: linear-gradient(to bottom, rgba(0,0,0,0.1) 6%,rgba(188,188,188,0.0) 100%), url('../Images/WNGA-M.png')no-repeat center white;
         height: 100px;
@@ -4278,16 +4296,16 @@ body
 }
 
 @media (min-width: 481px) and (max-width: 767px) {
-     
+
     #userprofile-Box{
         display: none;
     }
-    
-     #userImg-inNav{
+
+    #userImg-inNav{
         display: none;
     }
-    
-    
+
+
     .logo {
         background: linear-gradient(to bottom, rgba(0,0,0,0.1) 6%,rgba(188,188,188,0.0) 100%), url('../Images/WNGA-M.png')no-repeat center white;
         height: 100px;
@@ -4532,7 +4550,7 @@ body
         resize: none;
         font-size: 12px;
     }
-    
+
     .post-textarea {
         display: block;
         margin: 0 auto;
@@ -4682,7 +4700,7 @@ body
     }
 
     .comment-Form{
-         margin-top: 40px;
+        margin-top: 40px;
         padding: 20px;
         resize: none;
         width: 100%;
@@ -4703,7 +4721,7 @@ body
     }
 
     .comments-Text{
-       padding: 10px;
+        padding: 10px;
     } 
 
     .commentForm-Section{
@@ -4871,11 +4889,11 @@ body
     #userprofile-Box{
         display: none;
     }
-    
+
     #userImg-inNav{
         display: none;
     }
-    
+
     .logo {
         background: linear-gradient(to bottom, rgba(0,0,0,0.1) 6%,rgba(188,188,188,0.0) 100%), url('../Images/WNGA-M.png')no-repeat center white;
         height: 100px;
@@ -4883,7 +4901,7 @@ body
         opacity: 1; 
         background-size: contain;
     }
-    
+
     #header-mobile {
         position: relative;
         margin-top: -20px;
@@ -5084,16 +5102,16 @@ body
 
     }
 
-/*    .news-Textarea{
-        resize: none;
-        width: 100%;
-        max-width: 100%;
-        border: 1px solid black;
-        margin: 0 auto;
-        height: 90px;
-        border: none;
-
-    }*/
+    /*    .news-Textarea{
+            resize: none;
+            width: 100%;
+            max-width: 100%;
+            border: 1px solid black;
+            margin: 0 auto;
+            height: 90px;
+            border: none;
+    
+        }*/
 
     .postForm {
         width: 100%;

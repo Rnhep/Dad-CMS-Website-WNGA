@@ -27,7 +27,7 @@
                     <div class="logo logo-hide col-md-12">
                     </div>
                     <div class="col-md-10" id="header-desktop"></div>
-                  
+
                     <section id="signInSection">
 
                         <div class="container col-md-12 signIn">
@@ -56,12 +56,14 @@
                     <section id="newUserSection">
                         <div class="col-md-12 newuser-box">
                             <a href="${pageContext.request.contextPath}/signUp">${signUp}</a>
-                            Forgot password
+                            
                         </div>
+
                     </section>
-                            <section id="">
-                                <hr class="col-md-10 signInFooterLine"></hr> 
-                            </section>
+                    <section id="">
+                        <hr class="col-md-10 signInFooterLine"></hr> 
+                    </section>
+
                     <footer id="footer" class="col-md-12"></footer>
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
                     <script src="${pageContext.request.contextPath}/js/jquery.js"></script>

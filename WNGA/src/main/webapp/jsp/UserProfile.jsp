@@ -27,27 +27,38 @@
                     </div>
                     <div class="col-md-12" id="header-desktop"></div>
                     <div id="up"></div> 
-
+                    <c:forEach var="user" items="${allUsers}">
+                                <c:if test="${pageContext.request.userPrincipal.name == user.userName}">
+                                    <div id="userImg-inNav">
+                                        <img src="${user.photo}"/>
+                                        <p>Hello: ${pageContext.request.userPrincipal.name} |
+                                            <a href="userProfile?userName=${pageContext.request.userPrincipal.name}">Profile</a></p>
+                                    </div>
+                                </c:if>
+                            </c:forEach>
 
                     <div class="container-fluid col-md-12 user-info">
                         <div class="container">
-                        <p> ${msg} </p>
+                            <p> ${msg} </p>
 
-                        <img src="${currentLogInUser.photo}"/>
-                        <p><a href="updateProfileForm?userId=${currentLogInUser.userId}">
-                          <input  type="button" class="update-profile-btn"  value="Update Profile"/></a></p>
-                        <hr></hr>
-                        <p> User Name: ${currentLogInUser.userName}</p>
-                        <hr></hr>
-                        <p> Member Since: 
-                            <fmt:parseDate pattern="yyyy-MM-dd" value="${currentLogInUser.joinDate}" var="joindate"/>
-                            <fmt:formatDate value="${joindate}" pattern="MMM-dd-yyyy"/></p>
-                        <hr></hr>
-                        <p>   First Name: ${currentLogInUser.firstName}  </p>
-                        <hr></hr>
-                        <p>   Last Name: ${currentLogInUser.lastName} </p>
-                        <hr></hr>
-                        <p>Email:  ${currentLogInUser.email}</p>
+                            <img src="${currentLogInUser.photo}"/>
+                            <p><a href="updateProfileForm?userId=${currentLogInUser.userId}">
+                                    <input  type="button" class="update-profile-btn"  value="Update Profile"/></a></p>
+                            <hr></hr>
+
+                            <p> User Name: ${currentLogInUser.userName}</p>
+                            <hr></hr>
+
+                            <p> Member Since: 
+                                <fmt:parseDate pattern="yyyy-MM-dd" value="${currentLogInUser.joinDate}" var="joindate"/>
+                                <fmt:formatDate value="${joindate}" pattern="MMM-dd-yyyy"/></p>
+                            <hr></hr>
+
+                            <p>   First Name: ${currentLogInUser.firstName}  </p>
+                            <hr></hr>
+                            <p>   Last Name: ${currentLogInUser.lastName} </p>
+                            <hr></hr>
+                            <p>Email:  ${currentLogInUser.email}</p>
                         </div>
                     </div>
 

@@ -38,6 +38,10 @@ public class MainController {
         this.NFDao = NFDao;
     }
 
+//    @RequestMapping(value = "/", method = RequestMethod.GET)
+//    public String comingSoon() {
+//        return "ComingSoon";
+//    }
     @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
     public String home(HttpServletRequest request, Model model) {
         //for home page contents

@@ -24,8 +24,8 @@ $('document').ready(function () {
         }
     }
     $(window).on('load resize', headerReload);
-    
-    
+
+
 //  var imgForHeader = document.getElementById('imgLink').value;
 //    var img = document.createElement('IMG');
 //    img.style.borderRadius = '50%';

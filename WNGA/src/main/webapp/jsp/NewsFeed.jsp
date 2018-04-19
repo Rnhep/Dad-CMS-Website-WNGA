@@ -32,6 +32,16 @@
         </div>
 
         <!------------------------------------------------------------------------------------------------------------------------------>                         
+        <c:forEach var="user" items="${allUsers}">
+            <c:if test="${pageContext.request.userPrincipal.name == user.userName}">
+                <div id="userImg-inNav">
+                    <img src="${user.photo}"/>
+                    <p>Hello: ${pageContext.request.userPrincipal.name} |
+                        <a href="userProfile?userName=${pageContext.request.userPrincipal.name}">Profile</a></p>
+                </div>
+            </c:if>
+        </c:forEach>
+
         <div class="to-center col-md-12" id="displayDate">
             <p class="today"> 
                 <%
@@ -40,26 +50,8 @@
             </p>
             <button class="btn-info backto-Top" id="backto-Top"> back to top</button>
         </div>
-    <c:if test="${ pageContext.request.userPrincipal.name != null}">
-                        <div class="col-md-12" id="userprofile-Box"> 
-                            <c:if test="${!empty pageContext.request.userPrincipal.name}">
-                                <div class="userprofile-photo">
-                                    <c:forEach var="user" items="${allUsers}">
-                                        <c:if test="${pageContext.request.userPrincipal.name == user.userName}">
-                                            <img src="${user.photo}"/>
-                                        </c:if>
-                                    </c:forEach>
-                                </div>
-                                <p class="username"> 
-                                    ${pageContext.request.userPrincipal.name} |
-                                    <a href="userProfile?userName=${pageContext.request.userPrincipal.name}">Profile</a>
 
-                                </p>
-                            </c:if>
-                        </div> 
-                    </c:if> 
         <div class="container displayNews col-md-12">
-
             <sec:authorize access="hasRole('ROLE_ADMIN')">
                 <div class="inner-postform">
                     <sf:form  class="form-horizontal" 
@@ -74,6 +66,7 @@
                     </sf:form> 
                 </div>
             </sec:authorize>
+
             <c:forEach var="news" items="${allNews}">
                 <div class="container pre-posts">
                     <p>

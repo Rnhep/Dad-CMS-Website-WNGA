@@ -32,13 +32,22 @@
                     <div class="logo logo-hide col-md-12">
                     </div>
                     <div class="col-md-10" id="header-desktop"></div>
-
+                    <c:forEach var="user" items="${allUsers}">
+                                <c:if test="${pageContext.request.userPrincipal.name == user.userName}">
+                                    <div id="userImg-inNav">
+                                        <img src="${user.photo}"/>
+                                        <p>Hello: ${pageContext.request.userPrincipal.name} |
+                                            <a href="userProfile?userName=${pageContext.request.userPrincipal.name}">Profile</a></p>
+                                    </div>
+                                </c:if>
+                            </c:forEach>
+                    
                     <div class="container col-md-12 contactUs-Section">
 
                         <h1> If you have any queries, or wants to help please contact one of the following members 
                         </h1>
                         <h1>
-                            password porgotten please contact one of the following members 
+                            password forgotten please contact one of the following members 
                         </h1>
                         <h1>**Please allows 24 to 48 hrs for admins to reset your password. </h1>
 
@@ -46,14 +55,14 @@
                             <h1>Site Related: contact</h1>
                             <h1> ritheenhep@gmail.com</h1>
                         </div>
-                        
+
                         <div class="contact1">
                             <h1> Information about the organization </h1>
-                            <h1> Sopha Nhep: sopahnhep@hotmail.com</h1>
+                            <h1> Sopha Nhep: sophanhep@hotmail.com</h1>
                             <h1>Sothea Pouch:  ssek71@gmail.com</h1>
                             <h1>Leoung Khi: lkangkor@gmail.com</h1> 
                         </div>
-                        
+
                     </div>
                     <hr class="col-md-10 footerLine"></hr>
 

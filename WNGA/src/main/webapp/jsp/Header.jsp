@@ -33,6 +33,7 @@
             </c:if>
 
         </div>
+
         <div class="btn-group dropdown" id="nav">
 
             <button class="" id="dropdown" type="button" data-toggle="dropdown">&#9776; 

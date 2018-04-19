@@ -33,38 +33,29 @@
                         <div class="col-md-9" id="header-desktop"></div>
                     </div>
 
+                    <c:forEach var="user" items="${allUsers}">
+                        <c:if test="${pageContext.request.userPrincipal.name == user.userName}">
+                            <div id="userImg-inNav">
+                                <img src="${user.photo}"/>
+                                <p>Hello: ${pageContext.request.userPrincipal.name} |
+                                    <a href="userProfile?userName=${pageContext.request.userPrincipal.name}">Profile</a></p>
+                            </div>
+                        </c:if>
+                    </c:forEach>
                     <div class="to-center col-md-12" id="displayDate">
+
                         <p class="today">
                             <%
-//                                        LocalDateTime date = LocalDateTime.now();
-//                                        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("E MMM-dd-yyyy HH:mma  ");
-//                                        String dates = formatter.format(date);
-//                                        out.print("Today is " + dates);
                                 out.print("Most recent posts");
                             %>
                         </p>
                         <button class="backto-Top"> back to top</button>
+
                     </div>
-                    <c:if test="${ pageContext.request.userPrincipal.name != null}">
-                        <div class="col-md-12" id="userprofile-Box"> 
-                            <c:if test="${!empty pageContext.request.userPrincipal.name}">
-                                <div class="userprofile-photo">
-                                    <c:forEach var="user" items="${allUsers}">
-                                        <c:if test="${pageContext.request.userPrincipal.name == user.userName}">
-                                            <img src="${user.photo}"/>
-                                        </c:if>
-                                    </c:forEach>
-                                </div>
-                                <p class="username"> 
-                                    ${pageContext.request.userPrincipal.name} | 
-                                    <a href="userProfile?userName=${pageContext.request.userPrincipal.name}">Profile</a>
-                                </p>
-                            </c:if>
-                        </div> 
-                    </c:if>    
                     <div class="container display-post col-md-10">
 
                         <div>
+
                             <sec:authorize access="isAuthenticated()">
                                 <div class="inner-postform">
                                     <sf:form role="form"  method="POST" class="form-horizontal"
@@ -84,7 +75,9 @@
                                     </sf:form> 
                                 </div>
                             </sec:authorize>
+
                         </div>
+
                         <c:forEach var="allPosts" items="${displayAllPost}">
                             <div class="container pre-posts">
                                 <p>
@@ -104,7 +97,7 @@
                                         <c:out value="${allPosts.content}"/>
                                     </p>
                                 </div>
-                                    
+
                                 <div class="container img-center">
                                     <c:if test="${!empty allPosts.imagePath}">
                                         <a href="${allPosts.imagePath}">
@@ -117,13 +110,15 @@
                                         </c:if>
                                     </c:if>                 
                                 </div>
+
                                 <hr class="comment-line"></hr>
+
                                 <div>
                                     <p class="show-Comments" data-text-swap="Hide" data-text-original="Show Comments" id="id">  
-                                       Show Comment(s) 
+                                        Show Comment(s) 
                                     </p>
                                     <div class="comments-Section">
-                                        
+
                                         <div class="display-Comments">
                                             <c:forEach var="allComments" items="${displayAllComments}">
                                                 <c:if test="${allComments.newPost.postId == allPosts.postId}">
@@ -147,7 +142,7 @@
                                             </c:forEach>
                                         </div>
                                     </div>
-                                    
+
                                     <sec:authorize access="isAuthenticated()">
                                         <div class="commentForm-Sectio">
                                             <sf:form role="form" action="createComment" method="POST" >

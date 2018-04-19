@@ -12,6 +12,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <title>WNGA Home</title>
+    <link rel="icon" href="../favico.ico" type="image/x-icon">
+        
+<link rel="shortcut icon" href="../favico.ico" type="image/x-icon"> 
         <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
             <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
                 </head>
@@ -27,21 +30,22 @@
                                 </div>
                             </div>
 
-                            
-                                <c:forEach var="user" items="${allUsers}">
-                                    <c:if test="${pageContext.request.userPrincipal.name == user.userName}">
-                                        <div id="userImg-inNav">
+                            <c:forEach var="user" items="${allUsers}">
+                                <c:if test="${pageContext.request.userPrincipal.name == user.userName}">
+                                    <div id="userImg-inNav">
                                         <img src="${user.photo}"/>
-                                        <p>Hello: ${pageContext.request.userPrincipal.name}</p>
+                                        <p>Hello: ${pageContext.request.userPrincipal.name} |
+                                            <a href="userProfile?userName=${pageContext.request.userPrincipal.name}">Profile</a></p>
                                     </div>
-                                    </c:if>
-                                </c:forEach>
-                            
+                                </c:if>
+                            </c:forEach>
+
                             <div class="col-md-12 upComing-outterDiv">
                                 <div class="latestPost to-center "> 
                                     <p id="upComing"> Upcoming Events</p>
                                 </div>
                             </div>
+
                         </section>
                         <div class="col-md-12" id="latestPost-ContentHolding" >
                             <div class="events latestPost-Content ">

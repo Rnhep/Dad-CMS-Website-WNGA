@@ -23,7 +23,15 @@
                     </div>
                     <div class="col-md-12" id="header-desktop"></div>
                     <div id="up"></div> 
-
+                    <c:forEach var="user" items="${allUsers}">
+                                <c:if test="${pageContext.request.userPrincipal.name == user.userName}">
+                                    <div id="userImg-inNav">
+                                        <img src="${user.photo}"/>
+                                        <p>Hello: ${pageContext.request.userPrincipal.name} |
+                                            <a href="userProfile?userName=${pageContext.request.userPrincipal.name}">Profile</a></p>
+                                    </div>
+                                </c:if>
+                            </c:forEach>
 
                     <div class="container col-md-12 admin-box">
                         <div class="container admin-note">

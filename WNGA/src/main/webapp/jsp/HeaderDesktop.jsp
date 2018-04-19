@@ -40,7 +40,7 @@
             <c:if test="${ pageContext.request.userPrincipal.name != null}">
                 <div><a  href="<c:url value="/j_spring_security_logout"/>">Sign Out</a> </div>
             </c:if>
-                
+
         </div>
 
 

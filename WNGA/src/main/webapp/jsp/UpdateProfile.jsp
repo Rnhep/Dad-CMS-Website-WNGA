@@ -39,6 +39,7 @@
                                     <sf:errors path="photo" cssClass="error"></sf:errors>
                                     </div>
                                 </div>
+
                                 <div class="form-group">
                                     <div class="col-md-8">
                                         <label>Email</label>
@@ -46,6 +47,7 @@
                                     <sf:errors path="email" cssClass="error"></sf:errors>
                                     </div>
                                 </div>
+
                                 <div class="form-group">
                                     <div class="col-md-8">
                                         <label>First Name</label>
@@ -53,6 +55,7 @@
                                     <sf:errors path="firstName" cssClass="error"></sf:errors>
                                     </div>
                                 </div>
+
                                 <div class="form-group">
                                     <div class="col-md-8">
                                         <label>Last Name</label>
@@ -60,6 +63,7 @@
                                     <sf:errors path="lastName" cssClass="error"></sf:errors>
                                     </div>
                                 </div>
+
                                 <div class="form-group">
                                     <div class="col-md-8">
                                     <sf:hidden path="userId"/>
@@ -71,6 +75,7 @@
                                 </div>
                             </div>
                         </sf:form>
+
                         <sf:form role="form"  modelAttribute="currentUser"  action="updatePassword" method="POST" >
 
                             <div class="form-group">
@@ -85,6 +90,7 @@
                                     <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-control" name="newPSW" placeholder="New Password"/>
                                 </div>
                             </div>
+
                             <div class="form-group">
                                 <div class="col-md-8">
                                     <label>Confirm new password</label>
@@ -92,6 +98,7 @@
                                     ${pswMessage}
                                 </div>
                             </div>
+
                             <input type="hidden" name="existingPSW" value="${currentUser.passWord}"/>
                             <sf:hidden path="userId"/>
                             <sf:hidden path="firstName"/>
