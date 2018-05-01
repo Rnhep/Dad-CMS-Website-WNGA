@@ -1,8 +1,9 @@
 <%-- 
-    Document   : EditContent
-    Created on : Dec 23, 2017, 11:35:20 PM
+    Document   : EditComment
+    Created on : Apr 8, 2018, 3:51:56 PM
     Author     : ritheenhep
 --%>
+
 <%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -13,9 +14,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fi">
        <head>
-        <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>WNGA Edit News</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>WNGA Edit Post</title>
         <!-- Bootstrap core CSS -->
         <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
             <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
@@ -23,39 +25,50 @@
                 <body> 
 
                     <div id="header-mobile"></div>
+
                     <div class="logo logo-hide col-md-12">
                     </div>
                     <div class="col-md-12" id="header-desktop"></div>
                     <div id="up"></div> 
+                    <c:forEach var="user" items="${allUsers}">
+                        <c:if test="${pageContext.request.userPrincipal.name == user.userName}">
+                            <div id="userImg-inNav">
+                                <img src="${user.photo}"/>
+                                <p>Hello: ${pageContext.request.userPrincipal.name}</p>
+                            </div>
+                        </c:if>
+                    </c:forEach>
                     <div class="to-center col-md-12" id="displayDate">
-                        <p class="today"> 
+                        <p class="today">
                             <%
-                                out.print("Edit News");
+                                out.print("Edit Post");
                             %>
                         </p>
-                        <button class="btn-info backto-Top" id="backto-Top"> back to top</button>
+                        <button class="backto-Top"> back to top</button>
                     </div>
-                  
+
                     <div class="container col-md-12  displayNews">
                         <div class="inner-postform">
-                            <sf:form role="form" action="updateNews" method="POST" modelAttribute="newsFeed">
+                            <sf:form role="form" action="updateComment" method="POST" modelAttribute="editComment"> 
                                 <div class="form-group">
-                                    <sf:input  id="registration-from" type="text" class="form-control" path="name" placeholder="Enter your Title here"/>
-                                    <sf:errors path="name" cssclass="error"></sf:errors>
-                                    </div>
-                                    <hr></hr>
-                                    <div class="form-group">
-                                    <sf:hidden path="date" value="${date}"/>
-                                    <sf:textarea type="text" class="news-Textarea" path="content" placeholder="Enter your news Feed here"/>
-                                    <sf:errors path="content" cssclass="error"></sf:errors>
-                                    <sf:hidden path="newsFeedId"/>
-                                    <input id="log-in-btn" type="submit" class="form-control" value="Update Content"/>
-
+                                    <textarea type="text" class="news-Textarea"  name="comment"
+                                              path="comment">${editComment.comment}</textarea>
+                                    <sf:input name="date" type="hidden" path="publishDate"/>
+                                    <input type="hidden" name="userId" value="${editComment.user.userId}"reqiured/>
+                                    <input type="hidden" name="postId" value="${editComment.newPost.postId}"reqiured/>
+                                    <sf:hidden path="commentId"/>
+                                </div>
+                                <div class="form-group">
+                                    <input id="log-in-btn" type="submit" class="form-control" value="Update"/>
                                 </div>
                             </sf:form>
                         </div>
                     </div>
 
+                    <section id="">
+                        <hr class="col-md-10 signInFooterLine"></hr> 
+                    </section>           
+                    <footer class="col-md-12" id="footer"></footer>
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
                     <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
                     <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>

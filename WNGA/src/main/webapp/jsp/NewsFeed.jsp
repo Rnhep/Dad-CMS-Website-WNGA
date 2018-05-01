@@ -24,6 +24,15 @@
         <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet"/>
     </head>
     <body>
+        <div><c:forEach var="user" items="${allUsers}">
+                <c:if test="${pageContext.request.userPrincipal.name == user.userName}">
+                    <div id="userImg-inNav">
+                        <img src="${user.photo}"/>
+                        <p>Hello: ${pageContext.request.userPrincipal.name} |
+                            <a href="userProfile?userName=${pageContext.request.userPrincipal.name}">Profile</a></p>
+                    </div>
+                </c:if>
+            </c:forEach></div>
         <div id="headerFreeze">
             <div id="header-mobile"></div>
             <div class="logo home logo-hide col-md-12">
@@ -32,15 +41,6 @@
         </div>
 
         <!------------------------------------------------------------------------------------------------------------------------------>                         
-        <c:forEach var="user" items="${allUsers}">
-            <c:if test="${pageContext.request.userPrincipal.name == user.userName}">
-                <div id="userImg-inNav">
-                    <img src="${user.photo}"/>
-                    <p>Hello: ${pageContext.request.userPrincipal.name} |
-                        <a href="userProfile?userName=${pageContext.request.userPrincipal.name}">Profile</a></p>
-                </div>
-            </c:if>
-        </c:forEach>
 
         <div class="to-center col-md-12" id="displayDate">
             <p class="today"> 

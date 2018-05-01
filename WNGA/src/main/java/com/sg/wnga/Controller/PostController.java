@@ -45,7 +45,7 @@ public class PostController {
         this.userDao = userDao;
         this.NPDao = NPDao;
         this.NFDao = NFDao;
-        this.commentDao=commentDao;
+        this.commentDao = commentDao;
         this.getCountDao = getCountDao;
 
     }
@@ -104,11 +104,11 @@ public class PostController {
 
     @RequestMapping(value = "/createNewsFeed", method = RequestMethod.POST)
     public String createNewsFeed(HttpServletRequest rq, Model model) {
-     
+
         String link = rq.getParameter("link");
         String content = rq.getParameter("content");
-        if(content == null || content.trim().length() == 0){
-             return "customError";
+        if (content == null || content.trim().length() == 0) {
+            return "customError";
         }
         NewsFeed newsFeed = new NewsFeed();
         LocalDate datePost = LocalDate.now();
@@ -152,8 +152,8 @@ public class PostController {
         return "redirect:displayPost";
 
     }
-    
-     @RequestMapping(value = "/comment", method = RequestMethod.GET)
+
+    @RequestMapping(value = "/comment", method = RequestMethod.GET)
     public String comment(HttpServletRequest rq, Model model) {
         String postIdParameter = rq.getParameter("postId");
         int postId = Integer.parseInt(postIdParameter);
@@ -163,18 +163,18 @@ public class PostController {
         model.addAttribute("comments", comments);
         return "Comment";
     }
-    
-      @RequestMapping(value = "/createComment", method = RequestMethod.POST)
-        public String createComment(HttpServletRequest rq, Model model) {
-         LocalDateTime timeStamp = LocalDateTime.now();
+
+    @RequestMapping(value = "/createComment", method = RequestMethod.POST)
+    public String createComment(HttpServletRequest rq, Model model) {
+        LocalDateTime timeStamp = LocalDateTime.now();
         //check for empty fields
         String userName = rq.getParameter("userName");
         String postIdIn = rq.getParameter("postId");
         String commentIn = rq.getParameter("comment");
-        if(commentIn==null || commentIn.trim().length()==0){
+        if (commentIn == null || commentIn.trim().length() == 0) {
             return "costumerror";
         }
-        int postId  = Integer.parseInt(postIdIn);//convert string to integer
+        int postId = Integer.parseInt(postIdIn);//convert string to integer
         NewPost post = NPDao.getPostById(postId);//get post by Id
         User user = userDao.getUserByUserName(userName);//get user by username
         Comment comment = new Comment();
@@ -183,6 +183,42 @@ public class PostController {
         comment.setUser(user);//insert user to comment
         comment.setNewPost(post);//insert post to comment
         commentDao.addComment(comment);
-       return "redirect:displayPost";
+        return "redirect:displayPost";
+    }
+
+    @RequestMapping(value = "/editComment", method = RequestMethod.GET)
+    public String editComment(HttpServletRequest rq, Model model) {
+        String commentIdParameter = rq.getParameter("commentId");
+        int commentId = Integer.parseInt(commentIdParameter);
+        Comment editComment = commentDao.getCommentById(commentId);
+        model.addAttribute("editComment", editComment);
+        return "EditComment";
+    }
+
+    @RequestMapping(value = "/updateComment", method = RequestMethod.POST)
+    public String updateComment(HttpServletRequest rq, Comment comment) {
+        String content = rq.getParameter("comment");
+        if (content == null || content.isEmpty() || content.trim().length() == 0) {
+            return "customError";
+        }
+        String userIdParameter = rq.getParameter("userId");
+        String NewPostIdParameter = rq.getParameter("postId");
+        int userId = Integer.parseInt(userIdParameter);
+        int postId = Integer.parseInt(NewPostIdParameter);
+        User user = userDao.getUserbyId(userId);
+        NewPost Post = NPDao.getPostById(postId);
+        comment.setUser(user);
+        comment.setNewPost(Post);
+        commentDao.updateComment(comment);
+        return "redirect:displayPost";
+    }
+    
+     @RequestMapping(value = "/deleteComment", method = RequestMethod.GET)
+    public String deleteComment(HttpServletRequest rq, Model model) {
+        String newsFeedIdParameter = rq.getParameter("commentId");
+        int commentId = Integer.parseInt(newsFeedIdParameter);
+        commentDao.deleteComment(commentId);
+        return "redirect:displayPost";
+
     }
 }

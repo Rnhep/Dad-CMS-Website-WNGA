@@ -41,7 +41,7 @@
                     <div class="to-center col-md-12" id="displayDate">
                         <p class="today">
                             <%
-                                out.print("Most recent posts");
+                                out.print("Edit Post");
                             %>
                         </p>
                         <button class="backto-Top"> back to top</button>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="14" failures="0" name="UserAndNewPostTest" time="4.782" errors="0" skipped="0">
+<testsuite tests="14" failures="0" name="UserAndNewPostTest" time="2.193" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib"/>
@@ -65,18 +65,18 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="UserAndNewPostTest" name="testGetPostById" time="0.401"/>
-  <testcase classname="UserAndNewPostTest" name="testDeleteComment" time="0.421"/>
-  <testcase classname="UserAndNewPostTest" name="testGetUserNameByPostId" time="0.203"/>
-  <testcase classname="UserAndNewPostTest" name="testGetAllUsers" time="0.62"/>
-  <testcase classname="UserAndNewPostTest" name="testUpdatePost" time="0.249"/>
-  <testcase classname="UserAndNewPostTest" name="testUpdateUser" time="0.461"/>
-  <testcase classname="UserAndNewPostTest" name="testDeleteNewPost" time="0.321"/>
-  <testcase classname="UserAndNewPostTest" name="testGetAllPost" time="0.178"/>
-  <testcase classname="UserAndNewPostTest" name="testAddGetComment" time="0.403"/>
-  <testcase classname="UserAndNewPostTest" name="testGetAllComment" time="0.326"/>
-  <testcase classname="UserAndNewPostTest" name="testGetCommentById" time="0.429"/>
-  <testcase classname="UserAndNewPostTest" name="testAddGetNewPost" time="0.191"/>
-  <testcase classname="UserAndNewPostTest" name="testGetUserByUserName" time="0.288"/>
-  <testcase classname="UserAndNewPostTest" name="testDeleteUser" time="0.291"/>
+  <testcase classname="UserAndNewPostTest" name="testGetPostById" time="0.202"/>
+  <testcase classname="UserAndNewPostTest" name="testDeleteComment" time="0.175"/>
+  <testcase classname="UserAndNewPostTest" name="testGetUserNameByPostId" time="0.186"/>
+  <testcase classname="UserAndNewPostTest" name="testGetAllUsers" time="0.136"/>
+  <testcase classname="UserAndNewPostTest" name="testUpdatePost" time="0.157"/>
+  <testcase classname="UserAndNewPostTest" name="testUpdateUser" time="0.165"/>
+  <testcase classname="UserAndNewPostTest" name="testDeleteNewPost" time="0.18"/>
+  <testcase classname="UserAndNewPostTest" name="testGetAllPost" time="0.125"/>
+  <testcase classname="UserAndNewPostTest" name="testAddGetComment" time="0.152"/>
+  <testcase classname="UserAndNewPostTest" name="testGetAllComment" time="0.139"/>
+  <testcase classname="UserAndNewPostTest" name="testGetCommentById" time="0.171"/>
+  <testcase classname="UserAndNewPostTest" name="testAddGetNewPost" time="0.12"/>
+  <testcase classname="UserAndNewPostTest" name="testGetUserByUserName" time="0.17"/>
+  <testcase classname="UserAndNewPostTest" name="testDeleteUser" time="0.115"/>
 </testsuite>

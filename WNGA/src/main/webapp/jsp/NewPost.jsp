@@ -26,14 +26,7 @@
             <link href="${pageContext.request.contextPath}/css/StyleSheet.css" type="text/css" rel="stylesheet">
                 </head>
                 <body>
-                    <div id="headerFreeze">
-                        <div id="header-mobile"></div>
-                        <div class="logo home logo-hide col-md-12">
-                        </div>
-                        <div class="col-md-9" id="header-desktop"></div>
-                    </div>
-
-                    <c:forEach var="user" items="${allUsers}">
+                    <div><c:forEach var="user" items="${allUsers}">
                         <c:if test="${pageContext.request.userPrincipal.name == user.userName}">
                             <div id="userImg-inNav">
                                 <img src="${user.photo}"/>
@@ -41,21 +34,26 @@
                                     <a href="userProfile?userName=${pageContext.request.userPrincipal.name}">Profile</a></p>
                             </div>
                         </c:if>
-                    </c:forEach>
+                    </c:forEach></div>
+                    <div id="headerFreeze">
+                        <div id="header-mobile"></div>
+                        <div class="logo home logo-hide col-md-12">
+                        </div>
+                        <div class="col-md-9" id="header-desktop"></div>
+                    </div>
+
+                    
                     <div class="to-center col-md-12" id="displayDate">
 
                         <p class="today">
-                            <%
-                                out.print("Most recent posts");
-                            %>
+                            MOST RECENT POSTS
                         </p>
                         <button class="backto-Top"> back to top</button>
-
                     </div>
                     <div class="container display-post col-md-10">
 
                         <div>
-
+                            
                             <sec:authorize access="isAuthenticated()">
                                 <div class="inner-postform">
                                     <sf:form role="form"  method="POST" class="form-horizontal"
@@ -115,10 +113,11 @@
 
                                 <div>
                                     <p class="show-Comments" data-text-swap="Hide" data-text-original="Show Comments" id="id">  
+                                        
                                         Show Comment(s) 
+                                        
                                     </p>
                                     <div class="comments-Section">
-
                                         <div class="display-Comments">
                                             <c:forEach var="allComments" items="${displayAllComments}">
                                                 <c:if test="${allComments.newPost.postId == allPosts.postId}">
@@ -137,12 +136,16 @@
                                                         <p class="comments-Text">
                                                             <c:out value="${allComments.comment}"/>
                                                         </p>
+                                                        <p>
+                                                            <a class="grey" href="editComment?commentId=${allComments.commentId}">edit</a>
+                                                            <a class="grey" href="deleteComment?commentId=${allComments.commentId}" id="delete" data-confirm=" WARNING!!!!: Are you sure to delete this comment? CANNOT BE UNDONE!!!">delete</a> |
+                                                        </p>
                                                     </div>
                                                 </c:if>
                                             </c:forEach>
                                         </div>
                                     </div>
-
+                                   
                                     <sec:authorize access="isAuthenticated()">
                                         <div class="commentForm-Sectio">
                                             <sf:form role="form" action="createComment" method="POST" >
@@ -156,10 +159,9 @@
                                         </div>
                                     </sec:authorize>
                                     <c:if test="${pageContext.request.userPrincipal.name == allPosts.user.userName}">
-                                        <p class="edit-delete grey">
+                                    <p class="edit-delete grey">
                                             <a class="grey" href="editPostForm?postId=${allPosts.postId}">edit</a> |
                                             <a class="grey" href="deletePost?postId=${allPosts.postId}" id="delete" data-confirm=" WARNING!!!!: Are you sure to delete this comment? CANNOT BE UNDONE!!!">delete</a> |
-
                                         </p>
                                     </c:if>
                                 </div>
@@ -181,3 +183,5 @@
                     <script src="${pageContext.request.contextPath}/js/linkify.js"></script>
                 </body>
                 </html>
+
+                

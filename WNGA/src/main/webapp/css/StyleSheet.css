@@ -8,8 +8,9 @@
        url('webfont.ttf')  format('truetype'),  Safari, Android, iOS 
        url('webfont.svg#svgFontName') format('svg');  Legacy iOS 
 }*/
-*{
-    font-family:Helvetica,Courier New, Myriad Pro Bold;
+html * {
+
+   font-family: Helvetica Neue, Algerian;
 }
 body
 {
@@ -19,7 +20,7 @@ body
     vertical-align: baseline;
     outline: 0;
     background: #edeeef;
-    font-family:Helvetica,Courier New, Myriad Pro Bold;
+    font-family: Helvetica Neue, Algerian;
 }
 
 /*
@@ -43,6 +44,7 @@ body
     #displayDate > .backto-Top {
         margin-top: -59px;
         float: right;
+        margin-right: 10px;
         font-size: 32px;
         width: 230px;
         color: #fff;
@@ -50,21 +52,22 @@ body
         border-radius: 12px;
     }
 
+
     #userImg-inNav{
         width: 100%;
         float: right;
-        top:-8em;
-        z-index: 10;
-        position: relative;
-        background-color: #3385ff;
+        z-index: 1;
+        margin-top: -1.4em;
+        background-color:  #337ab7;
         padding: 5px;
+        margin-bottom: 20px;
     }
-    
+
     #userImg-inNav a {
         text-decoration: none;
         color: #fff;
     }
-    
+
     #userImg-inNav > p {
         float: right;
         margin-right: 40px;
@@ -137,12 +140,12 @@ body
 
     .events {
         white-space:pre-line;
+
     }
 
     .logo {
         background: url('../Images/WNGA-M.png')no-repeat white;
-        min-height: 290px;
-        margin-top: -19px;
+        min-height: 450px;
         max-width: 100%;
         background-size: contain;
         border: 1px solid #fff;
@@ -159,7 +162,6 @@ body
         height: 100px;
         opacity: 1;   
         background-size: contain;
-
     }
 
     #section-a{
@@ -169,33 +171,32 @@ body
     .flex-container {
         position:relative;
         display:flex;
-        margin-left: 42em;
+        margin-left: 10em;
         width: auto;
-        margin-top: 35px;
+        margin-top: 15px;
         padding: 2px;
+    }
+
+    .flex-container > div >a
+    {
+        width: 100%;
+        max-width: 158px;
+        font-size: 52px;
+        font-weight: bold;
+        margin-left: 50px;
+        padding: 5px;
+        border-top: 3px solid #4286f4;
+        border-bottom: 3px solid #4286f4;
+        border-left: 3px solid #4286f4;
+        border-right: 3px solid #4286f4;
+        border-radius: 2px 15px  2px 15px;
+        box-shadow: 3px  3px 4px #080808;
     }
 
     .userprofile-headerPhoto > img{
         width: 10px;
         height: 10px;
         margin-top: -100px;
-    }
-
-    .flex-container > div >a { 
-        position: relative;
-        background-color: menu;
-        width: 100%;
-        max-width: 158px;
-        font-size: 32px;
-        font-weight: bold;
-        margin-left: 30px;
-        padding: 5px;
-        border-top: 4px solid #4286f4;
-        border-left: 3px solid #4286f4;
-        border-right: 3px solid #4286f4;
-        border-bottom: 3px solid #4286f4;
-        border-radius: 2px 15px  2px 15px;
-        box-shadow: 4px  4px 5px #080808;
     }
 
     .flex-container a,
@@ -291,7 +292,7 @@ body
         padding: 5px;
         margin-right: auto;
         margin-left: auto;
-        width: 60em;
+        width: 75em;
         height: auto;
         background-color: #fff;
         border-radius: 10px;
@@ -310,6 +311,7 @@ body
     }
 
     .post-textarea {
+         padding: 10px;
         display: block;
         margin: 0 auto;
         width:100%;
@@ -326,9 +328,9 @@ body
     }
 
     .latestPost-Content {
-        font-size: 24px;
+        font-size: 42px;
         width: 100%;
-        max-width: 650px;
+        max-width: 40em;
         height: auto;
         padding-left: 30px;
         margin: 0 auto;
@@ -339,10 +341,11 @@ body
     }
 
     .latestPost-Content p {
+        padding: 20px;
         white-space: nowrap;  
         overflow: hidden;
         text-overflow: ellipsis;
-        font-size: 22px;
+        font-size: 42px;
     }
 
 
@@ -361,8 +364,7 @@ body
     }
 
     .pre-posts {
-
-        font-size: 24px;
+        font-size: 30px;
         padding: 30px;
         margin-top: 30px;
         height:auto;
@@ -371,7 +373,6 @@ body
         background-color: #fff;
         border-radius:10px;
         box-shadow:  1px 1px 2px #888888;
-
     }
 
     .postContents {
@@ -381,7 +382,7 @@ body
         padding: 10px;
         height: auto;
         border-radius: 10px;
-        font-size: 24px;
+        font-size: 38px;
 
     }
 
@@ -405,8 +406,7 @@ body
         width: 100%;
     }
 
-    .comment-Form
-    {
+    .comment-Form {
         padding: 20px;
         resize: none;
         width: 100%;
@@ -422,13 +422,11 @@ body
         border: 0.1em solid #dcdcdc;
     }
 
-    .comments-Block{
+    .comments-Block {
         height:auto;
         width: 100%;
         padding-bottom: 20px;
         border-bottom: 1px solid #dcdcdc;
-
-
     }
 
     .commentForm-Section{
@@ -437,9 +435,8 @@ body
 
     .comments-Text{
         text-align: justify;
-        font-size: 22px;
+        font-size: 38px;
         font-weight: bold;
-
     }
 
     span {
@@ -465,27 +462,21 @@ body
     }
 
 
-    #displayDate p {
-        font-size: 42px;
-        color: #000000;
-    }
-
     .latestPost {
+        text-align: center;
         margin: 0 auto;
-        padding-bottom: 28px;
-        border-top: 9px solid  #4286f4;
-        border-bottom: 9px solid #5393fc;
+        border-top: 10px solid  #4286f4;
+        border-bottom: 10px solid #5393fc;
         width:350px;
-        height: 250px;
         border-radius: 20px;
     }
 
     .upComing-outterDiv{
         width: 100%;
         height: auto;
-        padding: 10px;
-
+        padding: 40px;
     }
+
 
     #upComing,
     #latestPost {
@@ -493,16 +484,7 @@ body
         color: #4286f4;
         font-weight: bold;
         width: auto;
-        font-size: 24px;
-    }
-
-
-    .img-container {
-
-        margin-top: 20px;
-        color:#fff;
-        font-size: 30px;
-        max-height: 100%;
+        font-size: 43px;
     }
 
     .to-center {
@@ -511,10 +493,20 @@ body
         height: 10px;
     }
 
+    .img-container {
+        padding: 20px;
+        margin-top: 20px;
+        color:#fff;
+        font-size: 30px;
+        max-height: 100%;
+    }
+
     .img-container p, h3, .to-center p,
     .news p a {
+        /*margin-top: 50px;*/
+        padding: 40px;
         text-align: center;
-        font-size: 35px;
+        font-size: 52px;
         font-weight: 900;
         color: #fff;
         text-decoration: none;
@@ -522,7 +514,7 @@ body
 
     #homepage-containerbg {
         margin-top: 35px;
-        height: 490px; 
+        height: auto; 
     }
 
     .post-preview p {
@@ -678,8 +670,6 @@ body
         padding: 10px;
     }
 
-
-
     .user-box {
 
         box-shadow: 1px 1px #000000;
@@ -714,10 +704,15 @@ body
 
     #displayDate {    
         margin-top: 50px;
-        padding: 5px;
-        background-color: #fff;
+        background-color: #337ab7;
         height: auto;
+        padding: 0;
+    }
 
+    #displayDate p {
+        padding: 0;
+        font-size: 62px;
+        color: #fff;
     }
 
     .admin-note{
@@ -726,12 +721,17 @@ body
     }
 
     #user-img {
-
         width: 90px;
         height: 90px;
         border-radius: 50%;
     }
 
+    img {
+        width: 550px; 
+        padding: 5px;
+        border-radius: 3px;
+    }
+    
     .grey{
         color: #888888;
     }
@@ -824,6 +824,7 @@ body
 
     #displayDate > .backto-Top {
         margin-top: -45px;
+        margin-right: 10px;
         float: right;
         font-size: 18px;
         width: 130px;
@@ -834,29 +835,29 @@ body
     #userImg-inNav{
         width: 100%;
         float: right;
-        top:-10.2em;
-        z-index: 10;
-        position: relative;
-        background-color: #3385ff;
+        z-index: 1;
+        margin-top: -1.5em;
+        background-color:  #337ab7;
         padding: 5px;
+        margin-bottom: 20px;
     }
 
-     #userImg-inNav a {
+    #userImg-inNav a {
         text-decoration: none;
         color: #fff;
     }
-    
+
     #userImg-inNav > p {
         float: right;
-        margin-right: 40px;
-        margin-top: 8px;
+        margin-right: 30px;
+        margin-top: 20px;
         color: #fff;
-        font-size: 22px;
+        font-size: 24px;
     }
 
     #userImg-inNav > img{
-        width: 50px;
-        height: 50px;
+        width: 70px;
+        height: 70px;
         border-radius: 50%;
         float: right;
         margin-right: 10em;
@@ -918,12 +919,22 @@ body
 
     .logo {
         background: url('../Images/WNGA-M.png')no-repeat white;
-        min-height: 190px;
-        margin-top: -19px;
+        min-height: 290px;
+        /*margin-top: -19px;*/
         max-width: 100%;
         background-size: contain;
         border: 1px solid #fff;
     }
+
+    #section-a{
+        width: 100%;
+    }
+
+    .events {
+        white-space:pre-line;
+        font-size: 33px;
+    }
+
 
     #header-desktop {
         top: -146px;
@@ -937,38 +948,29 @@ body
         background-size: contain;
         border-bottom: 3px solid #fff;
     }
-    #section-a{
-        width: 100%;
-    }
-
-    .events {
-        white-space:pre-line;
-    }
 
     .flex-container {
-        position: absolute;
-        display:flex;
-        margin-left: 33em;
-        width: auto;
-        margin-top: 59px;
+        width:100%;
+        display: flex;
+        margin-left: 30px;
+        margin-top: 40px;
         padding: 2px;
     }
 
     .flex-container > div >a
-    {   
-        background-color: menu;
+    {
         width: 100%;
         max-width: 158px;
-        font-size: 18px;
+        font-size: 28px;
         font-weight: bold;
-        margin-left: 15px;
+        margin-left: 50px;
         padding: 5px;
-        border-top: 4px solid #4286f4;
+        border-top: 3px solid #4286f4;
+        border-bottom: 3px solid #4286f4;
         border-left: 3px solid #4286f4;
         border-right: 3px solid #4286f4;
-        border-bottom: 3px solid #4286f4;
         border-radius: 2px 15px  2px 15px;
-        box-shadow: 4px  4px 5px #080808;
+        box-shadow: 3px  3px 4px #080808;
     }
 
     .flex-container a {
@@ -1020,7 +1022,7 @@ body
 
     .latestPost-Content {
         width: 100%;
-        max-width: 550px;
+        max-width: 950px;
         height:auto;
         padding-left: 30px;
         border: 1px solid silver;
@@ -1028,7 +1030,7 @@ body
         margin-bottom: 30px;
         background-color: #fff;
         border-radius: 10px;
-        box-shadow: 15px 5px 18px #888888;
+        box-shadow: 1px 1px 1px #888888;
 
     }
 
@@ -1036,7 +1038,7 @@ body
         white-space: nowrap;  
         overflow: hidden;
         text-overflow: ellipsis;
-        font-size: 18px;
+        font-size: 33px;
     }
 
 
@@ -1072,7 +1074,7 @@ body
         margin-right: auto;
         margin-left: auto;
         width: 100%;
-        max-width: 47em;
+        max-width: 55em;
         background: #fff;
         border-radius: 10px;
         padding: 5px;
@@ -1084,13 +1086,14 @@ body
         margin-left: 1em;
         margin-top: 5px;
         width:100%;
-        max-width: 22em;
+        max-width: 25em;
         height: 40px;
         resize: none;
         font-size: 14px;
     }
 
     .post-textarea {
+        padding: 10px;
         display: block;
         margin: 0 auto;
         width:100%;
@@ -1120,7 +1123,7 @@ body
         margin-top: 30px;
         height: auto;
         width: 100%;
-        max-width: 46.8em;
+        max-width: 54.8em;
         background-color: #fff;
         border-radius:10px;
         box-shadow:  1px 1px 1px #888888;
@@ -1137,7 +1140,7 @@ body
     }
 
     .postContents{
-        font-size: 16px;
+        font-size: 22px;
     }
 
 
@@ -1157,7 +1160,18 @@ body
         margin-left: 5em;
         margin-top: -2em;
     }
+    #displayDate {    
+        margin-top: 50px;
+        background-color: #337ab7;
+        height: auto;
+        padding: 0;
+    }
 
+    #displayDate p {
+        padding: 0;
+        font-size: 22px;
+        color: #fff;
+    }
     .display-Comments{
         margin-top: 35px;
         padding-top: 20px;
@@ -1165,7 +1179,7 @@ body
         width: auto;
         height: 650px;
         background-color:#edeeef;
-        font-size: 18px;
+        font-size: 22px;
         overflow: hidden;
         overflow-x: hidden;
         overflow-y: scroll;
@@ -1183,6 +1197,7 @@ body
     .comment-Form {
         padding: 10px;
         margin-left: 16px;
+        margin-top: 10px;
         resize: none;
         width: 95%;
         max-height: 100%;
@@ -1196,7 +1211,7 @@ body
 
     .comments-Text{
         text-align: justify;
-        font-size: 14px;
+        font-size: 20px;
         font-weight: bold;
         padding-right: 10px;
     }
@@ -1220,33 +1235,34 @@ body
         border-bottom: 1px solid #dcdcdc;
     }
 
-    #displayDate {    
-        margin-top: -60px;
-        padding: 5px;
-        background-color: #fff;
-        height: auto;
 
+    #displayDate {    
+        margin-top: -62px;
+        background-color: #337ab7;
+        height: auto;
+        padding: 0;
     }
 
     #displayDate p {
-        font-size: 28px;
-        color: #000000;
+        padding: 0;
+        font-size: 30px;
+        color: #fff;
     }
 
     .latestPost {
+        text-align: center;
         margin: 0 auto;
-        padding-bottom: 28px;
-        border-top: 9px solid  #4286f4;
-        border-bottom: 9px solid #5393fc;
+        border-top: 10px solid  #4286f4;
+        border-bottom: 10px solid #5393fc;
         width:350px;
-        height: 250px;
         border-radius: 20px;
     }
 
     .upComing-outterDiv{
         width: 100%;
         height: auto;
-        padding: 10px;
+        padding: 40px;
+
     }
 
     #upComing,
@@ -1258,23 +1274,26 @@ body
         font-size: 24px;
     }
 
-    .img-container {
-        margin-top: 20px;
-        color:#fff;
-        font-size: 30px;
-        max-height: 100%;
-    }
-
     .to-center {
         margin-top: 20px;
         color: black;
         height: 10px;
     }
 
+    .img-container {
+        padding: 20px;
+        margin-top: 20px;
+        color:#fff;
+        font-size: 30px;
+        max-height: 100%;
+    }
+
     .img-container p, h3, .to-center p,
     .news p a {
+        /*margin-top: 50px;*/
+        padding: 40px;
         text-align: center;
-        font-size: 25px;
+        font-size: 38px;
         font-weight: 900;
         color: #fff;
         text-decoration: none;
@@ -1282,7 +1301,7 @@ body
 
     #homepage-containerbg {
         margin-top: 35px;
-        height: 490px; 
+        height: auto; 
     }
 
     .post-preview p {
@@ -1511,6 +1530,12 @@ body
         border-radius: 50%;
 
     }
+    img {
+        width: 350px; 
+        padding: 5px;
+        border-radius: 3px;
+    }
+
 
     .edit-delete{
         margin-bottom: -0px;
@@ -1584,6 +1609,7 @@ body
     }
 
     #displayDate > .backto-Top {
+        margin-right: 10px;
         margin-top: -20px;
         float: right;
         font-size: 12px;
@@ -1595,24 +1621,24 @@ body
     #userImg-inNav{
         width: 100%;
         float: right;
-        top:-10.2em;
-        z-index: 10;
-        position: relative;
-        background-color: #3385ff;
-        padding: 5px;
+        z-index: 1;
+        margin-top: -1.4em;
+        background-color:  #337ab7;
+        padding: 2px;
+        margin-bottom: 20px;
     }
 
-     #userImg-inNav a {
+    #userImg-inNav a {
         text-decoration: none;
         color: #fff;
     }
-    
+
     #userImg-inNav > p {
         float: right;
-        margin-right: 40px;
-        margin-top: 8px;
+        margin-right: 20px;
+        margin-top: 10px;
         color: #fff;
-        font-size: 22px;
+        font-size: 20px;
     }
 
     #userImg-inNav > img{
@@ -1680,7 +1706,7 @@ body
 
     .logo {
         background: url('../Images/WNGA-M.png')no-repeat white;
-        min-height: 135px;
+        min-height: 235px;
         margin-top: -19px;
         width: 100%;
         max-width: 100%;
@@ -1688,10 +1714,12 @@ body
         border: 1px solid #fff;
     }
 
+
+
     #header-desktop {
         top: -146px;
         overflow: hidden;
-        margin-left: 20%;
+        margin-left: 25%;
         margin-top: 46.2px;
         max-height: 150px;
         max-width: 75%;
@@ -1699,6 +1727,36 @@ body
         opacity: 1;   
         background-size: contain;
         border-bottom: 3px solid #fff;
+    }
+
+    .flex-container {
+        width:100%;
+        display: flex;
+        margin-left: 30px;
+        margin-top: 55px;
+        padding: 2px;
+    }
+
+    .flex-container > div >a
+    {
+        width: 100%;
+        max-width: 158px;
+        font-size: 18px;
+        font-weight: bold;
+        margin-left: 50px;
+        padding: 5px;
+        border-top: 3px solid #4286f4;
+        border-bottom: 3px solid #4286f4;
+        border-left: 3px solid #4286f4;
+        border-right: 3px solid #4286f4;
+        border-radius: 2px 15px  2px 15px;
+        box-shadow: 3px  3px 4px #080808;
+    }
+
+    .flex-container a {
+        color: #000;
+        text-decoration: none;
+        font-size: 18px;
     }
 
 
@@ -1710,35 +1768,7 @@ body
         white-space:pre-line;
     }
 
-    .flex-container {
-        width:100%;
-        display: flex;
-        margin-left: 18em;
-        margin-top: 68px;
-        padding: 2px;
-    }
 
-    .flex-container > div >a {
-        width: 100%;
-        max-width: 158px;
-        font-size: 12px;
-        font-weight: bold;
-        margin-left: 40px;
-        padding: 5px;
-        border-top: 3px solid #4286f4;
-        border-left: 3px solid #4286f4;
-        border-right: 3px solid #4286f4;
-        border-bottom: 3px solid #4286f4;
-        border-radius: 2px 15px  2px 15px;
-        box-shadow: 2px  2px 3px #080808;
-    }
-
-    .flex-container a,
-    .flex-signIn a  {
-        color: #000;
-        text-decoration: none;
-        font-size: 14px;
-    }
 
     .aboutus-header {
         padding-top: -18px;
@@ -1924,7 +1954,7 @@ body
         height: 135px;
         max-width: 100em;
         resize: none;
-        font-size: 14px;
+        font-size: 12px;
         border: none;
     } 
 
@@ -1952,7 +1982,7 @@ body
         text-align: justify;
         width: 100%;
         height: auto;
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .commentCount{
@@ -1976,26 +2006,29 @@ body
     }
 
     #displayDate {    
-        margin-top: -60px;
-        padding: 5px;
-        background-color: #fff;
+        margin-top: -64px;
+        background-color: #337ab7;
         height: auto;
+        padding: 0;
     }
 
     #displayDate p {
-        font-size: 16px;
-        color: #000000;
+        padding: 0;
+        font-size: 25px;
+        color: #fff;
     }
 
     .upComing-outterDiv{
+        margin-bottom: 10px;
         width: 100%;
         height: auto;
-        padding: 10px;
+        /*padding: 10px;*/
 
     }
 
     #upComing,
     #latestPost {
+        text-align: center;
         margin: 0 auto;
         color: #4286f4;
         font-weight: bold;
@@ -2005,11 +2038,11 @@ body
 
     .latestPost {
         margin: 0 auto;
-        padding-bottom: 23px;
+        /*padding-bottom: 23px;*/
         border-top: 9px solid  #4286f4;
         border-bottom: 9px solid #5393fc;
         width:350px;
-        height: 250px;
+        height: auto;
         border-radius: 20px;
     }
 
@@ -2017,7 +2050,8 @@ body
         margin-top: 20px;
         color:#fff;
         font-size: 30px;
-        max-height: 100%;
+        height: auto;
+
     }
 
     .to-center {
@@ -2028,8 +2062,11 @@ body
 
     .img-container p, h3, .to-center p,
     .news p a {
+        /*margin-top: 50px;*/
+        padding: 20px;
+        height: auto;
         text-align: center;
-        font-size: 25px;
+        font-size: 28px;
         font-weight: 900;
         color: #fff;
         text-decoration: none;
@@ -2037,7 +2074,7 @@ body
 
     #homepage-containerbg {
         margin-top: 35px;
-        height: 490px; 
+        height: auto; 
     }
 
     .post-preview p {
@@ -2264,7 +2301,16 @@ body
         height: 40px;
         border-radius: 50%;
     }
+    img {
+        width: 250px; 
+        padding: 5px;
+        border-radius: 3px;
+    }
 
+    /*    .img-center {
+            text-align: center;
+            padding-bottom: 10px;
+        }*/
     .grey{
         color: #adadad;
     }
@@ -2337,10 +2383,11 @@ body
     }
 
     #displayDate > .backto-Top {
+        margin-right: 10px;
         margin-top: -20px;
         float: right;
-        font-size: 12px;
-        width: 90px;
+        font-size: 8px;
+        width: 60px;
         color: #fff;
         background-color: #3385ff;
     }
@@ -2348,36 +2395,33 @@ body
     #userImg-inNav{
         width: 100%;
         float: right;
-        top:-10.2em;
-        z-index: 10;
-        position: relative;
-        background-color: #3385ff;
-        padding: 0px;
-        height: auto;
+        z-index: 1;
+        margin-top: -1.4em;
+        background-color:  #337ab7;
+        padding: 1px;
+        margin-bottom: 20px;
+    }
+
+    #userImg-inNav a {
+        text-decoration: none;
+        color: #fff;
     }
 
     #userImg-inNav > p {
         float: right;
-        margin-right: 20px;
-        margin-top: 8px;
+        margin-right: 10px;
+        margin-top: 13px;
         color: #fff;
         font-size: 14px;
     }
 
-     #userImg-inNav a {
-        text-decoration: none;
-        color: #fff;
-    }
-    
     #userImg-inNav > img{
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
         float: right;
-        margin-top: 4px;
         margin-right: 10em;
     }
-
 
     .username {
         font-size: 14px;
@@ -2450,8 +2494,6 @@ body
         border-bottom: 3px solid #fff;
     }
 
-
-
     .flex-container {
         width:100%;
         display: flex;
@@ -2522,6 +2564,9 @@ body
         background-color: #fff;
         border-radius: 10px;
         box-shadow: 1px 1px 1px #000000;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .latestPost-Content p {
@@ -2529,7 +2574,6 @@ body
         overflow: hidden;
         text-overflow: ellipsis;
     }
-
 
     .displayNews {
         margin-top: 20px;
@@ -2639,7 +2683,7 @@ body
     }
 
     .postContents{
-        font-size: 10px;
+        font-size: 12px;
     }
 
     .display-Comments{
@@ -2677,6 +2721,7 @@ body
         border-radius: 5px;
         border: 1px solid  #edeeef;
     }
+
     .comments-Block{
         width: 100%;
     }
@@ -2713,36 +2758,40 @@ body
     }
 
 
-    #displayDate {    
-        margin-top: -60px;
-        padding: 5px;
-        background-color: #fff;
+   #displayDate {    
+        margin-top: -64px;
+        background-color: #337ab7;
         height: auto;
+        padding: 0;
     }
 
     #displayDate p {
-        font-size: 16px;
-        color: #000000;
+        padding: 0;
+        font-size: 18px;
+        color: #fff;
     }
 
     .latestPost {
-        margin: 0 auto;
-        padding-bottom: 28px;
+        margin-left: auto;
+        margin-right: auto;
         border-top: 9px solid  #4286f4;
         border-bottom: 9px solid #5393fc;
-        width:350px;
-        height: 250px;
+        width: 350px;
+        height: auto;
         border-radius: 20px;
     }
 
     .upComing-outterDiv{
+        margin-top: 20px;
+        padding-right: 50px;
         width: 100%;
         height: auto;
-        padding: 10px;
+
     }
 
     #upComing,
     #latestPost {
+        text-align: center;
         margin: 0 auto;
         color: #4286f4;
         font-weight: bold;
@@ -2755,10 +2804,12 @@ body
     }
 
     .img-container {
+        padding: 20px;
         margin-top: 20px;
         color:#fff;
         font-size: 30px;
         max-height: 100%;
+        height: auto;
     }
 
     .to-center {
@@ -2769,6 +2820,7 @@ body
 
     .img-container p, h3, .to-center p,
     .news p a {
+        padding: 40px;
         text-align: center;
         font-size: 25px;
         font-weight: 900;
@@ -2778,7 +2830,7 @@ body
 
     #homepage-containerbg {
         margin-top: 35px;
-        height: 490px; 
+        height: auto; 
     }
 
     .post-preview p {
@@ -2981,6 +3033,16 @@ body
         border-radius: 50%;
     }
 
+    img {
+        width: 160px; 
+        padding: 5px;
+        border-radius: 3px;
+    }
+
+    /*    .img-center {
+            text-align: center;
+            padding-bottom: 10px;
+        }*/
     .edit-delete {
         margin-bottom: -0px;
         margin-left: 10px;
@@ -3079,7 +3141,7 @@ body
     .profile a {
         color: #fff;
         text-decoration: none;
-        font-size: 14px;
+        font-size: 20px;
         width: 100%;
         display: block
     }
@@ -3217,11 +3279,14 @@ body
     .img-container  p, h3, .to-center p,
     .news p a {
         text-align: center;
-        font-size: 16px;
+        font-size: 20px;
         font-weight: 900;
         text-decoration: none;
     } 
-
+    .upComing-outterDiv{
+        text-align: center;
+        font-weight: bolder;
+    }
     .upcoming {
         text-align: center;
         color: #337ab7;
@@ -3271,6 +3336,7 @@ body
     }
 
     .img-container {
+        padding: 20px;
         margin-top: 20px;
         color: white;
         font-size: 24px;
@@ -3516,6 +3582,12 @@ body
         padding-bottom: 10px;
     }
 
+    .img-center{
+
+
+
+    }
+
     .grey {
         color: #101010; 
     }
@@ -3700,7 +3772,7 @@ body
 
     .logo {
         background: linear-gradient(to bottom, rgba(0,0,0,0.1) 6%,rgba(188,188,188,0.0) 100%), url('../Images/WNGA-M.png')no-repeat center white;
-        height: 100px;
+        height: 150px;
         width: 100%;
         opacity: 1; 
         background-size: contain;
@@ -3767,7 +3839,7 @@ body
     .profile a {
         color: #fff;
         text-decoration: none;
-        font-size: 12px;
+        font-size: 20px;
         width: 100%;
         display: block
     }
@@ -3806,7 +3878,7 @@ body
     #dropdown {
         color: #3385ff;
         background-color: #3385ff;
-        font-size: 30px;
+        font-size: 52px;
         background:none;
         text-decoration: none;
         outline: none;
@@ -3839,10 +3911,15 @@ body
     .img-container  p, h3, .to-center p,
     .news p a {
         text-align: center;
-        font-size: 12px;
+        font-size: 14px;
         font-weight: 900;
         text-decoration: none;
     } 
+
+    .upComing-outterDiv{
+        text-align: center;
+        font-weight: bolder;
+    }
 
     .upcoming {
         text-align: center;
@@ -3895,6 +3972,7 @@ body
     }
 
     .img-container {
+        padding: 20px;
         margin-top: 20px;
         color: white;
         font-size: 24px;
@@ -4308,7 +4386,7 @@ body
 
     .logo {
         background: linear-gradient(to bottom, rgba(0,0,0,0.1) 6%,rgba(188,188,188,0.0) 100%), url('../Images/WNGA-M.png')no-repeat center white;
-        height: 100px;
+        height: 200px;
         width: 100%;
         opacity: 1; 
         background-size: contain;
@@ -4377,7 +4455,7 @@ body
     .profile a {
         color: #fff;
         text-decoration: none;
-        font-size: 14px;
+        font-size: 20px;
         width: 100%;
         display: block
     }
@@ -4408,7 +4486,7 @@ body
     #dropdown {
         color: #3385ff;
         background-color: #3385ff;
-        font-size: 30px;
+        font-size: 52px;
         background:none;
         text-decoration: none;
         outline: none;
@@ -4454,6 +4532,11 @@ body
         font-weight: 900;
         text-decoration: none;
     } 
+
+    .upComing-outterDiv{
+        text-align: center;
+        font-weight: bolder;
+    }
 
     .upcoming {
         text-align: center;
@@ -4504,6 +4587,7 @@ body
     }
 
     .img-container  {
+        padding: 20px;
         margin-top: 20px;
         color: white;
         font-size: 24px;
@@ -4896,7 +4980,7 @@ body
 
     .logo {
         background: linear-gradient(to bottom, rgba(0,0,0,0.1) 6%,rgba(188,188,188,0.0) 100%), url('../Images/WNGA-M.png')no-repeat center white;
-        height: 100px;
+        height: 180px;
         width: 100%;
         opacity: 1; 
         background-size: contain;
@@ -4937,9 +5021,12 @@ body
     .profile a  {
         color: #fff;
         text-decoration: none;
-        font-size: 14px;
+        font-size: 22px;
         width: 100%;
         display: block
+    }
+    .glyphicon {
+        font-size: 22px;
     }
 
     .contact0, 
@@ -4972,6 +5059,7 @@ body
     #news,
     #blog, 
     #log-in {
+        /*font-size: 32px;*/
         width: 100%;
         text-align: center;
         color: #337ab7;
@@ -4994,7 +5082,7 @@ body
     #dropdown {
         color: #3385ff;
         background-color: #3385ff;
-        font-size: 30px;
+        font-size: 42px;
         background:none;
         text-decoration: none;
         outline: none;
@@ -5003,7 +5091,7 @@ body
 
     #nav {
         color: #337ab7;
-        font-size: 16px;
+        font-size: 36px;
         font-weight: bold;
     }
 
@@ -5046,6 +5134,12 @@ body
         font-weight: 900;
         text-decoration: none;
     } 
+
+    .upComing-outterDiv{
+        margin-top: 20px;
+        text-align: center;
+        font-weight: bolder;
+    }
 
     .upcoming {
         text-align: center;
@@ -5091,7 +5185,7 @@ body
         margin-top: 20px;
         color: white;
         font-size: 24px;
-        padding-bottom: 30px;
+        padding: 20px;
         height: auto;
     }
 
@@ -5261,6 +5355,7 @@ body
     }
 
     .latestPost-Content {
+
         height: auto;
         padding-left: 30px;
         border: 1px solid silver;

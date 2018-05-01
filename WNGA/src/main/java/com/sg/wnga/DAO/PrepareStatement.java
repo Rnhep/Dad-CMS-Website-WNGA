@@ -128,7 +128,7 @@ public class PrepareStatement {
             = "insert into Comment (Comment, PublishDate, UserId, PostId)value(?, ?, ?, ?)";
 
     protected static final String SQL_UPDATE_COMMENT
-            = "update Comment set Comment= ?, PubishDate = ? UserId = ? PostId = ? "
+            = "update Comment set Comment = ?, PublishDate = ?, UserId = ?, PostId = ? "
             + "where CommentId = ? ";
     protected static final String SQL_DELETE_POST_FROM_COMMENT
             = "delete from Comment where PostId = ? ";
